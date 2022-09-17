@@ -7,16 +7,8 @@ Empresas normalmente não exigem formação acadêmica para contratação, mas s
 Ao mesmo tempo, há uma grande quantidade de material disponível gratuitamente na web de maneira desorganizada, que dificulta o processo de aprendizado para iniciantes na área. No entanto, se esse conteúdo for propriamente indexado, categorizado e disponibilizado de uma maneira acessível e estruturada, poderá ser utilizado por potenciais profissionais na obtenção da capacitação necessária e, consequentemente, na inserção desses no mercado.
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
-
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Com a alta demanda por profissionais de TI no mercado e a baixa taxa de profissionais especializados anualmente, a disponibilidade de conteúdo gratuito para auxiliar na profissionalização de iniciantes no setor é extremamente necessária. Entretanto, por conta da alta quantidade e variedade de conteúdo gratuito, iniciantes na área se deparam com dificuldades em não somente encontrar, mas também em curar informações conteudistas para definir um plano de estudo otimizado, capaz de prover o conhecimento necessário e ou complementar, com a finalidade de aumentar suas chances de ingressar no setor de TI. 
 
 ## Objetivos
 
