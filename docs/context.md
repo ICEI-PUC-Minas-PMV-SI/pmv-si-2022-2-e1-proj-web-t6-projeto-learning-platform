@@ -21,12 +21,11 @@ Apresente também alguns (pelo menos 2) objetivos específicos dependendo de ond
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+A procura por profissionais de tecnologia vem crescendo ano a ano, gerando, apenas em 2020, um aumento de 670% em relação a 2019 (1). Em contrapartida, o desemprego aumentou em 42,7% entre pessoas de 14 a 17 anos, 29,8% entre pessoas de 18 a 24 anos e 13,9% entre pessoas com idade de 25 e 39 anos (2), indicando uma falta de profissionais qualificados. 
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
+Ao todo, existem cerca de 19.372 mil empresas atuando no setor de TI no Brasil, sendo 27,3% (5.294) delas voltadas ao desenvolvimento e produção de software. Porém, segundo a pesquisa **"Demanda de Talentos em TIC e Estratégia Σ TCEM"** desenvolvida pela **Brasscom** (3), apenas 46 mil profissionais se formam por ano no Ensino Superior com o perfil necessário para atender essas vagas e o déficit de profissionais capacitados pode chegar a 290 mil até 2024.  
 
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Com isso, propõe-se aqui a criação de uma plataforma para auxiliar na capacitação de um maior número de profissionais, com o interesse de reduzir este percentual entre o desemprego e a procura por mão de obra qualificada no setor de TI. 
 
 ## Público-Alvo
 
