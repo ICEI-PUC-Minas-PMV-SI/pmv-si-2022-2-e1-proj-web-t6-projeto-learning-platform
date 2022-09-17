@@ -12,12 +12,21 @@ Com a alta demanda por profissionais de TI no mercado e a baixa taxa de profissi
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+### Objetivo geral 
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+O principal objetivo da plataforma é a categorização e organização de conteúdos educacionais disponíveis gratuitamente relacionados à área de TI, estruturando as informações de modo a fornecer conhecimentos válidos para a especialização profissional dos usuários que desejam ingressar no setor. 
+
+### Objetivos específicos 
+
+Na prática, o projeto visa cumprir a orientação quanto ao melhor material a ser estudado pelo aluno através de plataforma de vídeo e texto, dando liberdade a esse para poder criar seu próprio perfil de aprendizado customizado. 
+
+- Desenvolver plataforma para a organização e a orientação de estudos, com vídeos e textos extraídos de serviços gratuitos. 
+
+- Utilizar API's de terceiros para a indexação do conteúdo. 
+
+- Prover acompanhamento de aprendizado. 
+
+- Desenvolver interface dinâmica compatível com diversos dispositivos. 
 
 ## Justificativa
 
