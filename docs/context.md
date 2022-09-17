@@ -1,6 +1,10 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+Existe hoje uma relação direta entre o grande déficit de profissionais de TI e o valor da profissionalização na área por meio de cursos de graduação em faculdades e universidades.
+
+Empresas normalmente não exigem formação acadêmica para contratação, mas seus processos de recrutamento testam possíveis candidatos em conhecimentos que seriam adquiridos em cursos de nível superior, o que contribui para a discrepância entre o crescimento da demanda por profissionais no setor de TI e a alta taxa de desemprego no país.
+
+Ao mesmo tempo, há uma grande quantidade de material disponível gratuitamente na web de maneira desorganizada, que dificulta o processo de aprendizado para iniciantes na área. No entanto, se esse conteúdo for propriamente indexado, categorizado e disponibilizado de uma maneira acessível e estruturada, poderá ser utilizado por potenciais profissionais na obtenção da capacitação necessária e, consequentemente, na inserção desses no mercado.
 
 ## Problema
 Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
