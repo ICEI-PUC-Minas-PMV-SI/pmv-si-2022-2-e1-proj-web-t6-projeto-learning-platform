@@ -1,24 +1,10 @@
 # Especificações do Projeto
 
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
-
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
-
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
+Marcelo, 25 anos, casado e recém-formado em Sistemas de Informação, todos os dias aplica em vagas para cargos na área de TI, mas sempre acaba esbarrando em algum requisito em que ele ainda não tem competência técnica. Por isso, Marcelo dedica tempo semanalmente para assistir vídeos e aprender técnicas e tecnologias novas, mas encontra dificuldade em encontrar conteúdo gratuito de qualidade nos tópicos que precisa aprender e que agreguem ao seu conhecimento sem desperdiçar tempo. 
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
-
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
+Lívia, 17 anos, mora com seus pais e acabou de completar o ensino médio e tem interesse na área de TI, mas uma faculdade está fora de alcance no momento devido aos altos valores das mensalidades. Por isso, Livia procura sem sucesso, plataformas que provenham direcionamento no conteúdo a ser estudo, para se profissionalizar e adquirir o conhecimento necessário a fim de ingressar em seu primeiro emprego no setor de tecnologia. 
 
 ## Histórias de Usuários
 
