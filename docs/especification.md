@@ -43,23 +43,15 @@ Lívia, 17 anos, mora com seus pais e acabou de completar o ensino médio e tem 
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
-
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
+|RNF-001| A plataforma deverá ser acessível em formato para desktop & mobile (responsivo) | ALTA | 
+|RNF-002| A plataforma deverá ser compatível com Google Chrome, Edge & Opera  |  ALTA | 
+|RNF-003| A plataforma deverá carregar páginas em no máximo 2 segundos  |  MÉDIA | 
+|RNF-004| Páginas protegidas do perfil do usuário (Perfil, Editor de perfil & Criação de plano) deverão ser protegidas e exigir login para acesso  |  ALTA | 
+|RNF-005| Senhas enviadas pela internet para o servidor deverão ser propriamente criptografadas para maior segurança |  ALTA | 
+|RNF-006| O site deverá conter uma base de dados para armazenamento e manutenção de dados |  ALTA | 
+|RNF-007| A base de dados deverá ser protegida para não permitir acesso indesejado dos dados |  ALTA | 
+|RNF-008| O site deverá conter UNIT testes automatizados com cobertura de no mínimo 50%  |  MÉDIA | 
+|RNF-009| O site deverá conter testes de interface abrangendo no mínimo as funcionalidades de: Login, Cadastro & Busca, expandindo para outras áreas se possível. (Cypress) |  MÉDIA | 
 
 ## Restrições
 
