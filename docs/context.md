@@ -21,21 +21,19 @@ Apresente também alguns (pelo menos 2) objetivos específicos dependendo de ond
 
 ## Justificativa
 
-A procura por profissionais de tecnologia vem crescendo ano a ano, gerando, apenas em 2020, um aumento de 670% em relação a 2019 (1). Em contrapartida, o desemprego aumentou em 42,7% entre pessoas de 14 a 17 anos, 29,8% entre pessoas de 18 a 24 anos e 13,9% entre pessoas com idade de 25 e 39 anos (2), indicando uma falta de profissionais qualificados. 
+A procura por profissionais de tecnologia vem crescendo ano a ano, gerando, apenas em 2020, um aumento de 670% em relação a 2019 [(1)](#referências). Em contrapartida, o desemprego aumentou em 42,7% entre pessoas de 14 a 17 anos, 29,8% entre pessoas de 18 a 24 anos e 13,9% entre pessoas com idade de 25 e 39 anos [(2)](#referências), indicando uma falta de profissionais qualificados. 
 
-Ao todo, existem cerca de 19.372 mil empresas atuando no setor de TI no Brasil, sendo 27,3% (5.294) delas voltadas ao desenvolvimento e produção de software. Porém, segundo a pesquisa **"Demanda de Talentos em TIC e Estratégia Σ TCEM"** desenvolvida pela **Brasscom** (3), apenas 46 mil profissionais se formam por ano no Ensino Superior com o perfil necessário para atender essas vagas e o déficit de profissionais capacitados pode chegar a 290 mil até 2024.  
+Ao todo, existem cerca de 19.372 mil empresas atuando no setor de TI no Brasil, sendo 27,3% (5.294) delas voltadas ao desenvolvimento e produção de software. Porém, segundo a pesquisa **"Demanda de Talentos em TIC e Estratégia Σ TCEM"** desenvolvida pela **Brasscom** [(3)](#referências), apenas 46 mil profissionais se formam por ano no Ensino Superior com o perfil necessário para atender essas vagas e o déficit de profissionais capacitados pode chegar a 290 mil até 2024.  
 
 Com isso, propõe-se aqui a criação de uma plataforma para auxiliar na capacitação de um maior número de profissionais, com o interesse de reduzir este percentual entre o desemprego e a procura por mão de obra qualificada no setor de TI. 
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
+O público alvo principal do projeto são jovens e adultos de 16 a 30 anos, que possuam ensino médio completo ou em andamento, de média ou baixa renda e que buscam formas gratuitas de estudo, que permitam a flexibilidade e autonomia na seleção do conteúdo a ser estudado, a fim de se preparar para ingressar em qualquer área do setor de TI.
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
+## Referências
 
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+
+> 1. Procura por profissionais de tecnologia cresce 671% durante a pandemia - [cnnbrasil.com.br](https://www.cnnbrasil.com.br/business/procura-por-profissionais-de-tecnologia-cresce-671-durante-a-pandemia/)
+> 2. Projeto dá formação profissional em TI para jovens de baixa renda - [virtz.r7.com](https://virtz.r7.com/projeto-da-formacao-profissional-em-ti-para-jovens-de-baixa-renda-01072021)
+> 3. Demanda de Talentos em TIC e Estratégia Σ TCEM - [brasscom.org.br](https://brasscom.org.br/pdfs/demanda-de-talentos-em-tic-e-estrategia-tcem/)
