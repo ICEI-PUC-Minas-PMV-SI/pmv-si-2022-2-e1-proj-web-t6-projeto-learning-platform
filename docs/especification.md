@@ -17,14 +17,26 @@ Lívia, 17 anos, mora com seus pais e acabou de completar o ensino médio e tem 
 
 ## Requisitos
 
-As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto.
-
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito  | Prioridade | Responsável |
-|------|-----------------------------------------|----| ----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA |  |
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA | |
+|ID | Página | Descrição do Requisito | Prioridade | 
+|------|--------|------------------------------------------|----| 
+|RF-001| Informação | deverá conter conteúdo sobre a motivação e os integrantes do projeto | ALTA |
+|RF-002| Informação | deverá conter informação sobre como funciona a aplicação e como o usuário pode começar | ALTA |
+|RF-003| Home | deverá conter cabeçalho com acesso para páginas Sobre, Login & Cadastro | ALTA |
+|RF-004| Home | o cabeçalho da página inicial, deverá conter um campo para pesquisa de conteúdo  | ALTA |
+|RF-005| Home | uma vez logado, o cabeçalho deverá exibir acesso para o perfil de usuário  | ALTA |
+|RF-006| Home | o cabeçalho da página inicial, deverá conter um campo de pesquisa  | ALTA |
+|RF-007| Home | a página inicial, deverá conter um filtro por palavras chave (tecnologias & tópicos)  | ALTA |
+|RF-008| Home | A plataforma deverá retornar resultados de pesquisa condizentes a requisição feita pelo usuário Login Média | ALTA |
+|RF-009| Home | deverá exibir o formulário de login com usuário, senha, botão de login e link para recuperação de senha | ALTA |
+|RF-010| Home | uma vez submetido deverá redirecionar para a página inicial  | ALTA |
+|RF-011| Home | caso o login falhe, reexibir formulário de login como mensagem de erro amigável e como prosseguir | ALTA |
+|RF-012| Home | ao clicar no link de recuperação de senha deverá levar o usuário para o formulário de recuperação de senha | ALTA |
+|RF-013| Home | deverá exibir formulário de recuperação de senha | ALTA |
+|RF-014| Cadastro | deverá formulário para criação de usuário como nome completo, usuário, senha, botão para submeter e link para a página de login (caso usuário já tenha uma conta) | ALTA |
+|RF-015| Cadastro | uma vez submetido, deve criar a conta do usuário e redirecionar para o perfil de usuário | ALTA |
+|RF-016| Cadastro | caso a criação de conta falhe, reexibir o formulário com informações amigáveis sobre o erro, e como prosseguir  | ALTA |
 
 
 ### Requisitos não Funcionais
