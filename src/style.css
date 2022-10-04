@@ -22,10 +22,8 @@ html, body {
    }
 
 header{
-    background-color: #353535;
     align-items: flex-start;
     padding: 0px 32px 0px 12px;
-    gap: 32px;
     height: 66px;
     order: 0;
 }
@@ -42,6 +40,5 @@ footer {
     padding: 0px 24px;
     height: 64px;
     top: 1016px;
-    gap: 10px;
     order: 2;
 }
