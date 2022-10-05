@@ -1,0 +1,56 @@
+:root {
+    --bs-primary: #38B9E1;
+    --bs-btn-border-color: var(--bs-primary);
+    --gr-text-muted: rgba(255,255,255,.3);
+    --gr-primary-hover: #2EE7F3;
+    --gr-bg-darker: #1B1B1B;
+    --gr-bg-default: #292929  !important;
+    --gr-border-default: #353535 ;
+}
+
+/* Backgroun */
+
+.bg-default {
+    background-color: var(--gr-bg-default);
+}
+
+.bg-darker {
+    background-color: var(--gr-bg-darker);
+}
+
+/* Border */
+
+.border-default {
+    border-color: var(--gr-border-default) !important;
+}
+
+/* Botões */
+.btn {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+}
+
+.btn-outline-dashed {
+    border-style: dashed;
+}
+
+.btn-border-muted {
+    border-color: var(--gr-text-muted);
+}
+
+.btn-outline-gr-primary {
+    border-color: var(--bs-primary);
+    color: var(--bs-primary);
+}
+
+.btn-outline-gr-primary:hover{
+    border-color: var(--gr-primary-hover) !important;
+    color: var(--gr-primary-hover) !important;
+}
+
+/* text */
+.text-gr-primary{
+    color: var(--bs-primary)
+}
+
+

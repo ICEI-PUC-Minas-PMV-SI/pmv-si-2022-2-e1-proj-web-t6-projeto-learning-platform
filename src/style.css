@@ -1,44 +1,43 @@
-
-.bg-default {
-    background-color: #292929  !important;
+@font-face {
+    font-family: gr-title-font;
+    src:url("./fonts/BakbakOne-Regular.ttf");
 }
-
-.bg-darker {
-    background-color: #1B1B1B;
-}
-
-.border-default{
-    border-color: #353535  !important;
-
-}
-
-.border-top{
-    border-top: 1px solid #353535;
-}
-
 
 html, body {
     height: 100%;
    }
 
+h6, h5, h4, h3, h2, h1{
+    font-family: gr-title-font;
+}
+
 header{
-    align-items: flex-start;
-    padding: 0px 32px 0px 12px;
-    height: 66px;
-    order: 0;
+    padding: 10px 32px 10px 12px;
+    height: 62px;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    margin-right: 10px;
+    padding: 0 24px;
+}
+
+ul a{
+   text-decoration: none;
 }
 
 main{
     padding: 0px;
     height: 600px;
-    order: 1;
 }
-
 
 footer {
     background-color: #292929;
     padding: 0px 24px;
     height: 64px;
     top: 1016px;
-    order: 2;
 }
