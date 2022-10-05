@@ -1,0 +1,44 @@
+
+.bg-default {
+    background-color: #292929  !important;
+}
+
+.bg-darker {
+    background-color: #1B1B1B;
+}
+
+.border-default{
+    border-color: #353535  !important;
+
+}
+
+.border-top{
+    border-top: 1px solid #353535;
+}
+
+
+html, body {
+    height: 100%;
+   }
+
+header{
+    align-items: flex-start;
+    padding: 0px 32px 0px 12px;
+    height: 66px;
+    order: 0;
+}
+
+main{
+    padding: 0px;
+    height: 600px;
+    order: 1;
+}
+
+
+footer {
+    background-color: #292929;
+    padding: 0px 24px;
+    height: 64px;
+    top: 1016px;
+    order: 2;
+}
