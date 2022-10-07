@@ -7,6 +7,7 @@
     --gr-bg-darker: #1B1B1B;
     --gr-bg-default: #292929  !important;
     --gr-border-default: #353535 ;
+    --gr-bg-gray: #4F4F4F;
 }
 
 /* Background */
@@ -20,6 +21,32 @@
 }
 
 /* Border */
+
+.button{
+    border-radius: 0 4px 4px 0;
+    height: 46px;
+    width: 62px;
+    background-color:var(--gr-bg-gray) ;
+    border: none;
+}
+
+.button:hover{
+    background-color: var(--bs-primary) !important;
+}
+
+
+.input{
+    border-radius: 4px 0 0 4px;
+    height: 46px;
+    width: 524px;
+    background-color:var(--gr-bg-darker);
+    border: none;
+}
+
+.dropdown-button{
+    height: 46px;
+    width: 202px;
+}
 
 .border-default {
     border-color: var(--gr-border-default) !important;
