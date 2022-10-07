@@ -1,3 +1,5 @@
+@import url(utilities.css);
+
 @font-face {
     font-family: gr-title-font;
     src:url("./fonts/BakbakOne-Regular.ttf");
@@ -29,6 +31,10 @@ ul li {
 ul a{
    text-decoration: none;
 }
+
+ul a:hover{
+    color: var(--gr-primary-hover) !important;
+ }
 
 main{
     padding: 0px;
