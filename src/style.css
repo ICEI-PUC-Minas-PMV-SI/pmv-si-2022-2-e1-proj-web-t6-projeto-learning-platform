@@ -5,6 +5,11 @@
     src:url("./fonts/BakbakOne-Regular.ttf");
 }
 
+@font-face {
+    font-family: gr-main-font;
+    src:url("./fonts/Almarai-Regular.ttf");
+}
+
 html, body {
     height: 100%;
    }
