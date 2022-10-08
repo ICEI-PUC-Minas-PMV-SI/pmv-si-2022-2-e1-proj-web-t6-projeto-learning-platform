@@ -1,0 +1,11 @@
+{
+    "editorconfig": true,
+    "overrides": [
+        {
+            "files": "./src/**/*.{hbs,html}",
+            "options": {
+                "parser": "glimmer"
+            }
+        }
+    ]
+}

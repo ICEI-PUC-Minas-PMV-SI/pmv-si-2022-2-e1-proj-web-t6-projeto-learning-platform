@@ -1,0 +1,15 @@
+{
+    "items": [
+        { "title": "Home", "url": "./index.html" },
+        { "title": "Sobre", "url": "./pages/sobre.html" },
+        { "title": "Come Começar", "url": "./pages/como-comecar.html" }
+    ],
+    "login": {
+        "title": "Entrar",
+        "url": "./pages/login.html"
+    },
+    "cadastro": {
+        "title": "Cadastre-se",
+        "url": "./pages/cadastro.html"
+    }
+}

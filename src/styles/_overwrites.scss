@@ -1,0 +1,99 @@
+// Substituições e customizações das css variables do Bootstrap esse arquivo.
+
+.btn {
+    --bs-btn-padding-x: 1rem;
+    --bs-btn-padding-y: 0;
+    --bs-btn-line-height: 44px;
+    --bs-btn-border-width: 1px;
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--bs-primary);
+    --bs-btn-border-color: var(--bs-primary);
+    --bs-btn-hover-bg: var(--gr-primary-hover);
+    --bs-btn-hover-border-color: var(--gr-primary-hover);
+    --bs-btn-active-bg: var(--bs-primary);
+    --bs-btn-active-border-color: var(--bs-primary);
+    --bs-btn-disabled-bg: var(--bs-primary);
+    --bs-btn-disabled-border-color: var(--bs-primary);
+}
+
+
+.btn-gr-frontend {
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--gr-frontend-color);
+    --bs-btn-border-color: var(--gr-frontend-color);
+    --bs-btn-border-radius: 6px;
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: var(--gr-frontend-color-hover);
+    --bs-btn-hover-border-color: var(--gr-frontend-color-hover);
+    --bs-btn-focus-shadow-rgb: var(--gr-frontend-color);
+    --bs-btn-active-color: var(--gr-frontend-color);
+    --bs-btn-active-bg: var(--gr-frontend-color);
+    --bs-btn-active-border-color: var(--gr-frontend-color);
+}
+
+.btn-gr-outline-frontend {
+    --bs-btn-color: var(--gr-frontend-color);
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: var(--gr-frontend-color);
+    --bs-btn-border-radius: 6px;
+    --bs-btn-hover-color: var(--gr-frontend-color-hover);
+    --bs-btn-hover-bg: transparent;
+    --bs-btn-hover-border-color: var(--gr-frontend-color-hover);
+    --bs-btn-focus-shadow-rgb: var(--gr-frontend-color);
+    --bs-btn-active-color: var(--gr-frontend-color);
+    --bs-btn-active-bg: transparent;
+    --bs-btn-active-border-color: var(--gr-frontend-color);
+
+    &:hover {
+        text-shadow: 0 0 21px var(--gr-frontend-color-hover);
+        box-shadow: inset 0px 0 10px var(--gr-frontend-color-hover), 0px 0 10px var(--gr-frontend-color-hover);
+    }
+}
+
+
+.btn-gr-outline-backend {
+    --bs-btn-color: var(--gr-backend-color);
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: var(--gr-backend-color);
+    --bs-btn-border-radius: 6px;
+    --bs-btn-hover-color: var(--gr-backend-color-hover);
+    --bs-btn-hover-bg: transparent;
+    --bs-btn-hover-border-color: var(--gr-backend-color-hover);
+    --bs-btn-focus-shadow-rgb: var(--gr-backend-color);
+    --bs-btn-active-color: var(--gr-backend-color);
+    --bs-btn-active-bg: transparent;
+    --bs-btn-active-border-color: var(--gr-backend-color);
+
+    &:hover {
+        text-shadow: 0 0 21px var(--gr-backend-color-hover);
+        box-shadow: inset 0px 0 10px var(--gr-backend-color-hover), 0px 0 10px var(--gr-backend-color-hover);
+    }
+}
+
+
+.input-group {
+    &:focus {
+        .btn-gr-default {
+            background-color: var(--gr-primary-hover) !important;
+        }
+    }
+}
+
+
+.form-control {
+    height: 46px;
+    width: 524px;
+    border-radius: 4px 0 0 4px;
+    background-color: var(--gr-bg-darker);
+    border: 2px solid var(--gr-bg-darker);
+
+    &:focus {
+        border-color: var(--gr-primary-hover);
+        background-color: var(--gr-bg-darker);
+        box-shadow: none;
+    }
+}
+
+

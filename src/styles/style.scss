@@ -1,0 +1,42 @@
+@import "./variables";
+@import "./overwrites";
+@import "./utilities";
+
+@font-face {
+    font-family: gr-title-font;
+    src: url("../static/fonts/BakbakOne-Regular.ttf");
+}
+
+html, body {
+    height: 100%;
+}
+
+h6, h5, h4, h3, h2, h1 {
+    font-family: gr-title-font;
+    color: var(--bs-primary);
+}
+
+header {
+    padding: 10px 32px 10px 12px;
+    height: 62px;
+}
+
+main {
+    padding: 0px;
+    height: 600px;
+}
+
+footer {
+    padding: 0px 24px;
+    height: 64px;
+    top: 1016px;
+}
+
+.gr-main-search:has(.form-control:focus) .btn-gr-default {
+    border-color: var(--gr-primary-hover) !important;
+    background-color: var(--gr-primary-hover) !important;
+}
+
+.gr-main-search {
+    max-width: 580px;
+}

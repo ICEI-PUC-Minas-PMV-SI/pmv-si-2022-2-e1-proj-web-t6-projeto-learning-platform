@@ -1,0 +1,19 @@
+// CSS Variables do nosso projeto sempre com prefix gr (grimore)
+
+:root {
+    --bs-primary: #38B9E1;
+    // --bs-btn-border-color: var(--bs-primary);
+    --gr-text-muted: rgba(255,255,255,.3);
+    --gr-primary-hover: #2EE7F3;
+
+    --gr-frontend-color: #CA3D89;
+    --gr-frontend-color-hover: #FF5BB4;
+
+    --gr-backend-color: #8542D8;
+    --gr-backend-color-hover: #A257FF;
+
+    --gr-box-primary-hover: #2ee6f3af;
+    --gr-bg-darker: #1B1B1B;
+    --gr-bg-default: #292929  !important;
+    --gr-border-default: #353535 ;
+}

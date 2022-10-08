@@ -1,16 +1,7 @@
-:root {
-    --bs-primary: #38B9E1;
-    --bs-btn-border-color: var(--bs-primary);
-    --gr-text-muted: rgba(255,255,255,.3);
-    --gr-primary-hover: #2EE7F3;
-    --gr-box-primary-hover: #2ee6f3af;
-    --gr-bg-darker: #1B1B1B;
-    --gr-bg-default: #292929  !important;
-    --gr-border-default: #353535 ;
-}
+// Classes de utilidades aqui
+
 
 /* Background */
-
 .bg-default {
     background-color: var(--gr-bg-default);
 }
@@ -58,9 +49,24 @@
     transition: 0.3s;
 }
 
+.btn-gr-default {
+    color: var(--gr-text-muted) !important;
+    border-color: var(--gr-border-default) !important;
+    background-color: var(--gr-border-default) !important;
+}
+
+.btn-gr-primar-hover {
+    color: white;
+    border-color: var(--gr-primary-hover) !important;
+    background-color: var(--gr-primary-hover) !important;
+}
+
+#gr-main-search:has(.form-control:focus) .btn-gr-default {
+    border-color: var(--gr-primary-hover) !important;
+    background-color: var(--gr-primary-hover) !important;
+}
+
 /* color hover */
-
-
 
 
 /* text */

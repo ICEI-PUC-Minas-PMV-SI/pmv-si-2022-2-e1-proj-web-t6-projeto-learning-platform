@@ -1,0 +1,73 @@
+{{#block "header"}}
+    <div class="container-fluid bd-gutter flex-wrap flex-xl-nowrap">
+        <div class="bd-navbar-toggle">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#gr-navbar-collapse" aria-controls="gr-navbar-collapse">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+                </svg>
+            </buton>
+        </div>
+        
+        <div class="navbar-brand">
+            <h2 class="m-0 me-lg-3">{{meta.name}}</h2>
+        </div>
+
+        <div class="d-none d-xl-block flex-fill">
+            <div class="d-flex flex-fill">
+                <div class="dropdown me-2">
+                    <button class="btn btn-secondary dropdown-toggle dropdown-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Explore por área
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+
+                <form id="gr-main-search" class="gr-main-search d-flex flex-fill mb-0" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control input" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                        <button class="btn btn-gr-default" type="submit">
+                            <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="d-block d-xl-none text-muted">
+            <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+        </div>
+
+        <div class="offcanvas-xl offcanvas-start"  tabindex="-1" id="gr-navbar-collapse">
+             <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Responsive offcanvas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#gr-navbar-collapse" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-3">
+                    {{#each menu.items}}
+                        <li class="nav-item">
+                            <a href="{{this.url}}" title="{{../meta.name}} - {{this.title}}" class="nav-link px-3">
+                                {{this.title}}
+                            </a>
+                        </li>
+                    {{/each}}
+                </ul>
+
+                <a  href="{{menu.login.url}}"
+                    class="text-gr-primary btn btn-outline-primary btn-outline-dashed btn-border-muted bg-default me-2"
+                >
+                    {{menu.login.title}}
+                </a>
+
+                <a href="{{menu.cadastro.url}}" class="btn btn-outline-gr-primary">
+                    {{menu.cadastro.title}}
+                    <i class="bi bi-plus-lg"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+{{/block}}
+
