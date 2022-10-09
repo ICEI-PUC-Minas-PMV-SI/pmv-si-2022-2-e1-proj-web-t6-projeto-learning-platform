@@ -1,0 +1,58 @@
+@import "./breakpoints";
+@import "./mixins";
+@import "./variables";
+@import "./overwrites";
+@import "./utilities";
+
+html, body {
+    height: 100%;
+    font-family: gr-body-font;
+    color: var(--gr-text-body);
+}
+
+h6, h5, h4, h3, h2, h1 {
+    font-family: gr-title-font;
+    color: var(--gr-text-title);
+}
+
+header {
+    padding: 10px 32px 10px 12px;
+
+    .navbar-brand {
+        h1 {
+            font-size: 1.6rem !important;
+        }
+    }
+
+    .btn {
+        --bs-btn-line-height: 36px;
+    }
+
+    // Muda a posição do menu mobile para a direite em telas lg
+    @include media-breakpoint-between(md, xl) {
+        .bd-navbar-toggle {
+            order: 5;
+        }
+    }
+}
+
+footer {
+    padding: 0px 24px;
+    height: 64px;
+    top: 1016px;
+}
+
+
+/*******************************************************************************
+* MAIN SEARCH
+*******************************************************************************/
+@import "./components/header-search";
+
+/*******************************************************************************
+* AUTHENTICATION BOXES (LOGIN, CADASTRO, RECUPERAÇÃO, etc...)
+*******************************************************************************/
+.auth-container {
+    width: 420px;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+}

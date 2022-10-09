@@ -1,0 +1,19 @@
+// Classes de utilidades aqui
+
+/*******************************************************
+* BACKGROUNDS
+*******************************************************/
+.bg-darker {
+    background-color: var(--gr-bg-darker);
+}
+
+/*******************************************************
+* BORDERS
+*******************************************************/
+.border-dashed {
+    border-style: dashed;
+}
+
+.border-lighter {
+    border-color: var(--bs-border-light-color) !important;
+}

@@ -1,0 +1,12 @@
+{
+    "extends": "@parcel/config-default",
+    "transformers": {
+        "*.{html,hbs,handlebars}": [
+            "@partiellkorrekt/parcel-transformer-handlebars"
+        ]
+    },
+    "reporters": [
+        "...",
+        "parcel-reporter-static-files-copy"
+    ]
+}
