@@ -1,78 +1,19 @@
 // Classes de utilidades aqui
 
-
-/* Background */
-.bg-default {
-    background-color: var(--gr-bg-default);
-}
-
+/*******************************************************
+* BACKGROUNDS
+*******************************************************/
 .bg-darker {
     background-color: var(--gr-bg-darker);
 }
 
-/* Border */
-
-.border-default {
-    border-color: var(--gr-border-default) !important;
-}
-
-/* Botões */
-
-.btn {
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-}
-
-.btn-outline-dashed {
+/*******************************************************
+* BORDERS
+*******************************************************/
+.border-dashed {
     border-style: dashed;
 }
 
-.btn-border-muted {
-    border-color: var(--gr-text-muted);
+.border-lighter {
+    border-color: var(--bs-border-light-color) !important;
 }
-
-.btn-border-muted:hover{
-    border-color: var(--gr-primary-hover) !important;
-    background: transparent !important;
-}
-
-.btn-outline-gr-primary {
-    border-color: var(--bs-primary);
-    color: var(--bs-primary);
-}
-
-.btn-outline-gr-primary:hover{
-    border-color: var(--gr-primary-hover) !important;
-    color: var(--gr-primary-hover) !important;
-    text-shadow: 0 0 21px var(--gr-primary-hover);
-    box-shadow: inset 0px 0 10px var(--gr-box-primary-hover), 0px 0 10px var(--gr-box-primary-hover);
-    transition: 0.3s;
-}
-
-.btn-gr-default {
-    color: var(--gr-text-muted) !important;
-    border-color: var(--gr-border-default) !important;
-    background-color: var(--gr-border-default) !important;
-}
-
-.btn-gr-primar-hover {
-    color: white;
-    border-color: var(--gr-primary-hover) !important;
-    background-color: var(--gr-primary-hover) !important;
-}
-
-#gr-main-search:has(.form-control:focus) .btn-gr-default {
-    border-color: var(--gr-primary-hover) !important;
-    background-color: var(--gr-primary-hover) !important;
-}
-
-/* color hover */
-
-
-/* text */
-
-.text-gr-primary{
-    color: var(--bs-primary)
-}
-
-

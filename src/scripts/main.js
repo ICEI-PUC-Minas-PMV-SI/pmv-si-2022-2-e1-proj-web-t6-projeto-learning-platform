@@ -5,5 +5,7 @@ if (module.hot) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    updateHeaderState();
     updateMainMenuActiveStatus();
+    toggleMobileSearch();
 });

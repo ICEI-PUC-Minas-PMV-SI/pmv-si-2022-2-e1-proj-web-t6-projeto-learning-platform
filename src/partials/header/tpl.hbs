@@ -1,4 +1,4 @@
-{{#block "header"}}
+{{#block "header/tpl"}}
     <div class="container-fluid bd-gutter flex-wrap flex-xl-nowrap">
         <div class="bd-navbar-toggle">
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#gr-navbar-collapse" aria-controls="gr-navbar-collapse">
@@ -8,15 +8,24 @@
             </buton>
         </div>
         
+        <!-- Logo Component -->
         <div class="navbar-brand">
-            <h2 class="m-0 me-lg-3">{{meta.name}}</h2>
+            <h1 class="m-0 me-lg-3">
+                <a href="/" title="{{meta.title}}" class="text-decoration-none text-white">{{meta.name}}</a>
+            </h1>
         </div>
 
-        <div class="d-none d-xl-block flex-fill">
+        <!-- Search Component -->
+        <div class="gr-main-search">
             <div class="d-flex flex-fill">
+                <button class="btn btn-link text-decoration-none text-body">
+                    <i class="bi bi-arrow-left-short fs-1"></i>
+                </button>
+
                 <div class="dropdown me-2">
-                    <button class="btn btn-secondary dropdown-toggle dropdown-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Explore por área
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="d-none d-sm-inline">Explore</span>
+                        <i class="bi bi-funnel d-sm-none"></i>
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Action</a></li>
@@ -25,31 +34,26 @@
                     </ul>
                 </div>
 
-                <form id="gr-main-search" class="gr-main-search d-flex flex-fill mb-0" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control input" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                        <button class="btn btn-gr-default" type="submit">
-                            <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-                        </button>
-                    </div>
+                <form class="d-flex flex-fill mb-0" role="search">
+                    <input type="text" class="form-control input" placeholder="{{home.header.search.placeholder}}" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                    <button class="btn btn-secondary" type="submit">
+                        <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                    </button>
                 </form>
             </div>
         </div>
 
-        <div class="d-block d-xl-none text-muted">
-            <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-        </div>
-
+        <!-- Menu Component -->
         <div class="offcanvas-xl offcanvas-start"  tabindex="-1" id="gr-navbar-collapse">
-             <div class="offcanvas-header">
+            <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Responsive offcanvas</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#gr-navbar-collapse" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <ul class="navbar-nav me-3">
+                <ul class="navbar-nav me-3 align-items-center">
                     {{#each menu.items}}
                         <li class="nav-item">
-                            <a href="{{this.url}}" title="{{../meta.name}} - {{this.title}}" class="nav-link px-3">
+                            <a href="{{this.url}}" title="{{../meta.name}} - {{this.title}}" class="nav-link">
                                 {{this.title}}
                             </a>
                         </li>
@@ -57,12 +61,12 @@
                 </ul>
 
                 <a  href="{{menu.login.url}}"
-                    class="text-gr-primary btn btn-outline-primary btn-outline-dashed btn-border-muted bg-default me-2"
+                    class="btn btn-outline-secondary border-dashed me-2"
                 >
                     {{menu.login.title}}
                 </a>
 
-                <a href="{{menu.cadastro.url}}" class="btn btn-outline-gr-primary">
+                <a href="{{menu.cadastro.url}}" class="btn btn-outline-primary">
                     {{menu.cadastro.title}}
                     <i class="bi bi-plus-lg"></i>
                 </a>

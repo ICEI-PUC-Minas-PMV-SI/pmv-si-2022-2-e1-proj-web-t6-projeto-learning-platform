@@ -7,12 +7,12 @@ A plataforma é static e pode ser instalada em qualquer servidor web, basta expo
 
 ## Desenvolvimento
 
-A plataforma utiliza o builder `parcel` junto com `handlebars` em seus arquivos fonte, para inicializar o servidor com hot reloading de desenvolvimento, rode o comando abaixo em seu terminal, partindo do root do projeto:
+A plataforma utiliza o builder `parcel` junto com `handlebars` em seus arquivos fonte, para inicializar o servidor de desenvolvimento com [hot reloading](https://en.parceljs.org/hmr.html), rode o comando abaixo em seu terminal, partindo do root do projeto:
 ```
 npm start
 ```
 
-Isto irá iniciar seu servidor de testes na url [http://localhost:1234](http://localhost:1234), abra está url em seu browser, toda alteração que for feita no código fonte, será atualizada automaticamente nesta url.
+Isto irá iniciar seu servidor de testes na url [http://localhost:1234](http://localhost:1234), abra está url em seu browser (isso deverá acontecer automaticamente), toda alteração que for feita no código fonte, será atualizada automaticamente nesta url.
 
 
 ## Conceitos de desenvolvimento
@@ -42,7 +42,6 @@ Com seu arquivo de dados criado, utilize os dados em uma de suas páginas, layou
 ```
 
 
-
 ### Páginas
 
 Páginas são os pontos de entrada da plataforma, e devem ser criadas dentro da pasta `pages`. A única página fora da pasta `pages` é a home, que é representada pelo arquivo `./src/index.hbs`, toda e qualquer outra página deve ser criada dentro da pasta pages, utilizando uma estrutura de sub-pastas coeerentes a navegação do site, ex:
@@ -69,7 +68,7 @@ Ao criar uma nova página na pasta `pages`, é necessário que extenda um dos la
 
 ```handlebars
 {{#extend "default"}}
-
+    <!-- ...blocks -->
 {{/extend}}
 ```
 
@@ -86,7 +85,7 @@ Com o código acima, todo conteúdo de layout `./layouts/default.hbs` será rend
 ```
 
 
-### Parciais
+### Parciais (Partials)
 
 Parciais são pedaços de html, uma pequena parte de uma página em um arquivo independente, que pode ser re-utilizado em vários layouts. Novas parciais devem ser salvas na pasta `./partials`, e seu conteúdo deve sempre começar com a declaração de nome do bloco:
 
@@ -97,7 +96,7 @@ Parciais são pedaços de html, uma pequena parte de uma página em um arquivo i
 {{/block}}
 ```
 
-Uma vez criada uma parcial, ela pode ser importada em qualquer layout, outras parcias, e páginas utilizando a tag `#embed` da seguinte maneira:
+Uma vez criada uma parcial, ela pode ser importada em qualquer layout, outras parcias e outras páginas, utilizando a tag `#embed` da seguinte maneira:
 
 ```handlebars
 {{#extend "default"}}
@@ -113,4 +112,43 @@ Uma vez criada uma parcial, ela pode ser importada em qualquer layout, outras pa
 ### Helpers
 
 Helpers são exxtremamente úteis na formatação de conteúdo, como converter textos para caixa alta ou baixa, customizar html, e facilitar a criação de estruturas complexas.
+
+Um helper é nada mais que uma função javascript em um arquivo dedicado, que recebe um contexxto e retorna conteúdo HTML em forma de uma string (texto).
+
+Nossa plataforma já disponibiliza uma grande quantidade de helpers que podem ser usados, a lista completa pode ser conferida [aqui](https://www.npmjs.com/package/handlebars-helpers), em casos específicos que nenhum dos helpers disponíveis satisfação os requerimentos, um novo deverá ser criado na pasta `./src/helpers`.
+
+
+# Flow de desenfolvimento de páginas
+
+Com os conceitos acima entendidos, é fácil criar novas páginas em nossa plataforma, o passo a passo abaixo cobre todos os passos da criação e desenvolvimento de novas páginas.
+
+### 1. Crie um no arquivo em `src/pages` com a extensão `.html`, siga o estilo de caixa baixa, e uma estrutura de pastas coerente ao caminho da página como no exemplo na seçãp "Páginas" deste arquivo.
+
+### 2. Adicione a estrutura base, que estende o layout desejado, na mairoria dos casos é o `src/layouts/default.hbs`:
+```handlebars
+{{#extend "default"}}
+    {{#content "main"}}
+        <!-- Seu conteúdo da página vai aqui! -->
+    {{/content}}
+{{/extend}}
+```
+
+### 3. Customize o conte;udo adicionando seue próprios elementos em HTML.
+
+### 4. Caso suas página tenha partes que podem se repetir em outras páginas, é aconcelhavel que seja criado um parcial (partial), para compartilhar a lógico com outras páginas do site.
+
+### 5. Salve seus arquivos e commit suas alterações em uma nova Branch, para isso:
+1. Faça um Pull da Branch `development` para ter certeza que tem todas as últimas mudanças feitas pelo time.
+2. Crie uma nova Branch a partir da Branch `development`.
+3. Commit suas mudanças nessa nova Branch.
+4. Faça o **Push**  de sua Branch para o Github
+
+### 6. Crie um **Pull Request** da sua Branch para a `development`
+### 7. Avançe seu ticket no [projeto do Github](https://github.com/orgs/ICEI-PUC-Minas-PMV-SI/projects/15) para a coluna **Review**
+### 8. Notifique a equipe no chat do Teams
+### 9. Aguarde seu review, e atenda a qualquer mudança requerida pela equipe
+### 10. Uma vez aprovado, faça o **merge** de suas alterações.
+
+Repita este ciclo para todas as alterações que fizer no repositório, sem pular passos para mantermos a organização e transparência do progresso do projeto.
+
 

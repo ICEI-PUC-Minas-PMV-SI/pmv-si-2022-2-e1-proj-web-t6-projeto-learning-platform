@@ -1,4 +1,9 @@
 {
+    "header": {
+        "search": {
+            "placeholder": "Digite uma palavra chave"
+        }
+    },
     "hero": {
         "title": "Aprender TI nunca foi tão fácil!",
         "lead": "O Grimore foi criado para auxiliar  iniciantes em TI, provendo conteúdo curado sobre diversos tópicos do setor e ferramentas que permitem a criação de planos de estudo para impulsionar o aprendizado."

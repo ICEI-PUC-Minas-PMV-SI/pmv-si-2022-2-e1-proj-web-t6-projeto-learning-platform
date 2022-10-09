@@ -5,8 +5,6 @@
  * indicar qual a página atual.
  */
  window.updateMainMenuActiveStatus = function() {
-    console.log(`Document is ready!`);
-
     // Retira a última parte da URL atual para saber qual a página atual carregada (ex: sobre.html)
     const page = location.pathname.split('/').pop();
 
@@ -26,29 +24,65 @@
     });
 }
 
-/**
- * Função para atualizar a classe do botão da busca principal, quando
- * o campo estiver em foco.
+/***
+ * Função que adiciona uma classes ao body da página dependendo
+ * do contexto de tela:
  * 
- * Quando estiver em foco o botão assume a cort de accent (Azul claro) e quando
- * perde o foco, valta a cor normal, feito por meio da troca das classes do
- * botão.
+ * .gr-mobile para telas > 768px
+ * .gr-tablet para telas >= 768px e < 992
+ * .gr-desktop para telas >= 992
+ * 
+ * Isso facilita algumas das customizações necessárias
+ * para a responsividade da plataforma.
  */
-window.updateSearchButtonState = function() {
-    // Seleciono o elemento input partindo do formulário com id main-search
-    const searchInput = document.querySelector('#gr-main-search input');
+window.updateHeaderState = function() {
+    const body = document.querySelector('body');
 
-    // Adiciono um evento no input quando estiver em foco
-    searchInput.addEventListener('focus', () => {
-        // Feita a troca das classes pela classe do botão azul
-        searchInput.nextElementSibling.classList.remove('btn-gr-default')
-        searchInput.nextElementSibling.classList.add('btn-gr-primar-hover')
-    })
+    const updateBodyContext = function() {
+        // Tela mobile < 768px
+        if (window.innerWidth < 768) {
+            body.classList.remove('gr-tablet')
+            body.classList.remove('gr-desktop')
+            body.classList.add('gr-mobile')
+        
+        // Tela tablet >= 768px & < 992px
+        } else if (window.innerWidth >= 768 && window.innerWidth < 992 ) {
+            body.classList.remove('gr-mobile')
+            body.classList.remove('gr-desktop')
+            body.classList.add('gr-tablet')
 
-    // Adiciono um evento no input quando foco sair
-    searchInput.addEventListener('focusout', () => {
-        // Feita a troca das classes pela classe do botão dark
-        searchInput.nextElementSibling.classList.remove('btn-gr-primar-hover')
-        searchInput.nextElementSibling.classList.add('btn-gr-default')
+        // Tela desktop > 992px
+        } else {
+            body.classList.remove('gr-mobile')
+            body.classList.remove('gr-tablet')
+            body.classList.add('gr-desktop')
+        }
+    }
+
+    window.addEventListener('resize', updateBodyContext)
+
+    updateBodyContext();
+}
+
+window.toggleMobileSearch = function() {
+    const search = document.querySelector('.gr-main-search');
+    const trigger = search.querySelector('form > button');
+    const closeTrigger = document.querySelector('.gr-main-search > div > .btn');
+
+    const toggle = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        search.classList.toggle('gr-opened')
+    }
+
+    window.addEventListener('resize', (e) => {
+        if (window.innerWidth >= 992) {
+            search.classList.remove('gr-opened')
+            trigger.removeEventListener('click', toggle)
+            closeTrigger.removeEventListener('click', toggle)
+        } else {
+            trigger.addEventListener('click', toggle)
+            closeTrigger.addEventListener('click', toggle)
+        }
     })
 }

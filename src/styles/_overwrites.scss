@@ -1,21 +1,111 @@
 // Substituições e customizações das css variables do Bootstrap esse arquivo.
 
+.navbar-toggler {
+    border: none;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+/*****************************************************************************
+* BACKGROUND
+*****************************************************************************/
+.bg-dark {
+    background-color: var(--gr-bg-default) !important;
+}
+
+/*****************************************************************************
+* TEXT
+*****************************************************************************/
+.text-body {
+    color: var(--gr-text-body) !important;
+}
+
+.text-bg-dark {
+    color: var(--gr-text-body) !important;
+    background-color: var(--gr-bg-default) !important;
+}
+
+.text-bg-darker {
+    color: var(--gr-text-body) !important;
+    background-color: var(--gr-bg-darker) !important;
+}
+
+.text-bg-lighter {
+    color: var(--gr-text-body) !important;
+    background-color: var(--bs-secondary) !important;
+}
+
+/*****************************************************************************
+* BORDER
+*****************************************************************************/
+.border-dark {
+    border-color: var(--gr-border-default) !important;
+}
+
+/*****************************************************************************
+* NAVBAR
+*****************************************************************************/
+.navbar {
+    --bs-navbar-nav-link-padding-x: 24px;
+}
+
+/*****************************************************************************
+* BUTTONS
+*****************************************************************************/
 .btn {
-    --bs-btn-padding-x: 1rem;
+    --bs-btn-padding-x: 24px;
     --bs-btn-padding-y: 0;
-    --bs-btn-line-height: 44px;
-    --bs-btn-border-width: 1px;
+    --bs-btn-line-height: 48px;
+    --bs-btn-border-width: 2px;
+    --bs-btn-border-radius: 6px;
+
 }
 
 .btn-primary {
     --bs-btn-bg: var(--bs-primary);
     --bs-btn-border-color: var(--bs-primary);
-    --bs-btn-hover-bg: var(--gr-primary-hover);
-    --bs-btn-hover-border-color: var(--gr-primary-hover);
+    --bs-btn-hover-bg: var(--bs-primary-hover);
+    --bs-btn-hover-border-color: var(--bs-primary-hover);
     --bs-btn-active-bg: var(--bs-primary);
     --bs-btn-active-border-color: var(--bs-primary);
-    --bs-btn-disabled-bg: var(--bs-primary);
-    --bs-btn-disabled-border-color: var(--bs-primary);
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--bs-primary);
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: var(--bs-primary);
+    --bs-btn-hover-bg: transparent;
+    --bs-btn-hover-border-color: var(--bs-primary-hover);
+    --bs-btn-active-bg: transparent;
+    --bs-btn-active-border-color: var(--bs-primary);
+
+    &:hover {
+        text-shadow: 0 0 21px var(--gr-primary-hover);
+        box-shadow: inset 0px 0 10px var(--gr-box-primary-hover), 0px 0 10px var(--gr-box-primary-hover);
+        transition: 0.3s;
+    }
+}
+
+.btn-secondary {
+    --bs-btn-color: #{shade(#ffffff, 20%)};
+    --bs-btn-bg: var(--bs-secondary);
+    --bs-btn-border-color: var(--bs-secondary);
+    --bs-btn-hover-bg: var(--bs-secondary-hover);
+    --bs-btn-hover-border-color: var(--bs-secondary-hover);
+    --bs-btn-active-bg: var(--bs-secondary-hover);
+    --bs-btn-active-border-color: var(--bs-secondary-hover);
+}
+
+.btn-outline-secondary {
+    --bs-btn-color: #{shade(#ffffff, 20%)};
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: var(--bs-border-light-color);
+    --bs-btn-hover-bg: transparent;
+    --bs-btn-hover-border-color: var(--bs-primary-hover);
+    --bs-btn-active-bg: transparent;
+    --bs-btn-active-border-color: var(--bs-secondary-hover);
 }
 
 
@@ -28,7 +118,7 @@
     --bs-btn-hover-bg: var(--gr-frontend-color-hover);
     --bs-btn-hover-border-color: var(--gr-frontend-color-hover);
     --bs-btn-focus-shadow-rgb: var(--gr-frontend-color);
-    --bs-btn-active-color: var(--gr-frontend-color);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
     --bs-btn-active-bg: var(--gr-frontend-color);
     --bs-btn-active-border-color: var(--gr-frontend-color);
 }
@@ -73,27 +163,44 @@
 }
 
 
-.input-group {
-    &:focus {
-        .btn-gr-default {
-            background-color: var(--gr-primary-hover) !important;
-        }
-    }
-}
 
-
+/*****************************************************************************
+* FORMS
+*****************************************************************************/
 .form-control {
-    height: 46px;
-    width: 524px;
-    border-radius: 4px 0 0 4px;
+    height: 52px;
+    color: var(--gr-text-body);
     background-color: var(--gr-bg-darker);
-    border: 2px solid var(--gr-bg-darker);
+    border: 2px solid var(--bs-border-light-color);
+    border-radius: 6px;
 
     &:focus {
-        border-color: var(--gr-primary-hover);
+        color: var(--gr-text-body);
+        border-color: var(--bs-secondary-hover);
         background-color: var(--gr-bg-darker);
         box-shadow: none;
     }
 }
 
+.form-label {
+    margin-bottom: 0.3rem;
+    color: var(--gr-text-muted);
+}
 
+
+/*****************************************************************************
+* CARDS
+*****************************************************************************/
+.card {
+    --bs-card-spacer-y: 1rem;
+    --bs-card-spacer-x: 1rem;
+    --bs-card-title-spacer-y: 2rem;
+    --bs-card-border-width: 0px;
+    --bs-card-border-radius: 6px;
+    --bs-card-box-shadow: ;
+
+    @media (min-width: 360px) {
+        --bs-card-spacer-y: 2.5rem;
+        --bs-card-spacer-x: 2rem;
+    }
+}

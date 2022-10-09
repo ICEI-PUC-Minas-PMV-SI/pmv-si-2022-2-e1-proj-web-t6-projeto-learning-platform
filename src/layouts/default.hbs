@@ -23,28 +23,26 @@
             <link href="/static/css/icons.min.css" rel="stylesheet" />
         {{/block}}
     </head>
-    <body class="bg-default">
-        <header class="navbar navbar-expand-lg bd-navbar navbar-dark">
+    <body class="d-flex flex-column bg-dark">
+        <header class="navbar navbar-expand-xl bd-navbar navbar-dark border-bottom">
             {{#block "header"}}
-                {{#embed "header"}}{{/embed}}
+                {{#embed "header/tpl"}}{{/embed}}
             {{/block}}
         </header>
 
-        <main class="d-flex align-items-center justify-content-center">
+        <main class="d-flex flex-fill align-items-center justify-content-center">
             {{#block "main"}}
                 <p class="text-white">Conteudo</p>
             {{/block}}
         </main>
 
-        <footer
-            class="bg-default d-flex align-items-center justify-content-center border-default border-top"
-        >
+        <footer class="bg-default d-flex align-items-center justify-content-center border-top">
             {{#block "footer"}}
-                <p class="text-white">&copy; 2022 Grimore, Inc</p>
+                <p class="m-0">&copy; 2022 Grimore, Inc</p>
             {{/block}}
         </footer>
 
-        {{#embed "sidebar"}}{{/embed}}
+        {{#embed "sidebar-menu/tpl"}}{{/embed}}
 
         {{#block "scripts"}}
             <script
