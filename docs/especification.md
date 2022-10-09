@@ -31,49 +31,49 @@ primeiro emprego no setor de tecnologia.
    visibilidade sobre meus conhecimentos e aumentar minhas chances de ingressar
    no mercado de trabalho.
 
+
 ## Requisitos
 
 ### Requisitos Funcionais
 
 | ID     | Página                             | Descrição do Requisito                                                                                                                                            | Prioridade |
 | ------ | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| RF-001 | Informação                         | deverá conter conteúdo sobre a motivação e os integrantes do projeto                                                                                              | ALTA       |
-| RF-002 | Informação                         | deverá conter informação sobre como funciona a aplicação e como o usuário pode começar                                                                            | ALTA       |
+| RF-001 | Sobre                              | deverá conter conteúdo sobre a motivação e os integrantes do projeto                                                                                              | ALTA       |
+| RF-002 | Como funciona                      | deverá conter informação sobre como funciona a aplicação e como o usuário pode começar                                                                            | ALTA       |
 | RF-003 | Home                               | deverá conter cabeçalho com acesso para páginas Sobre, Login & Cadastro                                                                                           | ALTA       |
 | RF-004 | Home                               | o cabeçalho da página inicial, deverá conter um campo para pesquisa de conteúdo                                                                                   | ALTA       |
 | RF-005 | Home                               | uma vez logado, o cabeçalho deverá exibir acesso para o perfil de usuário                                                                                         | ALTA       |
 | RF-006 | Home                               | o cabeçalho da página inicial, deverá conter um campo de pesquisa                                                                                                 | ALTA       |
 | RF-007 | Home                               | a página inicial, deverá conter um filtro por palavras chave (tecnologias & tópicos)                                                                              | ALTA       |
-| RF-008 | Home                               | A plataforma deverá retornar resultados de pesquisa condizentes a requisição feita pelo usuário Login Média                                                       | ALTA       |
-| RF-009 | Home                               | deverá exibir o formulário de login com usuário, senha, botão de login e link para recuperação de senha                                                           | ALTA       |
-| RF-010 | Home                               | uma vez submetido deverá redirecionar para a página inicial                                                                                                       | ALTA       |
-| RF-011 | Home                               | caso o login falhe, reexibir formulário de login como mensagem de erro amigável e como prosseguir                                                                 | ALTA       |
-| RF-012 | Home                               | ao clicar no link de recuperação de senha deverá levar o usuário para o formulário de recuperação de senha                                                        | ALTA       |
-| RF-013 | Home                               | deverá exibir formulário de recuperação de senha                                                                                                                  | ALTA       |
-| RF-014 | Cadastro                           | deverá formulário para criação de usuário como nome completo, usuário, senha, botão para submeter e link para a página de login (caso usuário já tenha uma conta) | ALTA       |
-| RF-015 | Cadastro                           | uma vez submetido, deve criar a conta do usuário e redirecionar para o perfil de usuário                                                                          | ALTA       |
-| RF-016 | Cadastro                           | caso a criação de conta falhe, reexibir o formulário com informações amigáveis sobre o erro, e como prosseguir                                                    | ALTA       |
-| RF-017 | Recuperação de senha               | deverá exibir formulário de recuperação de senha                                                                                                                  | ALTA       |
-| RF-018 | Recuperação de senha               | uma vez submetido, exibir mensagem de sucesso e como prosseguir                                                                                                   | MÉDIA      |
-| RF-019 | Recuperação de senha               | uma vez submetido, deverá exibir link para página inicial e login                                                                                                 | MÉDIA      |
-| RF-020 | Perfil de usuário                  | deverá conter um avatar automático do usuário                                                                                                                     | MÉDIA      |
-| RF-021 | Perfil de usuário                  | deverá exibir por padrão sessão com as palavras chave de tópicos de vídeos mais assistidos pelo usuário                                                           | MÉDIA      |
-| RF-022 | Perfil de usuário                  | deverá exibir sessão com os últimos vídeos assistidos pelo usuário                                                                                                | MÉDIA      |
-| RF-023 | Perfil de usuário                  | deverá conter sessão com sugestões de vídeos para o usuário                                                                                                       | MÉDIA      |
-| RF-024 | Perfil de usuário                  | deverá exibir link de acesso ao editor de perfil                                                                                                                  | MÉDIA      |
-| RF-025 | Editor de perfil                   | deverá exibir formulário para atualização de perfil, permitindo alterar nome & senha                                                                              | MÉDIA      |
-| RF-026 | Criador de plano de estudo         | deverá permitir ao usuário escolher um roadmap completo                                                                                                           | MÉDIA      |
-| RF-027 | Criador de plano de estudo         | deverá permitir ao usuário criar seu próprio roadmap                                                                                                              | MÉDIA      |
-| RF-028 | Criador de plano de estudo         | deverá conter um seletor de roadmap e ou palavras chave (tags)                                                                                                    | MÉDIA      |
-| RF-029 | Criador de plano de estudo         | cada tag escolhida, deverá ser exibida em um tipo de lista intuitiva, denominando um progresso a ser feito.                                                       | MÉDIA      |
-| RF-030 | Criador de plano de estudo         | caso usuário crie seu próprio roadmap, deverá permitir reordenar as palavras chave da lista.                                                                      | MÉDIA      |
-| RF-031 | Criador de plano de estudo         | deverá permitir salvar o roadmap.                                                                                                                                 | MÉDIA      |
-| RF-032 | Criador de plano de estudo         | deverá exibir uma visualização do roadmap (plano de estudo) criado.                                                                                               | MÉDIA      |
-| RF-033 | Criador de plano de estudo         | caso não haja progresso, exibir mensagem amigável incentivando usuário a começar.                                                                                 | MÉDIA      |
-| RF-034 | Progresso do usuário - (Histórico) | deverá exibir de maneira intuitiva o progresso feito pelo usuário até o momento com nomes dos vídeos já assistidos agrupados por cada palavra chave.              | MÉDIA      |
-| RF-035 | Progresso do usuário - (Histórico) | caso usuário crie seu próprio roadmap, deverá permitir reordenar as palavras chave da lista.                                                                      | MÉDIA      |
-| RF-036 | Progresso do usuário - (Histórico) | deverá exibir botão ou link de compartilhamento com redes sociais.                                                                                                | MÉDIA      |
-| RF-037 | Progresso do usuário - (Histórico) | A plataforma deverá referenciar os autores de conteúdos terceirizados respeitando a Lei de Direito Autoral (Lei nº. 9.610/98)                                     | MÉDIA      |
+| RF-008 | Pesquisa                           | a plataforma deverá retornar resultados de pesquisa condizentes a requisição feita pelo usuário                                                                   | ALTA       |
+| RF-009 | Login                              | deverá exibir o formulário de login com usuário, senha, botão de login e link para recuperação de senha                                                           | ALTA       |
+| RF-010 | Login                              | uma vez submetido deverá redirecionar para a página inicial                                                                                                       | ALTA       |
+| RF-011 | Login                              | caso o login falhe, reexibir formulário de login como mensagem de erro amigável e como prosseguir                                                                 | ALTA       |
+| RF-012 | Login                              | ao clicar no link de recuperação de senha deverá levar o usuário para o formulário de recuperação de senha                                                        | ALTA       |
+| RF-013 | Cadastro                           | deverá formulário para criação de usuário como nome completo, usuário, senha, botão para submeter e link para a página de login (caso usuário já tenha uma conta) | ALTA       |
+| RF-014 | Cadastro                           | uma vez submetido, deve criar a conta do usuário e enviar email de validação de email                                                                             | ALTA       |
+| RF-015 | Cadastro                           | caso a criação de conta falhe, reexibir o formulário com informações amigáveis sobre o erro, e como prosseguir                                                    | ALTA       |
+| RF-016 | Recuperação de senha               | deverá exibir formulário de recuperação de senha                                                                                                                  | ALTA       |
+| RF-017 | Recuperação de senha               | uma vez submetido, exibir mensagem de sucesso e como prosseguir                                                                                                   | ALTA       |
+| RF-020 | Recuperação de senha               | uma vez submetido, deverá exibir link para página inicial e login                                                                                                 | ALTA       |
+| RF-021 | Dashboard                          | deverá conter o avatar, junto com informações do perfil do usuário                                                                                                | ALTA       |
+| RF-022 | Dashboard                          | Deverá conter lista com os planos de estudo em andamento                                                                                                          | ALTA       |
+| RF-023 | Dashboard                          | Deverá conter lista histórico de planos de estudo concluídos                                                                                                      | ALTA       |
+| RF-024 | Dashboard                          | Deverá conter lista com conteúdo salvo pelo usuário                                                                                                               | ALTA       |
+| RF-025 | Dashboard                          | Deverá conter lista com notas criadas pelo usuário, e permitir editar, e remover notas                                                                            | ALTA       |
+| RF-026 | Dashboard                          | deverá exibir botão ou link de compartilhamento com redes sociais.                                                                                                | ALTA       |
+| RF-027 | Perfil público                     | deverá exibir um avatar do usuário                                                                                                                                | ALTA       |
+| RF-028 | Perfil público                     | deverá conter seção com gráficos sobre tópicos e tecnologias relacionadas ao histórico do usuário                                                                 | ALTA       |
+| RF-029 | Perfil público                     | deverá deverá conter seção para lista de skills                                                                                                                   | ALTA       |
+| RF-030 | Perfil público                     | deverá conter conter seção com histórico de planos de estudo concluídos                                                                                           | ALTA       |
+| RF-031 | Perfil público                     | deverá conter seção com projetos concluídos pelo usuário                                                                                                          | ALTA       |
+| RF-032 | Perfil público                     | deverá exibir link de acesso ao editor de perfil                                                                                                                  | ALTA       |
+| RF-033 | Editor de perfil                   | deverá exibir formulário para atualização de perfil, permitindo alterar nome, avatar e senha                                                                      | ALTA       |
+| RF-034 | Criador de plano de estudo         | deverá permitir ao usuário criar um plano de estudos com base em área, tecnologia e tempo disponível                                                              | ALTA       |
+| RF-035 | Criador de plano de estudo         | deverá exibir uma páginas do plano de estudo criado.                                                                                                              | ALTA       |
+| RF-036 | Criador de plano de estudo         | caso não haja progresso, exibir mensagem amigável incentivando usuário a começar.                                                                                 | ALTA       |
+| RF-037 | Geral                              | A plataforma deverá referenciar os autores de conteúdos terceirizados respeitando a Lei de Direito Autoral (Lei nº. 9.610/98)                                     | ALTA       |
+
 
 ### Requisitos não Funcionais
 
@@ -88,6 +88,7 @@ primeiro emprego no setor de tecnologia.
 | RNF-007 | A base de dados deverá ser protegida para não permitir acesso indesejado dos dados                                                                                | ALTA       |
 | RNF-008 | O site deverá conter UNIT testes automatizados com cobertura de no mínimo 50%                                                                                     | MÉDIA      |
 | RNF-009 | O site deverá conter testes de interface abrangendo no mínimo as funcionalidades de: Login, Cadastro & Busca, expandindo para outras áreas se possível. (Cypress) | MÉDIA      |
+
 
 ## Restrições
 

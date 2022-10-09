@@ -1,0 +1,34 @@
+{
+    "name": "grimore",
+    "version": "1.0.0",
+    "main": "./src/index.js",
+    "description": "Learning Platform",
+    "directories": {
+        "doc": "docs"
+    },
+    "scripts": {
+        "start": "parcel ./src/index.html ./src/pages/**/*.html ./src/styles/*.scss ./src/scripts/*.js --open"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2022-2-e1-proj-web-t6-projeto-learning-platform.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2022-2-e1-proj-web-t6-projeto-learning-platform/issues"
+    },
+    "homepage": "https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2022-2-e1-proj-web-t6-projeto-learning-platform#readme",
+    "devDependencies": {
+        "@parcel/transformer-sass": "^2.7.0",
+        "@partiellkorrekt/parcel-transformer-handlebars": "^1.0.3",
+        "npm": "^8.19.2",
+        "parcel": "^2.7.0",
+        "parcel-reporter-static-files-copy": "^1.4.0",
+        "sass": "^1.55.0"
+    },
+    "staticFiles": {
+        "staticPath": "src/static",
+        "staticOutPath": "static"
+    }
+}
