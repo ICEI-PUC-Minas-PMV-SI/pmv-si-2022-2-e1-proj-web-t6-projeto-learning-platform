@@ -14,6 +14,12 @@ Após uma pesquisa, descidimos aderir um tema escuro por padrão, por ser mais c
 ![Paleta de cores](img/Cores.png)
 
 ![Icones](img/Icones.png)
+
+## Home
+![Home](img/Home.png)
+
+A página inicial é a principal entrada da plataforma, responsável por prover informações gerais sobre o objetivo da plataforma e dar acesso a outras páginas incluíndo páginas Sobre, Como funciona, Login e Cadastro. Nela você também acesso a fazer pesquisas por via categorias ou palavras chave (RF-001 à RF-007).
+
 ## User Flow
 
 ![Exemplo de UserFlow](img/userflow.jpg)
