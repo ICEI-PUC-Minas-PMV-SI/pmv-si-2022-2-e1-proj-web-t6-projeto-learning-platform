@@ -31,3 +31,13 @@ Já na página de busca, a interface contém uma seleção de vídeos préviamen
 
 As páginas a seguir são protegidas por authenticação, assim a plataforma prove meios para criação de conta, login e recuperação de senha por meio de formulários modernos e intuitívos, além da facilidade de utilizar a conta do Github para criar conta e subsequentemente se authenticar na plataforma.
 (RF-009 à RF-020)
+
+## Planos de estudo
+![Planos de estudo](img/PlanosEstudo.png)
+
+A parte de plano de estudos é composta pela criação*, onde o usuário seleciona o assunto, a tecnologia desejada e a disponibilidade de estudo, e pelo acompanhamento, que prove o conteúdo em si daquele plano e informações adicionais como o progresso no plano.  (RF-034 à RF-033)
+
+## Dashboard & Perfil
+![Perfis](img/Perfis.png)
+
+Após sua autenticação, o usuário é levado ao seu Dashboard, contendo informações sobre seus planos de estudo em andamento e aqueles já concluídos, além de suas informações pessoais como nome, email e links sociais, que complementam seu perfil público, com um overview de suas características e seu progresso na plataforma. (RF-021 à RF-036)
