@@ -1,10 +1,19 @@
 
-# Projeto de Interface
+# **Grimore**
 
-Visão geral da interação do usuário pelas telas do sistema e protótipo interativo das telas com as funcionalidades que fazem parte do sistema (wireframes).
 
- Apresente as principais interfaces da plataforma. Discuta como ela foi elaborada de forma a atender os requisitos funcionais, não funcionais e histórias de usuário abordados nas <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a>.
+# **Wireframe**
 
+Para atender a todos os requisitos envisionados durante a etapa de contexto do projeto, nossa equipe desenvolveu uma interface moderna com foco em leitura e apendizado, afim de promover um ambiente confortável e empolgante nossos usuários.
+
+
+## Identidade visual
+
+Após uma pesquisa, descidimos aderir um tema escuro por padrão, por ser mais confortável para leitura, além de refletir uma aparência mais moderna o que se alinha bem com nosso tema em tecnologia..
+
+![Paleta de cores](img/Cores.png)
+
+![Icones](img/Icones.png)
 ## User Flow
 
 ![Exemplo de UserFlow](img/userflow.jpg)
