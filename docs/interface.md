@@ -5,7 +5,7 @@ Para atender a todos os requisitos envisionados durante a etapa de contexto do p
 
 ## Identidade visual
 
-Após uma pesquisa, descidimos aderir um tema escuro por padrão, por ser mais confortável para leitura, além de refletir uma aparência mais moderna o que se alinha bem com nosso tema em tecnologia..
+Após uma pesquisa, descidimos aderir um tema escuro por padrão, por ser mais confortável para leitura, além de refletir uma aparência mais moderna o que se alinha bem com nosso tema em tecnologia.
 
 ![Paleta de cores](img/Cores.png)
 
