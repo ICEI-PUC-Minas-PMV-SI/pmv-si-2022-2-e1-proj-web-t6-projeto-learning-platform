@@ -1,10 +1,10 @@
 if (module.hot) {
     module.hot.accept(() => {
-        location.reload()
-    })
+        location.reload();
+    });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     updateHeaderState();
     updateMainMenuActiveStatus();
     toggleMobileSearch();

@@ -1,23 +1,37 @@
-// Substituições e customizações das css variables do Bootstrap esse arquivo.
+:root {
+    --bs-font-sans-serif: "Almarai", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial,
+        sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bs-body-font-size: 0.95rem;
+    --bs-primary: #38b9e1;
+    --bs-primary-hover: #4cc0e4;
+    --bs-secondary: #383838;
+    --bs-secondary-hover: #424242;
+    --gr-text-body: #bfbfbf;
+    --gr-text-title: #f2f2f2;
+    --gr-text-muted: #ffffff4d;
+    --gr-bg-darker: #1f1f1f;
+    --gr-frontend-color: #ca3d89;
+    --gr-frontend-color-hover: #ff5bb4;
+    --gr-backend-color: #8542d8;
+    --gr-backend-color-hover: #a257ff;
+    --gr-box-primary-hover: #2ee6f3af;
+    --bs-border-color: #3d3d3d !important;
+    --bs-border-light-color: #555 !important;
+    --gr-bg-default: #292929 !important;
+}
 
 .navbar-toggler {
     border: none;
-
-    &:focus {
-        box-shadow: none;
-    }
 }
 
-/*****************************************************************************
-* BACKGROUND
-*****************************************************************************/
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
 .bg-dark {
     background-color: var(--gr-bg-default) !important;
 }
 
-/*****************************************************************************
-* TEXT
-*****************************************************************************/
 .text-body {
     color: var(--gr-text-body) !important;
 }
@@ -41,23 +55,14 @@
     background-color: var(--bs-secondary) !important;
 }
 
-/*****************************************************************************
-* BORDER
-*****************************************************************************/
 .border-dark {
     border-color: var(--gr-border-default) !important;
 }
 
-/*****************************************************************************
-* NAVBAR
-*****************************************************************************/
 .navbar {
     --bs-navbar-nav-link-padding-x: 24px;
 }
 
-/*****************************************************************************
-* BUTTONS
-*****************************************************************************/
 .btn {
     --bs-btn-padding-x: 24px;
     --bs-btn-padding-y: 0;
@@ -84,17 +89,16 @@
     --bs-btn-hover-border-color: var(--bs-primary-hover);
     --bs-btn-active-bg: transparent;
     --bs-btn-active-border-color: var(--bs-primary);
+}
 
-    &:hover {
-        text-shadow: 0 0 21px var(--gr-primary-hover);
-        box-shadow: inset 0px 0 10px var(--gr-box-primary-hover),
-            0px 0 10px var(--gr-box-primary-hover);
-        transition: 0.3s;
-    }
+.btn-outline-primary:hover {
+    text-shadow: 0 0 21px var(--gr-primary-hover);
+    box-shadow: inset 0px 0 10px var(--gr-box-primary-hover), 0px 0 10px var(--gr-box-primary-hover);
+    transition: all 0.3s;
 }
 
 .btn-secondary {
-    --bs-btn-color: #{shade(#ffffff, 20%)};
+    --bs-btn-color: #ccc;
     --bs-btn-bg: var(--bs-secondary);
     --bs-btn-border-color: var(--bs-secondary);
     --bs-btn-hover-bg: var(--bs-secondary-hover);
@@ -104,7 +108,7 @@
 }
 
 .btn-outline-secondary {
-    --bs-btn-color: #{shade(#ffffff, 20%)};
+    --bs-btn-color: #ccc;
     --bs-btn-bg: transparent;
     --bs-btn-border-color: var(--bs-border-light-color);
     --bs-btn-hover-bg: transparent;
@@ -139,12 +143,12 @@
     --bs-btn-active-color: var(--gr-frontend-color);
     --bs-btn-active-bg: transparent;
     --bs-btn-active-border-color: var(--gr-frontend-color);
+}
 
-    &:hover {
-        text-shadow: 0 0 21px var(--gr-frontend-color-hover);
-        box-shadow: inset 0px 0 10px var(--gr-frontend-color-hover),
-            0px 0 10px var(--gr-frontend-color-hover);
-    }
+.btn-gr-outline-frontend:hover {
+    text-shadow: 0 0 21px var(--gr-frontend-color-hover);
+    box-shadow: inset 0px 0 10px var(--gr-frontend-color-hover),
+        0px 0 10px var(--gr-frontend-color-hover);
 }
 
 .btn-gr-outline-backend {
@@ -159,17 +163,14 @@
     --bs-btn-active-color: var(--gr-backend-color);
     --bs-btn-active-bg: transparent;
     --bs-btn-active-border-color: var(--gr-backend-color);
-
-    &:hover {
-        text-shadow: 0 0 21px var(--gr-backend-color-hover);
-        box-shadow: inset 0px 0 10px var(--gr-backend-color-hover),
-            0px 0 10px var(--gr-backend-color-hover);
-    }
 }
 
-/*****************************************************************************
-* FORMS
-*****************************************************************************/
+.btn-gr-outline-backend:hover {
+    text-shadow: 0 0 21px var(--gr-backend-color-hover);
+    box-shadow: inset 0px 0 10px var(--gr-backend-color-hover),
+        0px 0 10px var(--gr-backend-color-hover);
+}
+
 .form-control {
     height: 52px;
     color: var(--gr-text-body);
@@ -177,23 +178,20 @@
     border: 2px solid var(--bs-border-light-color);
     border-radius: 6px;
     font-size: 0.95rem;
+}
 
-    &:focus {
-        color: var(--gr-text-body);
-        border-color: var(--bs-secondary-hover);
-        background-color: var(--gr-bg-darker);
-        box-shadow: none;
-    }
+.form-control:focus {
+    color: var(--gr-text-body);
+    border-color: var(--bs-secondary-hover);
+    background-color: var(--gr-bg-darker);
+    box-shadow: none;
 }
 
 .form-label {
-    margin-bottom: 0.3rem;
     color: var(--gr-text-muted);
+    margin-bottom: 0.3rem;
 }
 
-/*****************************************************************************
-* CARDS
-*****************************************************************************/
 .card {
     --bs-card-spacer-y: 1rem;
     --bs-card-spacer-x: 1rem;
@@ -201,9 +199,141 @@
     --bs-card-border-width: 0px;
     --bs-card-border-radius: 6px;
     --bs-card-box-shadow: ;
+}
 
-    @media (min-width: 360px) {
+@media (min-width: 360px) {
+    .card {
         --bs-card-spacer-y: 2.5rem;
         --bs-card-spacer-x: 2rem;
     }
+}
+
+.bg-darker {
+    background-color: var(--gr-bg-darker);
+}
+
+.border-dashed {
+    border-style: dashed;
+}
+
+.border-lighter {
+    border-color: var(--bs-border-light-color) !important;
+}
+
+html,
+body {
+    height: 100%;
+    color: var(--gr-text-body);
+}
+
+h6,
+h5,
+h4,
+h3,
+h2,
+h1 {
+    color: var(--gr-text-title);
+    font-family: Bakbak One, cursive;
+}
+
+header {
+    padding: 10px 32px 10px 12px;
+}
+
+header .navbar-brand h1 {
+    font-size: 1.6rem !important;
+}
+
+header .btn {
+    --bs-btn-line-height: 36px;
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    header .bd-navbar-toggle {
+        order: 5;
+    }
+}
+
+footer {
+    height: 64px;
+    padding: 0 24px;
+    top: 1016px;
+}
+
+header:has(.gr-main-search.gr-opened) .navbar-brand,
+header:has(.gr-main-search.gr-opened) .bd-navbar-toggle {
+    display: none;
+}
+
+.gr-main-search {
+    position: relative;
+}
+
+.gr-main-search > div {
+    max-width: 580px;
+}
+
+.gr-main-search form:has(.form-control:focus) .btn {
+    color: var(--bs-primary-hover);
+    border-color: var(--bs-secondary-hover) !important;
+    background-color: var(--bs-secondary-hover) !important;
+}
+
+.gr-main-search form .form-control {
+    height: 40px;
+    border-width: 0;
+}
+
+@media (max-width: 767.98px) {
+    .gr-main-search form .btn {
+        border: 0;
+        background-color: #0000 !important;
+    }
+}
+
+.gr-main-search .btn {
+    height: 40px;
+    padding: 0 12px;
+    line-height: 40px;
+}
+
+.gr-main-search > div > .btn,
+.gr-main-search .dropdown,
+.gr-main-search .form-control {
+    display: none;
+}
+
+.gr-main-search.gr-opened {
+    flex: 1;
+}
+
+.gr-main-search.gr-opened > div {
+    max-width: 100%;
+}
+
+.gr-main-search.gr-opened > div > .btn,
+.gr-main-search.gr-opened .dropdown,
+.gr-main-search.gr-opened .form-control {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .gr-main-search {
+        flex: 1;
+    }
+
+    .gr-main-search > div > .btn {
+        display: none;
+    }
+
+    .gr-main-search .dropdown,
+    .gr-main-search .form-control {
+        display: block;
+    }
+}
+
+.auth-container {
+    width: 420px;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
 }

@@ -1,13 +1,14 @@
 {
     "name": "grimore",
     "version": "1.0.0",
-    "main": "./src/index.js",
     "description": "Learning Platform",
     "directories": {
         "doc": "docs"
     },
     "scripts": {
-        "start": "parcel ./src/index.html ./src/pages/**/*.html ./src/styles/*.scss ./src/scripts/*.js --open"
+        "start": "parcel ./src/index.html ./src/pages/**/*.html ./src/styles/style.scss ./src/scripts/*.js --open --no-source-maps --public-url /",
+        "build": "parcel build ./src/index.html ./src/pages/**/*.html ./src/styles/style.scss ./src/scripts/*.js --no-source-maps --public-url / --no-optimize --no-content-hash --no-optimize --dist-dir build",
+        "format": "prettier --write ."
     },
     "repository": {
         "type": "git",
@@ -20,15 +21,15 @@
     },
     "homepage": "https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2022-2-e1-proj-web-t6-projeto-learning-platform#readme",
     "devDependencies": {
+        "@jmilanes/parcel-transformer-handlebars-revamped": "^1.0.0",
         "@parcel/transformer-sass": "^2.7.0",
-        "@partiellkorrekt/parcel-transformer-handlebars": "^1.0.3",
-        "npm": "^8.19.2",
         "parcel": "^2.7.0",
         "parcel-reporter-static-files-copy": "^1.4.0",
+        "prettier": "^2.7.1",
         "sass": "^1.55.0"
     },
     "staticFiles": {
-        "staticPath": "src/static",
-        "staticOutPath": "static"
+        "staticPath": "src/public",
+        "staticOutPath": "public"
     }
 }

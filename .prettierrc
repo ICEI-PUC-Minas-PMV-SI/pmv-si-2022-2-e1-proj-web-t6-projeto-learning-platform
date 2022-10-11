@@ -1,5 +1,4 @@
 {
-    "editorconfig": true,
     "overrides": [
         {
             "files": "./src/**/*.{hbs,html}",
