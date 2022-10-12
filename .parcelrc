@@ -2,7 +2,10 @@
     "extends": "@parcel/config-default",
     "transformers": {
         "*.{html,hbs,handlebars}": [
-            "@partiellkorrekt/parcel-transformer-handlebars"
+            "@jmilanes/parcel-transformer-handlebars-revamped"
+        ],
+        "url:*": [
+            "..."
         ]
     },
     "reporters": [

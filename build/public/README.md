@@ -6,7 +6,6 @@ Aqui voê encontra or arquivos de fontes para text e icones, e outros arquivos d
 
 Os tipos de arquivos que devem ser salvos aqui são:
 
-1. Imagens, caso utilize imagens, elas devem ser salvas na pasta `./static/images` como nome que torne fácil sua identificação.
+1. Imagens, caso utilize imagens, elas devem ser salvas na pasta `./public/images` como nome que torne fácil sua identificação.
 2. Arquivos para download
 3. Icones em SVG
-

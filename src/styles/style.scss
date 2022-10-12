@@ -4,14 +4,19 @@
 @import "./overwrites";
 @import "./utilities";
 
-html, body {
+html,
+body {
     height: 100%;
-    font-family: gr-body-font;
     color: var(--gr-text-body);
 }
 
-h6, h5, h4, h3, h2, h1 {
-    font-family: gr-title-font;
+h6,
+h5,
+h4,
+h3,
+h2,
+h1 {
+    font-family: "Bakbak One", cursive;
     color: var(--gr-text-title);
 }
 
@@ -41,7 +46,6 @@ footer {
     height: 64px;
     top: 1016px;
 }
-
 
 /*******************************************************************************
 * MAIN SEARCH

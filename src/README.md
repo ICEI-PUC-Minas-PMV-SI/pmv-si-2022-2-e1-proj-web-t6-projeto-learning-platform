@@ -1,19 +1,23 @@
 # Grimore
 
-## Instalação do Site
-
-A plataforma é static e pode ser instalada em qualquer servidor web, basta exportar o conteúdo da past `./dist` para o servidor.
-
-
 ## Desenvolvimento
 
-A plataforma utiliza o builder `parcel` junto com `handlebars` em seus arquivos fonte, para inicializar o servidor de desenvolvimento com [hot reloading](https://en.parceljs.org/hmr.html), rode o comando abaixo em seu terminal, partindo do root do projeto:
+A plataforma utiliza o `handlebars`, que possibilita quebrar os arquivos fonte em partes reusáveis, evitando a repitição desnecessária de código.
+Para inicializar o ambiente de desenvolvimento, siga os passos abaixo:
+
+Se esta é a primeira vez que está iniciando o projeto, instale as dependências rodando o commando abaixo apartir do root deste projeto (uma pasta acima de onde este README.md se encontra):
+
+```
+npm install
+```
+
+Isto irá instalar os arquivos necessários, a seguir, rode o comando abaixo para inicializar a plataforma:\
+
 ```
 npm start
 ```
 
-Isto irá iniciar seu servidor de testes na url [http://localhost:1234](http://localhost:1234), abra está url em seu browser (isso deverá acontecer automaticamente), toda alteração que for feita no código fonte, será atualizada automaticamente nesta url.
-
+Pronto! A plataforma está live na url [http://localhost:1234](http://localhost:1234), abra está url em seu browser caso não tenha aberto automaticamente, toda alteração que for feita no código fonte, será atualizada automaticamente nesta url.
 
 ## Conceitos de desenvolvimento
 
@@ -26,6 +30,7 @@ O Handlebars trás 3 conceitos principais e largamente utilizados na plataforma:
 Com handlebars é possível separar as responsabilidades em arquivos e pastas dedicadas, tornando nosso código fonte mais limpo e coerente. Com isso, os dados das páginas ficam localizados em arquivos `.json` na pasta dados, e estão disponíveis em qualquer layout, bloco ou páginas do código.
 
 A utilização destes dados começa por criar seu arquivo de dados dentro da pasta dados:
+
 ```json
 // Arquivo: ./dados/usuario.json
 {
@@ -35,12 +40,12 @@ A utilização destes dados começa por criar seu arquivo de dados dentro da pas
 ```
 
 Com seu arquivo de dados criado, utilize os dados em uma de suas páginas, layouts ou blocos como abaixo:
+
 ```handlebars
 {{#block "custom"}}
     <h2>{{usuario.nome}} {{usuario.sobrenome}}<h2>
 {{/block}}
 ```
-
 
 ### Páginas
 
@@ -79,11 +84,10 @@ Com o código acima, todo conteúdo de layout `./layouts/default.hbs` será rend
     <!-- Ao utilizar o bloco #content, substituimos o conteúdo do bloco "main" do layout "default". -->
     {{#content "main"}}
         <p class="text-white">Customizar Conteudo</p>
-    {{/content }}
-    
+    {{/content}}
+
 {{/extend}}
 ```
-
 
 ### Parciais (Partials)
 
@@ -103,11 +107,10 @@ Uma vez criada uma parcial, ela pode ser importada em qualquer layout, outras pa
     {{#content "main"}}
         <!-- O conteúdo do bloco "main" do layout "default", será substituído pelo conteúdo de sua nova parcial "my-block". -->
         {{#embed "my-block"}}{{/embed}}
-    {{/content }}
-    
+    {{/content}}
+
 {{/extend}}
 ```
-
 
 ### Helpers
 
@@ -117,38 +120,43 @@ Um helper é nada mais que uma função javascript em um arquivo dedicado, que r
 
 Nossa plataforma já disponibiliza uma grande quantidade de helpers que podem ser usados, a lista completa pode ser conferida [aqui](https://www.npmjs.com/package/handlebars-helpers), em casos específicos que nenhum dos helpers disponíveis satisfação os requerimentos, um novo deverá ser criado na pasta `./src/helpers`.
 
-
 # Flow de desenfolvimento de páginas
 
 Com os conceitos acima entendidos, é fácil criar novas páginas em nossa plataforma, o passo a passo abaixo cobre todos os passos da criação e desenvolvimento de novas páginas.
 
-### 1. Crie um no arquivo em `src/pages` com a extensão `.html`, siga o estilo de caixa baixa, e uma estrutura de pastas coerente ao caminho da página como no exemplo na seçãp "Páginas" deste arquivo.
+1. Crie um no arquivo em `src/pages` com a extensão `.html`, siga o estilo de caixa baixa, e uma estrutura de pastas coerente ao caminho da página como no exemplo na seçãp "Páginas" deste arquivo.
 
-### 2. Adicione a estrutura base, que estende o layout desejado, na mairoria dos casos é o `src/layouts/default.hbs`:
-```handlebars
-{{#extend "default"}}
-    {{#content "main"}}
-        <!-- Seu conteúdo da página vai aqui! -->
-    {{/content}}
-{{/extend}}
-```
+2. Adicione a estrutura base, que estende o layout desejado, na mairoria dos casos é o `src/layouts/default.hbs`:
 
-### 3. Customize o conte;udo adicionando seue próprios elementos em HTML.
+    ```handlebars
+    {{#extend "default"}}
+        {{#content "main"}}
+            <!-- Seu conteúdo da página vai aqui! -->
+        {{/content}}
+    {{/extend}}
+    ```
 
-### 4. Caso suas página tenha partes que podem se repetir em outras páginas, é aconcelhavel que seja criado um parcial (partial), para compartilhar a lógico com outras páginas do site.
+3. Customize o conte;udo adicionando seue próprios elementos em HTML.
 
-### 5. Salve seus arquivos e commit suas alterações em uma nova Branch, para isso:
-1. Faça um Pull da Branch `development` para ter certeza que tem todas as últimas mudanças feitas pelo time.
-2. Crie uma nova Branch a partir da Branch `development`.
-3. Commit suas mudanças nessa nova Branch.
-4. Faça o **Push**  de sua Branch para o Github
+4. Caso suas página tenha partes que podem se repetir em outras páginas, é aconcelhavel que seja criado um parcial (partial), para compartilhar a lógico com outras páginas do site.
 
-### 6. Crie um **Pull Request** da sua Branch para a `development`
-### 7. Avançe seu ticket no [projeto do Github](https://github.com/orgs/ICEI-PUC-Minas-PMV-SI/projects/15) para a coluna **Review**
-### 8. Notifique a equipe no chat do Teams
-### 9. Aguarde seu review, e atenda a qualquer mudança requerida pela equipe
-### 10. Uma vez aprovado, faça o **merge** de suas alterações.
+5. Salve seus arquivos e commit suas alterações em uma nova Branch, para isso:
+    1. Faça um Pull da Branch `development` para ter certeza que tem todas as últimas mudanças feitas pelo time.
+    2. Crie uma nova Branch a partir da Branch `development`.
+    3. Commit suas mudanças nessa nova Branch.
+    4. Faça o **Push** de sua Branch para o Github
+6. Crie um **Pull Request** da sua Branch para a `development`
+
+7. Avançe seu ticket no [projeto do Github](https://github.com/orgs/ICEI-PUC-Minas-PMV-SI/projects/15) para a coluna **Review**
+
+8. Notifique a equipe no chat do Teams
+
+9. Aguarde seu review, e atenda a qualquer mudança requerida pela equipe
+
+10. Uma vez aprovado, faça o **merge** de suas alterações.
 
 Repita este ciclo para todas as alterações que fizer no repositório, sem pular passos para mantermos a organização e transparência do progresso do projeto.
 
+## Deployment para produção
 
+A plataforma é estática e pode ser instalada em qualquer servidor web, basta exportar o conteúdo da past `./dist` para o servidor, mas por padrão, a o deployment é feita no Github pages automaticamente por meio de uma action configurada no Github, que acontece toda vez que uma tag é criada na branch **main**.

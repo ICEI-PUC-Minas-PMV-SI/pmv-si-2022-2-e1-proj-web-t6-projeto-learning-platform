@@ -22,6 +22,10 @@
     color: var(--gr-text-body) !important;
 }
 
+.text-bold {
+    font-weight: 700;
+}
+
 .text-bg-dark {
     color: var(--gr-text-body) !important;
     background-color: var(--gr-bg-default) !important;
@@ -60,7 +64,7 @@
     --bs-btn-line-height: 48px;
     --bs-btn-border-width: 2px;
     --bs-btn-border-radius: 6px;
-
+    --bs-btn-font-size: 0.95rem;
 }
 
 .btn-primary {
@@ -83,7 +87,8 @@
 
     &:hover {
         text-shadow: 0 0 21px var(--gr-primary-hover);
-        box-shadow: inset 0px 0 10px var(--gr-box-primary-hover), 0px 0 10px var(--gr-box-primary-hover);
+        box-shadow: inset 0px 0 10px var(--gr-box-primary-hover),
+            0px 0 10px var(--gr-box-primary-hover);
         transition: 0.3s;
     }
 }
@@ -107,7 +112,6 @@
     --bs-btn-active-bg: transparent;
     --bs-btn-active-border-color: var(--bs-secondary-hover);
 }
-
 
 .btn-gr-frontend {
     --bs-btn-color: var(--bs-white);
@@ -138,10 +142,10 @@
 
     &:hover {
         text-shadow: 0 0 21px var(--gr-frontend-color-hover);
-        box-shadow: inset 0px 0 10px var(--gr-frontend-color-hover), 0px 0 10px var(--gr-frontend-color-hover);
+        box-shadow: inset 0px 0 10px var(--gr-frontend-color-hover),
+            0px 0 10px var(--gr-frontend-color-hover);
     }
 }
-
 
 .btn-gr-outline-backend {
     --bs-btn-color: var(--gr-backend-color);
@@ -158,11 +162,10 @@
 
     &:hover {
         text-shadow: 0 0 21px var(--gr-backend-color-hover);
-        box-shadow: inset 0px 0 10px var(--gr-backend-color-hover), 0px 0 10px var(--gr-backend-color-hover);
+        box-shadow: inset 0px 0 10px var(--gr-backend-color-hover),
+            0px 0 10px var(--gr-backend-color-hover);
     }
 }
-
-
 
 /*****************************************************************************
 * FORMS
@@ -173,6 +176,7 @@
     background-color: var(--gr-bg-darker);
     border: 2px solid var(--bs-border-light-color);
     border-radius: 6px;
+    font-size: 0.95rem;
 
     &:focus {
         color: var(--gr-text-body);
@@ -186,7 +190,6 @@
     margin-bottom: 0.3rem;
     color: var(--gr-text-muted);
 }
-
 
 /*****************************************************************************
 * CARDS
