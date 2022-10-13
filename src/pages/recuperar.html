@@ -1,5 +1,33 @@
 {{#extend "default"}}
     {{#content "main"}}
-        <h2>Recuperação</h2>
+        <div class="auth-container mx-3">
+            {{#embed "form-box/tpl"}}
+                {{#content "cardTitle"}}
+                    Recuperar senha
+                {{/content}}
+                {{#content "cardContent"}}
+
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <p style="text-align: center" class="text-body">Digite seu e-mail que enviaremos um link para definir uma nova senha.</p>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="inputEmail3" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="inputEmail3" />
+                    </div>   
+                            
+                {{/content}}
+                {{#content "cardButton"}}
+                    Recuperar senha
+                {{/content}}
+                {{#content "cardExtra"}}
+                    
+                    <div class="d-flex align-items-center justify-content-center px-4 pt-4">
+                        <a href="./pages/login.html" class="text-body">Voltar para o login.</a>
+                    </div>
+
+                {{/content}}
+            {{/embed}}
+        </div>
     {{/content}}
 {{/extend}}

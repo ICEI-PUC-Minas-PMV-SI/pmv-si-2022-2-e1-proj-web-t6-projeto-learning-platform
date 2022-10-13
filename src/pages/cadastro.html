@@ -1,5 +1,46 @@
 {{#extend "default"}}
     {{#content "main"}}
-        <h2>Cadastro</h2>
+        <div class="auth-container mx-3">
+            {{#embed "form-box/tpl"}}
+                {{#content "cardTitle"}}
+                    Inscreva-se e comece a aprender
+                {{/content}}
+                {{#content "cardContent"}}
+                    <div class="mb-3">
+                        <label for="inputNome3" class="form-label">Nome</label>
+                        <input class="form-control" id="inputNome3" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputEmail3" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="inputEmail3" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputPassword3" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="inputPassword3" />
+                    </div>
+            
+                {{/content}}
+                {{#content "cardButton"}}
+                    Criar conta
+                {{/content}}
+                {{#content "cardExtra"}}
+                    <div class="d-flex align-items-center my-3">
+                        <div class="border-top border-lighter flex-fill" style="height: 1px;"></div>
+                        <div class="px-2">ou</div>
+                        <div class="border-top border-lighter flex-fill" style="height: 1px;"></div>
+                    </div>
+
+                    <button type="button" class="btn btn-dark">
+                        <i class="bi bi-github mx-3"></i>
+                        Continue com o Github
+                    </button>
+                    
+                    <div class="d-flex align-items-center justify-content-center px-4 pt-4">
+                        <a href="./pages/login.html" class="text-body">Já tem uma conta? Faça login</a>
+                    </div>
+
+                {{/content}}
+            {{/embed}}
+        </div>
     {{/content}}
 {{/extend}}
