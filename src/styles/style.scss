@@ -60,3 +60,33 @@ footer {
     padding-top: 3.5rem;
     padding-bottom: 3.5rem;
 }
+/*******************************************************************************
+* CUSTOM SEARCH
+*******************************************************************************/
+
+.gr-custom-search{
+    
+    position: relative;
+    input{
+        padding-right: 55px;
+    }
+    .form-control{
+        background-color: #ffffff 0.8;
+        opacity: 80%;
+        border-color: #38B9E1;
+        height: 60px;
+    }
+    .form-control::placeholder{
+        color: white;
+        font-family: 'Almarai';
+        opacity: 55%;
+        font-size: 20px;
+        text-align: left;
+    }
+    .bi{
+        position: absolute;
+        right: 24px;
+        top: 50%;
+        transform: translateY(-50%)
+    }
+}

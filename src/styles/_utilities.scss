@@ -17,3 +17,10 @@
 .border-lighter {
     border-color: var(--bs-border-light-color) !important;
 }
+
+/*******************************************************
+* MAIN GRADIENT
+*******************************************************/
+.bg-gradient{
+    background: linear-gradient(103.3deg, #CA3D89 1.28%, #9349EF 34.16%, #6C6DE9 49.68%, #4C8AE5 62.28%, #2EE5F1 100%) !important;
+}

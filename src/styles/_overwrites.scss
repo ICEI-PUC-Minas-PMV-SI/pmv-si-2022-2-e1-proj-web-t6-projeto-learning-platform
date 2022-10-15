@@ -41,6 +41,14 @@
     background-color: var(--bs-secondary) !important;
 }
 
+.text-lead{
+    font-size: 30px !important;
+    font-family: 'Almarai' !important;
+}
+.text-title-home{
+    font-size: 84px;
+}
+
 /*****************************************************************************
 * BORDER
 *****************************************************************************/
@@ -164,6 +172,17 @@
         text-shadow: 0 0 21px var(--gr-backend-color-hover);
         box-shadow: inset 0px 0 10px var(--gr-backend-color-hover),
             0px 0 10px var(--gr-backend-color-hover);
+    }
+}
+
+.btn-gr-down-chevron{
+    position: absolute;
+    background-color: transparent;
+    border-color: transparent;
+    transition: 300ms;
+    &:hover{
+        margin-top: -5px;
+        text-shadow: 0 0 21px white;
     }
 }
 
