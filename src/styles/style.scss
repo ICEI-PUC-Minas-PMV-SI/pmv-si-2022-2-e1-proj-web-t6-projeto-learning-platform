@@ -20,6 +20,10 @@ h1 {
     color: var(--gr-text-title);
 }
 
+h2{
+    font-size: 94px;
+}
+
 header {
     padding: 10px 32px 10px 12px;
 
@@ -66,22 +70,18 @@ footer {
 
 .gr-custom-search{
     
+    margin-top: 78px;
     position: relative;
-    input{
-        padding-right: 55px;
-    }
     .form-control{
-        background-color: #ffffff 0.8;
+        padding-right: 55px;
+        background-color: rgba($color: #fff, $alpha: 0.1);
         opacity: 80%;
         border-color: #38B9E1;
         height: 60px;
     }
     .form-control::placeholder{
-        color: white;
-        font-family: 'Almarai';
-        opacity: 55%;
+        color: rgba($color: #fff, $alpha: 0.8);
         font-size: 20px;
-        text-align: left;
     }
     .bi{
         position: absolute;
@@ -90,3 +90,13 @@ footer {
         transform: translateY(-50%)
     }
 }
+
+/*******************************************************************************
+* HOME STYLES
+*******************************************************************************/
+
+.gr-home-container{
+    padding-top: 120px;
+    padding-bottom: 253px;
+}
+
