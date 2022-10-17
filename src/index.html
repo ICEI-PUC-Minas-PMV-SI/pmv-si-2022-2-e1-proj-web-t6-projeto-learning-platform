@@ -1,9 +1,10 @@
 {{#extend "default"}}
     {{#content "main"}}
+
         <section class="bg-gradient h-100 w-100">
             <div class="gr-home-container container">
                 <div class="row">
-                    <div class="col-md-7">
+                    <div class="col-md-7 order-1 order-md-0">
                         <h2 class="text-title-home">Como funciona?</h2>
                         <div class="text-lead text-white">
                             <p>O Grimore utiliza conteúdo gratuíto, já disponível na web para ajudar
@@ -25,13 +26,12 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-md-5 text-center">
+                    <div class="col-md-5 text-center order-0 order-md-1">
                         <img src="public/images/funil.svg" style="width: 70%; height:auto" />
                     </div>
-                    <div class="order-3">
-                        {{#embed "section-nav-button/tpl"}}{{/embed}}
-                    </div>
+
                 </div>
+                {{#embed "section-nav-button/tpl"}}{{/embed}}
             </div>
         </section>
         <section>
@@ -41,12 +41,11 @@
                         <img src="public/images/baker icon.svg" style="width: 80%; height:auto" />
                     </div>
                     <div class="col-12 col-lg-7">
-                        <h2 class="text-title-home text-primary">Planos de
-                            aprendizado</h2>
+                        <h2 class="text-title-home text-primary">Planos de aprendizado</h2>
                         <div class="text-lead">
-                            <p>Fazendo uso de conteúdo de qualidade, nosso
-                                sistema monta planos detalhados de aprendizado com artigos, vídeos e
-                                projetos interativos, que é capaz de tornar qualquer iniciante em um
+                            <p>Fazendo uso de conteúdo de qualidade, nosso sistema monta planos
+                                detalhados de aprendizado com artigos, vídeos e projetos
+                                interativos, que é capaz de tornar qualquer iniciante em um
                                 profissional em apenas alguns meses.</p>
                         </div>
                         <div class="row w-100">
@@ -56,8 +55,8 @@
                             </a>
                         </div>
                     </div>
-                    {{#embed "section-nav-button/tpl"}}{{/embed}}
                 </div>
+                {{#embed "section-nav-button/tpl"}}{{/embed}}
             </div>
         </section>
     {{/content}}
