@@ -18,6 +18,7 @@ h2,
 h1 {
     font-family: "Bakbak One", cursive;
     color: var(--gr-text-title);
+    font-size: 96px;
 }
 
 h2{
@@ -95,8 +96,21 @@ footer {
 * HOME STYLES
 *******************************************************************************/
 
+.gr-section-home{
+    height: 90vh;
+}
+
+.gr-home-hero{
+    padding-top: 158px;
+    padding-bottom: 200px;
+
+    text-align: center;
+    padding-inline: 140px;
+    
+}
+
 .gr-home-container{
     padding-top: 120px;
     padding-bottom: 253px;
+    
 }
-

@@ -52,6 +52,12 @@
     width: 538px;
 }
 
+.text-gradient {
+    background: linear-gradient(104.19deg, #FF0089 6.17%, #9765D6 29.4%, #2F74DA 48.62%, #00EFFF 67.85%, #FFFFFF 83.07%) !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
 /*****************************************************************************
 * BORDER
 *****************************************************************************/
