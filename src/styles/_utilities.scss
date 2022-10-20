@@ -17,3 +17,17 @@
 .border-lighter {
     border-color: var(--bs-border-light-color) !important;
 }
+
+/*******************************************************
+* BUTTOM
+*******************************************************/
+.btn-left-icon{
+    position: relative;
+
+    .bi{
+        position: absolute;
+        left: 24px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

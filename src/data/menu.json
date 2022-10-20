@@ -2,7 +2,7 @@
     "items": [
         { "title": "Home", "url": "./index.html" },
         { "title": "Sobre", "url": "./pages/sobre.html" },
-        { "title": "Come Começar", "url": "./pages/como-comecar.html" }
+        { "title": "Como Começar", "url": "./pages/como-comecar.html" }
     ],
     "login": {
         "title": "Entrar",
