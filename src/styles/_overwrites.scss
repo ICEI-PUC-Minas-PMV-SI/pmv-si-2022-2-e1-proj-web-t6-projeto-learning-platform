@@ -41,6 +41,23 @@
     background-color: var(--bs-secondary) !important;
 }
 
+.text-lead{
+
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 30px !important;
+    
+}
+.text-title-home{
+    font-size: 84px;
+    width: 538px;
+}
+
+.text-gradient {
+    background: linear-gradient(104.19deg, #FF0089 6.17%, #9765D6 29.4%, #2F74DA 48.62%, #00EFFF 67.85%, #FFFFFF 83.07%) !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
 /*****************************************************************************
 * BORDER
 *****************************************************************************/
@@ -164,6 +181,17 @@
         text-shadow: 0 0 21px var(--gr-backend-color-hover);
         box-shadow: inset 0px 0 10px var(--gr-backend-color-hover),
             0px 0 10px var(--gr-backend-color-hover);
+    }
+}
+
+.btn-gr-down-chevron{
+    position: absolute;
+    background-color: transparent;
+    border-color: transparent;
+    transition: 300ms;
+    &:hover{
+        margin-top: -5px;
+        text-shadow: 0 0 21px white;
     }
 }
 
