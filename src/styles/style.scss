@@ -18,6 +18,11 @@ h2,
 h1 {
     font-family: "Bakbak One", cursive;
     color: var(--gr-text-title);
+    font-size: 96px;
+}
+
+h2{
+    font-size: 94px;
 }
 
 header {
@@ -59,4 +64,53 @@ footer {
     width: 420px;
     padding-top: 3.5rem;
     padding-bottom: 3.5rem;
+}
+/*******************************************************************************
+* CUSTOM SEARCH
+*******************************************************************************/
+
+.gr-custom-search{
+    
+    margin-top: 78px;
+    position: relative;
+    .form-control{
+        padding-right: 55px;
+        background-color: rgba($color: #fff, $alpha: 0.1);
+        opacity: 80%;
+        border-color: #38B9E1;
+        height: 60px;
+    }
+    .form-control::placeholder{
+        color: rgba($color: #fff, $alpha: 0.8);
+        font-size: 20px;
+    }
+    .bi{
+        position: absolute;
+        right: 24px;
+        top: 50%;
+        transform: translateY(-50%)
+    }
+}
+
+/*******************************************************************************
+* HOME STYLES
+*******************************************************************************/
+
+.gr-section-home{
+    height: 90vh;
+}
+
+.gr-home-hero{
+    padding-top: 158px;
+    padding-bottom: 200px;
+
+    text-align: center;
+    padding-inline: 140px;
+    
+}
+
+.gr-home-container{
+    padding-top: 120px;
+    padding-bottom: 253px;
+    
 }

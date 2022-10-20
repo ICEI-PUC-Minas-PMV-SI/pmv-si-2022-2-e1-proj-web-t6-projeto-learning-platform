@@ -1,5 +1,78 @@
 {{#extend "default"}}
     {{#content "main"}}
-        <h1>Home</h1>
+
+        <section class="gr-section-home">
+            <div class="container gr-home-hero">
+                <div class="text-gradient">
+                    <h1>Aprender TI nunca foi tão fácil!</h1>
+                </div>
+                
+                <p class="text-lead">O Grimore foi criado para auxiliar iniciantes em TI, provendo conteúdo curado
+                    sobre diversos tópicos do setor e ferramentas que permitem a criação de planos
+                    de estudo para impulsionar o aprendizado.</p>
+            </div>
+            <div class="container">
+                {{#embed "section-nav-button/tpl"}}{{/embed}}
+            </div>
+
+        </section>
+        <section class="bg-gradient w-100 gr-section-home">
+            <div class="gr-home-container container">
+                <div class="row">
+                    <div class="col-md-7 order-1 order-md-0">
+                        <h2 class="text-title-home">Como funciona?</h2>
+                        <div class="text-lead text-white">
+                            <p>O Grimore utiliza conteúdo gratuíto, já disponível na web para ajudar
+                                iniciantes no setor a aprender sobre diversos tópicos e tecnologias.</p>
+                            <p>Nossa equipe utiliza algoritmos especiais e um processo de curagem
+                                manual para filtrar esse conteúdo e disponibilizar para você apenas
+                                o que há de melhor e confiável.</p>
+                        </div>
+                        <div>
+                            <form>
+                                <div class="gr-custom-search">
+                                    <input
+                                        type="text"
+                                        class="form-control input"
+                                        placeholder="Digite um tópico ou tecnologia"
+                                    />
+                                    <i class="bi bi-search text-lead"></i>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-5 text-center order-0 order-md-1">
+                        <img src="public/images/funil.svg" style="width: 70%; height:auto" />
+                    </div>
+
+                </div>
+                {{#embed "section-nav-button/tpl"}}{{/embed}}
+            </div>
+        </section>
+        <section class="gr-section-home">
+            <div class="gr-home-container container">
+                <div class="row">
+                    <div class="col-12 col-md-5">
+                        <img src="public/images/baker icon.svg" style="width: 80%; height:auto" />
+                    </div>
+                    <div class="col-12 col-lg-7">
+                        <h2 class="text-title-home text-primary">Planos de aprendizado</h2>
+                        <div class="text-lead">
+                            <p>Fazendo uso de conteúdo de qualidade, nosso sistema monta planos
+                                detalhados de aprendizado com artigos, vídeos e projetos
+                                interativos, que é capaz de tornar qualquer iniciante em um
+                                profissional em apenas alguns meses.</p>
+                        </div>
+                        <div class="row w-100">
+                            <a class="btn btn-outline-primary">
+                                Criar plano de estudos
+                                <i class="bi bi-plus-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {{#embed "section-nav-button/tpl"}}{{/embed}}
+            </div>
+        </section>
     {{/content}}
 {{/extend}}
