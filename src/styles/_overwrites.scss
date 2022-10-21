@@ -14,6 +14,9 @@
 .bg-dark {
     background-color: var(--gr-bg-default) !important;
 }
+.bg-darker{
+    background-color: var(--gr-bg-darker) !important;
+}
 
 /*****************************************************************************
 * TEXT
@@ -42,14 +45,30 @@
 }
 
 .text-lead{
-
     color: rgba(255, 255, 255, 0.8) !important;
     font-size: 30px !important;
     
 }
+.text-lead-small{
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 24px !important;
+
+}
+
+.text-legend{
+    color: rgba(255, 255, 255, 0.3) !important;
+    font-size: 24px !important;
+}
+
+.text-paragraph{
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 24px !important;
+}
+
 .text-title-home{
-    font-size: 84px;
-    width: 538px;
+    
+    max-width: 538px;
+    width: auto;
 }
 
 .text-gradient {
@@ -57,6 +76,7 @@
     background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
 }
+
 
 /*****************************************************************************
 * BORDER
@@ -104,6 +124,26 @@
 
     &:hover {
         text-shadow: 0 0 21px var(--gr-primary-hover);
+        box-shadow: inset 0px 0 10px var(--gr-box-primary-hover),
+            0px 0 10px var(--gr-box-primary-hover);
+        transition: 0.3s;
+    }
+}
+
+.btn-outline-body {
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: var(--bs-primary);
+    --bs-btn-hover-bg: transparent;
+    --bs-btn-hover-border-color: var(--bs-primary-hover);
+    --bs-btn-active-bg: transparent;
+    --bs-btn-active-border-color: var(--bs-primary);
+    --bs-btn-font-family: var(--gr-text-body);
+    --bs-btn-font-size: 18px;
+    --bs-btn-font-weight: 800;
+
+    &:hover {
+        text-shadow: 0 0 10px var(--gr-box-primary-hover);
         box-shadow: inset 0px 0 10px var(--gr-box-primary-hover),
             0px 0 10px var(--gr-box-primary-hover);
         transition: 0.3s;
@@ -234,4 +274,13 @@
         --bs-card-spacer-y: 2.5rem;
         --bs-card-spacer-x: 2rem;
     }
+}
+
+/*****************************************************************************
+* IMAGE MASKS
+*****************************************************************************/
+.mask-img{
+    padding-left: 10px;
+    border-radius: 50%;
+    
 }
