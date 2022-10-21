@@ -22,7 +22,16 @@ h1 {
 }
 
 h2{
-    font-size: 94px;
+    font-size: 84px;
+}
+h3{
+    font-size: 64px;
+}
+h4{
+    font-size: 54px;
+}
+h5{
+    font-size: 36px;
 }
 
 header {
@@ -96,21 +105,47 @@ footer {
 * HOME STYLES
 *******************************************************************************/
 
-.gr-section-home{
-    height: 90vh;
-}
 
 .gr-home-hero{
+    max-width: 1192px;
     padding-top: 158px;
     padding-bottom: 200px;
+    padding-inline: 108px;
 
     text-align: center;
-    padding-inline: 140px;
+    
     
 }
 
 .gr-home-container{
     padding-top: 120px;
     padding-bottom: 253px;
+    max-width: 1192px;
     
 }
+
+/*******************************************************************************
+* ABOUT STYLES
+*******************************************************************************/
+
+.gr-content-container{
+    padding-top: 110px;
+    padding-bottom: 72px;
+    max-width: 992px;
+    
+}
+.gr-about-paragraph{
+    padding-top: 72px;
+    gap: 32px;  
+}
+.gr-about-card{
+    padding-top: 72px;
+    gap: 72px;
+}
+
+.gr-how-card{
+    padding-top: 86px;
+    padding-bottom: 102px;
+    gap: 140px;
+}
+
