@@ -1,32 +1,38 @@
 {{#extend "default"}}
     {{#content "main"}}
-        <section class="gr-section-home">
-            <div class="container gr-home-hero">
-                <div class="text-gradient ">
-                    <h1>Aprender TI nunca foi tão fácil!</h1>
-                </div>
-                
-                <p class="text-lead">O Grimore foi criado para auxiliar iniciantes em TI, provendo conteúdo curado
-                    sobre diversos tópicos do setor e ferramentas que permitem a criação de planos
-                    de estudo para impulsionar o aprendizado.</p>
-            {{#embed "section-nav-button/tpl"}}{{/embed}}
-            </div>
-            
-
-        </section>
-        <section class="bg-gradient w-100 gr-section-home">
-            <div class="gr-home-container container">
-                <div class="row">
-                    <div class="col-lg-7 order-1 order-lg-0">
-                        <h2 class="text-title-home">Como funciona?</h2>
-                        <div class="text-lead text-white">
-                            <p>O Grimore utiliza conteúdo gratuíto, já disponível na web para ajudar
-                                iniciantes no setor a aprender sobre diversos tópicos e tecnologias.</p>
-                            <p>Nossa equipe utiliza algoritmos especiais e um processo de curagem
-                                manual para filtrar esse conteúdo e disponibilizar para você apenas
-                                o que há de melhor e confiável.</p>
+        <div class="gr-home-page w-100">
+            <section class="d-flex align-items-center justify-content-center gr-home-hero">
+                <div class="container text-center">
+                    <div class="px-4 px-md-5 mb-5">
+                        <div class="text-gradient">
+                            <h1>Aprender TI nunca foi tão fácil!</h1>
                         </div>
-                        <div>
+
+                        <p class="text-lead">O Grimore foi criado para auxiliar iniciantes em TI,
+                            provendo conteúdo curado sobre diversos tópicos do setor e ferramentas
+                            que permitem a criação de planos de estudo para impulsionar o
+                            aprendizado.</p>
+                    </div>
+                    <div class="pt-5">
+                        {{#embed "section-nav-button/tpl"}}{{/embed}}
+                    </div>
+                </div>
+            </section>
+
+            <section
+                class="gr-section-how-it-works bg-gradient d-flex align-items-center justify-content-center"
+            >
+                <div class="container text-center text-lg-start">
+                    <div class="row mb-1 mb-lg-5">
+                        <div class="col-lg-7 order-1 order-lg-0">
+                            <h2 class="text-title-home mb-3">Como funciona?</h2>
+                            <div class="text-lead mb-3">
+                                <p>O Grimore utiliza conteúdo gratuíto, já disponível na web para
+                                    ajudar iniciantes no setor a aprender sobre diversos tópicos e
+                                    tecnologias. Nossa equipe utiliza algoritmos especiais e um
+                                    processo de curagem manual para filtrar esse conteúdo e
+                                    disponibilizar para você apenas o que há de melhor e confiável.</p>
+                            </div>
                             <form>
                                 <div class="gr-custom-search">
                                     <input
@@ -38,57 +44,64 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
-                    <div class="col-lg-5 text-center order-0 order-lg-1">
-                        <img src="public/images/funil.svg" style="width: 70%; height:auto" />
-                    </div>
-
-                </div>
-                {{#embed "section-nav-button/tpl"}}{{/embed}}
-            </div>
-        </section>
-        <section class="gr-section-home w-100 bg-darker">
-            <div class="gr-home-container container">
-                <div class="row">
-                    <div class="col-12 col-lg-5 order-0 order-lg-0">
-                        <img src="public/images/baker icon.svg" style="width: 80%; height:auto" />
-                    </div>
-                    <div class="col-12 col-lg-7 order-1 order-lg-1">
-                        <h2 class="text-title-home text-primary">Planos de aprendizado</h2>
-                        <div class="text-lead">
-                            <p>Fazendo uso de conteúdo de qualidade, nosso sistema monta planos
-                                detalhados de aprendizado com artigos, vídeos e projetos
-                                interativos, que é capaz de tornar qualquer iniciante em um
-                                profissional em apenas alguns meses.</p>
+                        <div class="col-lg-5 text-center order-0 order-lg-1 pb-5 pb-lg-0">
+                            <img src="public/images/funil.svg" class="img-fluid" />
                         </div>
-                        <div class="row w-100">
+                    </div>
+                    <div class="pt-5">
+                        {{#embed "section-nav-button/tpl"}}{{/embed}}
+                    </div>
+                </div>
+            </section>
+
+            <section
+                class="gr-section-courses bg-darker d-flex align-items-center justify-content-center"
+            >
+                <div class="container text-center text-lg-start">
+                    <div class="row mb-1 mb-lg-5">
+                        <div class="col-12 col-lg-5 order-0 order-lg-0 pb-5 pb-lg-0">
+                            <img src="public/images/baker-icon.svg" class="img-fluid" />
+                        </div>
+                        <div class="col-12 col-lg-7 order-1 order-lg-1">
+                            <h2 class="text-title-home text-primary mb-3">Planos de aprendizado</h2>
+                            <div class="text-lead mb-3">
+                                <p>Fazendo uso de conteúdo de qualidade, nosso sistema monta planos
+                                    detalhados de aprendizado com artigos, vídeos e projetos
+                                    interativos, que é capaz de tornar qualquer iniciante em um
+                                    profissional em apenas alguns meses.</p>
+                            </div>
                             <a class="btn btn-outline-body">
                                 Criar plano de estudos
                                 <i class="bi bi-plus-lg"></i>
                             </a>
                         </div>
                     </div>
+                    <div class="pt-5">
+                        {{#embed "section-nav-button/tpl"}}{{/embed}}
+                    </div>
                 </div>
-                {{#embed "section-nav-button/tpl"}}{{/embed}}
-            </div>
-        </section>
-        <section class="gr-section-home w-100"> 
-            <div class="gr-home-container container text-center">
-                <div class="row" style="justify-content: center;">
-                    <img src="public/images/academic-cap.svg" style="width: 27%; height:auto"/>
+            </section>
+            <section class="gr-section-sing-up d-flex align-items-center justify-content-center">
+                <div class="container text-center">
+                    <div class="pb-5">
+                        <img src="public/images/academic-cap.svg" class="img-fluid" />
+                    </div>
+                    <h2 class="mb-3">Comece hoje mesmo!</h2>
+                    <p class="text-lead mb-5">
+                        Deixa de enrolar e comece aprender sobre seu tópico preferido em TI hoje
+                        mesmo, nosso serviço é totalmente gratuito!
+                    </p>
+                    <div>
+                        <a class="btn btn-outline-body" style="max-width: 500px;">
+                            <i
+                                class="bi bi-person-plus justify-content-center"
+                                style="float: left; padding-top: 7px; font-size: 30px"
+                            ></i>
+                            Criar uma conta gratuita
+                        </a>
+                    </div>
                 </div>
-                <h2>Comece hoje mesmo!</h2>
-                <p class="text-lead">
-                    Deixa de enrolar e comece aprender sobre seu tópico preferido em TI hoje mesmo, nosso serviço é totalmente gratuito!
-                </p>
-                <div class="row justify-content-evenly">
-                    <a class="btn btn-outline-body" style="max-width: 500px;">
-                        <i class="bi bi-person-plus justify-content-center" style="float: left; padding-top: 7px; font-size: 30px"></i>
-                        Criar uma conta gratuita
-                    </a>
-                </div>
-
-            </div>
-        </section>
+            </section>
+        </div>
     {{/content}}
 {{/extend}}
