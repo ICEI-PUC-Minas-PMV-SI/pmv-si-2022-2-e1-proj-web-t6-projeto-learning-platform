@@ -3,6 +3,10 @@
 /*******************************************************
 * BACKGROUNDS
 *******************************************************/
+.bg-secondary {
+    background-color: var(--gr-bg-secondary);
+}
+
 .bg-darker {
     background-color: var(--gr-bg-darker);
 }
@@ -21,16 +25,23 @@
 /*******************************************************
 * MAIN GRADIENT
 *******************************************************/
-.bg-gradient{
-    background: linear-gradient(103.3deg, #CA3D89 1.28%, #9349EF 34.16%, #6C6DE9 49.68%, #4C8AE5 62.28%, #2EE5F1 100%) !important;
+.bg-gradient {
+    background: linear-gradient(
+        103.3deg,
+        #ca3d89 1.28%,
+        #9349ef 34.16%,
+        #6c6de9 49.68%,
+        #4c8ae5 62.28%,
+        #2ee5f1 100%
+    ) !important;
 }
 /*******************************************************
 * BUTTON
 *******************************************************/
-.btn-left-icon{
+.btn-left-icon {
     position: relative;
 
-    .bi{
+    .bi {
         position: absolute;
         left: 24px;
         top: 50%;

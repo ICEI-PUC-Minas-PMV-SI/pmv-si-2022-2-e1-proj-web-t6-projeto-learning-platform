@@ -14,7 +14,7 @@
 .bg-dark {
     background-color: var(--gr-bg-default) !important;
 }
-.bg-darker{
+.bg-darker {
     background-color: var(--gr-bg-darker) !important;
 }
 
@@ -44,39 +44,37 @@
     background-color: var(--bs-secondary) !important;
 }
 
-.text-lead{
+.text-lead {
     color: rgba(255, 255, 255, 0.8) !important;
     font-size: 30px !important;
-    
 }
-.text-lead-small{
+.text-lead-small {
     color: rgba(255, 255, 255, 0.8) !important;
     font-size: 24px !important;
-
 }
 
-.text-legend{
+.text-legend {
     color: rgba(255, 255, 255, 0.3) !important;
     font-size: 24px !important;
 }
 
-.text-paragraph{
+.text-paragraph {
     color: rgba(255, 255, 255, 0.8) !important;
     font-size: 24px !important;
 }
 
-.text-title-home{
-    
-    max-width: 538px;
-    width: auto;
-}
-
 .text-gradient {
-    background: linear-gradient(104.19deg, #FF0089 6.17%, #9765D6 29.4%, #2F74DA 48.62%, #00EFFF 67.85%, #FFFFFF 83.07%) !important;
+    background: linear-gradient(
+        104.19deg,
+        #ff0089 6.17%,
+        #9765d6 29.4%,
+        #2f74da 48.62%,
+        #00efff 67.85%,
+        #ffffff 83.07%
+    ) !important;
     background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
 }
-
 
 /*****************************************************************************
 * BORDER
@@ -224,14 +222,19 @@
     }
 }
 
-.btn-gr-down-chevron{
-    position: absolute;
-    background-color: transparent;
-    border-color: transparent;
-    transition: 300ms;
-    &:hover{
-        margin-top: -5px;
+.gr-section-nav-button {
+    transition: 300ms ease-in-out;
+    font-size: 36px;
+    opacity: 0.3;
+
+    &:hover {
+        transform: translate(0, -8px);
         text-shadow: 0 0 21px white;
+        opacity: 0.6;
+    }
+
+    @media screen and (min-width: 768px) {
+        font-size: 60px;
     }
 }
 
@@ -279,8 +282,7 @@
 /*****************************************************************************
 * IMAGE MASKS
 *****************************************************************************/
-.mask-img{
+.mask-img {
     padding-left: 10px;
     border-radius: 50%;
-    
 }

@@ -18,20 +18,30 @@ h2,
 h1 {
     font-family: "Bakbak One", cursive;
     color: var(--gr-text-title);
-    font-size: 96px;
 }
 
-h2{
-    font-size: 84px;
-}
-h3{
-    font-size: 64px;
-}
-h4{
+h1 {
     font-size: 54px;
 }
-h5{
+
+h2 {
+    font-size: 42px;
+}
+
+h3 {
     font-size: 36px;
+}
+
+h4 {
+    font-size: 30px;
+}
+
+h5 {
+    font-size: 26px;
+}
+
+h6 {
+    font-size: 22px;
 }
 
 header {
@@ -58,7 +68,6 @@ header {
 footer {
     padding: 0px 24px;
     height: 64px;
-    top: 1016px;
 }
 
 /*******************************************************************************
@@ -74,78 +83,41 @@ footer {
     padding-top: 3.5rem;
     padding-bottom: 3.5rem;
 }
-/*******************************************************************************
-* CUSTOM SEARCH
-*******************************************************************************/
-
-.gr-custom-search{
-    
-    margin-top: 78px;
-    position: relative;
-    .form-control{
-        padding-right: 55px;
-        background-color: rgba($color: #fff, $alpha: 0.1);
-        opacity: 80%;
-        border-color: #38B9E1;
-        height: 60px;
-    }
-    .form-control::placeholder{
-        color: rgba($color: #fff, $alpha: 0.8);
-        font-size: 20px;
-    }
-    .bi{
-        position: absolute;
-        right: 24px;
-        top: 50%;
-        transform: translateY(-50%)
-    }
-}
 
 /*******************************************************************************
-* HOME STYLES
+* HOME
 *******************************************************************************/
-
-
-.gr-home-hero{
-    max-width: 1192px;
-    padding-top: 158px;
-    padding-bottom: 200px;
-    padding-inline: 108px;
-
-    text-align: center;
-    
-    
-}
-
-.gr-home-container{
-    padding-top: 120px;
-    padding-bottom: 253px;
-    max-width: 1192px;
-    
-}
+@import "./components/home";
 
 /*******************************************************************************
 * ABOUT STYLES
 *******************************************************************************/
-
-.gr-content-container{
+.gr-content-container {
     padding-top: 110px;
     padding-bottom: 72px;
     max-width: 992px;
-    
 }
-.gr-about-paragraph{
+.gr-about-paragraph {
     padding-top: 72px;
-    gap: 32px;  
+    gap: 32px;
 }
-.gr-about-card{
+.gr-about-card {
     padding-top: 72px;
     gap: 72px;
 }
 
-.gr-how-card{
+.gr-how-card {
     padding-top: 86px;
     padding-bottom: 102px;
     gap: 140px;
 }
 
+/*******************************************************************************
+* PLANO DE ESTUDOS STYLES
+*******************************************************************************/
+.gr-track-title-section {
+    .btn {
+        position: absolute;
+        left: -100%;
+    }
+}
