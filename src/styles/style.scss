@@ -92,26 +92,7 @@ footer {
 /*******************************************************************************
 * ABOUT STYLES
 *******************************************************************************/
-.gr-content-container {
-    padding-top: 110px;
-    padding-bottom: 72px;
-    max-width: 992px;
-}
-.gr-about-paragraph {
-    padding-top: 72px;
-    gap: 32px;
-}
-.gr-about-card {
-    padding-top: 72px;
-    gap: 72px;
-}
-
-.gr-how-card {
-    padding-top: 86px;
-    padding-bottom: 102px;
-    gap: 140px;
-}
-
+@import "./components/about";
 /*******************************************************************************
 * PLANO DE ESTUDOS STYLES
 *******************************************************************************/
@@ -121,3 +102,5 @@ footer {
         left: -100%;
     }
 }
+
+

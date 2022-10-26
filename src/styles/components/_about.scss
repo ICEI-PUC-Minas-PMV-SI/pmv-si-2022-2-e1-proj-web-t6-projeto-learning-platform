@@ -1,0 +1,98 @@
+.gr-about-how {
+    .text-legend{
+        color: rgba(255, 255, 255, 0.3) !important;
+    }
+    .text-lead-small {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+    .container {
+        padding-top: 110px;
+        padding-bottom: 72px;
+        max-width: 992px;
+    }
+    h3 {
+        font-size: 30px;
+    }
+    h4 {
+        font-size: 26px;
+    }
+
+    .text-lead {
+        font-size: 16px !important;
+    }
+
+    .text-paragraph {
+        font-size: 14px !important;
+    }
+    img {
+        max-width: 40% !important;
+    }
+    
+
+    @media screen and (min-width: 576px) {
+        h3 {
+            font-size: 40px;
+        }
+        h4 {
+            font-size: 36px;
+        }
+
+        .text-lead {
+            font-size: 22px !important;
+        }
+
+        .text-paragraph {
+            font-size: 16px !important;
+            /*text-align: start !important;*/
+        }
+        .text-legend {
+            font-size: 20px !important;
+        }
+        img {
+            max-width: 40% !important;
+        }
+
+
+    }
+    @media screen and (min-width: 768px) {
+        h3 {
+            font-size: 48px;
+        }
+
+        .text-lead {
+            font-size: 24px !important;
+        }
+
+        .text-paragraph {
+            font-size: 18px !important;
+        }
+
+        img {
+            max-width: 50% !important;
+        }
+    }
+    @media screen and (min-width: 992px) {
+        h3 {
+            font-size: 64px;
+        }
+        h4 {
+            font-size: 54px;
+        }
+
+        .text-lead {
+            font-size: 30px !important;
+        }
+
+        .text-paragraph {
+            font-size: 24px !important;
+        }
+
+        .text-legend {
+            font-size: 24px !important;
+        }
+
+        img {
+            max-width: 100% !important;
+        }
+    }
+}
