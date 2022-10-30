@@ -6,10 +6,10 @@
     ],
     "login": {
         "title": "Entrar",
-        "url": "./pages/login.html"
+        "url": "./pages/login/login.html"
     },
     "cadastro": {
         "title": "Cadastre-se",
-        "url": "./pages/cadastro.html"
+        "url": "./pages/login/cadastro.html"
     }
 }

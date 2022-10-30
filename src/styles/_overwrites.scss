@@ -207,3 +207,16 @@
         --bs-card-spacer-x: 2rem;
     }
 }
+
+/*****************************************************************************
+* SPINNERS
+*****************************************************************************/
+
+.spinner-border {
+    --bs-spinner-width: 4rem;
+    --bs-spinner-height: 4rem;
+    --bs-spinner-border-width: 0.65rem;
+    --bs-spinner-animation-speed: 1.25s;
+    --bs-spinner-animation-name: spinner-border;
+    border: var(--bs-spinner-border-width) dotted white;
+}

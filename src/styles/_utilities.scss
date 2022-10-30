@@ -45,3 +45,23 @@
     }
 }
 
+.div-plan-content{
+    max-width: 780px;
+    
+    span{
+        color: var(--gr-frontend-color);
+
+    }
+    .title-plan{
+        font-size: 56px;
+    }
+     
+    .describe-plan{
+        font-size: 36px;
+    }
+
+    p{
+        font-size: 24px;
+        text-align: center;
+    }
+}
