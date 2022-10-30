@@ -1,0 +1,118 @@
+.gr-home-page {
+    section {
+        min-height: 100vh;
+    }
+
+    .container {
+        max-width: 1192px;
+    }
+
+    h1 {
+        font-size: 46px;
+    }
+
+    h2 {
+        font-size: 42px;
+    }
+
+    .text-lead {
+        font-size: 18px !important;
+    }
+
+    img {
+        max-width: 35% !important;
+    }
+
+    @media screen and (min-width: 576px) {
+        h1 {
+            font-size: 54px;
+        }
+
+        h2 {
+            font-size: 48px;
+        }
+
+        img {
+            max-width: 30% !important;
+        }
+
+        .text-lead {
+            font-size: 24px !important;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        h1 {
+            font-size: 74px;
+        }
+
+        h2 {
+            font-size: 66px;
+        }
+
+        img {
+            max-width: 25% !important;
+        }
+
+        .text-lead {
+            font-size: 28px !important;
+        }
+
+        .gr-section-sing-up {
+            img {
+                max-width: 290px !important;
+            }
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        h1 {
+            font-size: 96px;
+        }
+
+        h2 {
+            font-size: 84px;
+        }
+
+        img {
+            max-width: 100% !important;
+        }
+
+        .text-lead {
+            font-size: 30px !important;
+        }
+
+        .gr-section-sing-up {
+            img {
+                max-width: 290px !important;
+            }
+        }
+    }
+}
+
+/*******************************************************************************
+* CUSTOM SEARCH
+*******************************************************************************/
+.gr-custom-search {
+    position: relative;
+
+    .form-control {
+        padding-right: 55px;
+        background-color: rgba($color: #fff, $alpha: 0.1);
+        opacity: 80%;
+        border-color: #38b9e1;
+        height: 60px;
+    }
+
+    .form-control::placeholder {
+        color: rgba($color: #fff, $alpha: 0.8);
+        font-size: 20px;
+    }
+
+    .bi {
+        position: absolute;
+        right: 24px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

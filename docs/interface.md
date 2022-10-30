@@ -14,7 +14,7 @@ Uma paleta de cores extensa foi utilizada para enriquecer a experiência do usu�
 
 ### Icones
 
-Para icnonografia a plataforma utiliza o Bootstrap icons, que oferece uma variedade de icones modernos que 
+Para icnonografia a plataforma utiliza o Bootstrap icons, que oferece uma variedade de icones modernos que
 
 <div style="text-align: center">
     <img src="img/Icones.png" />
@@ -25,7 +25,6 @@ Para icnonografia a plataforma utiliza o Bootstrap icons, que oferece uma varied
 Para textos a plataforma utiliza duas fontes, uma de mais impacto para títulos e logotipo, e outra mais simples para textos de corpo como paragraphos, listas e tabelas.
 
 ![Tipografia](img/tipografia.png)
-
 
 ## Páginas
 
@@ -62,7 +61,7 @@ A parte de plano de estudos é composta pela criação, onde o usuário selecion
 
 Após sua autenticação, o usuário é levado ao seu Dashboard, contendo informações sobre seus planos de estudo em andamento e aqueles já concluídos, além de suas informações pessoais como nome, email e links sociais, que complementam seu perfil público, com um overview de suas características e seu progresso na plataforma. (RF-021 à RF-036)
 
-## User Flow 
+## User Flow
 
 ### Menu principal
 
@@ -70,13 +69,11 @@ O menu principal dá aos usuários da plataforma uma maneira fácil de navegar a
 
 ![Flow Menu](img/FlowMenu.png)
 
-
 ### Pesquisa de conteúdo
 
 A pesquisa o flow é simples, onde o usuário busca por conteúdo, assiste vídeos e repete o fluxo.
 
 ![Flow Pesquisa de Conteudo](img/FlowPesquisaConteudo.png)
-
 
 ### Plano de estudo personalizado
 
@@ -84,13 +81,11 @@ A criação de plano é uma área protegida, logo usuários precisam estar authe
 
 ![Flow Criacao Plano de Estudos](img/FlowCriacaoPlano.png)
 
-
 ### Criação de Conta
 
 A chamada de ação na página Home tem o intuito de convencer usuários a criarem sua conta na plataforma logo na primeira visita.
 
 ![Flow Login](img/FlowCriacaoConta.png)
-
 
 ### Autenticação
 
@@ -98,10 +93,8 @@ Este fluxo é utilizado em outros fluxos acima, diferênciamos o cadastro do log
 
 ![Flow Autenticacao](img/FlowAutenticacao.png)
 
-
 ### Recuperação de senha
 
 A recuperaçao de senha guia o usuário a redefinir sua senha caso a tenha esquecido, trazendo o usuário de volta ao login ao final do processo para re-authenticação.
 
 ![Flow Recuperacao de senha](img/FlowRecuperacaoSenha.png)
-

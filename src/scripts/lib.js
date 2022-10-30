@@ -63,6 +63,9 @@ window.updateHeaderState = function () {
     updateBodyContext();
 };
 
+/**
+ *
+ */
 window.toggleMobileSearch = function () {
     const search = document.querySelector(".gr-main-search");
     const trigger = search.querySelector("form > button");
@@ -83,5 +86,58 @@ window.toggleMobileSearch = function () {
             trigger.addEventListener("click", toggle);
             closeTrigger.addEventListener("click", toggle);
         }
+    });
+};
+
+/**
+ * Encontra o um elemento pai, dado seu nome de tag
+ *
+ * @param {HTMLElement} element
+ * @param {string} parentName
+ * @returns {(null|HTMLElement)}
+ */
+window.findParentByName = function (element, parentName) {
+    if (!element.parentElement) {
+        return null;
+    }
+
+    const tagName = element.parentElement.tagName.toLowerCase();
+
+    if (tagName === "body") {
+        return null;
+    }
+
+    if (tagName === parentName) {
+        return element.parentElement;
+    }
+
+    return findParentByName(element.parentElement, parentName);
+};
+
+window.scrolToSection = function () {
+    // Encontre todos os botões (Seta) na página
+    const triggers = document.querySelectorAll(".gr-section-nav-button a");
+
+    // para cada botão encontrado
+    triggers.forEach((trigger) => {
+        // Adicione o evento click
+        trigger.addEventListener("click", (e) => {
+            // Quando clicado:
+            // Previna o comportamento padrão do elemto
+            e.preventDefault();
+            // Pare a propagação do evento na arvore do html
+            e.stopPropagation();
+            // Encontra o elemento 'section' pai do botão clicado
+            const parentSection = findParentByName(e.target, "section");
+
+            // Se a seção pai e a próxima seção existirem
+            if (parentSection && parentSection.nextElementSibling) {
+                // Scroll para a próxima seção
+                parentSection.nextElementSibling.scrollIntoView({
+                    behavior: "smooth", // Usa transição para o scroll
+                    block: "start", // Alinhe a próxima seção no topo da window
+                });
+            }
+        });
     });
 };
