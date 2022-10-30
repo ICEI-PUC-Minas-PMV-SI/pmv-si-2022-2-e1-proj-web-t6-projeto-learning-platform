@@ -31,3 +31,17 @@
         transform: translateY(-50%);
     }
 }
+
+.password-confirm{
+    width: 612px;
+
+    h1{
+        font-size: 54px;
+        color: var(--bs-primary);
+    }
+    
+    p{
+        font-size: 24px;
+    }
+}
+
