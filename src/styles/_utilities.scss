@@ -1,6 +1,10 @@
 // Classes de utilidades aqui
 
 /*******************************************************
+* TEXT
+*******************************************************/
+
+/*******************************************************
 * BACKGROUNDS
 *******************************************************/
 .bg-secondary {
@@ -66,23 +70,31 @@
     }
 }
 
-.div-plan-content{
+.div-plan-content {
     max-width: 780px;
-    
-    span{
+
+    span {
         color: var(--gr-frontend-color);
 
     }
-    .title-plan{
+
+    .title-plan {
         font-size: 56px;
     }
-     
-    .describe-plan{
+
+    .describe-plan {
         font-size: 36px;
     }
 
-    p{
+    p {
         font-size: 24px;
         text-align: center;
     }
+}
+/*****************************************************************************
+* IMAGE MASKS
+*****************************************************************************/
+.mask-img {
+    padding-left: 10px;
+    border-radius: 50%;
 }

@@ -25,18 +25,16 @@
     color: var(--gr-text-body) !important;
 }
 
+.text-body-link {
+    color: var(--gr-text-body) !important;
+    
+    &:hover {
+        color: var(--bs-primary-hover) !important;
+    }
+}
+
 .text-bold {
     font-weight: 700;
-}
-
-.text-bg-dark {
-    color: var(--gr-text-body) !important;
-    background-color: var(--gr-bg-default) !important;
-}
-
-.text-bg-darker {
-    color: var(--gr-text-body) !important;
-    background-color: var(--gr-bg-darker) !important;
 }
 
 .text-bg-lighter {
@@ -44,19 +42,24 @@
     background-color: var(--bs-secondary) !important;
 }
 
-.text-lead {
-    color: rgba(255, 255, 255, 0.8) !important;
-    font-size: 30px !important;
+.text-lead-lg {
+    font-size: 28px !important;
 }
-
 
 .text-paragraph {
     color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.text-lead {
+    font-size: 24px !important;
+}
+
+.text-legend {
     font-size: 24px !important;
 }
 
 .text-gradient {
-    background: linear-gradient(
+    background: -webkit-linear-gradient(
         104.19deg,
         #ff0089 6.17%,
         #9765d6 29.4%,
@@ -64,7 +67,7 @@
         #00efff 67.85%,
         #ffffff 83.07%
     ) !important;
-    background-clip: text !important;
+    -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
 }
 
@@ -90,7 +93,7 @@
 .btn {
     --bs-btn-padding-x: 24px;
     --bs-btn-padding-y: 0;
-    --bs-btn-line-height: 48px;
+    --bs-btn-line-height: 42px;
     --bs-btn-border-width: 2px;
     --bs-btn-border-radius: 6px;
     --bs-btn-font-size: 0.95rem;
@@ -255,16 +258,15 @@
 * FORMS
 *****************************************************************************/
 .form-control {
-    height: 52px;
+    padding: .6rem .75rem;
     color: var(--gr-text-body);
     background-color: var(--gr-bg-darker);
     border: 2px solid var(--bs-border-light-color);
     border-radius: 6px;
-    font-size: 0.95rem;
 
     &:focus {
         color: var(--gr-text-body);
-        border-color: var(--bs-secondary-hover);
+        border-color: var(--bs-primary-hover);
         background-color: var(--gr-bg-darker);
         box-shadow: none;
     }
@@ -379,11 +381,12 @@
     --bs-card-title-spacer-y: 2rem;
     --bs-card-border-width: 0px;
     --bs-card-border-radius: 6px;
-    --bs-card-box-shadow: ;
+    --bs-card-box-shadow: var(--gr-bg-darker);
+    --bs-card-bg: var(--gr-bg-light);
 
     @media (min-width: 360px) {
-        --bs-card-spacer-y: 2.5rem;
-        --bs-card-spacer-x: 2rem;
+        --bs-card-spacer-y: 1.8rem;
+        --bs-card-spacer-x: 1.6rem;
     }
 }
 

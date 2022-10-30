@@ -1,0 +1,29 @@
+{
+    "items": [
+        {
+            "complete": true,
+            "title": "Introdução",
+            "description": "Descrição"
+        },
+        {
+            "complete": true,
+            "title": "Quem pesquisa amigo é",
+            "description": "Aprenda como e onde pesquisar para desencalhar durando seu aprendizado."
+        },
+        {
+            "complete": false,
+            "title": "Versionamento com Git & Github",
+            "description": "Como gerenciar seus arquivos durante o desenvolvimento de uma aplicação."
+        },
+        {
+            "complete": false,
+            "title": "HTML",
+            "description": "Pensando como um desenvolvedor de software."
+        },
+        {
+            "complete": false,
+            "title": "CSS",
+            "description": "Pensando como um desenvolvedor de software."
+        }
+    ]
+}

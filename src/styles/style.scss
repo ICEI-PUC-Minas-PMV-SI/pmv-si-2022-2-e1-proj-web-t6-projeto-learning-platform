@@ -8,6 +8,7 @@ html,
 body {
     height: 100%;
     color: var(--gr-text-body);
+    font-size: 16px;
 }
 
 h6,
@@ -53,8 +54,10 @@ header {
         }
     }
 
-    .btn {
-        --bs-btn-line-height: 36px;
+    @include media-breakpoint-up(xl) {
+        .btn {
+            --bs-btn-line-height: 36px;
+        }
     }
 
     // Muda a posição do menu mobile para a direite em telas lg
@@ -66,8 +69,22 @@ header {
 }
 
 footer {
-    padding: 0px 24px;
+    padding: 0 24px;
     height: 64px;
+}
+
+/*****************************************************************************
+* MMBILE MENU
+*****************************************************************************/
+.gr-mobile-menu {
+    &.show,
+    &.showing {
+        background-color: var(--gr-bg-darker);
+
+        @include media-breakpoint-down(xl) {
+            font-size: 140% !important;
+        }   
+    }
 }
 
 /*******************************************************************************
@@ -79,9 +96,10 @@ footer {
 * AUTHENTICATION BOXES (LOGIN, CADASTRO, RECUPERAÇÃO, etc...)
 *******************************************************************************/
 .auth-container {
-    width: 420px;
-    padding-top: 3.5rem;
+    max-width: 420px;
+    padding-top: 6rem;
     padding-bottom: 3.5rem;
+    align-self: center;
 }
 
 /*******************************************************************************
@@ -103,4 +121,56 @@ footer {
     }
 }
 
+.gr-study-plan {
+    .gr-plan-progress {
+        div:first-child {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 4px solid var(--bs-border-light-color);
+            color: white;
+            padding: 3px 0 0 1px;
+        }
 
+        div:last-child {
+            width: 4px;
+            background: var(--bs-border-light-color);
+        }
+    }
+
+    .gr-theme-frontend {
+        h1 {
+            color: var(--gr-frontend-color);            
+        }
+
+        .gr-plan-progress {
+            &.complete {
+                div:first-child {
+                    border-color: var(--gr-frontend-color);
+                }
+
+                div:last-child {
+                    background: var(--gr-frontend-color);
+                }
+            }
+        }
+    }
+    
+    &.gr-theme-backend {
+        h1 {
+            color: var(--gr-backend-color);
+        }
+        
+        .gr-plan-progress {
+            &.complete {
+                div:first-child {
+                    border-color: var(--gr-backend-color);
+                }
+
+                div:last-child {
+                    background: var(--gr-backend-color);
+                }
+            }
+        }
+    }
+}

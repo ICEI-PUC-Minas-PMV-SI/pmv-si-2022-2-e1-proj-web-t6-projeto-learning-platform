@@ -75,9 +75,9 @@
         </div>
 
         <!-- Menu Component -->
-        <div class="offcanvas-xl offcanvas-start" tabindex="-1" id="gr-navbar-collapse">
+        <div class="gr-mobile-menu offcanvas-xl offcanvas-start" tabindex="-1" id="gr-navbar-collapse">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Responsive offcanvas</h5>
+                <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">{{meta.name}}</h5>
                 <button
                     type="button"
                     class="btn-close"
@@ -87,7 +87,7 @@
                 ></button>
             </div>
             <div class="offcanvas-body">
-                <ul class="navbar-nav me-3 align-items-center">
+                <ul class="navbar-nav me-3">
                     {{#each menu.items}}
                         <li class="nav-item">
                             <a href="{{this.url}}" title="{{this.title}}" class="nav-link">
@@ -97,11 +97,13 @@
                     {{/each}}
                 </ul>
 
-                <a href="{{menu.login.url}}" class="btn btn-outline-secondary border-dashed me-2">
+                <hr class="display-xl-none my-4">
+
+                <a href="{{menu.login.url}}" class="btn btn-outline-secondary border-dashed me-0 me-xl-2 mb-3 mb-xl-0 d-block d-xl-inline">
                     {{menu.login.title}}
                 </a>
 
-                <a href="{{menu.cadastro.url}}" class="btn btn-outline-primary">
+                <a href="{{menu.cadastro.url}}" class="btn btn-outline-primary d-block d-xl-inline">
                     {{menu.cadastro.title}}
                     <i class="bi bi-plus-lg"></i>
                 </a>
