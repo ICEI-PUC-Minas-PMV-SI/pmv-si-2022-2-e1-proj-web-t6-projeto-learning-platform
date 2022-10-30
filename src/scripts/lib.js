@@ -141,3 +141,20 @@ window.scrolToSection = function () {
         });
     });
 };
+
+window.changeMenu = function(){
+    const triggers = document.querySelectorAll(".btn-nav-section button");
+    // para cada botão encontrado
+    triggers.forEach((trigger) => {
+        // Adicione o evento click
+        trigger.addEventListener("click", (e) => {
+            // Quando clicado:
+            // Previna o comportamento padrão do elemto
+            e.preventDefault();
+            // Pare a propagação do evento na arvore do html
+            e.stopPropagation();
+            // Encontra o elemento 'section' pai do botão clicado
+            
+        });
+    });
+}
