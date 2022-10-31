@@ -15,6 +15,9 @@
     --bs-primary-rgb: 56, 185, 225;
     --bs-secondary-rgb: 56, 56, 56;
 
+    --bs-link-color: var(--bs-primary);
+    --bs-link-hover-color: var(--bs-primary-hover);
+
     --bs-border-color: #3d3d3d !important;
     --bs-border-light-color: #555555 !important;
 
@@ -22,10 +25,10 @@
     --gr-text-title: #{shade(#ffffff, 5%)};
     --gr-text-muted: rgba(255, 255, 255, 0.3);
 
+    --gr-bg-light: #3d3d3d !important;
     --gr-bg-default: #292929 !important;
     --gr-bg-secondary: #1b1b1b;
     --gr-bg-darker: #1f1f1f;
-    --gr-bg-light: #3D3D3D;
 
     --gr-frontend-color: #ca3d89;
     --gr-frontend-color-hover: #ff5bb4;
@@ -34,5 +37,4 @@
     --gr-backend-color-hover: #a257ff;
 
     --gr-box-primary-hover: #2ee6f3af;
-    
 }

@@ -1,0 +1,52 @@
+{
+    "id": "nodejs",
+    "title": "Node JS",
+    "description": "Node é um framework para criação de servidores web utilizando Javascript.",
+    "content": [
+        {
+            "complete": true,
+            "title": "Oque é e pra que serve o Node Js",
+            "description": "O Node Js é hoje um dos frameworks mais utilizados para criação de servidores para aplicações web.."
+        },
+        {
+            "complete": false,
+            "title": "Instalando o Node Js",
+            "description": "Aprenda como instalar o Node Js em sua máquina local."
+        },
+        {
+            "complete": false,
+            "title": "NPM",
+            "description": "NPM é o sidekick do Node Js, um genrênciador de pacotes poderoso e fácil de usar."
+        },
+        {
+            "complete": false,
+            "title": "Módulos",
+            "description": "O conceitp mais importante de Node são módulos, aprenda o que são, como criar e utilizar módulos em Node Js."
+        },
+        {
+            "complete": false,
+            "title": "Seu primeiro script em Node JS",
+            "description": "Com Node é possível rodar scripts simples para pequenas automações ou task, aprenda a criar seu primeiro script."
+        },
+        {
+            "complete": false,
+            "title": "Manipulação de arquivos",
+            "description": "Como Node é possível manipular aquivos na máquida do usuário, crie, atualize e remove seu primeiro arquivo utilizando o Node Js."
+        },
+        {
+            "complete": false,
+            "title": "Servidores HTTP",
+            "description": "Aprenda a criar um sevidor de arquivos HTTP rápidamente com Node JS."
+        },
+        {
+            "complete": false,
+            "title": "Streams",
+            "description": "Stream é uma maneira eficiente de carregar informação de várias fontes, entenda como funciona."
+        },
+        {
+            "complete": false,
+            "title": "Criptographia",
+            "description": "Segurança de dados é uma das mairoes procupações de empresas hoje, aprenda como criptografar dados com Node Js."
+        }
+    ]
+}

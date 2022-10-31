@@ -1,0 +1,164 @@
+@-webkit-keyframes TextGradientAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+/* @-moz-keyframes TextGradientAnimation {
+    0%{background-size: 100% 100%; background-position: 100% 0; }
+    50%{background-size: 250% 250%; background-position: 250% 250%; }
+    100%{background-size: 100% 100%; background-position: 100% 0; }
+}
+@-o-keyframes TextGradientAnimation {
+    0%{background-size: 100% 100%; background-position: 100% 0; }
+    50%{background-size: 250% 250%; background-position: 250% 250%;; }
+    100%{background-size: 100% 100%; background-position: 100% 0; }
+}
+@keyframes TextGradientAnimation {
+    0%{background-size: 100% 100%; background-position: 100% 0; }
+    50%{background-size: 250% 250%; background-position: 250% 250%; }
+    100%{background-size: 100% 100%; background-position: 100% 0; }
+} */
+
+@-webkit-keyframes GradientRadialAnimation {
+    0% {
+        background-size: 100% 100%;
+        background-position: 100% 0;
+        opacity: 0.3;
+    }
+    50% {
+        background-size: 250% 250%;
+        background-position: 250% 250%;
+        opacity: 0.7;
+    }
+    100% {
+        background-size: 100% 100%;
+        background-position: 100% 0;
+        opacity: 0.3;
+    }
+}
+@-moz-keyframes GradientRadialAnimation {
+    0% {
+        background-size: 100% 100%;
+        background-position: 100% 0;
+        opacity: 0.3;
+    }
+    50% {
+        background-size: 250% 250%;
+        background-position: 250% 250%;
+        opacity: 0.7;
+    }
+    100% {
+        background-size: 100% 100%;
+        background-position: 100% 0;
+        opacity: 0.3;
+    }
+}
+@-o-keyframes GradientRadialAnimation {
+    0% {
+        background-size: 100% 100%;
+        background-position: 100% 0;
+        opacity: 0.3;
+    }
+    50% {
+        background-size: 250% 250%;
+        background-position: 250% 250%;
+        opacity: 0.7;
+    }
+    100% {
+        background-size: 100% 100%;
+        background-position: 100% 0;
+        opacity: 0.3;
+    }
+}
+@keyframes GradientRadialAnimation {
+    0% {
+        background-size: 100% 100%;
+        background-position: 100% 0;
+        opacity: 0.3;
+    }
+    50% {
+        background-size: 250% 250%;
+        background-position: 250% 250%;
+        opacity: 0.7;
+    }
+    100% {
+        background-size: 100% 100%;
+        background-position: 100% 0;
+        opacity: 0.3;
+    }
+}
+
+@-webkit-keyframes GradientRadialAnimation2 {
+    0% {
+        background-size: 100% 100%;
+        background-position: 0 0;
+        opacity: 0.7;
+    }
+    50% {
+        background-size: 200% 200%;
+        background-position: 100% 100%;
+        opacity: 0.3;
+    }
+    100% {
+        background-size: 100% 100%;
+        background-position: 0 0;
+        opacity: 0.7;
+    }
+}
+@-moz-keyframes GradientRadialAnimation2 {
+    0% {
+        background-size: 100% 100%;
+        background-position: 0 0;
+        opacity: 0.7;
+    }
+    50% {
+        background-size: 200% 200%;
+        background-position: 100% 100%;
+        opacity: 0.3;
+    }
+    100% {
+        background-size: 100% 100%;
+        background-position: 0 0;
+        opacity: 0.7;
+    }
+}
+@-o-keyframes GradientRadialAnimation2 {
+    0% {
+        background-size: 100% 100%;
+        background-position: 0 0;
+        opacity: 0.7;
+    }
+    50% {
+        background-size: 200% 200%;
+        background-position: 100% 100%;
+        opacity: 0.3;
+    }
+    100% {
+        background-size: 100% 100%;
+        background-position: 0 0;
+        opacity: 0.7;
+    }
+}
+@keyframes GradientRadialAnimation2 {
+    0% {
+        background-size: 100% 100%;
+        background-position: 0 0;
+        opacity: 0.7;
+    }
+    50% {
+        background-size: 200% 200%;
+        background-position: 100% 100%;
+        opacity: 0.3;
+    }
+    100% {
+        background-size: 100% 100%;
+        background-position: 0 0;
+        opacity: 0.7;
+    }
+}

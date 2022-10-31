@@ -25,18 +25,16 @@
     color: var(--gr-text-body) !important;
 }
 
+.text-body-link {
+    color: var(--gr-text-body) !important;
+
+    &:hover {
+        color: var(--bs-primary-hover) !important;
+    }
+}
+
 .text-bold {
     font-weight: 700;
-}
-
-.text-bg-dark {
-    color: var(--gr-text-body) !important;
-    background-color: var(--gr-bg-default) !important;
-}
-
-.text-bg-darker {
-    color: var(--gr-text-body) !important;
-    background-color: var(--gr-bg-darker) !important;
 }
 
 .text-bg-lighter {
@@ -44,31 +42,21 @@
     background-color: var(--bs-secondary) !important;
 }
 
-.text-lead {
-    color: rgba(255, 255, 255, 0.8) !important;
-    font-size: 30px !important;
+.text-lead-lg {
+    font-size: 20px !important;
 }
-
 
 .text-paragraph {
     color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.text-lead {
     font-size: 24px !important;
 }
 
-.text-gradient {
-    background: linear-gradient(
-        104.19deg,
-        #ff0089 6.17%,
-        #9765d6 29.4%,
-        #2f74da 48.62%,
-        #00efff 67.85%,
-        #ffffff 83.07%
-    ) !important;
-    background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
+.text-legend {
+    font-size: 24px !important;
 }
-
-
 
 /*****************************************************************************
 * BORDER
@@ -90,7 +78,7 @@
 .btn {
     --bs-btn-padding-x: 24px;
     --bs-btn-padding-y: 0;
-    --bs-btn-line-height: 48px;
+    --bs-btn-line-height: 42px;
     --bs-btn-border-width: 2px;
     --bs-btn-border-radius: 6px;
     --bs-btn-font-size: 0.95rem;
@@ -215,25 +203,20 @@
             0px 0 10px var(--gr-backend-color-hover);
     }
 }
-.btn-nav-section{
-    border:none ;
+.btn-nav-section {
+    border: none;
     border-bottom: 2px;
     --bs-btn-color: red;
     --bs-btn-font-family: var(--gr-text-body);
     --bs-btn-active-color: yellow;
 
-    &:active{
+    &:active {
         border: none;
-        
     }
-    &:hover{
+    &:hover {
         --bs-btn-color: green;
     }
-
-    
 }
-        
-
 
 .gr-section-nav-button {
     transition: 300ms ease-in-out;
@@ -255,16 +238,15 @@
 * FORMS
 *****************************************************************************/
 .form-control {
-    height: 52px;
+    padding: 0.6rem 0.75rem;
     color: var(--gr-text-body);
     background-color: var(--gr-bg-darker);
     border: 2px solid var(--bs-border-light-color);
     border-radius: 6px;
-    font-size: 0.95rem;
 
     &:focus {
         color: var(--gr-text-body);
-        border-color: var(--bs-secondary-hover);
+        border-color: var(--bs-primary-hover);
         background-color: var(--gr-bg-darker);
         box-shadow: none;
     }
@@ -275,49 +257,49 @@
     color: var(--gr-text-muted);
 }
 
-.gr-form-filter{
+.gr-form-filter {
     height: 32px;
     color: var(--gr-text-body);
     border: none;
     background-color: transparent;
-    border-bottom: 2px solid #3D3D3D !important;
-    
+    border-bottom: 2px solid #3d3d3d !important;
+
     &:focus {
         border: none;
         color: var(--gr-text-body);
         border-color: var(--bs-secondary-hover);
-        
+
         box-shadow: none;
     }
 }
-.gr-plan{
-    border-bottom: 2px solid #3D3D3D;
+.gr-plan {
+    border-bottom: 2px solid #3d3d3d;
 }
-.gr-plan-card{
+.gr-plan-card {
     margin-top: 32px;
     margin-bottom: 32px;
-    
-    h4{
+
+    h4 {
         font-size: 32px;
     }
-    .percent{
-        border-left: 2px solid #3D3D3D !important;
-        border-right: 2px solid #3D3D3D !important;
+    .percent {
+        border-left: 2px solid #3d3d3d !important;
+        border-right: 2px solid #3d3d3d !important;
     }
-    .gr-variable-title{
-        color: #CA3D89 !important;
+    .gr-variable-title {
+        color: #ca3d89 !important;
     }
-    .text-lead{
+    .text-lead {
         font-size: 24px !important;
         font-weight: 400 !important;
         line-height: 147.5% !important;
     }
-    .text-legend{
+    .text-legend {
         font-size: 20px !important;
         line-height: 130% !important;
         color: rgba(255, 255, 255, 0.3) !important;
     }
-    .btn{
+    .btn {
         --bs-btn-color: #{shade(#ffffff, 20%)};
         --bs-btn-bg: transparent;
         --bs-btn-border-color: var(--bs-border-light-color);
@@ -331,30 +313,30 @@
     }
 }
 
-.gr-video-list{
+.gr-video-list {
     flex-direction: column !important;
     gap: 32px !important;
-    .text-paragraph{
+    .text-paragraph {
         font-size: 18px !important;
         margin: 0px !important;
     }
-    .text-small{
+    .text-small {
         margin: 0px !important;
         font-size: 14px !important;
         color: rgba(255, 255, 255, 0.8) !important;
     }
 }
 
-.gr-note-list{
-    p{
+.gr-note-list {
+    p {
         font-size: 18px;
     }
 }
 
-.gr-search{
+.gr-search {
     padding-top: 48px;
     padding-bottom: 22px;
-    .dropdown-menu{
+    .dropdown-menu {
         --bs-dropdown-link-color: rgba(255, 255, 255, 0.3);
         --bs-dropdown-bg: var(--gr-bg-darker);
         --bs-dropdown-border-radius: 6px;
@@ -369,7 +351,6 @@
     }
 }
 
-
 /*****************************************************************************
 * CARDS
 *****************************************************************************/
@@ -379,11 +360,12 @@
     --bs-card-title-spacer-y: 2rem;
     --bs-card-border-width: 0px;
     --bs-card-border-radius: 6px;
-    --bs-card-box-shadow: ;
+    --bs-card-box-shadow: #000;
+    --bs-card-bg: var(--gr-bg-light);
 
     @media (min-width: 360px) {
-        --bs-card-spacer-y: 2.5rem;
-        --bs-card-spacer-x: 2rem;
+        --bs-card-spacer-y: 1.8rem;
+        --bs-card-spacer-x: 1.6rem;
     }
 }
 
@@ -400,7 +382,6 @@
     border: var(--bs-spinner-border-width) dotted white;
 }
 
-
 /*****************************************************************************
 /* IMAGE MASKS
 /*****************************************************************************/
@@ -413,16 +394,15 @@
 * PROFILE CONTAINER
 *****************************************************************************/
 
-.gr-profile-header{
+.gr-profile-header {
     top: 0px;
     background-color: var(--gr-bg-darker);
 }
 
-.gr-profile-container{
+.gr-profile-container {
     max-width: 1192px;
 }
 
 .gr-menu {
     background-color: var(--gr-bg-light);
 }
-

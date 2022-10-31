@@ -1,0 +1,12 @@
+{
+    "extname": "hbs",
+    "source": "src",
+    "partials": "partials/**/*.hbs",
+    "layouts": "layouts/**/*.hbs",
+    "helpers": "helpers/**/*.js",
+    "data": "data/**/*.{json,js}",
+    "views": "pages",
+    "styles": "styles",
+    "styleMode": "scss",
+    "fakeDb": "db"
+}

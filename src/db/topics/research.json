@@ -1,0 +1,17 @@
+{
+    "id": "research",
+    "title": "Quem pesquisa amigo é",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla facilisi morbi tempus iaculis urna id volutpat lacus laoreet. Euismod elementum nisi quis eleifend.",
+    "content": [
+        {
+            "complete": true,
+            "title": "Seu melhor amigo Google",
+            "description": "Em programação saber pesquisar é uma skill muito importante no seu dia a dia de trabalho, o Google é seu amigo."
+        },
+        {
+            "complete": true,
+            "title": "E o amigo dele Stack Overflow",
+            "description": "Imagina se ouvesse um Goggle apenas para assuntos técnicos, já existe, e seu nome é STack Overflow."
+        }
+    ]
+}

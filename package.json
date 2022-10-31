@@ -6,8 +6,7 @@
         "doc": "docs"
     },
     "scripts": {
-        "start": "parcel ./src/index.html ./src/pages/**/*.html ./src/styles/style.scss ./src/scripts/*.js --open --no-source-maps --public-url /",
-        "build": "parcel build ./src/index.html ./src/pages/**/*.html ./src/styles/style.scss ./src/scripts/*.js --no-source-maps --public-url / --no-optimize --no-content-hash --no-optimize --dist-dir build",
+        "start": "hotbars serve",
         "format": "prettier --write ."
     },
     "repository": {
@@ -21,15 +20,8 @@
     },
     "homepage": "https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2022-2-e1-proj-web-t6-projeto-learning-platform#readme",
     "devDependencies": {
-        "@jmilanes/parcel-transformer-handlebars-revamped": "^1.0.0",
-        "@parcel/transformer-sass": "^2.7.0",
-        "parcel": "^2.7.0",
-        "parcel-reporter-static-files-copy": "^1.4.0",
+        "@jmilanes/hotbars": "^1.3.1",
         "prettier": "^2.7.1",
         "sass": "^1.55.0"
-    },
-    "staticFiles": {
-        "staticPath": "src/public",
-        "staticOutPath": "public"
     }
 }
