@@ -1,0 +1,37 @@
+{
+    "id": "css",
+    "title": "CSS 3",
+    "description": "Aprenda o que é CSS e como utilizar para aplicar estilos a páginas html.",
+    "content": [
+        {
+            "complete": true,
+            "title": "Criando seu primeiro arquivo de estilos",
+            "description": "Estilos podem ser aplicados de varias maneiras, nesta lição você irá aprender a maneira correta de fazer."
+        },
+        {
+            "complete": false,
+            "title": "Seletores básicos",
+            "description": "CSS é extremamente extenso, mas alguns seletores são commumente mais utilizados do que outros."
+        },
+        {
+            "complete": false,
+            "title": "Fontes",
+            "description": "Tipografia é uma das melhores maneiras de dar identidade a uma página, aprenda como utilizar Fontes."
+        },
+        {
+            "complete": false,
+            "title": "Imagens & Backgrounds",
+            "description": "Imagens e gravuras dão vida a páginas html, aprenda como utilizar imagens em seus projetos."
+        },
+        {
+            "complete": false,
+            "title": "Flex",
+            "description": "Apenda as propriedades de flex e quando elas devem ser utilizadas."
+        },
+        {
+            "complete": false,
+            "title": "Pseudo Selectors",
+            "description": "O CSS possui uma série de seletores especiais utilizados para controlar estados e aplicar estilos."
+        }
+    ]
+}

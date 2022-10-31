@@ -1,4 +1,5 @@
 @import "./breakpoints";
+@import "./animations";
 @import "./mixins";
 @import "./variables";
 @import "./overwrites";
@@ -83,7 +84,7 @@ footer {
 
         @include media-breakpoint-down(xl) {
             font-size: 140% !important;
-        }   
+        }
     }
 }
 
@@ -96,10 +97,18 @@ footer {
 * AUTHENTICATION BOXES (LOGIN, CADASTRO, RECUPERAÇÃO, etc...)
 *******************************************************************************/
 .auth-container {
-    max-width: 420px;
+    width: 375px;
     padding-top: 6rem;
     padding-bottom: 3.5rem;
     align-self: center;
+
+    @include media-breakpoint-up(md) {
+        width: 400px;
+    }
+
+    @include media-breakpoint-up(xl) {
+        width: 420px;
+    }
 }
 
 /*******************************************************************************
@@ -111,6 +120,7 @@ footer {
 * ABOUT STYLES
 *******************************************************************************/
 @import "./components/about";
+
 /*******************************************************************************
 * PLANO DE ESTUDOS STYLES
 *******************************************************************************/
@@ -140,7 +150,7 @@ footer {
 
     .gr-theme-frontend {
         h1 {
-            color: var(--gr-frontend-color);            
+            color: var(--gr-frontend-color);
         }
 
         .gr-plan-progress {
@@ -155,12 +165,12 @@ footer {
             }
         }
     }
-    
+
     &.gr-theme-backend {
         h1 {
             color: var(--gr-backend-color);
         }
-        
+
         .gr-plan-progress {
             &.complete {
                 div:first-child {

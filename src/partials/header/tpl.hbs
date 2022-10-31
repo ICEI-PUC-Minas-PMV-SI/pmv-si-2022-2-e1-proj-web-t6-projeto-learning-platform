@@ -75,7 +75,11 @@
         </div>
 
         <!-- Menu Component -->
-        <div class="gr-mobile-menu offcanvas-xl offcanvas-start" tabindex="-1" id="gr-navbar-collapse">
+        <div
+            class="gr-mobile-menu offcanvas-xl offcanvas-start"
+            tabindex="-1"
+            id="gr-navbar-collapse"
+        >
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">{{meta.name}}</h5>
                 <button
@@ -97,9 +101,12 @@
                     {{/each}}
                 </ul>
 
-                <hr class="display-xl-none my-4">
+                <hr class="display-xl-none my-4" />
 
-                <a href="{{menu.login.url}}" class="btn btn-outline-secondary border-dashed me-0 me-xl-2 mb-3 mb-xl-0 d-block d-xl-inline">
+                <a
+                    href="{{menu.login.url}}"
+                    class="btn btn-outline-secondary border-dashed me-0 me-xl-2 mb-3 mb-xl-0 d-block d-xl-inline"
+                >
                     {{menu.login.title}}
                 </a>
 

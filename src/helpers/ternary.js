@@ -1,6 +1,3 @@
-
-
-
 /**
  * Helper usado para acessar dados em qualquer context
  * sem precisar mudar o cominho do context  com '../',

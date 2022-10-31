@@ -31,16 +31,23 @@
 *******************************************************/
 
 .bg-gradient {
-    background: linear-gradient(
-        103.3deg,
-        #ca3d89 1.28%,
-        #9349ef 34.16%,
-        #6c6de9 49.68%,
-        #4c8ae5 62.28%,
-        #2ee5f1 100%
+    background-image: linear-gradient(91deg, #ca3d89, #9824de, #1d69bc) !important;
+}
+
+.text-gradient {
+    animation: TextGradientAnimation 15s ease infinite;
+    background-image: -webkit-linear-gradient(
+        0deg,
+        #ff0089 10%,
+        #9765d6 35%,
+        #00efff 50%,
+        #9765d6 75%,
+        #ff0089 90%
     ) !important;
-
-
+    background-size: 150% 150%;
+    background-position: 0 0;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
 }
 
 /*******************************************************
@@ -57,15 +64,15 @@
     }
 }
 
-.password-confirm{
+.password-confirm {
     width: 612px;
 
-    h1{
+    h1 {
         font-size: 54px;
         color: var(--bs-primary);
     }
-    
-    p{
+
+    p {
         font-size: 24px;
     }
 }
@@ -75,7 +82,6 @@
 
     span {
         color: var(--gr-frontend-color);
-
     }
 
     .title-plan {

@@ -8,7 +8,8 @@
     }
 
     h1 {
-        font-size: 46px;
+        font-size: 52px;
+        line-height: 1;
     }
 
     h2 {
@@ -37,7 +38,7 @@
         }
 
         .text-lead-lg {
-            font-size: 24px !important;
+            font-size: 20px !important;
         }
     }
 
@@ -55,7 +56,7 @@
         }
 
         .text-lead-lg {
-            font-size: 28px !important;
+            font-size: 24px !important;
         }
 
         .gr-section-sing-up {
@@ -79,7 +80,7 @@
         }
 
         .text-lead-lg {
-            font-size: 30px !important;
+            font-size: 26px !important;
         }
 
         .gr-section-sing-up {
@@ -87,6 +88,55 @@
                 max-width: 290px !important;
             }
         }
+    }
+}
+
+.gr-section-how-it-works {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+
+    .bg-gradient-liean,
+    .bg-gradient-radial,
+    .bg-gradient-radial-2 {
+        z-index: -100;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .bg-gradient-radial {
+        -webkit-animation: GradientRadialAnimation 30s ease infinite;
+        -moz-animation: GradientRadialAnimation 30s ease infinite;
+        -o-animation: GradientRadialAnimation 30s ease infinite;
+        animation: GradientRadialAnimation 30s ease infinite;
+        background-size: 100% 100%;
+        background-position: 100% 0;
+        background-image: radial-gradient(
+            circle,
+            rgb(0, 231, 255) 0%,
+            rgba(183, 6, 255, 1) 50%,
+            rgba(255, 0, 207, 1) 100%
+        );
+        opacity: 0.3;
+    }
+
+    .bg-gradient-radial-2 {
+        -webkit-animation: GradientRadialAnimation2 50s ease infinite;
+        -moz-animation: GradientRadialAnimation2 50s ease infinite;
+        -o-animation: GradientRadialAnimation2 50s ease infinite;
+        animation: GradientRadialAnimation2 50s ease infinite;
+        background-size: 100% 100%;
+        background-position: 0 0;
+        background-image: radial-gradient(
+            circle,
+            rgba(255, 0, 207, 1) 0%,
+            rgb(16, 133, 206) 54%,
+            rgba(183, 6, 255, 1) 100%
+        );
+        opacity: 0.7;
     }
 }
 

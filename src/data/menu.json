@@ -6,11 +6,10 @@
     ],
     "login": {
         "title": "Entrar",
-        "url": "/login"
+        "url": "/auth/login"
     },
     "cadastro": {
         "title": "Cadastre-se",
-        "url": "/cadastro"
+        "url": "/auth/cadastro"
     }
 }
-

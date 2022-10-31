@@ -6,9 +6,7 @@
         "doc": "docs"
     },
     "scripts": {
-        "dev": "hotbars serve --logLevel 1",
-        "start": "parcel ./src/index.html ./src/pages/**/*.html ./src/styles/style.scss ./src/scripts/*.js --open --no-source-maps --public-url /",
-        "build": "parcel build ./src/index.html ./src/pages/**/*.html ./src/styles/style.scss ./src/scripts/*.js --no-source-maps --public-url / --no-optimize --no-content-hash --no-optimize --dist-dir build",
+        "start": "hotbars serve",
         "format": "prettier --write ."
     },
     "repository": {

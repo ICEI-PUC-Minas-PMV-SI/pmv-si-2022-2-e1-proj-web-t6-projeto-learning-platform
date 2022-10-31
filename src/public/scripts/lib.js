@@ -142,7 +142,7 @@ window.scrolToSection = function () {
     });
 };
 
-window.changeMenu = function(){
+window.changeMenu = function () {
     const triggers = document.querySelectorAll(".btn-nav-section button");
     // para cada botão encontrado
     triggers.forEach((trigger) => {
@@ -154,7 +154,6 @@ window.changeMenu = function(){
             // Pare a propagação do evento na arvore do html
             e.stopPropagation();
             // Encontra o elemento 'section' pai do botão clicado
-            
         });
     });
-}
+};

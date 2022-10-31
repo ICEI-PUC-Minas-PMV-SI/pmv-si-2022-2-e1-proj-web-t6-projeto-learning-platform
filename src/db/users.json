@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Jair Mialnes",
+        "email": "jmilanes.dev@gmail.com",
+        "password": "123456789"
+    },
+    {
+        "id": 3,
+        "name": "Iago Oliveira",
+        "email": "iago.almeida@sga.pucminas.br",
+        "password": "123456789"
+    },
+    {
+        "id": 4,
+        "name": "Gabriel Janot",
+        "email": "gabriel.penchel@sga.pucminas.br",
+        "password": "123456789"
+    },
+    {
+        "id": 2,
+        "name": "Abel Leony",
+        "email": "abel.leony@sga.pucminas.br",
+        "password": "123456789"
+    }
+]

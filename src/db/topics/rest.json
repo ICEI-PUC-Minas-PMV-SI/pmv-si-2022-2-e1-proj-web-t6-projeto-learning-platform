@@ -1,0 +1,32 @@
+{
+    "id": "rest",
+    "title": "REST Apis",
+    "description": "Api's são extremamente importantes no desenvolvimento de aplicações web, aprenda o que são e como criar a sua.",
+    "content": [
+        {
+            "complete": true,
+            "title": "REST",
+            "description": "O que significa e para que serve."
+        },
+        {
+            "complete": false,
+            "title": "Protocolo HTTP",
+            "description": "O protocolo http é o padrão na comunicação entre client/servidor em aplicações web, entenda o que é e como funciona."
+        },
+        {
+            "complete": false,
+            "title": "Métodos HTTP",
+            "description": "Para cada tipo de ação a ser efetuada existe um método HTTP específico a ser utilizado."
+        },
+        {
+            "complete": false,
+            "title": "Códigos de respósta HTTP",
+            "description": "Todo requerimento enviado a um servidor HTTP, retorna com um código de resposta, entenda para que cada um deles é utilizado."
+        },
+        {
+            "complete": false,
+            "title": "REST Api's",
+            "description": "Aprenda a criar endpoints que respondem a um requerimento http."
+        }
+    ]
+}

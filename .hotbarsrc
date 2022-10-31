@@ -7,5 +7,6 @@
     "data": "data/**/*.{json,js}",
     "views": "pages",
     "styles": "styles",
-    "styleMode": "scss"
+    "styleMode": "scss",
+    "fakeDb": "db"
 }
