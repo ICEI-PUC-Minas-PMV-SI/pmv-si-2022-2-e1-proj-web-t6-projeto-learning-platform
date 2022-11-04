@@ -192,6 +192,87 @@
     --gr-box-primary-hover: #2ee6f3af;
 }
 
+html,
+body {
+    height: 100%;
+    color: var(--gr-text-body);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.4rem;
+}
+
+@media (min-width: 576px) {
+    html {
+        font-size: 72%;
+    }
+}
+@media (min-width: 768px) {
+    html {
+        font-size: 85%;
+    }
+    body {
+        font-size: 1.2rem;
+    }
+}
+@media (min-width: 992px) {
+    html {
+        font-size: 95%;
+    }
+}
+@media (min-width: 1200px) {
+    html {
+        font-size: 100%;
+    }
+    body {
+        font-size: 1.1rem;
+    }
+}
+h6,
+h5,
+h4,
+h3,
+h2,
+h1 {
+    font-family: "Bakbak One", cursive;
+    color: var(--gr-text-title);
+    line-height: 1 !important;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2.25rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+h5 {
+    font-size: 1.75rem;
+}
+
+h6 {
+    font-size: 1.5rem;
+}
+
+.lead-text {
+    font-size: 1.4rem !important;
+    font-weight: 400 !important;
+    line-height: 147.5% !important;
+}
+
 .navbar-toggler {
     border: none;
 }
@@ -231,22 +312,6 @@
 .text-bg-lighter {
     color: var(--gr-text-body) !important;
     background-color: var(--bs-secondary) !important;
-}
-
-.text-lead-lg {
-    font-size: 20px !important;
-}
-
-.text-paragraph {
-    color: rgba(255, 255, 255, 0.8) !important;
-}
-
-.text-lead {
-    font-size: 24px !important;
-}
-
-.text-legend {
-    font-size: 24px !important;
 }
 
 /*****************************************************************************
@@ -364,10 +429,14 @@
     --bs-btn-active-bg: transparent;
     --bs-btn-active-border-color: var(--gr-frontend-color);
 }
+.btn-gr-outline-frontend .div-plan-content p {
+    font-size: 24px;
+    text-align: center;
+}
 .btn-gr-outline-frontend:hover {
-    text-shadow: 0 0 21px var(--gr-frontend-color-hover);
-    box-shadow: inset 0px 0 10px var(--gr-frontend-color-hover),
-        0px 0 10px var(--gr-frontend-color-hover);
+    text-shadow: 0 0 10px var(--gr-frontend-color-hover);
+    box-shadow: inset 0 0 10px var(--gr-frontend-color-hover),
+        0 0 10px var(--gr-frontend-color-hover);
 }
 
 .btn-gr-outline-backend {
@@ -473,16 +542,6 @@
 .gr-plan-card .gr-variable-title {
     color: #ca3d89 !important;
 }
-.gr-plan-card .text-lead {
-    font-size: 24px !important;
-    font-weight: 400 !important;
-    line-height: 147.5% !important;
-}
-.gr-plan-card .text-legend {
-    font-size: 20px !important;
-    line-height: 130% !important;
-    color: rgba(255, 255, 255, 0.3) !important;
-}
 .gr-plan-card .btn {
     --bs-btn-color: #cccccc;
     --bs-btn-bg: transparent;
@@ -508,10 +567,6 @@
     margin: 0px !important;
     font-size: 14px !important;
     color: rgba(255, 255, 255, 0.8) !important;
-}
-
-.gr-note-list p {
-    font-size: 18px;
 }
 
 .gr-search {
@@ -564,18 +619,10 @@
 }
 
 /*****************************************************************************
-/* IMAGE MASKS
-/*****************************************************************************/
-.mask-img {
-    padding-left: 10px;
-    border-radius: 50%;
-}
-
-/*****************************************************************************
 * PROFILE CONTAINER
 *****************************************************************************/
 .gr-profile-header {
-    top: 0px;
+    top: 0;
     background-color: var(--gr-bg-darker);
 }
 
@@ -588,17 +635,21 @@
 }
 
 /*******************************************************
-* TEXT
+* PAGE
 *******************************************************/
+.pt-page {
+    padding-top: 6rem;
+}
+
 /*******************************************************
 * BACKGROUNDS
 *******************************************************/
 .bg-secondary {
-    background-color: var(--gr-bg-secondary);
+    background-color: var(--gr-bg-secondary) !important;
 }
 
 .bg-darker {
-    background-color: var(--gr-bg-darker);
+    background-color: var(--gr-bg-darker) !important;
 }
 
 /*******************************************************
@@ -659,72 +710,35 @@
     font-size: 24px;
 }
 
-.div-plan-content {
-    max-width: 780px;
+/*******************************************************
+* TEXT
+*******************************************************/
+.text-justify {
+    text-align: justify;
 }
-.div-plan-content span {
+
+/*******************************************************
+* CATEGORIES
+*******************************************************/
+.gr-frontend-color {
     color: var(--gr-frontend-color);
 }
-.div-plan-content .title-plan {
-    font-size: 56px;
+
+.gr-frontend-bg {
+    background-color: var(--gr-frontend-color);
 }
-.div-plan-content .describe-plan {
-    font-size: 36px;
+
+.gr-backend-color {
+    color: var(--gr-backend-color);
 }
-.div-plan-content p {
-    font-size: 24px;
-    text-align: center;
+
+.gr-backend-bg {
+    background-color: var(--gr-backend-color);
 }
 
 /*****************************************************************************
-* IMAGE MASKS
+* HEADER
 *****************************************************************************/
-.mask-img {
-    padding-left: 10px;
-    border-radius: 50%;
-}
-
-html,
-body {
-    height: 100%;
-    color: var(--gr-text-body);
-    font-size: 16px;
-}
-
-h6,
-h5,
-h4,
-h3,
-h2,
-h1 {
-    font-family: "Bakbak One", cursive;
-    color: var(--gr-text-title);
-}
-
-h1 {
-    font-size: 54px;
-}
-
-h2 {
-    font-size: 42px;
-}
-
-h3 {
-    font-size: 36px;
-}
-
-h4 {
-    font-size: 30px;
-}
-
-h5 {
-    font-size: 26px;
-}
-
-h6 {
-    font-size: 22px;
-}
-
 header {
     padding: 10px 32px 10px 12px;
 }
@@ -742,13 +756,16 @@ header .navbar-brand h1 {
     }
 }
 
+/*****************************************************************************
+* FOOTER
+*****************************************************************************/
 footer {
     padding: 0 24px;
     height: 64px;
 }
 
 /*****************************************************************************
-* MMBILE MENU
+* MOBILE MENU
 *****************************************************************************/
 .gr-mobile-menu.show,
 .gr-mobile-menu.showing {
@@ -757,70 +774,205 @@ footer {
 @media (max-width: 1199.98px) {
     .gr-mobile-menu.show,
     .gr-mobile-menu.showing {
-        font-size: 140% !important;
+        font-size: 1.4rem !important;
+    }
+}
+@media (max-width: 767.98px) {
+    .gr-mobile-menu.show,
+    .gr-mobile-menu.showing {
+        font-size: 1.6rem !important;
+    }
+}
+@media (max-width: 575.98px) {
+    .gr-mobile-menu.show,
+    .gr-mobile-menu.showing {
+        font-size: 1.8rem !important;
     }
 }
 
 /*******************************************************************************
 * MAIN SEARCH
 *******************************************************************************/
-header:has(.gr-main-search.gr-opened) .navbar-brand,
-header:has(.gr-main-search.gr-opened) .bd-navbar-toggle {
+header:has(.gr-search-bar.gr-opened) .navbar-brand,
+header:has(.gr-search-bar.gr-opened) .bd-navbar-toggle {
     display: none;
 }
 
-.gr-main-search {
+.gr-search-bar {
     position: relative;
 }
-.gr-main-search > div {
+.gr-search-bar > div:first-child {
     max-width: 580px;
 }
-.gr-main-search form:has(.form-control:focus) .btn {
+.gr-search-bar form:has(.form-control:focus) .btn {
     border-color: var(--bs-secondary-hover) !important;
     background-color: var(--bs-secondary-hover) !important;
     color: var(--bs-primary-hover);
 }
-.gr-main-search form .form-control {
+.gr-search-bar form .form-control {
     height: 40px;
     border-width: 0;
 }
 @media (max-width: 767.98px) {
-    .gr-main-search form .btn {
+    .gr-search-bar form .btn {
         background-color: transparent !important;
         border: 0;
     }
 }
-.gr-main-search .btn {
-    line-height: 40px;
+.gr-search-bar .gr-search-bar-explore-btn.gr-active {
+    height: 50px !important;
+    margin-bottom: -10px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-color: var(--gr-bg-darker);
+    background-color: var(--gr-bg-darker);
+}
+.gr-search-bar .form-control,
+.gr-search-bar .gr-search-bar-back-btn,
+.gr-search-bar .gr-search-bar-explore-btn {
+    display: none;
+}
+.gr-search-bar > div:first-child .btn {
+    line-height: 36px;
     height: 40px;
     padding: 0 12px;
 }
-.gr-main-search > div > .btn,
-.gr-main-search .dropdown,
-.gr-main-search .form-control {
-    display: none;
-}
-.gr-main-search.gr-opened {
+.gr-search-bar.gr-opened {
     flex: 1;
 }
-.gr-main-search.gr-opened > div {
+.gr-search-bar.gr-opened > div {
     max-width: 100%;
 }
-.gr-main-search.gr-opened > div > .btn,
-.gr-main-search.gr-opened .dropdown,
-.gr-main-search.gr-opened .form-control {
+.gr-search-bar.gr-opened .form-control,
+.gr-search-bar.gr-opened .gr-search-bar-back-btn,
+.gr-search-bar.gr-opened .gr-search-bar-explore-btn {
     display: block;
 }
 @media (min-width: 768px) {
-    .gr-main-search {
+    .gr-search-bar {
         flex: 1;
     }
-    .gr-main-search > div > .btn {
+    .gr-search-bar .gr-search-bar-back-btn {
         display: none;
     }
-    .gr-main-search .dropdown,
-    .gr-main-search .form-control {
+    .gr-search-bar .gr-search-bar-explore-btn,
+    .gr-search-bar .form-control {
         display: block;
+    }
+}
+
+.gr-floating-menu {
+    position: absolute;
+    top: 49px;
+    left: 0;
+    right: 0;
+    transition: top 0.3s, opacity 0.3s;
+    opacity: 1;
+    z-index: 1000;
+}
+.gr-floating-menu.invisible {
+    top: 40px;
+    opacity: 0;
+}
+.gr-floating-menu.invisible > div {
+    display: none !important;
+}
+.gr-floating-menu .gr-drop-menu-container > div:first-child {
+    width: 100%;
+}
+.gr-floating-menu .gr-drop-menu-title {
+    display: block;
+}
+.gr-floating-menu .gr-drop-menu-back-btn,
+.gr-floating-menu .gr-drop-menu-sub-title {
+    display: none;
+}
+.gr-floating-menu:has(.gr-sub-category.gr-active) .gr-drop-menu-container > div:first-child {
+    display: none !important;
+}
+.gr-floating-menu:has(.gr-sub-category.gr-active) .gr-drop-menu-title {
+    display: none;
+}
+.gr-floating-menu:has(.gr-sub-category.gr-active) .gr-drop-menu-back-btn,
+.gr-floating-menu:has(.gr-sub-category.gr-active) .gr-drop-menu-sub-title {
+    display: block;
+}
+.gr-floating-menu .gr-drop-menu-container > div:last-child:not(:has(.gr-sub-category.gr-active)) {
+    display: none !important;
+}
+.gr-floating-menu .gr-sub-category a {
+    border: 2px solid var(--bs-secondary);
+    color: var(--gr-text-body);
+    text-decoration: none;
+}
+.gr-floating-menu .gr-sub-category:not(.gr-active) {
+    display: none !important;
+}
+@media (min-width: 768px) {
+    .gr-floating-menu {
+        position: absolute;
+        transition: left 0.3s, opacity 0.3s;
+        left: 0;
+        right: auto;
+    }
+    .gr-floating-menu.invisible {
+        left: -20px;
+        opacity: 0;
+    }
+    .gr-floating-menu .gr-drop-menu-container > div:first-child {
+        width: 280px;
+    }
+    .gr-floating-menu:has(.gr-sub-category.gr-active) .gr-drop-menu-container > div:first-child {
+        display: block !important;
+    }
+    .gr-floating-menu:has(.gr-sub-category.gr-active)
+        .gr-drop-menu-container
+        > div:first-child
+        > a:not(.gr-active) {
+        margin-right: 1rem;
+    }
+    .gr-floating-menu:has(.gr-sub-category.gr-active)
+        .gr-drop-menu-container
+        > div:first-child
+        > a.gr-active {
+        border-width: 3px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        margin-right: -3px;
+    }
+    .gr-floating-menu .gr-drop-menu-container > div:last-child {
+        width: 220px;
+    }
+    .gr-floating-menu .gr-sub-category {
+        position: relative;
+    }
+    .gr-floating-menu .gr-sub-category > div:first-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 3px;
+    }
+    .gr-floating-menu .gr-sub-category a {
+        border: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        color: var(--gr-text-body);
+        text-decoration: none;
+    }
+    .gr-floating-menu .gr-sub-category.frontend > div:first-child {
+        background-color: var(--gr-frontend-color-hover);
+        box-shadow: inset 0 0 10px var(--gr-frontend-color-hover),
+            0 0 10px var(--gr-frontend-color-hover);
+    }
+    .gr-floating-menu .gr-sub-category.frontend a:hover {
+        color: var(--gr-frontend-color-hover);
+    }
+    .gr-floating-menu .gr-sub-category.backend > div:first-child {
+        background-color: var(--gr-backend-color-hover);
+        box-shadow: 0 0 10px var(--gr-backend-color-hover);
+    }
+    .gr-floating-menu .gr-sub-category.backend a:hover {
+        color: var(--gr-backend-color);
     }
 }
 
@@ -848,27 +1000,78 @@ header:has(.gr-main-search.gr-opened) .bd-navbar-toggle {
 * HOME
 *******************************************************************************/
 .gr-home-page section {
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 590px;
+    position: relative;
+}
+.gr-home-page section:first-child {
+    height: 90vh;
+}
+.gr-home-page .gr-section-nav-button {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 20px;
 }
 .gr-home-page .container {
     max-width: 1192px;
 }
 .gr-home-page h1 {
-    font-size: 52px;
+    font-size: 36px;
     line-height: 1;
 }
 .gr-home-page h2 {
-    font-size: 42px;
-}
-.gr-home-page .text-lead-lg {
-    font-size: 18px !important;
+    font-size: 30px;
 }
 .gr-home-page img {
     max-width: 35% !important;
 }
-@media screen and (min-width: 576px) {
+@media (min-width: 281px) {
+    .gr-home-page section {
+        min-height: 640px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 40px;
+    }
+    .gr-home-page section:first-child {
+        height: 88vh;
+    }
     .gr-home-page h1 {
-        font-size: 54px;
+        font-size: 46px;
+        line-height: 1;
+    }
+    .gr-home-page h2 {
+        font-size: 36px;
+    }
+    .gr-home-page img {
+        max-width: 30% !important;
+    }
+}
+@media (min-width: 413px) {
+    .gr-home-page section {
+        min-height: 640px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .gr-home-page section:first-child {
+        height: 91vh;
+    }
+    .gr-home-page h1 {
+        font-size: 46px;
+        line-height: 1;
+    }
+    .gr-home-page h2 {
+        font-size: 40px;
+    }
+}
+@media (min-width: 576px) {
+    .gr-home-page section {
+        min-height: 760px;
+        padding-left: 110px;
+        padding-right: 110px;
+    }
+    .gr-home-page h1 {
+        font-size: 62px;
     }
     .gr-home-page h2 {
         font-size: 48px;
@@ -876,49 +1079,56 @@ header:has(.gr-main-search.gr-opened) .bd-navbar-toggle {
     .gr-home-page img {
         max-width: 30% !important;
     }
-    .gr-home-page .text-lead-lg {
-        font-size: 20px !important;
-    }
 }
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
+    .gr-home-page section {
+        min-height: 900px;
+    }
+    .gr-home-page .gr-section-nav-button {
+        right: 0;
+        left: 0;
+        bottom: 30px;
+    }
     .gr-home-page h1 {
-        font-size: 74px;
+        font-size: 90px;
     }
     .gr-home-page h2 {
         font-size: 66px;
     }
     .gr-home-page img {
-        max-width: 25% !important;
+        max-width: 30% !important;
+        margin-bottom: 3rem;
     }
-    .gr-home-page .text-lead-lg {
-        font-size: 24px !important;
+}
+@media (min-width: 992px) {
+    .gr-home-page section {
+        min-height: 800px;
+        padding-bottom: 60px;
+    }
+    .gr-home-page .gr-section-nav-button {
+        bottom: 60px;
+    }
+    .gr-home-page h1 {
+        font-size: 105px;
+    }
+    .gr-home-page h2 {
+        font-size: 80px;
+    }
+    .gr-home-page img {
+        max-width: 100% !important;
     }
     .gr-home-page .gr-section-sing-up img {
         max-width: 290px !important;
     }
 }
-@media screen and (min-width: 992px) {
-    .gr-home-page h1 {
-        font-size: 96px;
-    }
-    .gr-home-page h2 {
-        font-size: 84px;
-    }
-    .gr-home-page img {
-        max-width: 100% !important;
-    }
-    .gr-home-page .text-lead-lg {
-        font-size: 26px !important;
-    }
-    .gr-home-page .gr-section-sing-up img {
-        max-width: 290px !important;
+@media (min-width: 1200px) {
+    .gr-home-page section {
+        min-height: 880px;
     }
 }
 
 .gr-section-how-it-works {
     position: relative;
-    height: 100vh;
-    width: 100vw;
 }
 .gr-section-how-it-works .bg-gradient-liean,
 .gr-section-how-it-works .bg-gradient-radial,
@@ -986,91 +1196,6 @@ header:has(.gr-main-search.gr-opened) .bd-navbar-toggle {
 }
 
 /*******************************************************************************
-* ABOUT STYLES
-*******************************************************************************/
-.gr-about-how .text-legend {
-    color: rgba(255, 255, 255, 0.3) !important;
-}
-.gr-about-how .text-lead-small {
-    color: rgba(255, 255, 255, 0.8) !important;
-}
-.gr-about-how .container {
-    padding-top: 110px;
-    padding-bottom: 72px;
-    max-width: 992px;
-}
-.gr-about-how h3 {
-    font-size: 30px;
-}
-.gr-about-how h4 {
-    font-size: 26px;
-}
-.gr-about-how .text-lead {
-    font-size: 16px !important;
-}
-.gr-about-how .text-paragraph {
-    font-size: 14px !important;
-}
-.gr-about-how img {
-    max-width: 40% !important;
-}
-@media screen and (min-width: 576px) {
-    .gr-about-how h3 {
-        font-size: 40px;
-    }
-    .gr-about-how h4 {
-        font-size: 36px;
-    }
-    .gr-about-how .text-lead {
-        font-size: 22px !important;
-    }
-    .gr-about-how .text-paragraph {
-        font-size: 16px !important;
-        /*text-align: start !important;*/
-    }
-    .gr-about-how .text-legend {
-        font-size: 20px !important;
-    }
-    .gr-about-how img {
-        max-width: 40% !important;
-    }
-}
-@media screen and (min-width: 768px) {
-    .gr-about-how h3 {
-        font-size: 48px;
-    }
-    .gr-about-how .text-lead {
-        font-size: 24px !important;
-    }
-    .gr-about-how .text-paragraph {
-        font-size: 18px !important;
-    }
-    .gr-about-how img {
-        max-width: 50% !important;
-    }
-}
-@media screen and (min-width: 992px) {
-    .gr-about-how h3 {
-        font-size: 64px;
-    }
-    .gr-about-how h4 {
-        font-size: 54px;
-    }
-    .gr-about-how .text-lead {
-        font-size: 30px !important;
-    }
-    .gr-about-how .text-paragraph {
-        font-size: 24px !important;
-    }
-    .gr-about-how .text-legend {
-        font-size: 24px !important;
-    }
-    .gr-about-how img {
-        max-width: 100% !important;
-    }
-}
-
-/*******************************************************************************
 * PLANO DE ESTUDOS STYLES
 *******************************************************************************/
 .gr-track-title-section .btn {
@@ -1078,7 +1203,7 @@ header:has(.gr-main-search.gr-opened) .bd-navbar-toggle {
     left: -100%;
 }
 
-.gr-study-plan .gr-plan-progress div:first-child {
+.gr-plan-progress > div:first-child div:first-child {
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -1086,26 +1211,34 @@ header:has(.gr-main-search.gr-opened) .bd-navbar-toggle {
     color: white;
     padding: 3px 0 0 1px;
 }
-.gr-study-plan .gr-plan-progress div:last-child {
+.gr-plan-progress > div:first-child div:first-child > i {
+    font-size: 24px;
+}
+.gr-plan-progress > div:first-child div:last-child {
     width: 4px;
     background: var(--bs-border-light-color);
 }
-.gr-study-plan .gr-theme-frontend h1 {
+.gr-plan-progress:last-child > div:first-child div:last-child {
+    display: none;
+}
+
+.gr-theme-frontend h1 {
     color: var(--gr-frontend-color);
 }
-.gr-study-plan .gr-theme-frontend .gr-plan-progress.complete div:first-child {
+.gr-theme-frontend .gr-plan-progress.complete > div:first-child div:first-child {
     border-color: var(--gr-frontend-color);
 }
-.gr-study-plan .gr-theme-frontend .gr-plan-progress.complete div:last-child {
+.gr-theme-frontend .gr-plan-progress.complete > div:first-child div:last-child {
     background: var(--gr-frontend-color);
 }
-.gr-study-plan.gr-theme-backend h1 {
+
+.gr-theme-backend h1 {
     color: var(--gr-backend-color);
 }
-.gr-study-plan.gr-theme-backend .gr-plan-progress.complete div:first-child {
+.gr-theme-backend .gr-plan-progress.complete > div:first-child div:first-child {
     border-color: var(--gr-backend-color);
 }
-.gr-study-plan.gr-theme-backend .gr-plan-progress.complete div:last-child {
+.gr-theme-backend .gr-plan-progress.complete > div:first-child div:last-child {
     background: var(--gr-backend-color);
 }
 

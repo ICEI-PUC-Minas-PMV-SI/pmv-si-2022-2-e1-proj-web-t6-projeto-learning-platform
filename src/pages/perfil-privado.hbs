@@ -5,7 +5,7 @@
                 <h1 class="py-4">Olá, que bom te ver de volta!</h1>
                 <div class="row">
                     <div class="col-md-3">
-                        <img class="mask-img" src="../public/images/User.png" />
+                        <img class="img-flid rounded-circle" src="/images/User.png" />
                     </div>
                     <div class="col-md-9">
                         <div class="d-flex justify-content-between align-items-center">
@@ -40,12 +40,17 @@
         <section class="gr-menu w-100">
             <div class="container gr-profile-container">
                 <div class="d-flex-row menu">
-                    <button id="target1" href="#target1" class="btn btn-nav-section target">Planos
-                        em andamento</button>
-                    <button id="target2" href="#target2" class="btn btn-nav-section target">Planos
-                        concluídos</button>
-                    <button id="target3" href="#target3" class="btn btn-nav-section target">Conteúdo
-                        salvo</button>
+                    <button
+                        id="target1"
+                        data-template="ongoing"
+                        class="btn btn-nav-section target"
+                    >Planos em andamento</button>
+                    <button
+                        id="target2"
+                        data-template="finished"
+                        class="btn btn-nav-section target"
+                    >Planos concluídos</button>
+                    <button id="target3" class="btn btn-nav-section target">Conteúdo salvo</button>
                     <button
                         id="target4"
                         href="#target4"

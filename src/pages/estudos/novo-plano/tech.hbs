@@ -1,0 +1,27 @@
+{{#extend "default"}}
+    {{#content "main"}}
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 pt-page">
+                        <h1 class="text mb-4">
+                            {{#with (find categories.items "name" query.category)}}
+                                <span class="gr-{{../query.category}}-color">{{label}}</span>, ótima escolha!
+                            {{/with}}
+                        </h1>
+
+                        <div class="mb-5">
+                            <p>
+                                Como um desenvolvedor Frontend, você é responsável por desenvvolver 
+                                interfaces de usuário, como websites e painéis de controle.
+
+                                Dentro do desenvolvimento frontend, existem varias technologias 
+                                interessantes com alta demanda por profissionais no mercado de trabalho.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {{/content}}
+{{/extend}}

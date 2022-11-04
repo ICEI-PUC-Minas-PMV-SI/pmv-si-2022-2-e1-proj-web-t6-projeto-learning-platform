@@ -36,42 +36,31 @@
         </div>
 
         <!-- Search Component -->
-        <div class="gr-main-search">
+        <div class="gr-search-bar position-relative">
             <div class="d-flex flex-fill">
-                <button class="btn btn-link text-decoration-none text-body">
+                <button class="gr-search-bar-back-btn btn btn-link text-decoration-none text-body">
                     <i class="bi bi-arrow-left-short fs-1"></i>
                 </button>
 
-                <div class="dropdown me-2">
-                    <button
-                        class="btn btn-secondary dropdown-toggle"
-                        type="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                    >
-                        <span class="d-none d-sm-inline">Explore</span>
-                        <i class="bi bi-funnel d-sm-none"></i>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </div>
+                <button class="gr-search-bar-explore-btn btn btn-secondary me-2" type="button">
+                    <span class="d-none d-sm-inline">Explore</span>
+                    <i class="bi bi-funnel d-sm-none"></i>
+                </button>
 
                 <form class="d-flex flex-fill mb-0" role="search">
                     <input
                         type="text"
-                        class="form-control input"
+                        class="form-control input me-2"
                         placeholder="{{home.header.search.placeholder}}"
                         aria-label="Example text with button addon"
                         aria-describedby="button-addon1"
                     />
-                    <button class="btn btn-secondary" type="submit">
+                    <button class="gr-search-btn btn btn-secondary" type="submit">
                         <i class="bi bi-search"></i>
                     </button>
                 </form>
             </div>
+            {{#embed "drop-menu/tpl"}}{{/embed}}
         </div>
 
         <!-- Menu Component -->
@@ -101,7 +90,7 @@
                     {{/each}}
                 </ul>
 
-                <hr class="display-xl-none my-4" />
+                <hr class="d-xl-none my-4" />
 
                 <a
                     href="{{menu.login.url}}"

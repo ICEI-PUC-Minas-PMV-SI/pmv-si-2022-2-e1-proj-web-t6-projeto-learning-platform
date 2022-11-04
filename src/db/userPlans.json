@@ -1,0 +1,55 @@
+[
+    {
+        "id": 1,
+        "userId": 1,
+        "title": "Meu plano de frontend",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+        "stats": "24 lições & 7 projetos restante",
+        "finished": "Plano concluído em 25 de Agosto de 2022"
+    },
+    {
+        "id": 2,
+        "userId": 1,
+        "title": "Meu plano de backend",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+        "stats": "24 lições & 7 projetos restante"
+    },
+    {
+        "id": 3,
+        "userId": 2,
+        "title": "Meu plano de frontend",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+        "stats": "24 lições & 7 projetos restante",
+        "finished": "Plano concluído em 25 de Agosto de 2022"
+    },
+    {
+        "id": 7,
+        "userId": 2,
+        "title": "Meu plano de backend",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+        "stats": "24 lições & 7 projetos restante"
+    },
+    {
+        "id": 4,
+        "userId": 3,
+        "title": "Meu plano de backend",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+        "stats": "24 lições & 7 projetos restante",
+        "finished": "Plano concluído em 25 de Agosto de 2022"
+    },
+    {
+        "id": 5,
+        "userId": 4,
+        "title": "Meu plano de frontend",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+        "stats": "24 lições & 7 projetos restante"
+    },
+    {
+        "id": 6,
+        "userId": 4,
+        "title": "Meu plano de backend",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+        "stats": "24 lições & 7 projetos restante",
+        "finished": "Plano concluído em 25 de Agosto de 2022"
+    }
+]

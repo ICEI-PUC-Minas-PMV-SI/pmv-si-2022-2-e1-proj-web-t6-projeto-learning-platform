@@ -3,7 +3,7 @@
         {{#block "head"}}
             <meta charset="utf-8" />
 
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
             <title>{{meta.name}}</title>
 
@@ -28,7 +28,7 @@
             />
         {{/block}}
     </head>
-    <body class="d-flex flex-column bg-dark">
+    <body class="bg-dark">
         <header class="navbar navbar-expand-xl bd-navbar navbar-dark border-bottom">
             {{#block "header"}}
                 {{#embed "header/tpl"}}{{/embed}}
@@ -55,8 +55,8 @@
                 integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
                 crossorigin="anonymous"
             ></script>
-            <script src="/scripts/lib.js"></script>
-            <script src="/scripts/main.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/cash/8.1.1/cash.min.js"></script>
+            <script async type="module" src="/scripts/main.js"></script>
         {{/block}}
     </body>
 </html>

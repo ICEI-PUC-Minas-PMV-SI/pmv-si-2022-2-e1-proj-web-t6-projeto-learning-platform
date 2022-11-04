@@ -1,6 +1,19 @@
 .gr-home-page {
     section {
-        min-height: 100vh;
+        height: 100vh;
+        min-height: 590px;
+        position: relative;
+
+        &:first-child {
+            height: 90vh;
+        }
+    }
+
+    .gr-section-nav-button {
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 20px;
     }
 
     .container {
@@ -8,25 +21,74 @@
     }
 
     h1 {
-        font-size: 52px;
+        font-size: 36px;
         line-height: 1;
     }
 
     h2 {
-        font-size: 42px;
-    }
-
-    .text-lead-lg {
-        font-size: 18px !important;
+        font-size: 30px;
     }
 
     img {
         max-width: 35% !important;
     }
 
-    @media screen and (min-width: 576px) {
+    @include media-breakpoint-up(xxs) {
+        section {
+            min-height: 640px;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 40px;
+
+            &:first-child {
+                height: 88vh;
+            }
+        }
+
         h1 {
-            font-size: 54px;
+            font-size: 46px;
+            line-height: 1;
+        }
+
+        h2 {
+            font-size: 36px;
+        }
+
+        img {
+            max-width: 30% !important;
+        }
+    }
+
+    @include media-breakpoint-up(xs) {
+        section {
+            min-height: 640px;
+            padding-left: 50px;
+            padding-right: 50px;
+
+            &:first-child {
+                height: 91vh;
+            }
+        }
+
+        h1 {
+            font-size: 46px;
+            line-height: 1;
+        }
+
+        h2 {
+            font-size: 40px;
+        }
+    }
+
+    @include media-breakpoint-up(sm) {
+        section {
+            min-height: 760px;
+            padding-left: 110px;
+            padding-right: 110px;
+        }
+
+        h1 {
+            font-size: 62px;
         }
 
         h2 {
@@ -36,15 +98,21 @@
         img {
             max-width: 30% !important;
         }
-
-        .text-lead-lg {
-            font-size: 20px !important;
-        }
     }
 
-    @media screen and (min-width: 768px) {
+    @include media-breakpoint-up(md) {
+        section {
+            min-height: 900px;
+        }
+
+        .gr-section-nav-button {
+            right: 0;
+            left: 0;
+            bottom: 30px;
+        }
+
         h1 {
-            font-size: 74px;
+            font-size: 90px;
         }
 
         h2 {
@@ -52,49 +120,53 @@
         }
 
         img {
-            max-width: 25% !important;
-        }
-
-        .text-lead-lg {
-            font-size: 24px !important;
-        }
-
-        .gr-section-sing-up {
-            img {
-                max-width: 290px !important;
-            }
+            max-width: 30% !important;
+            margin-bottom: 3rem;
         }
     }
 
-    @media screen and (min-width: 992px) {
+    @include media-breakpoint-up(lg) {
+        section {
+            min-height: 800px;
+            padding-bottom: 60px;
+
+            &:first-child {
+                // height: 89vh;
+            }
+        }
+
+        .gr-section-nav-button {
+            bottom: 60px;
+        }
+
         h1 {
-            font-size: 96px;
+            font-size: 105px;
         }
 
         h2 {
-            font-size: 84px;
+            font-size: 80px;
         }
 
         img {
             max-width: 100% !important;
         }
 
-        .text-lead-lg {
-            font-size: 26px !important;
-        }
-
         .gr-section-sing-up {
             img {
                 max-width: 290px !important;
             }
         }
     }
+
+    @include media-breakpoint-up(xl) {
+        section {
+            min-height: 880px;
+        }
+    }
 }
 
 .gr-section-how-it-works {
     position: relative;
-    height: 100vh;
-    width: 100vw;
 
     .bg-gradient-liean,
     .bg-gradient-radial,

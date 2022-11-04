@@ -1,18 +1,21 @@
 // Classes de utilidades aqui
 
 /*******************************************************
-* TEXT
+* PAGE
 *******************************************************/
+.pt-page {
+    padding-top: 6rem;
+}
 
 /*******************************************************
 * BACKGROUNDS
 *******************************************************/
 .bg-secondary {
-    background-color: var(--gr-bg-secondary);
+    background-color: var(--gr-bg-secondary) !important;
 }
 
 .bg-darker {
-    background-color: var(--gr-bg-darker);
+    background-color: var(--gr-bg-darker) !important;
 }
 
 /*******************************************************
@@ -29,7 +32,6 @@
 /*******************************************************
 * MAIN GRADIENT
 *******************************************************/
-
 .bg-gradient {
     background-image: linear-gradient(91deg, #ca3d89, #9824de, #1d69bc) !important;
 }
@@ -77,30 +79,28 @@
     }
 }
 
-.div-plan-content {
-    max-width: 780px;
-
-    span {
-        color: var(--gr-frontend-color);
-    }
-
-    .title-plan {
-        font-size: 56px;
-    }
-
-    .describe-plan {
-        font-size: 36px;
-    }
-
-    p {
-        font-size: 24px;
-        text-align: center;
-    }
+/*******************************************************
+* TEXT
+*******************************************************/
+.text-justify {
+    text-align: justify;
 }
-/*****************************************************************************
-* IMAGE MASKS
-*****************************************************************************/
-.mask-img {
-    padding-left: 10px;
-    border-radius: 50%;
+
+/*******************************************************
+* CATEGORIES
+*******************************************************/
+.gr-frontend-color {
+    color: var(--gr-frontend-color);
+}
+
+.gr-frontend-bg {
+    background-color: var(--gr-frontend-color);
+}
+
+.gr-backend-color {
+    color: var(--gr-backend-color);
+}
+
+.gr-backend-bg {
+    background-color: var(--gr-backend-color);
 }

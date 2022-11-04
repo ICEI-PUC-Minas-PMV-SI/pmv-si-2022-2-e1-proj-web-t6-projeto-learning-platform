@@ -2,50 +2,20 @@
 @import "./animations";
 @import "./mixins";
 @import "./variables";
-@import "./overwrites";
-@import "./utilities";
 
 html,
 body {
     height: 100%;
     color: var(--gr-text-body);
-    font-size: 16px;
 }
 
-h6,
-h5,
-h4,
-h3,
-h2,
-h1 {
-    font-family: "Bakbak One", cursive;
-    color: var(--gr-text-title);
-}
+@import "./typography";
+@import "./overwrites";
+@import "./utilities";
 
-h1 {
-    font-size: 54px;
-}
-
-h2 {
-    font-size: 42px;
-}
-
-h3 {
-    font-size: 36px;
-}
-
-h4 {
-    font-size: 30px;
-}
-
-h5 {
-    font-size: 26px;
-}
-
-h6 {
-    font-size: 22px;
-}
-
+/*****************************************************************************
+* HEADER
+*****************************************************************************/
 header {
     padding: 10px 32px 10px 12px;
 
@@ -69,13 +39,16 @@ header {
     }
 }
 
+/*****************************************************************************
+* FOOTER
+*****************************************************************************/
 footer {
     padding: 0 24px;
     height: 64px;
 }
 
 /*****************************************************************************
-* MMBILE MENU
+* MOBILE MENU
 *****************************************************************************/
 .gr-mobile-menu {
     &.show,
@@ -83,7 +56,15 @@ footer {
         background-color: var(--gr-bg-darker);
 
         @include media-breakpoint-down(xl) {
-            font-size: 140% !important;
+            font-size: 1.4rem !important;
+        }
+
+        @include media-breakpoint-down(md) {
+            font-size: 1.6rem !important;
+        }
+
+        @include media-breakpoint-down(sm) {
+            font-size: 1.8rem !important;
         }
     }
 }
@@ -117,11 +98,6 @@ footer {
 @import "./components/home";
 
 /*******************************************************************************
-* ABOUT STYLES
-*******************************************************************************/
-@import "./components/about";
-
-/*******************************************************************************
 * PLANO DE ESTUDOS STYLES
 *******************************************************************************/
 .gr-track-title-section {
@@ -131,8 +107,8 @@ footer {
     }
 }
 
-.gr-study-plan {
-    .gr-plan-progress {
+.gr-plan-progress {
+    & > div:first-child {
         div:first-child {
             width: 36px;
             height: 36px;
@@ -140,6 +116,10 @@ footer {
             border: 4px solid var(--bs-border-light-color);
             color: white;
             padding: 3px 0 0 1px;
+
+            & > i {
+                font-size: 24px;
+            }
         }
 
         div:last-child {
@@ -148,13 +128,23 @@ footer {
         }
     }
 
-    .gr-theme-frontend {
-        h1 {
-            color: var(--gr-frontend-color);
+    &:last-child {
+        & > div:first-child {
+            div:last-child {
+                display: none;
+            }
         }
+    }
+}
 
-        .gr-plan-progress {
-            &.complete {
+.gr-theme-frontend {
+    h1 {
+        color: var(--gr-frontend-color);
+    }
+
+    .gr-plan-progress {
+        &.complete {
+            & > div:first-child {
                 div:first-child {
                     border-color: var(--gr-frontend-color);
                 }
@@ -165,14 +155,16 @@ footer {
             }
         }
     }
+}
 
-    &.gr-theme-backend {
-        h1 {
-            color: var(--gr-backend-color);
-        }
+.gr-theme-backend {
+    h1 {
+        color: var(--gr-backend-color);
+    }
 
-        .gr-plan-progress {
-            &.complete {
+    .gr-plan-progress {
+        &.complete {
+            & > div:first-child {
                 div:first-child {
                     border-color: var(--gr-backend-color);
                 }

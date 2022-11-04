@@ -1,0 +1,8 @@
+{
+    "button": {
+        "label": "Criar plano de estudos",
+        "type": "primary",
+        "icon": "plus",
+        "url": "/estudos/novo-plano/area"
+    }
+}

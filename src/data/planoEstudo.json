@@ -1,4 +1,11 @@
 {
+    "id": 1,
+    "userId": 1,
+    "track": {
+        "title": "Frontend",
+        "slug": "frontend"
+    },
+    "title": "Meu plano de frontend",
     "items": [
         {
             "complete": true,
