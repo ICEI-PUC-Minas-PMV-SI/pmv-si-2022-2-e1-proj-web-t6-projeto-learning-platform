@@ -7,13 +7,15 @@
                         <div class="div-plan-content">
                             <h1 class="text-center title-plan">Por favor,</h1>
                             
-                            <h3 class="text-center describe-plan">Aguarde enquanto criamos seu plano de estudos
-                                para desenvolvimento
+                            <h3 class="text-center describe-plan">
+                                Aguarde enquanto criamos seu plano de estudos para desenvolvimento
                                 {{#with (find categories.items "name" query.category)}}
-                                    <span class="gr-{{../query.category}}-color">{{label}}</span>
+                                    <span class="gr-{{data "query.category"}}-color">{{label}}</span>
                                 {{/with}}
                                 com
-                                <span class="gr-{{query.category}}-color">ReactJs</span>.
+                                {{#with (find technologies.items "name" query.tecnology)}}
+                                    <span class="gr-{{data "query.category"}}-color">{{label}}</span>.
+                                {{/with}}
                             </h3>
                             
                             <div class="d-flex justify-content-center align-items-center p-5">
@@ -22,8 +24,10 @@
                             </div>
                 
                             <div>
-                                <p class="lead-text">Seu plano de estudos ficará pronto em alguns segundos, tenho certeza que ira
-                                    gostar!</p>
+                                <p class="lead-text text-center mb-5">
+                                    Seu plano de estudos ficará pronto em alguns segundos. Tenho certeza que irá
+                                    gostar!
+                                </p>
                             </div>
                         </div>
                     </div>
