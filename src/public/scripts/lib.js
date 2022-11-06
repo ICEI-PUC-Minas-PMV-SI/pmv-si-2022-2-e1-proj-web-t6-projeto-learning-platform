@@ -70,7 +70,16 @@ export function initHomeScrollNav() {
 
 
 export function initPrivateProfile() {
+    window.onload = async function() {
+        const response = await fetch("/api/userPlans");
+        const plans = await response.json();
 
+        plans
+            .filter((plan) => (!plan.finished))
+            .forEach((plan, i) => {
+                $("#gr-profile-body").render("ongoing", plan, i > 0 ? "append" : null);
+            });
+    };
     const triggers = $(".gr-profile-container .btn");
 
     triggers.each((i, btn) => {
