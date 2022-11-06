@@ -1,25 +1,27 @@
-export function updateBodyContext() {
-    const body = $("body");
+/**
+ * Função que verifica a página carregada e adiciona
+ * a classe "active" ao item do menu principal para
+ * indicar qual a página atual.
+ */
+window.updateMainMenuActiveStatus = function () {
+    // Retira a última parte da URL atual para saber qual a página atual carregada (ex: sobre.html)
+    const page = location.pathname.split("/").pop();
 
-    // Tela mobile < 768px
-    if (window.innerWidth < 768) {
-        body.removeClass("gr-tablet");
-        body.removeClass("gr-desktop");
-        body.addClass("gr-mobile");
+    // Seleciona todos as tags "a" do menu principal
+    const menuItems = document.querySelectorAll("#gr-navbar-collapse ul > li > a");
 
-        // Tela tablet >= 768px & < 992px
-    } else if (window.innerWidth >= 768 && window.innerWidth < 992) {
-        body.removeClass("gr-mobile");
-        body.removeClass("gr-desktop");
-        body.addClass("gr-tablet");
-
-        // Tela desktop > 992px
-    } else {
-        body.removeClass("gr-mobile");
-        body.removeClass("gr-tablet");
-        body.addClass("gr-desktop");
-    }
-}
+    // Passa por cada uma delas, verificando qual é a ativa
+    menuItems.forEach((element) => {
+        // Se a tag "a" contém o nome da página atual em seu atributo href
+        // adcionamos uma classe de nome "active"
+        if (element.href.endsWith(page)) {
+            element.classList.add("active");
+            // Caso contrário, removemos a classe "active" da tag "a"
+        } else {
+            element.classList.remove("active");
+        }
+    });
+};
 
 /***
  * Função que adiciona uma classes ao body da página dependendo
@@ -32,59 +34,127 @@ export function updateBodyContext() {
  * Isso facilita algumas das customizações necessárias
  * para a responsividade da plataforma.
  */
-export function initBreakpoints() {
-    window.addEventListener("resize", updateBodyContext);
-    updateBodyContext();
-}
+window.updateHeaderState = function () {
+    const body = document.querySelector("body");
 
-export function initHomeScrollNav() {
+    const updateBodyContext = function () {
+        // Tela mobile < 768px
+        if (window.innerWidth < 768) {
+            body.classList.remove("gr-tablet");
+            body.classList.remove("gr-desktop");
+            body.classList.add("gr-mobile");
+
+            // Tela tablet >= 768px & < 992px
+        } else if (window.innerWidth >= 768 && window.innerWidth < 992) {
+            body.classList.remove("gr-mobile");
+            body.classList.remove("gr-desktop");
+            body.classList.add("gr-tablet");
+
+            // Tela desktop > 992px
+        } else {
+            body.classList.remove("gr-mobile");
+            body.classList.remove("gr-tablet");
+            body.classList.add("gr-desktop");
+        }
+    };
+
+    window.addEventListener("resize", updateBodyContext);
+
+    updateBodyContext();
+};
+
+/**
+ *
+ */
+window.toggleMobileSearch = function () {
+    const search = document.querySelector(".gr-main-search");
+    const trigger = search.querySelector("form > button");
+    const closeTrigger = document.querySelector(".gr-main-search > div > .btn");
+
+    const toggle = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        search.classList.toggle("gr-opened");
+    };
+
+    window.addEventListener("resize", (e) => {
+        if (window.innerWidth >= 992) {
+            search.classList.remove("gr-opened");
+            trigger.removeEventListener("click", toggle);
+            closeTrigger.removeEventListener("click", toggle);
+        } else {
+            trigger.addEventListener("click", toggle);
+            closeTrigger.addEventListener("click", toggle);
+        }
+    });
+};
+
+/**
+ * Encontra o um elemento pai, dado seu nome de tag
+ *
+ * @param {HTMLElement} element
+ * @param {string} parentName
+ * @returns {(null|HTMLElement)}
+ */
+window.findParentByName = function (element, parentName) {
+    if (!element.parentElement) {
+        return null;
+    }
+
+    const tagName = element.parentElement.tagName.toLowerCase();
+
+    if (tagName === "body") {
+        return null;
+    }
+
+    if (tagName === parentName) {
+        return element.parentElement;
+    }
+
+    return findParentByName(element.parentElement, parentName);
+};
+
+window.scrolToSection = function () {
     // Encontre todos os botões (Seta) na página
-    const scrollBtns = $(".gr-section-nav-button a");
+    const triggers = document.querySelectorAll(".gr-section-nav-button a");
 
     // para cada botão encontrado
-    scrollBtns.each((i, btn) => {
+    triggers.forEach((trigger) => {
         // Adicione o evento click
-        $(btn).on("click", (e) => {
+        trigger.addEventListener("click", (e) => {
             // Quando clicado:
             // Previna o comportamento padrão do elemto
             e.preventDefault();
             // Pare a propagação do evento na arvore do html
             e.stopPropagation();
-
             // Encontra o elemento 'section' pai do botão clicado
-            const parentSection = $(btn).parents("section");
+            const parentSection = findParentByName(e.target, "section");
 
             // Se a seção pai e a próxima seção existirem
-            if (parentSection && parentSection.next()) {
+            if (parentSection && parentSection.nextElementSibling) {
                 // Scroll para a próxima seção
-                console.log(parentSection.next());
-                parentSection.next().get(0).scrollIntoView({
+                parentSection.nextElementSibling.scrollIntoView({
                     behavior: "smooth", // Usa transição para o scroll
                     block: "start", // Alinhe a próxima seção no topo da window
                 });
             }
         });
     });
-}
+};
 
-export function initPrivateProfile() {
-    const triggers = $(".gr-profile-container .btn");
-
-    triggers.each((i, btn) => {
-        $(btn).on("click", async () => {
-            const template = $(btn).data("template");
-            const response = await fetch("/api/userPlans");
-            const plans = await response.json();
-
-            plans
-                .filter(
-                    (plan) =>
-                        (template === "ongoing" && !plan.finished) ||
-                        (template === "finished" && typeof plan.finished === "string")
-                )
-                .forEach((plan, i) => {
-                    $("#gr-profile-body").render(template, plan, i > 0 ? "append" : null);
-                });
+window.changeMenu = function(){
+    const triggers = document.querySelectorAll(".btn-nav-section button");
+    // para cada botão encontrado
+    triggers.forEach((trigger) => {
+        // Adicione o evento click
+        trigger.addEventListener("click", (e) => {
+            // Quando clicado:
+            // Previna o comportamento padrão do elemto
+            e.preventDefault();
+            // Pare a propagação do evento na arvore do html
+            e.stopPropagation();
+            // Encontra o elemento 'section' pai do botão clicado
+            
         });
     });
 }
