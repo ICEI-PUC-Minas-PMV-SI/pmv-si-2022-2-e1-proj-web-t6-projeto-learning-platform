@@ -629,9 +629,6 @@ h6 {
 .gr-profile-container {
   max-width: 1192px;
 }
-.gr-profile-container a {
-  color: white;
-}
 
 .gr-edit-profile-section {
   border-bottom: 2px solid var(--gr-bg-light);
