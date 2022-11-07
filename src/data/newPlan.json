@@ -4,5 +4,10 @@
         "type": "primary",
         "icon": "plus",
         "url": "/estudos/novo-plano/area"
+    },
+    "back-button":{
+        "type": "primary",
+        "icon": "plus",
+        "url": "/estudos/novo-plano/area"
     }
 }

@@ -67,24 +67,56 @@ export function initHomeScrollNav() {
     });
 }
 
+
+
 export function initPrivateProfile() {
+    window.onload = async function() {
+        const response = await fetch("/api/userPlans");
+        const plans = await response.json();
+
+        plans
+            .filter((plan) => (!plan.finished))
+            .forEach((plan, i) => {
+                $("#gr-profile-body").render("ongoing", plan, i > 0 ? "append" : null);
+            });
+    };
     const triggers = $(".gr-profile-container .btn");
 
     triggers.each((i, btn) => {
         $(btn).on("click", async () => {
             const template = $(btn).data("template");
-            const response = await fetch("/api/userPlans");
-            const plans = await response.json();
+            triggers.removeClass("activ");
+            $(btn).addClass("activ");
+            if(template === "ongoing" || template === "finished"){
+                const response = await fetch("/api/userPlans");
+                const plans = await response.json();
 
-            plans
-                .filter(
-                    (plan) =>
-                        (template === "ongoing" && !plan.finished) ||
-                        (template === "finished" && typeof plan.finished === "string")
-                )
-                .forEach((plan, i) => {
-                    $("#gr-profile-body").render(template, plan, i > 0 ? "append" : null);
-                });
+                plans
+                    .filter(
+                        (plan) =>
+                            (template === "ongoing" && !plan.finished) ||
+                            (template === "finished" && typeof plan.finished === "string")
+                    )
+                    .forEach((plan, i) => {
+                        $("#gr-profile-body").render(template, plan, i > 0 ? "append" : null);
+                    });
+            }
+            if(template === "saved"){
+                console.log("saved");
+                const response = await fetch("/api/saved");
+                const saves = await response.json();
+                saves.items.forEach((item, i) => {
+                        $("#gr-profile-body").render(template, item, i > 0 ? "append" : null);
+                    });
+            }
+            if(template === "notes"){
+                console.log("notes");
+                const response = await fetch("/api/notes");
+                const notes = await response.json();
+                notes.items.forEach((item, i) => {
+                        $("#gr-profile-body").render(template, item, i > 0 ? "append" : null);
+                    });
+                }
         });
     });
 }
