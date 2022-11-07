@@ -20,10 +20,8 @@
     },
     "homepage": "https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2022-2-e1-proj-web-t6-projeto-learning-platform#readme",
     "devDependencies": {
+        "@jmilanes/hotbars": "^1.4.6",
         "prettier": "^2.7.1",
         "sass": "^1.55.0"
-    },
-    "dependencies": {
-        "@jmilanes/hotbars": "file:../../../APPS/packages/hotbars"
     }
 }
