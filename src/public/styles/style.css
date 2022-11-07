@@ -197,6 +197,10 @@ body {
   height: 100%;
   color: var(--gr-text-body);
 }
+html p,
+body p {
+  margin-bottom: 0;
+}
 
 html {
   font-size: 62.5%;
@@ -375,6 +379,8 @@ h6 {
   --bs-btn-font-family: var(--gr-text-body);
   --bs-btn-font-size: 18px;
   --bs-btn-font-weight: 800;
+  --bs-btn-min-width: 350px;
+  --bs-btn-gap: 10px;
 }
 .btn-outline-body:hover {
   text-shadow: 0 0 10px var(--gr-box-primary-hover);
@@ -705,15 +711,14 @@ h6 {
   transform: translateY(-50%);
 }
 
-.password-confirm {
-  width: 612px;
+.gr-btn-plan {
+  background: none;
+  border: 2px solid var(--gr-text-muted);
+  position: relative;
 }
-.password-confirm h1 {
-  font-size: 54px;
-  color: var(--bs-primary);
-}
-.password-confirm p {
-  font-size: 24px;
+.gr-btn-plan:hover {
+  background: none !important;
+  box-shadow: inset 0 0 10px var(--gr-text-muted), 0 0 10px var(--gr-text-muted);
 }
 
 /*******************************************************
@@ -1225,6 +1230,21 @@ header:has(.gr-search-bar.gr-opened) .bd-navbar-toggle {
 }
 .gr-theme-backend .gr-plan-progress.complete > div:first-child div:last-child {
   background: var(--gr-backend-color);
+}
+
+.gr-plan-options {
+  color: white !important;
+  min-height: 64px;
+}
+.gr-plan-options i {
+  font-size: 40px;
+}
+.gr-plan-options:hover {
+  background-color: rgb(43, 43, 43) !important;
+  scale: 1.02;
+  border: none;
+  box-shadow: 0px 0 10px 0px rgb(36, 36, 36);
+  transition: 0.2s;
 }
 
 /*# sourceMappingURL=style.css.map */

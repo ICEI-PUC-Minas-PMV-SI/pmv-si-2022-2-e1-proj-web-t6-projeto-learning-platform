@@ -105,6 +105,8 @@
     --bs-btn-font-family: var(--gr-text-body);
     --bs-btn-font-size: 18px;
     --bs-btn-font-weight: 800;
+    --bs-btn-min-width: 350px;
+    --bs-btn-gap: 10px;
 
     &:hover {
         text-shadow: 0 0 10px var(--gr-box-primary-hover);
