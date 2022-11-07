@@ -1,0 +1,52 @@
+{
+    "id": "javascript",
+    "title": "Javascript",
+    "description": "Aprenda o que é Javascript e como utilizar para aplicar estilos a páginas html.",
+    "content": [
+        {
+            "complete": true,
+            "title": "Conceitos básicos de lógica da programação",
+            "description": "Antes de mergulharmos nessa linguagem tão versátil e utilizada, vamos primeiro entender alguns conceitos básicos necessários."
+        },
+        {
+            "complete": false,
+            "title": "Tipos de dados",
+            "description": "O Javascript apesar de extremamente poderoso possuí apenas 5 tipos de datas nativos, vamos aprender quais são eles."
+        },
+        {
+            "complete": false,
+            "title": "Variaveis",
+            "description": "Variaveis matem um valor para uso posterior em seu cógido javascript."
+        },
+        {
+            "complete": false,
+            "title": "Funções",
+            "description": "Funções executam logicas isoladas e podem ou não retornar valores."
+        },
+        {
+            "complete": false,
+            "title": "Classes",
+            "description": "Classes podem ser consideradas um conjunto de funções que mantem algum estado."
+        },
+        {
+            "complete": false,
+            "title": "Funções ou Classes",
+            "description": "É comum se quastionar sobre quando utilizar funções ou quando utilizar classes."
+        },
+        {
+            "complete": false,
+            "title": "Javascript para Frontend (Client)",
+            "description": "Aprneda como carregar & utilizar arquivos Javascript em suas páginas."
+        },
+        {
+            "complete": false,
+            "title": "Javascript no Backend (Servidor)",
+            "description": "Aprenda como carregar e utilizar arquivos Javascript em um servidor."
+        },
+        {
+            "complete": false,
+            "title": "Estrutura de projetos",
+            "description": "É importante organizar seu projeto em diferentes aquivos para que faça sentido de fácil manutenção."
+        }
+    ]
+}

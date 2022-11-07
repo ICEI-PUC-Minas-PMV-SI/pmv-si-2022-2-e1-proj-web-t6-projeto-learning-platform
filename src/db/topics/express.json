@@ -1,0 +1,72 @@
+{
+    "id": "rest",
+    "title": "Express Js",
+    "description": "Criar api's REST pode ser um trabalho díficil a não ser que utilize a ferramenta correta.",
+    "content": [
+        {
+            "complete": true,
+            "title": "Express Js",
+            "description": "O que é e para que serve."
+        },
+        {
+            "complete": false,
+            "title": "Instalando o Express Js",
+            "description": "Aprends como instalar o Express js utilizando o NPM com Node Js."
+        },
+        {
+            "complete": false,
+            "title": "Seu primeiro app com Express",
+            "description": "Criar um servidor HTTP com Express é simples e rápido."
+        },
+        {
+            "complete": false,
+            "title": "CRUD",
+            "description": "Um conjunto de endpoints onde é possível requisitar, salvar, atualizar e deletar dados é conhecido como CRUD."
+        },
+        {
+            "complete": false,
+            "title": "Endpoints GET",
+            "description": "Aprenda como retornar dados para um requerimento de método GET."
+        },
+        {
+            "complete": false,
+            "title": "Endpoints POST",
+            "description": "Aprenda como processar um requerimento de método POST."
+        },
+        {
+            "complete": false,
+            "title": "Endpoints PUT",
+            "description": "Aprenda como processar um requerimento de método PUT."
+        },
+        {
+            "complete": false,
+            "title": "Endpoints PATCH",
+            "description": "Aprenda como processar um requerimento de método PATCH."
+        },
+        {
+            "complete": false,
+            "title": "Endpoints DELETE",
+            "description": "Aprenda como processar um requerimento de método DELETE."
+        },
+        {
+            "complete": false,
+            "title": "Segurança de dados",
+            "description": "Agora que você tem um servidor com um CRUD implementado, vamos aprender como garantir a segurança dos dados."
+        },
+        {
+            "complete": false,
+            "title": "Genênciamento de usuários",
+            "description": "Em qualquer aplicação é importante garantir que certos usuários tem acesso apenas a dados relacionados a ele, aprenda como implementar uma authenticação simples de usuário e controlar os dados e ações que ele tem acesso."
+        },
+        {
+            "complete": false,
+            "title": "Genênciamento de usuários",
+            "description": "Em qualquer aplicação é importante garantir que certos usuários tem acesso apenas a dados relacionados a ele, aprenda como implementar uma authenticação simples de usuário e controlar os dados e ações que ele tem acesso."
+        },
+        {
+            "complete": false,
+            "title": "Deployment",
+            "description": "Aprenda opções de hospedagem e deployment para tornar seu servidor HTTP acessível na web."
+        }
+    ]
+}

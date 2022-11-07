@@ -1,0 +1,21 @@
+{{#extend "default"}}
+    {{#content "main"}}
+       <div class="auth-container flex-fill mx-3">
+            <div>
+                <h2 class="text-center text-primary">{{auth.confirmation.title}}</h2>
+                <div class="d-flex align-items-center justify-content-center px-4 pt-4">
+                    <p class="text-center">{{auth.confirmation.description}}</p>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center px-4 pt-5">
+                <p class="lead-text">{{auth.recover.backToLogin}}&nbsp;
+                    <a
+                        href="{{auth.link.login.url}}"
+                        class="text-decoration-none"
+                    >{{auth.recover.login}}</a></p>
+                    
+            </div>
+        </div>
+    {{/content}}
+{{/extend}}

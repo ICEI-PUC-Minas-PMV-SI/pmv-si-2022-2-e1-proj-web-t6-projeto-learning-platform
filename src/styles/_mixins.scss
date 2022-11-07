@@ -15,5 +15,5 @@
 /// @return {Color}
 
 @function shade($color, $percentage) {
-  @return mix(black, $color, $percentage);
+    @return mix(black, $color, $percentage);
 }

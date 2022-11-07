@@ -1,0 +1,76 @@
+{
+    "items": [
+        {
+            "label": "Frontend",
+            "name": "frontend",
+            "url": "",
+            "items": [
+                {
+                    "label": "React",
+                    "name": "react",
+                    "url": "/search?category=frontend&topic=react",
+                    "icon": "/images/technologies/react.svg"
+                },
+                {
+                    "label": "Angular",
+                    "name": "angular",
+                    "url": "/search?category=frontend&topic=angular",
+                    "icon": "/images/technologies/angular.svg"
+                },
+                {
+                    "label": "Vue JS",
+                    "name": "vue",
+                    "url": "/search?category=frontend&topic=vue",
+                    "icon": "/images/technologies/vue.svg"
+                }
+            ]
+        },
+        {
+            "label": "Backend",
+            "name": "backend",
+            "url": "",
+            "items": [
+                {
+                    "label": "Javascript",
+                    "name": "javascript",
+                    "url": ""
+                },
+                {
+                    "label": "Node Js",
+                    "name": "nodejs",
+                    "url": ""
+                },
+                {
+                    "label": "REST",
+                    "name": "rest",
+                    "url": ""
+                },
+                {
+                    "label": "Express",
+                    "name": "express",
+                    "url": ""
+                },
+                {
+                    "label": "Javascript",
+                    "name": "javascript",
+                    "url": ""
+                },
+                {
+                    "label": "Node Js",
+                    "name": "nodejs",
+                    "url": ""
+                },
+                {
+                    "label": "REST",
+                    "name": "rest",
+                    "url": ""
+                },
+                {
+                    "label": "Express",
+                    "name": "express",
+                    "url": ""
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+{
+    "id": "html",
+    "title": "HTML 5",
+    "description": "Aprenda o que é HTML e como utilizar para aplicar estilos a páginas html.",
+    "content": [
+        {
+            "complete": true,
+            "title": "Criando seu primeiro documento HTML",
+            "description": "Nessa lição você irá criar seu primerio documento HTML 5 utilizando o VS Code."
+        },
+        {
+            "complete": false,
+            "title": "Tags básicas",
+            "description": "Aprenda quais são as tags mais utilizadas em uma página HTML 5."
+        },
+        {
+            "complete": false,
+            "title": "Estilos",
+            "description": "Aprenda o que são estilos e a melhor maneira de aplicalos a uma página HTML 5."
+        },
+        {
+            "complete": false,
+            "title": "Posicionamento",
+            "description": "Aprenda os conceitos básicos de posicionamento antes de sujar suas mãos."
+        },
+        {
+            "complete": false,
+            "title": "Grid",
+            "description": "Aprenda uma das técincas mais utilizadas na criação de layouts de página."
+        },
+        {
+            "complete": false,
+            "title": "Flex",
+            "description": "Flex é o conceito mais moderno e versátil de posicionamento, vamos a fundo nessa lição."
+        },
+        {
+            "complete": false,
+            "title": "Tabelas",
+            "description": "Aprenda como representar dados tabulares em uma página html."
+        },
+        {
+            "complete": false,
+            "title": "Listas",
+            "description": "Listagem é um dos modelos mais utilizados para a representação de dados."
+        },
+        {
+            "complete": false,
+            "title": "Frameworks",
+            "description": "Flex é o conceito mais moderno e versátil de posicionamento, vamos a fundo nessa lição."
+        }
+    ]
+}

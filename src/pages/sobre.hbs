@@ -1,0 +1,66 @@
+{{#extend "default"}}
+    {{#content "main"}}
+        <section class="gr-about-how pt-page">
+            <div class="container">
+                <div class="row mb-3 mb-md-5 text-paragraph">
+                    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                        <h1 class="text-gradient mb-5">Organizando e transformando o aprendizado em
+                            TI.
+                        </h1>
+
+                        <div class="text-justify">
+                            <p class="lead-text mb-4">Acreditamos que não existe falta de informação
+                                e ou escolas, cursos ou bootcamps, mas sim falta de organização de
+                                informações já disponíveis e por onde começar, o que aprender e
+                                quando, para guiar iniciantes em TI com conteúdo de alta qualidade,
+                                e assim, ajudar a suprir a demanda crescente de profissionais
+                                altamente capacitados no mercado.</p>
+
+                            <p class="mb-4">O Grimore, foi criado para atacar o problema de falta de
+                                profissionais capacitados no mercado de uma maneira diferente, ao
+                                invéz criamos nosso próprio conteúdo, fazemos uso de conteúdo aberto
+                                e público para criar linhas de aprendizado contendo diferentes típos
+                                de media de maneira organizada e estruturada, oque nos permite
+                                prover conteúdo de alta qualidade para aqueles que desejam ingressar
+                                no setor de TI.
+                            </p>
+
+                            <p class="mb-5">
+                                Nossa equipe é formada por calouros do bacharelado em Técnologia da
+                                Informação pela PUC Minas, apaixonados por TI e técnologia que sabem
+                                bem sobre o quanto é difícil navegar o mar de informação e conteúdo
+                                disponível na web quando se está começando no setor, com o objetivo
+                                de facilitar para futuros iniciantes em TI.
+                            </p>
+                        </div>
+
+                        <h2 class="pt-5 mb-5">Nossa Equipe</h2>
+
+                        {{#each sobre.items}}
+                            <div class="row text-paragraph mb-5">
+                                <div class="col-md-4 order-0 order-md-0 text-center mb-4 mb-md-0">
+                                    <img
+                                        class="img-fluid rounded-circle"
+                                        alt="{{this.name}}"
+                                        src="{{this.avatar}}"
+                                    />
+                                </div>
+                                <div class="col-md-8 order-1 order-md-1">
+                                    <div class="text-center text-md-start mb-4">
+                                        <h3 class="text-gradient">{{this.name}}</h3>
+                                        <p class="text-muted text-muted">{{this.ocupation}}</p>
+                                    </div>
+                                    <div class="text-justify">
+                                        {{#each description}}
+                                            <p>{{this}}</p>
+                                        {{/each}}
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {{/content}}
+{{/extend}}

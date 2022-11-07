@@ -1,0 +1,97 @@
+{{#extend "default"}}
+    {{#content "main"}}
+        <section class="d-flex gr-profile-header w-100">
+            <div class="container gr-profile-container pb-4">
+                <h1 class="py-5">Olá, que bom te ver de volta!</h1>
+                <div class="d-flex row">
+                    <div class="col-lg-3 order-0 text-center text-lg-start">
+                        <img class="img-flid rounded-circle" src="/images/User.png" />
+                    </div>
+                    <div class="col-lg-9 order-1 text-center text-lg-start">
+                        <div class="d-flex justify-content-between align-items-center pb-2">
+                            <h2>Marcelo Soares</h2>
+                            <a href="editar-perfil" class="text-decoration-none" style="font-size: 18px">Editar
+                                perfil</a>
+                        </div>
+                        <div class="d-flex">
+                            <i class="bi bi-envelope p-1"></i>
+                            <p>marcelo.soares@gmail.com</p>
+                        </div>
+                        <div class="d-flex">
+                            <i class="bi bi-geo-alt p-1"></i>
+                            <p>Belo Horizonte, Minas Gerais</p>
+                        </div>
+                        <div class="d-flex">
+                            <i class="bi bi-github p-1"></i>
+                            <p>marcelosoares</p>
+                        </div>
+                        <div class="d-flex">
+                            <i class="bi bi-linkedin p-1"></i>
+                            <p>http://linkedin.com/marcelo-soares</p>
+                        </div>
+                        <div class="d-flex">
+                            <i class="bi bi-link-45deg p-1"></i>
+                            <p>http://marcelo.soares.com.br</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gr-menu w-100">
+            <div class="container gr-profile-container">
+                <div class="d-flex menu justify-content-between align-items-center">
+                    <div class="order-0">
+                        <button
+                            data-template="ongoing"
+                            class="btn btn-nav-section activ"
+                        >Planos em andamento</button>
+                        <button
+                            data-template="finished"
+                            class="btn btn-nav-section"
+                        >Planos concluídos</button>
+                        <button data-template="saved" class="btn btn-nav-section">Conteúdo salvo</button>
+                        <button
+                            data-template="notes"
+                            class="btn btn-nav-section"
+                        >Notas</button>
+                    </div>
+                    <a href="/estudos/novo-plano" class="text-decoration-none order-1"><small>Criar novo plano de estudos</small></a>
+                </div>
+            </div>
+        </section>
+        <section class="w-100">
+            <div class="container gr-profile-container gr-search">
+                <div class="d-flex justify-content-between align-items-center">
+                    <input
+                        type="text"
+                        class="gr-form-filter w-100"
+                        placeholder="Filtrar resultados"
+                        aria-describedby="button-addon1"
+                    />
+                    <div class="dropdown dropup mx-2">
+                        <button
+                            class="dropdown-toggle gr-form-filter text-start"
+                            id="dropdownMenuOffset"
+                            style="width: 328px;"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            <span class="d-none d-sm-inline">Ordenar por</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu w-100">
+                            <li><a
+                                    class="d-flex dropdown-item justify-content-between"
+                                >Ordenar por <i class="bi bi-chevron-right"></i></a></li>
+                            <li><a class="dropdown-item" >Mais antigos primeiro</a></li>
+                            <li><a class="dropdown-item" >Mais novos primeiro</a></li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {{#embed "profile-body/tpl"}}{{/embed}}
+
+    {{/content}}
+{{/extend}}

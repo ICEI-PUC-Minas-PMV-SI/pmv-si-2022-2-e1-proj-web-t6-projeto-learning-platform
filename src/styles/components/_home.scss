@@ -1,0 +1,240 @@
+.gr-home-page {
+    section {
+        height: 100vh;
+        min-height: 590px;
+        position: relative;
+
+        &:first-child {
+            height: 90vh;
+        }
+    }
+
+    .gr-section-nav-button {
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 20px;
+    }
+
+    .container {
+        max-width: 1192px;
+    }
+
+    h1 {
+        font-size: 36px;
+        line-height: 1;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    img {
+        max-width: 35% !important;
+    }
+
+    @include media-breakpoint-up(xxs) {
+        section {
+            min-height: 640px;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 40px;
+
+            &:first-child {
+                height: 88vh;
+            }
+        }
+
+        h1 {
+            font-size: 46px;
+            line-height: 1;
+        }
+
+        h2 {
+            font-size: 36px;
+        }
+
+        img {
+            max-width: 30% !important;
+        }
+    }
+
+    @include media-breakpoint-up(xs) {
+        section {
+            min-height: 640px;
+            padding-left: 50px;
+            padding-right: 50px;
+
+            &:first-child {
+                height: 91vh;
+            }
+        }
+
+        h1 {
+            font-size: 46px;
+            line-height: 1;
+        }
+
+        h2 {
+            font-size: 40px;
+        }
+    }
+
+    @include media-breakpoint-up(sm) {
+        section {
+            min-height: 760px;
+            padding-left: 110px;
+            padding-right: 110px;
+        }
+
+        h1 {
+            font-size: 62px;
+        }
+
+        h2 {
+            font-size: 48px;
+        }
+
+        img {
+            max-width: 30% !important;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        section {
+            min-height: 900px;
+        }
+
+        .gr-section-nav-button {
+            right: 0;
+            left: 0;
+            bottom: 30px;
+        }
+
+        h1 {
+            font-size: 90px;
+        }
+
+        h2 {
+            font-size: 66px;
+        }
+
+        img {
+            max-width: 30% !important;
+            margin-bottom: 3rem;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        section {
+            min-height: 800px;
+            padding-bottom: 60px;
+
+            &:first-child {
+                // height: 89vh;
+            }
+        }
+
+        .gr-section-nav-button {
+            bottom: 60px;
+        }
+
+        h1 {
+            font-size: 105px;
+        }
+
+        h2 {
+            font-size: 80px;
+        }
+
+        img {
+            max-width: 100% !important;
+        }
+
+        .gr-section-sing-up {
+            img {
+                max-width: 290px !important;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(xl) {
+        section {
+            min-height: 880px;
+        }
+    }
+}
+
+.gr-section-how-it-works {
+    position: relative;
+
+    .bg-gradient-liean,
+    .bg-gradient-radial,
+    .bg-gradient-radial-2 {
+        z-index: -100;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .bg-gradient-radial {
+        -webkit-animation: GradientRadialAnimation 30s ease infinite;
+        -moz-animation: GradientRadialAnimation 30s ease infinite;
+        -o-animation: GradientRadialAnimation 30s ease infinite;
+        animation: GradientRadialAnimation 30s ease infinite;
+        background-size: 100% 100%;
+        background-position: 100% 0;
+        background-image: radial-gradient(
+            circle,
+            rgb(0, 231, 255) 0%,
+            rgba(183, 6, 255, 1) 50%,
+            rgba(255, 0, 207, 1) 100%
+        );
+        opacity: 0.3;
+    }
+
+    .bg-gradient-radial-2 {
+        -webkit-animation: GradientRadialAnimation2 50s ease infinite;
+        -moz-animation: GradientRadialAnimation2 50s ease infinite;
+        -o-animation: GradientRadialAnimation2 50s ease infinite;
+        animation: GradientRadialAnimation2 50s ease infinite;
+        background-size: 100% 100%;
+        background-position: 0 0;
+        background-image: radial-gradient(
+            circle,
+            rgba(255, 0, 207, 1) 0%,
+            rgb(16, 133, 206) 54%,
+            rgba(183, 6, 255, 1) 100%
+        );
+        opacity: 0.7;
+    }
+}
+
+/*******************************************************************************
+* CUSTOM SEARCH
+*******************************************************************************/
+.gr-custom-search {
+    position: relative;
+
+    .form-control {
+        padding-right: 55px;
+        background-color: rgba($color: #fff, $alpha: 0.1);
+        opacity: 80%;
+        border-color: #38b9e1;
+        height: 60px;
+    }
+
+    .form-control::placeholder {
+        color: rgba($color: #fff, $alpha: 0.8);
+        font-size: 20px;
+    }
+
+    .bi {
+        position: absolute;
+        right: 24px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

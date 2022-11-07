@@ -1,72 +1,105 @@
 {{#block "header/tpl"}}
     <div class="container-fluid bd-gutter flex-wrap flex-xl-nowrap">
         <div class="bd-navbar-toggle">
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#gr-navbar-collapse" aria-controls="gr-navbar-collapse">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi" fill="currentColor" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#gr-navbar-collapse"
+                aria-controls="gr-navbar-collapse"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    class="bi"
+                    fill="currentColor"
+                    viewBox="0 0 16 16"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                    ></path>
                 </svg>
-            </buton>
+            </button>
         </div>
-        
+
         <!-- Logo Component -->
         <div class="navbar-brand">
             <h1 class="m-0 me-lg-3">
-                <a href="/" title="{{meta.title}}" class="text-decoration-none text-white">{{meta.name}}</a>
+                <a
+                    href="/"
+                    title="{{meta.title}}"
+                    class="text-decoration-none text-white"
+                >{{meta.name}}</a>
             </h1>
         </div>
 
         <!-- Search Component -->
-        <div class="gr-main-search">
+        <div class="gr-search-bar position-relative">
             <div class="d-flex flex-fill">
-                <button class="btn btn-link text-decoration-none text-body">
+                <button class="gr-search-bar-back-btn btn btn-link text-decoration-none text-body">
                     <i class="bi bi-arrow-left-short fs-1"></i>
                 </button>
 
-                <div class="dropdown me-2">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="d-none d-sm-inline">Explore</span>
-                        <i class="bi bi-funnel d-sm-none"></i>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </div>
+                <button class="gr-search-bar-explore-btn btn btn-secondary me-2" type="button">
+                    <span class="d-none d-sm-inline">Explore</span>
+                    <i class="bi bi-funnel d-sm-none"></i>
+                </button>
 
                 <form class="d-flex flex-fill mb-0" role="search">
-                    <input type="text" class="form-control input" placeholder="{{home.header.search.placeholder}}" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                    <button class="btn btn-secondary" type="submit">
-                        <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                    <input
+                        type="text"
+                        class="form-control input me-2"
+                        placeholder="{{home.header.search.placeholder}}"
+                        aria-label="Example text with button addon"
+                        aria-describedby="button-addon1"
+                    />
+                    <button class="gr-search-btn btn btn-secondary" type="submit">
+                        <i class="bi bi-search"></i>
                     </button>
                 </form>
             </div>
+            {{#embed "drop-menu/tpl"}}{{/embed}}
         </div>
 
         <!-- Menu Component -->
-        <div class="offcanvas-xl offcanvas-start"  tabindex="-1" id="gr-navbar-collapse">
+        <div
+            class="gr-mobile-menu offcanvas-xl offcanvas-start"
+            tabindex="-1"
+            id="gr-navbar-collapse"
+        >
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Responsive offcanvas</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#gr-navbar-collapse" aria-label="Close"></button>
+                <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">{{meta.name}}</h5>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas"
+                    data-bs-target="#gr-navbar-collapse"
+                    aria-label="Close"
+                ></button>
             </div>
             <div class="offcanvas-body">
-                <ul class="navbar-nav me-3 align-items-center">
+                <ul class="navbar-nav me-3">
                     {{#each menu.items}}
                         <li class="nav-item">
-                            <a href="{{this.url}}" title="{{../meta.name}} - {{this.title}}" class="nav-link">
+                            <a href="{{this.url}}" title="{{this.title}}" class="nav-link">
                                 {{this.title}}
                             </a>
                         </li>
                     {{/each}}
                 </ul>
 
-                <a  href="{{menu.login.url}}"
-                    class="btn btn-outline-secondary border-dashed me-2"
+                <hr class="d-xl-none my-4" />
+
+                <a
+                    href="{{menu.login.url}}"
+                    class="btn btn-outline-secondary border-dashed me-0 me-xl-2 mb-3 mb-xl-0 d-block d-xl-inline"
                 >
                     {{menu.login.title}}
                 </a>
 
-                <a href="{{menu.cadastro.url}}" class="btn btn-outline-primary">
+                <a href="{{menu.cadastro.url}}" class="btn btn-outline-primary d-block d-xl-inline">
                     {{menu.cadastro.title}}
                     <i class="bi bi-plus-lg"></i>
                 </a>
@@ -74,4 +107,3 @@
         </div>
     </div>
 {{/block}}
-

@@ -1,0 +1,41 @@
+{
+    "id": 1,
+    "userId": 1,
+    "track": {
+        "title": "Frontend",
+        "slug": "frontend"
+    },
+    "title": "Meu plano de frontend",
+    "items": [
+        {
+            "id": "introduction",
+            "complete": true,
+            "title": "Introdução",
+            "description": "Descrição"
+        },
+        {
+            "id": "research",
+            "complete": true,
+            "title": "Quem pesquisa amigo é",
+            "description": "Aprenda como e onde pesquisar para desencalhar durando seu aprendizado."
+        },
+        {
+            "id": "versioning",
+            "complete": false,
+            "title": "Versionamento com Git & Github",
+            "description": "Como gerenciar seus arquivos durante o desenvolvimento de uma aplicação."
+        },
+        {
+            "id": "html",
+            "complete": false,
+            "title": "HTML",
+            "description": "Pensando como um desenvolvedor de software."
+        },
+        {
+            "id": "css",
+            "complete": false,
+            "title": "CSS",
+            "description": "Pensando como um desenvolvedor de software."
+        }
+    ]
+}

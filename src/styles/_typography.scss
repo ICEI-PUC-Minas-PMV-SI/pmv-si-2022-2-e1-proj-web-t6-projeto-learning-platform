@@ -1,0 +1,66 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.4rem;
+}
+
+@include media-breakpoint-up(sm) {
+    html {
+        font-size: 72%;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    html {
+        font-size: 85%;
+    }
+
+    body {
+        font-size: 1.2rem;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    html {
+        font-size: 95%;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    html {
+        font-size: 100%;
+    }
+
+    body {
+        font-size: 1.1rem;
+    }
+}
+
+h6,
+h5,
+h4,
+h3,
+h2,
+h1 {
+    font-family: "Bakbak One", cursive;
+    color: var(--gr-text-title);
+    line-height: 1 !important;
+}
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        @if $i == 1 {
+            font-size: 4rem;
+        } @else {
+            font-size: calc(3rem - calc(0.25rem * $i));
+        }
+    }
+}
+
+.lead-text {
+    font-size: 1.4rem !important;
+    font-weight: 400 !important;
+    line-height: 147.5% !important;
+}
