@@ -1,9 +1,12 @@
-const userRoutes = (app, router, config) => {
+const userRoutes = (app, createRouter, config) => {
     // console.log("HELL YEAHHHHH! LOADING MY ROUTES");
 
-    app.get("/test/custom", function (req, res) {
-        res.send("hello world");
-    });
+    const studyPlanRouter = createRouter();
+
+    studyPlanRouter
+        .get(`/estudos/:planId/topic/:topicId`, (req, res) => {
+            
+        })
 };
 
 module.exports = userRoutes;

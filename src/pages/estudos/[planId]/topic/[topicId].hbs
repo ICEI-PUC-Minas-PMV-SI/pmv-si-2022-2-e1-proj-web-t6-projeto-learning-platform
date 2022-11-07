@@ -1,0 +1,27 @@
+{{#extend "default"}}
+    {{#content "main"}}
+        <div class="gr-study-plan gr-theme-backend">
+            {{> "plan-header/tpl"
+                url=(append "/estudos/" params.planId)
+                category="Frontend"
+                title=(get "title" (itemAt planoEstudo.items params.topicId))
+            }}
+            <section class="py-5 px-3 px-sm-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3 offset-1 d-none d-lg-block">
+                            {{#each planoEstudo.items}}
+                                {{#embed "study-plan-step/tpl" context=this url=../url}}{{/embed}}
+                            {{/each}}
+                        </div>
+                        <div class="col-12 cl-md-10 ofsset-md-1 col-lg-7 offset-lg-0">
+                            {{#each planoEstudo.items}}
+                                {{#embed "plan-topic-entry/tpl" context=this}}{{/embed}}
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    {{/content}}
+{{/extend}}

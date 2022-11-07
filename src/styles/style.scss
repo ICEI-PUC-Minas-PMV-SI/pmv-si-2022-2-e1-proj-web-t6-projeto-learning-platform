@@ -106,9 +106,18 @@ footer {
 * PLANO DE ESTUDOS STYLES
 *******************************************************************************/
 .gr-track-title-section {
+    .container {
+        position: relative;
+
+        .gr-breadcrumbs {
+            height: 32px;
+        }
+    }
     .btn {
         position: absolute;
-        left: -100%;
+        left: -36px;
+        height: 32px;
+        width: 32px;
     }
 }
 
@@ -137,6 +146,22 @@ footer {
         & > div:first-child {
             div:last-child {
                 display: none;
+            }
+        }
+    }
+
+    // Menu mode, tracker must be a bit smaller than full mode
+    &:not(.full-view) {
+        & > div:first-child {
+            div:first-child {
+                width: 30px;
+                height: 30px;
+                border-width: 3px;
+                padding: 2px 0 0 1px;
+
+                & > i {
+                    font-size: 20px;
+                }
             }
         }
     }
