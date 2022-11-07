@@ -194,19 +194,28 @@
     }
 }
 .btn-nav-section {
-    border: none;
-    border-bottom: 2px;
-    --bs-btn-color: red;
-    --bs-btn-font-family: var(--gr-text-body);
-    --bs-btn-active-color: yellow;
-
-    &:active {
-        border: none;
-    }
+    
+    border-bottom: 3px solid transparent;
+    
+    --bs-btn-color: white;
+    --bs-btn-border-radius: 0px;
+    --bs-btn-hover-color: white;
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-active-border-color: transparent;
+    
     &:hover {
-        --bs-btn-color: green;
+        border-bottom: 3px groove var(--bs-primary-hover) !important;
+    }
+
+
+}
+.activ {
+    border-bottom: 3px solid var(--bs-primary-hover);
+    &:hover{
+        border-bottom: 3px solid var(--bs-primary-hover);
     }
 }
+
 
 .gr-section-nav-button {
     transition: 300ms ease-in-out;
@@ -268,10 +277,6 @@
 .gr-plan-card {
     margin-top: 32px;
     margin-bottom: 32px;
-
-    h4 {
-        font-size: 32px;
-    }
 
     .percent {
         border-left: 2px solid #3d3d3d !important;
@@ -370,6 +375,20 @@
 
 .gr-profile-container {
     max-width: 1192px;
+
+}
+.gr-edit-profile-section{
+    
+    border-bottom: 2px solid var(--gr-bg-light);
+    .container{
+        max-width: 792px;
+    }
+    .password{
+        background-color: var(--gr-bg-darker);
+        h6 {
+            color: var(--bs-primary);
+        }
+    }
 }
 
 .gr-menu {

@@ -1,16 +1,16 @@
 {{#extend "default"}}
     {{#content "main"}}
         <section class="d-flex gr-profile-header w-100">
-            <div class="container gr-profile-container">
-                <h1 class="py-4">Olá, que bom te ver de volta!</h1>
-                <div class="row">
-                    <div class="col-md-3">
+            <div class="container gr-profile-container pb-4">
+                <h1 class="py-5">Olá, que bom te ver de volta!</h1>
+                <div class="d-flex row">
+                    <div class="col-lg-3 order-0 text-center text-lg-start">
                         <img class="img-flid rounded-circle" src="/images/User.png" />
                     </div>
-                    <div class="col-md-9">
-                        <div class="d-flex justify-content-between align-items-center">
+                    <div class="col-lg-9 order-1 text-center text-lg-start">
+                        <div class="d-flex justify-content-between align-items-center pb-2">
                             <h2>Marcelo Soares</h2>
-                            <a href="" class="text-decoration-none" style="font-size: 18px">Editar
+                            <a href="editar-perfil" class="text-decoration-none" style="font-size: 18px">Editar
                                 perfil</a>
                         </div>
                         <div class="d-flex">
@@ -39,26 +39,24 @@
         </section>
         <section class="gr-menu w-100">
             <div class="container gr-profile-container">
-                <div class="d-flex-row menu">
-                    <button
-                        id="target1"
-                        data-template="ongoing"
-                        class="btn btn-nav-section target"
-                    >Planos em andamento</button>
-                    <button
-                        id="target2"
-                        data-template="finished"
-                        class="btn btn-nav-section target"
-                    >Planos concluídos</button>
-                    <button id="target3" class="btn btn-nav-section target">Conteúdo salvo</button>
-                    <button
-                        id="target4"
-                        href="#target4"
-                        class="btn btn-nav-section target"
-                    >Notas</button>
-                    <a href="" class="text-decoration-none">Criar novo plano de estudos</a>
+                <div class="d-flex menu justify-content-between align-items-center">
+                    <div class="order-0">
+                        <button
+                            data-template="ongoing"
+                            class="btn btn-nav-section activ"
+                        >Planos em andamento</button>
+                        <button
+                            data-template="finished"
+                            class="btn btn-nav-section"
+                        >Planos concluídos</button>
+                        <button data-template="saved" class="btn btn-nav-section">Conteúdo salvo</button>
+                        <button
+                            data-template="notes"
+                            class="btn btn-nav-section"
+                        >Notas</button>
+                    </div>
+                    <a href="/estudos/novo-plano" class="text-decoration-none order-1"><small>Criar novo plano de estudos</small></a>
                 </div>
-
             </div>
         </section>
         <section class="w-100">
@@ -85,10 +83,9 @@
                         <div class="dropdown-menu w-100">
                             <li><a
                                     class="d-flex dropdown-item justify-content-between"
-                                    href="#/"
                                 >Ordenar por <i class="bi bi-chevron-right"></i></a></li>
-                            <li><a class="dropdown-item" href="#/">Mais antigos primeiro</a></li>
-                            <li><a class="dropdown-item" href="#/">Mais novos primeiro</a></li>
+                            <li><a class="dropdown-item" >Mais antigos primeiro</a></li>
+                            <li><a class="dropdown-item" >Mais novos primeiro</a></li>
                         </div>
                     </div>
                 </div>
