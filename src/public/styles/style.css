@@ -1168,9 +1168,17 @@ header:has(.gr-search-bar.gr-opened) .bd-navbar-toggle {
 /*******************************************************************************
 * PLANO DE ESTUDOS STYLES
 *******************************************************************************/
+.gr-track-title-section .container {
+  position: relative;
+}
+.gr-track-title-section .container .gr-breadcrumbs {
+  height: 32px;
+}
 .gr-track-title-section .btn {
   position: absolute;
-  left: -100%;
+  left: -36px;
+  height: 32px;
+  width: 32px;
 }
 
 .gr-plan-progress > div:first-child div:first-child {
@@ -1190,6 +1198,15 @@ header:has(.gr-search-bar.gr-opened) .bd-navbar-toggle {
 }
 .gr-plan-progress:last-child > div:first-child div:last-child {
   display: none;
+}
+.gr-plan-progress:not(.full-view) > div:first-child div:first-child {
+  width: 30px;
+  height: 30px;
+  border-width: 3px;
+  padding: 2px 0 0 1px;
+}
+.gr-plan-progress:not(.full-view) > div:first-child div:first-child > i {
+  font-size: 20px;
 }
 
 .gr-theme-frontend h1 {
