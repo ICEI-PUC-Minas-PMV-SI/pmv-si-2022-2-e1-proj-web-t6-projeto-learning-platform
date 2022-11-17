@@ -1,90 +1,117 @@
 header {
+    padding: 10px 32px 10px 12px;
+
+    // logo sizing
+    .navbar-brand h1 {
+        font-size: 1.8rem !important;
+    }
+
+    .gr-header-start,
+    .gr-header-end {
+        min-width: 30%;
+    }
+
+    // hide logo and sidebar toggle when mobile search is open
     &:has(.gr-search-bar.gr-opened) {
         .navbar-brand,
-        .bd-navbar-toggle {
+        .gr-header-start,
+        .gr-header-end {
             display: none;
+        }
+    }
+
+    .gr-icon-btn {
+        padding: 0 12px;
+        font-size: 1.4rem;
+
+        &.gr-user-btn {
+            font-size: 2rem;
+            width: 42px;
+            padding: 2px;
+        }
+    }
+
+    .gr-user-thumbnail {
+    }
+
+    @include media-breakpoint-up(xl) {
+        .gr-header-start,
+        .gr-header-end {
+            min-width: auto;
+
+            .gr-search-btn {
+                display: none;
+            }
         }
     }
 }
 
 .gr-search-bar {
+    flex-grow: 0;
     position: relative;
 
-    & > div:first-child {
-        max-width: 580px;
+    .gr-search-bar-container {
+        max-width: 100%;
+        display: none !important;
     }
 
+    // Unify search input and buttton to appear like they are one.
+    .input-group {
+        .form-control {
+            border-right-width: 0 !important;
+        }
+        .btn {
+            background-color: var(--gr-bg-darker) !important;
+            border: 2px solid var(--bs-border-light-color) !important;
+            border-left-width: 0 !important;
+        }
+    }
+
+    // Give the search button the same focus border as the form-controls
     form {
+        // Add blue border to search input on focus
         &:has(.form-control:focus) {
-            .btn {
-                border-color: var(--bs-secondary-hover) !important;
-                background-color: var(--bs-secondary-hover) !important;
+            .input-group .btn {
+                border-color: var(--bs-primary-hover) !important;
                 color: var(--bs-primary-hover);
             }
         }
-
-        .form-control {
-            height: 40px;
-            border-width: 0;
-        }
-
-        @include media-breakpoint-down(md) {
-            .btn {
-                background-color: transparent !important;
-                border: 0;
-            }
-        }
     }
 
-    .gr-search-bar-explore-btn {
-        &.gr-active {
-            height: 50px !important;
-            margin-bottom: -10px;
-            border-bottom-right-radius: 0;
-            border-bottom-left-radius: 0;
-            border-color: var(--gr-bg-darker);
-            background-color: var(--gr-bg-darker);
-        }
-    }
-
-    .form-control,
-    .gr-search-bar-back-btn,
-    .gr-search-bar-explore-btn {
-        display: none;
-    }
-
-    & > div:first-child .btn {
-        line-height: 36px;
-        height: 40px;
-        padding: 0 12px;
-    }
-
+    // On mobile, whe search is active fix flex and width
     &.gr-opened {
-        flex: 1;
+        flex-grow: 1;
 
-        & > div {
-            max-width: 100%;
-        }
-
-        .form-control,
-        .gr-search-bar-back-btn,
-        .gr-search-bar-explore-btn {
-            display: block;
+        .gr-search-bar-container {
+            display: flex !important;
         }
     }
 
-    // estilos para telas >= md
-    @include media-breakpoint-up(md) {
-        flex: 1;
+    @include media-breakpoint-up(xl) {
+        flex-grow: 1;
 
-        .gr-search-bar-back-btn {
-            display: none;
+        .gr-search-bar-container {
+            max-width: 580px;
+            display: flex !important;
         }
 
-        .gr-search-bar-explore-btn,
-        .form-control {
-            display: block;
+        .gr-search-close {
+            display: none !important;
         }
+
+        .gr-search-bar-container {
+        }
+    }
+}
+
+.gr-explore-btn {
+    &.gr-active {
+        height: 50px !important;
+        margin-bottom: -10px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-color: var(--gr-bg-darker);
+        background-color: var(--gr-bg-darker);
     }
 }
 

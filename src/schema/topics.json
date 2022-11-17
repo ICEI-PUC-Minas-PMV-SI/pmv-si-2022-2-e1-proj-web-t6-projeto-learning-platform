@@ -1,0 +1,19 @@
+{
+    "size": 15,
+    "name": "topics",
+    "schema": {
+        "id": "datatype.uuid",
+        "title": "lorem.sentence",
+        "slug": "helpers.slugify:prop.title",
+        "description": "lorem.paragraph",
+        "tech": "unique:helpers.arrayElement:React Js,Angular,Responsive Web",
+        "techSlug": "helpers.slugify:prop.tech",
+        "technologyId": "relation:technologies.slug:topics.techSlug"
+    },
+    "afterAll": [
+        {
+            "type": "removeProps",
+            "value": ["tech", "techSlug"]
+        }
+    ]
+}

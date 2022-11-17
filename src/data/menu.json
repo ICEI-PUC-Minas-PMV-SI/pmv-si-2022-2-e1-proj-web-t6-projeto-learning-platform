@@ -1,15 +1,15 @@
 {
     "items": [
         { "title": "Home", "url": "/" },
-        { "title": "Sobre", "url": "/sobre" },
-        { "title": "Como Começar", "url": "/como-comecar" }
+        { "title": "Sobre", "url": "/about" },
+        { "title": "Como Começar", "url": "/how-it-works" }
     ],
     "login": {
         "title": "Entrar",
-        "url": "/auth/login"
+        "url": "/sign-in"
     },
     "cadastro": {
         "title": "Cadastre-se",
-        "url": "/auth/cadastro"
+        "url": "/sign-up"
     }
 }

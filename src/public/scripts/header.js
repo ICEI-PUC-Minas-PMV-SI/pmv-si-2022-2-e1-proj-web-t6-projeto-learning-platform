@@ -1,7 +1,7 @@
 function initMobileSearch() {
     const search = $(".gr-search-bar");
-    const trigger = $(".gr-search-btn", search);
-    const closeTrigger = $(".gr-search-bar-back-btn", search);
+    const trigger = $("header .gr-search-btn");
+    const closeTrigger = $(".gr-search-close", search);
 
     const toggle = (e) => {
         e.preventDefault();
@@ -23,7 +23,7 @@ function initMobileSearch() {
     let attached = false;
 
     $(window).on("resize", (e) => {
-        const isMobile = window.outerWidth < 768;
+        const isMobile = window.outerWidth < 1200;
 
         if (isMobile && !attached) {
             attach();
@@ -41,15 +41,17 @@ function initDropMenu() {
     const search = $(".gr-search-bar");
     const menu = $(".gr-floating-menu");
     const container = $(".gr-drop-menu-container");
-    const exploreBtn = search.find(".gr-search-bar-explore-btn");
+    const exploreBtn = search.find(".gr-explore-btn");
     const categories = container.find("div:first-child [data-target]");
     const backBtn = $(".gr-drop-menu-back-btn");
     const menuSubTitle = $(".gr-drop-menu-sub-title");
 
+    // Toggle drop menu
     exploreBtn.on("click", () => {
         menu.toggleClass("invisible");
     });
 
+    // When search container closes, also close the menu if is open
     search.mutate(["class"], (values) => {
         if (values.class.indexOf("gr-opened") === -1 && !menu.hasClass("invisible")) {
             menu.toggleClass("invisible");
@@ -65,6 +67,7 @@ function initDropMenu() {
         }
     });
 
+    // Close the menu if the window get's resized below 1200px
     $(window).on("resize", (e) => {
         if (e.currentTarget.innerWidth < 978 && !menu.hasClass("invisible")) {
             menu.toggleClass("invisible");

@@ -3,11 +3,11 @@
         "label": "Criar plano de estudos",
         "type": "primary",
         "icon": "plus",
-        "url": "/estudos/novo-plano/area"
+        "url": "/tracks/new/area"
     },
-    "back-button":{
+    "back-button": {
         "type": "primary",
         "icon": "plus",
-        "url": "/estudos/novo-plano/area"
+        "url": "/tracks/new/area"
     }
 }

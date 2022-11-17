@@ -1,0 +1,58 @@
+{{#extend "default"}}
+    {{#content "main"}}
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div
+                        class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 pt-page"
+                    >
+
+                        <a
+                            href="/tracks/new/tech?category={{data 'query.category'}}"
+                            class="d-flex text-decoration-none align-items-center mb-2 link-light"
+                        >
+                            <i class="bi bi-arrow-left me-2 gr-{{data 'query.category'}}-color"></i>
+                            Passo 3 de 4
+                        </a>
+
+                        {{#with (find technologies.items "name" query.tecnology)}}
+                            <h1 class="text mb-4">
+                                <span
+                                    class="gr-{{data 'query.category'}}-color"
+                                >{{label}}</span>{{header}}
+                            </h1>
+                            <p class="text-lead mb-5 text-justify">
+                                {{descricao}}
+                            </p>
+                        {{/with}}
+
+                        <div class="mb-5">
+                            <h4 class="mb-5">
+                                Quanto tempo você pode, e/ou gostaria de dedicar diariamente para
+                                seus estudos?
+                            </h4>
+
+                            {{#each times.items}}
+                                <a
+                                    href="/tracks/new/informations?category={{data
+                                        'query.category'
+                                    }}&tecnology={{data 'query.tecnology'}}&time={{id}}"
+                                    class="text-lead row align-items-center justify-content-center text-decoration-none p-3 border-top gr-plan-options"
+                                >
+                                    <p class="col-10">{{descricao}}</p>
+                                    <i
+                                        class="col-2 bi bi-clock-history gr-{{data
+                                                'query.category'
+                                            }}-color"
+                                    ></i>
+                                </a>
+                            {{/each}}
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    {{/content}}
+{{/extend}}

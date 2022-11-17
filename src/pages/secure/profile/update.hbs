@@ -1,0 +1,107 @@
+{{#extend "default"}}
+    {{#content "main"}}
+        <section class="d-flex gr-profile-header w-100">
+            <div class="container gr-profile-container py-5">
+                <h2>
+                    <a class="text-decoration-none" href="/profile">
+                        <i class="bi bi-chevron-left p-1"></i>Editar perfil
+                    </a>
+                </h2>
+                <div class="d-flex row">
+                    <div class="text-center">
+                        <img class="img-flid rounded-circle" src="/images/User.png" />
+                        <i class="bi bi-pencil-square align-bottom text-end lead-text"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gr-edit-profile-section">
+            <div class="d-flex-row container py-4">
+                <h6 class="py-4">Informações da conta</h6>
+                <p class="m-0 pt-3"><small>Nome*</small></p>
+                <input type="text" class="form-control input w-100" placeholder="Marcelo Soares" />
+                <p class="m-0 pt-3"><small>Email*</small></p>
+                <input
+                    type="text"
+                    class="form-control input w-100"
+                    placeholder="marcelo.soares @gmail.com"
+                />
+                <p class="m-0 pt-3"><small>Cidade*</small></p>
+                <input type="text" class="form-control input w-100" placeholder="Belo Horizonte" />
+                <p class="m-0 pt-3"><small>Headline*</small></p>
+                <input
+                    type="text"
+                    class="form-control input w-100"
+                    placeholder="Senior Frontend Lead Engineer na UOL"
+                />
+                <p class="m-0 pt-3"><small>Bio</small></p>
+                <input
+                    type="text"
+                    class="form-control input w-100"
+                    placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+                />
+            </div>
+        </section>
+
+        <section class="gr-edit-profile-section">
+            <div class="d-flex-row container py-4">
+                <h6 class="py-4">Links</h6>
+
+                <p class="m-0 pt-3"><small>Website</small></p>
+                <input
+                    type="text"
+                    class="form-control input w-100"
+                    placeholder="http://marcelo.soares.com"
+                />
+                <p class="m-0 pt-3"><small>LinkedIn</small></p>
+                <input
+                    type="text"
+                    class="form-control input w-100"
+                    placeholder="http://linkedin.com/marcelo-soares"
+                />
+                <p class="m-0 pt-3"><small>Outro link útil</small></p>
+                <input
+                    type="text"
+                    class="form-control input w-100"
+                    placeholder="Portifólio ou outro link útil"
+                />
+            </div>
+        </section>
+
+        <section class="gr-edit-profile-section">
+            <div class="d-flex-row container py-4">
+                <h6 class="py-4">Integrações</h6>
+                <p>Seu nome de usuário do Github é utilizado para syncronizar e puxar informações
+                    sobre o seu perfil.</p>
+
+                <p class="m-0 pt-3"><small>Github Username</small></p>
+                <input type="text" class="form-control input w-100" placeholder="JohnDoe" />
+            </div>
+
+            <div class="d-flex-row container password py-4 mb-4">
+                <h6>Trocar senha</h6>
+                <p>Entre sua nova senha abaixo, você será que efetuar o login novamente após
+                    confirmar sua nova senha.</p>
+
+                <p class="m-0 pt-3"><small>Nova Senha</small></p>
+                <input
+                    type="text"
+                    class="form-control input w-100"
+                    placeholder="Digite sua senha"
+                />
+                <p class="m-0 pt-3"><small>Confirme sua senha</small></p>
+                <input
+                    type="text"
+                    class="form-control input w-100"
+                    placeholder="Digite sua senha novamente"
+                />
+
+                <div class="d-grid gap-1 pt-4">
+                    <button type="submit" class="btn btn-primary"> Atualizar senha </button>
+                </div>
+            </div>
+        </section>
+
+    {{/content}}
+{{/extend}}

@@ -1,0 +1,18 @@
+{
+    "size": 3,
+    "name": "technologies",
+    "schema": {
+        "id": "datatype.uuid",
+        "title": "unique:helpers.arrayElement:React Js,Angular,Responsive Web",
+        "slug": "helpers.slugify:prop.title",
+        "description": "lorem.paragraph",
+        "areaId": "relation:areas.type:technologies.slug"
+    },
+    "mapping": {
+        "areas": {
+            "react-js": "frontend",
+            "angular": "frontend",
+            "responsive-web": "frontend"
+        }
+    }
+}

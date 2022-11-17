@@ -6,23 +6,18 @@
                     Default title
                 {{/block}}
             </h5>
-            <form>
+            <form id="{{id}}" action="{{action}}" method="post">
                 {{#block "cardContent"}}
                     Card content
                 {{/block}}
 
                 <div class="d-grid gap-1 pt-3">
-                    
-                        <button type="submit" class="btn btn-primary">
-                            {{#block "cardButton"}}
-                            {{/block}}
-                        </button>
-                    
-
-                    {{#block "cardExtra"}}{{/block}}
+                    <button type="submit" class="btn btn-primary">
+                        {{#block "cardButton"}}{{/block}}
+                    </button>
                 </div>
-
             </form>
+            {{#block "cardExtra"}}{{/block}}
         </div>
     </div>
 {{/block}}

@@ -1,0 +1,12 @@
+{
+    "size": 10,
+    "name": "tracks",
+    "schema": {
+        "id": "datatype.uuid",
+        "title": "lorem.sentence",
+        "startDate": "date.recent",
+        "endDate": null,
+        "technologyId": "relation:technologies.id",
+        "userId": "relation:users.id"
+    }
+}

@@ -1,0 +1,70 @@
+{{#extend "default"}}
+    {{#content "main"}}
+        <div class="auth-container flex-fill mx-3">
+            {{#embed "form-box/tpl" id="gr-login" action="/auth/local"}}
+                {{#content "cardTitle"}}
+                    {{auth.login.title}}
+                {{/content}}
+
+                {{#content "cardContent"}}
+                    <div class="mb-3">
+                        <label
+                            for="auth-username"
+                            class="form-label"
+                        >{{auth.login.form.email.label}}</label>
+                        <input
+                            name="username"
+                            type="text"
+                            class="form-control"
+                            id="auth-username"
+                        />
+                    </div>
+
+                    <div class="mb-3">
+                        <label
+                            for="auth-password"
+                            class="form-label"
+                        >{{auth.login.form.password.label}}</label>
+                        <input
+                            name="password"
+                            type="password"
+                            class="form-control"
+                            id="auth-password"
+                        />
+                    </div>
+
+                    <div class="text-end my-4">
+                        <a
+                            href="{{auth.link.recover.url}}"
+                            class="text-body-link text-decoration-none"
+                        >{{auth.link.recover.label}}</a>
+                    </div>
+                {{/content}}
+
+                {{#content "cardButton"}} Login {{/content}}
+
+                {{#content "cardExtra"}}
+                    <div class="d-flex align-items-center my-3">
+                        <div class="border-top border-lighter flex-fill" style="height: 1px"></div>
+                        <div class="px-2">ou</div>
+                        <div class="border-top border-lighter flex-fill" style="height: 1px"></div>
+                    </div>
+
+                    <form action="/auth/github" method="post">
+                        <button type="submit" class="btn btn-dark btn-left-icon">
+                            <i class="bi bi-github"></i>
+                            {{auth.link.github.label}}
+                        </button>
+                    </form>
+
+                    <div class="d-flex align-items-center justify-content-center px-4 pt-4">
+                        {{auth.login.noAccount}}&nbsp;
+                        <a href="{{menu.cadastro.url}}" class="text-decoration-none">
+                            {{auth.link.signUp.label}}
+                        </a>
+                    </div>
+                {{/content}}
+            {{/embed}}
+        </div>
+    {{/content}}
+{{/extend}}

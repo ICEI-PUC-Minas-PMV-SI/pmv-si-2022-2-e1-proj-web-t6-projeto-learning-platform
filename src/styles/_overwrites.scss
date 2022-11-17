@@ -61,8 +61,8 @@
 *****************************************************************************/
 .btn {
     --bs-btn-padding-x: 24px;
-    --bs-btn-padding-y: 0;
-    --bs-btn-line-height: 42px;
+    // --bs-btn-padding-y: 0;
+    // --bs-btn-line-height: 42px;
     --bs-btn-border-width: 2px;
     --bs-btn-border-radius: 6px;
     --bs-btn-font-size: 0.95rem;
@@ -196,28 +196,23 @@
     }
 }
 .btn-nav-section {
-    
     border-bottom: 3px solid transparent;
-    
     --bs-btn-color: white;
     --bs-btn-border-radius: 0px;
     --bs-btn-hover-color: white;
     --bs-btn-hover-border-color: transparent;
     --bs-btn-active-border-color: transparent;
-    
+
     &:hover {
         border-bottom: 3px groove var(--bs-primary-hover) !important;
     }
-
-
 }
-.activ {
+/* .active {
     border-bottom: 3px solid var(--bs-primary-hover);
     &:hover{
         border-bottom: 3px solid var(--bs-primary-hover);
     }
-}
-
+} */
 
 .gr-section-nav-button {
     transition: 300ms ease-in-out;
@@ -239,7 +234,6 @@
 * FORMS
 *****************************************************************************/
 .form-control {
-    padding: 0.6rem 0.75rem;
     color: var(--gr-text-body);
     background-color: var(--gr-bg-darker);
     border: 2px solid var(--bs-border-light-color);
@@ -250,6 +244,10 @@
         border-color: var(--bs-primary-hover);
         background-color: var(--gr-bg-darker);
         box-shadow: none;
+    }
+
+    &.lg {
+        padding: 0.6rem 0.75rem;
     }
 }
 
@@ -377,15 +375,13 @@
 
 .gr-profile-container {
     max-width: 1192px;
-
 }
-.gr-edit-profile-section{
-    
+.gr-edit-profile-section {
     border-bottom: 2px solid var(--gr-bg-light);
-    .container{
+    .container {
         max-width: 792px;
     }
-    .password{
+    .password {
         background-color: var(--gr-bg-darker);
         h6 {
             color: var(--bs-primary);

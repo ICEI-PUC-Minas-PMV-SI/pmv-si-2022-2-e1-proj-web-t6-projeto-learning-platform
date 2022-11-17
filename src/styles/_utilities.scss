@@ -66,15 +66,14 @@
     }
 }
 
-.gr-btn-plan{
+.gr-btn-plan {
     background: none;
     border: 2px solid var(--gr-text-muted);
     position: relative;
 
-    &:hover{
+    &:hover {
         background: none !important;
-        box-shadow: inset 0 0 10px var(--gr-text-muted),
-            0 0 10px var(--gr-text-muted);
+        box-shadow: inset 0 0 10px var(--gr-text-muted), 0 0 10px var(--gr-text-muted);
     }
 }
 
@@ -103,4 +102,3 @@
 .gr-backend-bg {
     background-color: var(--gr-backend-color);
 }
-

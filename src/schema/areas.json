@@ -1,0 +1,10 @@
+{
+    "size": 3,
+    "name": "areas",
+    "schema": {
+        "id": "datatype.uuid",
+        "type": "unique:helpers.arrayElement:frontend,backend,full-stack",
+        "title": "string.titleize:prop.type",
+        "description": "lorem.paragraph"
+    }
+}
