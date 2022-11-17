@@ -24,7 +24,8 @@
         "prettier": "^2.7.1"
     },
     "dependencies": {
-        "@jmilanes/hotbars": "^1.6.0",
-        "passport-github2": "^0.1.12"
+        "@jmilanes/hotbars": "^1.6.1",
+        "passport-github2": "^0.1.12",
+        "random-seed": "^0.3.0"
     }
 }

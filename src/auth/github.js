@@ -1,5 +1,7 @@
 const GithubStrategy = require("passport-github2");
+const random = require('random-seed');
 const { StrategyAbstract, DataManager } = require("@jmilanes/hotbars");
+
 
 class GithubAuth extends StrategyAbstract {
     constructor() {
@@ -29,11 +31,26 @@ class GithubAuth extends StrategyAbstract {
         const [accessToken, refreshToken, profile, done] = args;
         const user = await this.getUser(profile.emails[0].value);
 
+        // user is trying to register
         if (!user) {
-            return done(undefined, false);
+            const user = await this.createUser(profile, accessToken, refreshToken)
+            return done(undefined, user);
         }
 
         return done(undefined, user);
+    }
+    
+    async createUser(profile, accessToken, refreshToken) {
+        return DataManager.get("lowDb").from("users").insert({
+            provider: profile.provider,
+            accessToken,
+            refreshToken,
+            username: profile.username,
+            email: profile.emails?.length ? profile.emails[0].value : null,
+            avatar: profile.photos?.length ? profile.photos[0].value : `https://avatars.dicebear.com/api/bottts/${random.create()}.svg`,
+            firstName: profile.name?.givenName || null,
+            lastName: profile.name?.familyName || null,
+        });
     }
 
     async getUser(email) {
