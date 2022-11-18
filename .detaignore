@@ -1,0 +1,9 @@
+tests
+docs
+.github
+logs
+presentation
+.env
+.env*
+.hidden
+.hidden*

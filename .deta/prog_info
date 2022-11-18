@@ -1,0 +1,1 @@
+{"id":"3e6856a6-0541-4725-8b08-9391dcd02754","space":38869,"runtime":"nodejs14.x","name":"grimore","path":"b1frcm","project":"b016baxm","account":"144798365827","region":"us-east-1","deps":["@jmilanes/hotbars@^1.6.2","passport-github2@^0.1.12","random-seed@^0.3.0"],"envs":["GITHUB_CLIENT_ID","GITHUB_CLIENT_SECRET"],"public":true,"log_level":"off","cron":""}

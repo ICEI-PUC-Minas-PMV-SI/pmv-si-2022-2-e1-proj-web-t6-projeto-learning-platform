@@ -1,5 +1,5 @@
-const { JsonDbAuthStrateygy } = require("@jmilanes/hotbars");
+const { JsonDbAuthStrategy } = require("@jmilanes/hotbars");
 
-class LocalAuth extends JsonDbAuthStrateygy {}
+class LocalAuth extends JsonDbAuthStrategy {}
 
 module.exports = LocalAuth;

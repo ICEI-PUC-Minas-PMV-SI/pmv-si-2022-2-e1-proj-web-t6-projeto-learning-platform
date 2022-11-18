@@ -3,6 +3,7 @@
 .parcel-cache
 src/db/*
 .env*
+.hidden*
 node_modules
 dist
 logs

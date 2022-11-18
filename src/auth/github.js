@@ -2,7 +2,6 @@ const GithubStrategy = require("passport-github2");
 const random = require('random-seed');
 const { StrategyAbstract, DataManager } = require("@jmilanes/hotbars");
 
-
 class GithubAuth extends StrategyAbstract {
     constructor() {
         super("github");
