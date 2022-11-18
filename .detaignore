@@ -7,3 +7,5 @@ presentation
 .env*
 .hidden
 .hidden*
+
+!.hotbarsrc
