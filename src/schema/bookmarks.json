@@ -4,7 +4,7 @@
     "schema": {
         "id": "datatype.uuid",
         "createAt": "date.recent",
-        "contentId": "relation:videos.id",
-        "userId": "relation:users.id"
+        "contentId": "one-to-one:videos.id",
+        "userId": "one-to-one:users.id"
     }
 }

@@ -1,10 +1,11 @@
 const GithubStrategy = require("passport-github2");
 const random = require('random-seed');
-const { StrategyAbstract, DataManager } = require("@jmilanes/hotbars");
+const { JsonDbAuthStrategy, DataManager } = require("@jmilanes/hotbars");
 
-class GithubAuth extends StrategyAbstract {
+class GithubAuth extends JsonDbAuthStrategy {
     constructor() {
         super("github");
+        this.successRedirect = "/profile"
     }
 
     createStrategy() {
@@ -28,19 +29,35 @@ class GithubAuth extends StrategyAbstract {
 
     async authenticate(...args) {
         const [accessToken, refreshToken, profile, done] = args;
-        const user = await this.getUser(profile.emails[0].value);
+        
+        try {
+            const user = await this.getOrCreateUser(profile, accessToken, refreshToken)
 
-        // user is trying to register
-        if (!user) {
-            const user = await this.createUser(profile, accessToken, refreshToken)
-            return done(undefined, user);
+            if (user) {
+                await this.sendEmailConfirmation(user, this.name);
+
+                return done(undefined, user);
+            }
+
+            return done(undefined, false);
+        } catch(e) {
+            return done(e, false);
         }
-
-        return done(undefined, user);
+    }
+    
+    async getOrCreateUser(profile, accessToken, refreshToken) {
+        const user = await this.getUser(profile.emails[0].value);
+        
+        if (!user) {
+            return this.createUser(profile, accessToken, refreshToken);
+        }
+        
+        return user;
     }
     
     async createUser(profile, accessToken, refreshToken) {
-        return DataManager.get("lowDb").from("users").insert({
+        return DataManager.get("jsonDb").from("users").insert({
+            confirmed: false,
             provider: profile.provider,
             accessToken,
             refreshToken,
@@ -53,7 +70,7 @@ class GithubAuth extends StrategyAbstract {
     }
 
     async getUser(email) {
-        return DataManager.get("lowDb").from("users").eq("email", email).single();
+        return DataManager.get("jsonDb").from("users").eq("email", email).single();
     }
 }
 

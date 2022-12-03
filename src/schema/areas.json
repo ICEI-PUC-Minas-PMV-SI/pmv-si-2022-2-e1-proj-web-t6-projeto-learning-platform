@@ -1,10 +1,10 @@
 {
-    "size": 3,
+    "size": 8,
     "name": "areas",
     "schema": {
         "id": "datatype.uuid",
-        "type": "unique:helpers.arrayElement:frontend,backend,full-stack",
-        "title": "string.titleize:prop.type",
-        "description": "lorem.paragraph"
+        "title": "unique:helpers.arrayElement:Frontend,Backend,Full-Stack,Mobile,Version Control,Testing,Automation,Project Management",
+        "slug": "lodash.kebabCase:prop.title",
+        "description": "lorem.paragraphs:1..3"
     }
 }

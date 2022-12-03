@@ -64,3 +64,10 @@ h1 {
     font-weight: 400 !important;
     line-height: 147.5% !important;
 }
+
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,30 @@
+{{#extend "default"}}
+    {{#content "main"}}
+        <section>
+            <div class="container">
+                <div class="row">
+
+                    <div
+                        class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 pt-page"
+                    >
+                        <h1 class="text mb-4">Novo plano de estudos</h1>
+                        <div class="mb-5">
+                            <p>
+                                O plano de estudo, é uma trilha de conteúdo organizado por
+                                dificuldade que te guia por meio de vídeos, artigos em texto e
+                                projetos interativos passo a passo, incentivando e acompanhando seu
+                                progresso, ajudando você a atingir seus objetivos.
+                            </p>
+                            <p>
+                                Para criar o seu, clique no botão abaixo e responda um formulário
+                                interatívo para definir a área e tecnologia de seu interesse.
+                            </p>
+                        </div>
+
+                        {{#embed "buttons/style-1/tpl" (i "newPlan.button")}}{{/embed}}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {{/content}}
+{{/extend}}

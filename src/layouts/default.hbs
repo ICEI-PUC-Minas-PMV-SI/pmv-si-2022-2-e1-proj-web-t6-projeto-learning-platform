@@ -5,7 +5,7 @@
 
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-            <title>{{meta.name}}</title>
+            <title>{{i "main.name"}}</title>
 
             <base href="/" target="_self" />
 
@@ -15,7 +15,7 @@
                 rel="stylesheet"
                 crossorigin="anonymous"
             />
-            <link href="/styles/style.css" rel="stylesheet" />
+            <link href="/public/styles/style.css" rel="stylesheet" />
             <link
                 rel="stylesheet"
                 href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
@@ -28,14 +28,14 @@
             />
         {{/block}}
     </head>
-    <body class="bg-dark d-flex flex-column">
+    <body class="bg-dark d-flex flex-column {{#isnt scroll "body"}}overflow-hidden{{/isnt}}">
         <header class="navbar navbar-expand-xl bd-navbar navbar-dark border-bottom">
             {{#block "header"}}
                 {{#embed "header/tpl"}}{{/embed}}
             {{/block}}
         </header>
 
-        <main class="d-flex flex-column flex-fill">
+        <main class="d-flex flex-column flex-fill {{#eq scroll "main"}}overflow-auto{{else}}{{#isnt scroll "body"}}overflow-hidden{{/isnt}}{{/eq}}">
             {{#block "main"}}
                 <p class="text-white">Conteudo</p>
             {{/block}}
@@ -45,20 +45,22 @@
             class="bg-default d-flex align-items-center justify-content-center border-top flex-shrink-1 py-3"
         >
             {{#block "footer"}}
-                <p class="m-0">&copy; 2022 Grimore, Inc</p>
+                <p class="m-0">{{i "main.copyright"}}</p>
             {{/block}}
         </footer>
 
         {{#embed "sidebar-user/tpl"}}{{/embed}}
 
+        {{> hotbarsFooter}}
+        
         {{#block "scripts"}}
             <script
                 src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
                 crossorigin="anonymous"
             ></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/cash/8.1.1/cash.min.js"></script>
-            <script async type="module" src="/scripts/main.js"></script>
+            <script async type="module" src="/public/scripts/main.js"></script>
         {{/block}}
     </body>
 </html>
+

@@ -14,6 +14,7 @@
                 aria-label="Close"
             ></button>
         </div>
+
         <div class="offcanvas-body">
             <h5 class="offcanvas-title mb-5">{{user.firstName}} {{user.lastName}}</h5>
             <div class="px-5 py-4 text-center">
@@ -27,7 +28,7 @@
             </div>
             <div class="py-4 border-bottom border-light">
                 <ul class="nav flex-column">
-                    {{#each userMenu}}
+                    {{#each (i "main.userMenu")}}
                         <li class="nav-item"><a
                                 href="{{url}}"
                                 class="nav-link"

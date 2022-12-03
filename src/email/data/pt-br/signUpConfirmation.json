@@ -1,0 +1,13 @@
+{
+    "subject": "Confirme seu email",
+    "title": "Olá {{user.username}}",
+    "beforeCallOut": [
+        "{{#markdown}}Obrigado por seu interesse no **Grimore**{{/markdown}}",
+        "Seu cadastro está quase completo, para finalizar, clique no botão abaixo para validar o seu email."
+    ],
+    "callOutText": "Confirmar email",
+    "afterCallOut": [
+        "Qualquer dúvida estamos a sua disposição.",
+        "Até mais!"
+    ]
+}

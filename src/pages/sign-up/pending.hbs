@@ -1,0 +1,21 @@
+{{#extend "default"}}
+    {{#content "main"}}
+        <div class="d-flex flex-column flex-fill justify-content-center container">
+            <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-md-2 col-xl-6 offset-md-3">
+                <div class="gr-signup-success">
+                    <h1 class="mb-4">Quase lá!</h1>
+                    <h6 class="mb-4">Seu cadastro está quase completo</h6>
+                    <h6 class="mb-5">Verifique seu email e siga as instruções enviadas para completar seu cadastro.</h6>
+
+                    <div class="d-flex flex-column">
+                        <a href="{{resendUrl}}" class="mb-3 text-warning" title="Click para enviar novamente o email de confirmação.">
+                            Não recebi o email, enviar novamente.
+                        </a>
+
+                        <a href="/sign-in">Ir para o login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/content}}
+{{/extend}}

@@ -1,7 +1,7 @@
 /**
  * Helper usado para acessar dados em qualquer context
  * sem precisar mudar o cominho do context  com '../',
- * o que cause errors quando formatando os arquivos com
+ * o que causa errors quando formatando os arquivos com
  * com prettier.
  *
  * Uso:
@@ -16,7 +16,7 @@
  */
 module.exports = function (path, options) {
     const parts = path.split(".");
-
+        
     return (function recurse(props, opts) {
         if (!props.length) return opts;
 

@@ -110,12 +110,28 @@ header {
         margin-bottom: -10px;
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
-        border-color: var(--gr-bg-darker);
+        border-color: var(--bs-dark);
         background-color: var(--gr-bg-darker);
+        border-bottom: 0;
+        border-width: 1px;
+        box-shadow: 6px 7px 10px -4px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 6px 7px 10px -4px rgba(0,0,0,0.75);
+        -moz-box-shadow: 6px 7px 10px -4px rgba(0,0,0,0.75);
+        
+        .bi {
+            display: inline-block;
+            transform: rotate(90deg);
+        }
+        
+        &:hover {
+            color: #fff;
+            background-color: var(--gr-bg-darker);
+            border-color: var(--bs-dark);
+        }
     }
 }
 
-.gr-floating-menu {
+.gr-drop-menu {
     position: absolute;
     top: 49px;
     left: 0;
@@ -123,6 +139,15 @@ header {
     transition: top 0.3s, opacity 0.3s;
     opacity: 1;
     z-index: 1000;
+    
+    &:not(.invisible) {
+        border-color: var(--bs-dark);
+        border: 1px solid var(--bs-dark);
+        border-top: 0;
+        box-shadow: 6px 7px 10px -4px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 6px 7px 10px -4px rgba(0,0,0,0.75);
+        -moz-box-shadow: 6px 7px 10px -4px rgba(0,0,0,0.75);
+    }
 
     &.invisible {
         top: 40px;
@@ -139,51 +164,12 @@ header {
         }
     }
 
-    .gr-drop-menu-title {
-        display: block;
-    }
-
-    .gr-drop-menu-back-btn,
-    .gr-drop-menu-sub-title {
-        display: none;
-    }
-
-    // If has active sub-menu, hide categories
-    &:has(.gr-sub-category.gr-active) {
-        .gr-drop-menu-container {
-            & > div:first-child {
-                display: none !important;
-            }
-        }
-
-        .gr-drop-menu-title {
-            display: none;
-        }
-
-        .gr-drop-menu-back-btn,
-        .gr-drop-menu-sub-title {
-            display: block;
-        }
-    }
-
     .gr-drop-menu-container {
         // If has no active sub-menu, hide container
         & > div:last-child {
             &:not(:has(.gr-sub-category.gr-active)) {
                 display: none !important;
             }
-        }
-    }
-
-    .gr-sub-category {
-        a {
-            border: 2px solid var(--bs-secondary);
-            color: var(--gr-text-body);
-            text-decoration: none;
-        }
-
-        &:not(.gr-active) {
-            display: none !important;
         }
     }
 
@@ -204,71 +190,9 @@ header {
             }
         }
 
-        // If has active sub-menu, hide categories
-        &:has(.gr-sub-category.gr-active) {
-            .gr-drop-menu-container {
-                & > div:first-child {
-                    display: block !important;
-
-                    & > a:not(.gr-active) {
-                        margin-right: 1rem;
-                    }
-
-                    & > a.gr-active {
-                        border-width: 3px;
-                        border-top-right-radius: 0;
-                        border-bottom-right-radius: 0;
-                        margin-right: -3px;
-                    }
-                }
-            }
-        }
-
         .gr-drop-menu-container {
             & > div:last-child {
                 width: 220px;
-            }
-        }
-
-        .gr-sub-category {
-            position: relative;
-
-            & > div:first-child {
-                position: absolute;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                width: 3px;
-            }
-
-            a {
-                border: 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-                color: var(--gr-text-body);
-                text-decoration: none;
-            }
-
-            &.frontend {
-                & > div:first-child {
-                    background-color: var(--gr-frontend-color-hover);
-                    box-shadow: inset 0 0 10px var(--gr-frontend-color-hover),
-                        0 0 10px var(--gr-frontend-color-hover);
-                }
-
-                a:hover {
-                    color: var(--gr-frontend-color-hover);
-                }
-            }
-
-            &.backend {
-                & > div:first-child {
-                    background-color: var(--gr-backend-color-hover);
-                    box-shadow: 0 0 10px var(--gr-backend-color-hover);
-                }
-
-                a:hover {
-                    color: var(--gr-backend-color);
-                }
             }
         }
     }

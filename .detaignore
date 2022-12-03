@@ -7,5 +7,6 @@ presentation
 .env*
 .hidden
 .hidden*
-
+**/*.md
+src/backup
 !.hotbarsrc

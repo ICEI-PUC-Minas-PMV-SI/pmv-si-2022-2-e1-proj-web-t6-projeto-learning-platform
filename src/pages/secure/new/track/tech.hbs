@@ -1,0 +1,65 @@
+{{#extend "default" scroll="body"}}
+    {{#content "main"}}
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div
+                        class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 pt-page"
+                    >
+                        {{#with area}}
+
+                            <a
+                                href="/new/track/area"
+                                class="d-flex text-decoration-none align-items-center mb-2 link-light"
+                            >
+                                <i
+                                    class="bi bi-arrow-left me-2 gr-{{slug}}-color"
+                                ></i>
+                                Passo 2 de 4
+                            </a>
+
+                            <h1 class="text mb-4">
+                                <span class="gr-{{slug}}-color">{{title}}</span>,
+                                ótima escolha!
+                            </h1>
+
+                            <div class="mb-5">
+                                <p>
+                                    Como um desenvolvedor Frontend, você é responsável por
+                                    desenvolver interfaces de usuário, como websites e painéis de
+                                    controle. Dentro do desenvolvimento frontend, existem varias
+                                    tecnologias interessantes com alta demanda por profissionais no
+                                    mercado de trabalho.
+                                </p>
+                            </div>
+
+                            <h4 class="mb-4">Qual destas tecnologias você gostaria de aprender?</h4>
+
+                            <div class="d-grid mb-5" style="">
+                                {{#each (data "tracks")}}
+                                    <a
+                                        href="/new/track/time?area={{data 'area.slug'}}&tech={{slug}}"
+                                        class="d-flex btn align-items-center justify-content-between border mb-2 gr-plan-options"
+                                    >
+                                        <div class="d-flex align-items-center flex-fill">
+                                            <img class="pe-2 py-2" src="{{icon}}" alt="" width="40"/>
+                                            <p class="lead-text m-0">{{title}}</p>
+                                        </div>
+
+                                        <i
+                                            class="bi bi-arrow-right-short gr-{{data 'area.slug'}}-color"
+                                        ></i>
+
+                                    </a>
+                                {{/each}}
+
+                            </div>
+
+                        {{/with}}
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    {{/content}}
+{{/extend}}

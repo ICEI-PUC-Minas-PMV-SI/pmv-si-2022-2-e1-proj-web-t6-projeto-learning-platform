@@ -1,11 +1,10 @@
 {
-    "size": 50,
+    "size": 300,
     "name": "lessons",
     "schema": {
         "id": "datatype.uuid",
         "endDate": null,
         "title": "lorem.sentence",
-        "content": "helpers.fake:##{{lorem.paragraphs(3)}}\r\n###{{lorem.sentence}}\r\n{{lorem.paragraphs(2)}}\r\n###{{lorem.sentence}}\r\n{{lorem.paragraphs(2)}}\r\n{{image.people}}##{{lorem.sentence}}\n{{lorem.paragraphs(4)}}",
-        "topicId": "relation:topics.id"
+        "content": "helpers.fake:##{{lorem.paragraphs(3)}}\r\n###{{lorem.sentence}}\r\n{{lorem.paragraphs(2)}}\r\n###{{lorem.sentence}}\r\n{{lorem.paragraphs(2)}}\r\n{{image.people}}##{{lorem.sentence}}\n{{lorem.paragraphs(4)}}"
     }
 }

@@ -1,0 +1,56 @@
+{
+    "items": [
+        {
+            "label": "Frontend",
+            "name": "frontend",
+            "url": "/search?area=frontend",
+            "items": [
+                {
+                    "label": "React",
+                    "name": "react",
+                    "url": "/search?area=frontend&tech=react-js",
+                    "icon": "/images/technologies/react.svg"
+                },
+                {
+                    "label": "Angular",
+                    "name": "angular",
+                    "url": "/search?area=frontend&tech=angular",
+                    "icon": "/images/technologies/angular.svg"
+                },
+                {
+                    "label": "Vue JS",
+                    "name": "vue",
+                    "url": "/search?area=frontend&tech=vue-js",
+                    "icon": "/images/technologies/vue.svg"
+                }
+            ]
+        },
+        {
+            "label": "Backend",
+            "name": "backend",
+            "url": "/search?area=backend",
+            "items": [
+                {
+                    "label": "Javascript",
+                    "name": "javascript",
+                    "url": "/search?area=backend&tech=javascript"
+                },
+                {
+                    "label": "Node Js",
+                    "name": "node-js",
+                    "url": "/search?area=backend&tech=node-js"
+                },
+                {
+                    "label": "REST",
+                    "name": "rest",
+                    "url": "/search?area=backend&tech=rest"
+                },
+                {
+                    "label": "Express",
+                    "name": "express",
+                    "url": "/search?area=backend&tech=express"
+                }
+            ]
+        }
+    ]
+}

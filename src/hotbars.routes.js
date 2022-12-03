@@ -1,9 +1,13 @@
 const userRoutes = (router, config) => {
-    console.log("HELL YEAHHHHH!");
-
     router.post(`/login`, (req, res) => {
         // login
         res.json({ ...req.body, message: "Faltou logar!" });
+    });
+
+    router.get(`/test/:what/:where`, (req, res) => {
+        
+        // login
+        res.json({ params: req.params, query: req.query });
     });
 
     router

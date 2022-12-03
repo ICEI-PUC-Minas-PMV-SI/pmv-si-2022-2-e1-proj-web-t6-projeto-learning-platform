@@ -11,7 +11,7 @@
 * BACKGROUNDS
 *******************************************************/
 .bg-secondary {
-    background-color: var(--gr-bg-secondary) !important;
+    background-color: var(--bs-secondary) !important;
 }
 
 .bg-darker {
@@ -88,17 +88,17 @@
 * CATEGORIES
 *******************************************************/
 .gr-frontend-color {
-    color: var(--gr-frontend-color);
+    color: var(--gr-frontend);
 }
 
 .gr-frontend-bg {
-    background-color: var(--gr-frontend-color);
+    background-color: var(--gr-frontend);
 }
 
 .gr-backend-color {
-    color: var(--gr-backend-color);
+    color: var(--gr-backend);
 }
 
 .gr-backend-bg {
-    background-color: var(--gr-backend-color);
+    background-color: var(--gr-backend);
 }

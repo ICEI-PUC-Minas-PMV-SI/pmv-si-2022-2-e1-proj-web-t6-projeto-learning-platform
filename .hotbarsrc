@@ -1,20 +1,30 @@
 {
-    "extname": "hbs",
-    "source": "src",
-    "partials": "partials",
-    "layouts": "layouts",
-    "helpers": "helpers",
-    "data": "data",
-    "views": "pages",
-    "styles": "styles",
+    "logLevel": 1,
     "styleMode": "scss",
     "jsonDb": "db/db.json",
-    "auth": {
+    "views": "pages",
+    "smtpServer": {
+        "enabled": true
+    },
+    "mailer": {
+        "enabled": true
+    },
+    "language": {
         "enabled": true,
-        "path": "auth"
+        "languages": ["pt-br"],
+        "default": "pt-br"
+    },
+    "jsonServer": {
+        "enabled": true
+    },
+    "auth": {
+        "enabled": true
     },
     "upload": {
         "enabled": true,
         "types": []
+    },
+    "autoroute": {
+        "new/track/confirm": ["get", "post"]
     }
 }

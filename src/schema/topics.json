@@ -1,19 +1,12 @@
 {
-    "size": 15,
+    "size": 30,
     "name": "topics",
     "schema": {
         "id": "datatype.uuid",
         "title": "lorem.sentence",
-        "slug": "helpers.slugify:prop.title",
         "description": "lorem.paragraph",
-        "tech": "unique:helpers.arrayElement:React Js,Angular,Responsive Web",
-        "techSlug": "helpers.slugify:prop.tech",
-        "technologyId": "relation:technologies.slug:topics.techSlug"
-    },
-    "afterAll": [
-        {
-            "type": "removeProps",
-            "value": ["tech", "techSlug"]
-        }
-    ]
+        "track": "unique:helpers.arrayElement:React Js,Angular,Vue Js,Javascript,HTML 5,Responsive Web",
+        "trackId": "one-to-many:tracks.id-2..5",
+        "lessons": "one-to-many:tracks.id-6..15"
+    }
 }

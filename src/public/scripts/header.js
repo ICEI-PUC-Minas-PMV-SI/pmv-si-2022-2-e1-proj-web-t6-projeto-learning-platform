@@ -39,12 +39,10 @@ function initMobileSearch() {
 
 function initDropMenu() {
     const search = $(".gr-search-bar");
-    const menu = $(".gr-floating-menu");
+    const menu = $(".gr-drop-menu");
     const container = $(".gr-drop-menu-container");
     const exploreBtn = search.find(".gr-explore-btn");
     const categories = container.find("div:first-child [data-target]");
-    const backBtn = $(".gr-drop-menu-back-btn");
-    const menuSubTitle = $(".gr-drop-menu-sub-title");
 
     // Toggle drop menu
     exploreBtn.on("click", () => {
@@ -60,7 +58,6 @@ function initDropMenu() {
 
     menu.mutate(["class"], (values) => {
         if (menu.hasClass("invisible")) {
-            $(".gr-sub-category").removeClass("gr-active");
             exploreBtn.removeClass("gr-active");
         } else {
             exploreBtn.addClass("gr-active");
@@ -82,22 +79,7 @@ function initDropMenu() {
             categories.each((i, cat) => $(cat).removeClass("gr-active"));
 
             $(category).addClass("gr-active");
-
-            const targetClass = `.gr-sub-category.${$(category).data("target")}`;
-
-            $(".gr-sub-category").removeClass("gr-active");
-            $(targetClass).addClass("gr-active");
-
-            menuSubTitle.html(
-                menuSubTitle
-                    .data("title")
-                    .replace("%s", `<a href="/">${$(category).data("label")}</a>`)
-            );
         });
-    });
-
-    backBtn.on("click", () => {
-        $(".gr-sub-category.gr-active").toggleClass("gr-active");
     });
 }
 
@@ -108,16 +90,17 @@ function initDropMenu() {
  */
 function initHeaderMenu() {
     // Retira a última parte da URL atual para saber qual a página atual carregada (ex: sobre.html)
-    const page = location.pathname.split("/").pop();
+    const page = `/${location.pathname.split("/").pop()}`;
 
     // Seleciona todos as tags "a" do menu principal
     const menuItems = document.querySelectorAll("#gr-navbar-collapse ul > li > a");
 
     // Passa por cada uma delas, verificando qual é a ativa
     menuItems.forEach((element) => {
+        const url = new URL(element.href);
         // Se a tag "a" contém o nome da página atual em seu atributo href
         // adcionamos uma classe de nome "active"
-        if (element.href.endsWith(page)) {
+        if (url.pathname === page) {
             element.classList.add("active");
             // Caso contrário, removemos a classe "active" da tag "a"
         } else {

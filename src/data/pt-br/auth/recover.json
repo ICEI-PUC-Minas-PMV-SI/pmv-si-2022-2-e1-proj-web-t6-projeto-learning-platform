@@ -1,0 +1,11 @@
+{
+    "title": "Recuperar senha",
+    "backToLogin": "Voltar para o",
+    "login": "login",
+    "formTitle": "Digite seu e-mail que enviaremos um link para definir uma nova senha.",
+    "email": {
+        "label": "Email",
+        "placeholder": "Digite seu email"
+    },
+    "sendEmail": "Enviar email de recuperação"
+}

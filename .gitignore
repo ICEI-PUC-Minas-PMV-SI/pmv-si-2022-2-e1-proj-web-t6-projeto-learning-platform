@@ -1,11 +1,10 @@
 .idea
 .vscode
 .parcel-cache
-src/db/*
+src/db
 .env*
 .hidden*
 node_modules
 dist
 logs
-src/public/styles/**
-
+src/public/styles

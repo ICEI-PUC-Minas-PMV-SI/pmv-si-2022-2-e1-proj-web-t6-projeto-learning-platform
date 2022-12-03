@@ -57,7 +57,6 @@ export function initHomeScrollNav() {
             // Se a seção pai e a próxima seção existirem
             if (parentSection && parentSection.next()) {
                 // Scroll para a próxima seção
-                console.log(parentSection.next());
                 parentSection.next().get(0).scrollIntoView({
                     behavior: "smooth", // Usa transição para o scroll
                     block: "start", // Alinhe a próxima seção no topo da window
@@ -100,7 +99,6 @@ export function initPrivateProfile() {
                     });
             }
             if (template === "saved") {
-                console.log("saved");
                 const response = await fetch("/api/saved");
                 const saves = await response.json();
                 saves.items.forEach((item, i) => {
@@ -108,7 +106,6 @@ export function initPrivateProfile() {
                 });
             }
             if (template === "notes") {
-                console.log("notes");
                 const response = await fetch("/api/notes");
                 const notes = await response.json();
                 notes.items.forEach((item, i) => {

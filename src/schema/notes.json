@@ -5,6 +5,6 @@
         "id": "datatype.uuid",
         "description": "lorem.paragraphs:1,2",
         "createAt": "date.recent",
-        "userId": "relation:users.id"
+        "userId": "one-to-one:users.id"
     }
 }

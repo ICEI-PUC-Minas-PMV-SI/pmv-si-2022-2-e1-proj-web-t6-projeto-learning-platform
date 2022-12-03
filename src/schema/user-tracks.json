@@ -1,0 +1,13 @@
+{
+    "size": 10,
+    "name": "user-tracks",
+    "schema": {
+        "id": "datatype.uuid",
+        "title": "lorem.sentence",
+        "startDate": "date.recent",
+        "endDate": null,
+        "length": "helpers.arrayElement:900,1800+2700,36000",
+        "trackId": "one-to-one:tracks.id",
+        "userId": "one-to-one:users.id"
+    }
+}

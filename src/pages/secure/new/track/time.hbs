@@ -1,0 +1,52 @@
+{{#extend "default" scroll="main"}}
+    {{#content "main"}}
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div
+                        class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 pt-page"
+                    >
+
+                        <a
+                            href="/new/track/tech?area={{area.slug}}"
+                            class="d-flex text-decoration-none align-items-center mb-2 link-light"
+                        >
+                            <i class="bi bi-arrow-left me-2 gr-{{area.slug}}-color"></i>
+                            Passo 3 de 4
+                        </a>
+        
+                        <h1 class="text mb-4">
+                            <span class="gr-{{area.slug}}-color">{{tech.title}}</span>
+                            {{#with (find technologies "slug" tech.slug)}}
+                                {{header}}
+                            {{/with}}
+                        </h1>
+                        <p class="text-lead mb-5 text-justify">
+                            {{tech.description}}
+                        </p>
+
+                        <div class="mb-5">
+                            <h4 class="mb-5">
+                                Quanto tempo você pode, e/ou gostaria de dedicar diariamente para
+                                seus estudos?
+                            </h4>
+                            <form id="gr-new-plan-form" method="post" action="/new/track/confirm">
+                                <input type="hidden" name="area" value="{{data 'area.slug'}}" />
+                                <input type="hidden" name="tech" value="{{data 'tech.slug'}}" />
+                                <input type="hidden" name="time" value="" />
+
+                                {{#each (i "times")}}
+                                    <button type="submit" data-time="{{value}}" class="text-lead d-flex align-items-center justify-content-center btn px-3 py-4 border-top gr-plan-options border-0">
+                                        <p class="m-0 flex-fill text-start me-5">{{description}}</p>
+                                        <i class="bi bi-clock-history gr-{{data 'area.slug'}}-color"></i>
+                                    </button>
+                                {{/each}}
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    {{/content}}
+{{/extend}}

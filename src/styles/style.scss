@@ -7,10 +7,6 @@ html,
 body {
     height: 100%;
     color: var(--gr-text-body);
-
-    p {
-        margin-bottom: 0;
-    }
 }
 
 @import "./typography";
@@ -79,6 +75,11 @@ footer {
 *******************************************************************************/
 @import "./components/home";
 
+
+/*******************************************************************************
+* SIGN UP
+*******************************************************************************/
+
 /*******************************************************************************
 * PLANO DE ESTUDOS STYLES
 *******************************************************************************/
@@ -146,18 +147,18 @@ footer {
 
 .gr-theme-frontend {
     h1 {
-        color: var(--gr-frontend-color);
+        color: var(--gr-frontend);
     }
 
     .gr-plan-progress {
         &.complete {
             & > div:first-child {
                 div:first-child {
-                    border-color: var(--gr-frontend-color);
+                    border-color: var(--gr-frontend);
                 }
 
                 div:last-child {
-                    background: var(--gr-frontend-color);
+                    background: var(--gr-frontend);
                 }
             }
         }
@@ -166,18 +167,18 @@ footer {
 
 .gr-theme-backend {
     h1 {
-        color: var(--gr-backend-color);
+        color: var(--gr-backend);
     }
 
     .gr-plan-progress {
         &.complete {
             & > div:first-child {
                 div:first-child {
-                    border-color: var(--gr-backend-color);
+                    border-color: var(--gr-backend);
                 }
 
                 div:last-child {
-                    background: var(--gr-backend-color);
+                    background: var(--gr-backend);
                 }
             }
         }
@@ -203,3 +204,6 @@ footer {
     &:focus {
     }
 }
+
+@import "./components/search";
+

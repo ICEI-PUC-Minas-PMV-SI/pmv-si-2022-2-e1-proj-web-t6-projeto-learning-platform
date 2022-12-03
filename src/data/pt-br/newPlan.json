@@ -1,0 +1,15 @@
+{
+    "button": {
+        "label": "Criar plano de estudos",
+        "type": "primary",
+        "icon": "plus",
+        "size": "lg",
+        "url": "/new/track/area"
+    },
+    "back-button": {
+        "type": "primary",
+        "icon": "plus",
+        "size": "lg",
+        "url": "new/tracks/area"
+    }
+}

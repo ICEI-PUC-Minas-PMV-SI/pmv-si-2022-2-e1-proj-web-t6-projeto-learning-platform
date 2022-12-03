@@ -1,0 +1,31 @@
+{
+    "logLevel": 1,
+    "browser": null,
+    "styleMode": "scss",
+    "jsonDb": "db/db.json",
+    "views": "pages",
+    "smtpServer": {
+        "enabled": true
+    },
+    "mailer": {
+        "enabled": true
+    },
+    "language": {
+        "enabled": true,
+        "languages": ["pt-br"],
+        "default": "pt-br"
+    },
+    "jsonServer": {
+        "enabled": true
+    },
+    "auth": {
+        "enabled": true
+    },
+    "upload": {
+        "enabled": true,
+        "types": []
+    },
+    "autoroute": {
+        "secure/new/track/confirm": ["get", "post"] 
+    }
+}

@@ -3,7 +3,7 @@
         <div class="auth-container flex-fill mx-3">
             {{#embed "form-box/tpl" id="gr-login" action="/auth/local"}}
                 {{#content "cardTitle"}}
-                    {{auth.login.title}}
+                    {{i "auth.signIn.title"}}
                 {{/content}}
 
                 {{#content "cardContent"}}
@@ -11,7 +11,7 @@
                         <label
                             for="auth-username"
                             class="form-label"
-                        >{{auth.login.form.email.label}}</label>
+                        >{{i "auth.signIn.email.label"}}</label>
                         <input
                             name="username"
                             type="text"
@@ -24,7 +24,7 @@
                         <label
                             for="auth-password"
                             class="form-label"
-                        >{{auth.login.form.password.label}}</label>
+                        >{{i "auth.signIn.password.label"}}</label>
                         <input
                             name="password"
                             type="password"
@@ -35,9 +35,9 @@
 
                     <div class="text-end my-4">
                         <a
-                            href="{{auth.link.recover.url}}"
+                            href="{{i "main.recover.url"}}"
                             class="text-body-link text-decoration-none"
-                        >{{auth.link.recover.label}}</a>
+                        >{{i "main.recover.label"}}</a>
                     </div>
                 {{/content}}
 
@@ -50,17 +50,12 @@
                         <div class="border-top border-lighter flex-fill" style="height: 1px"></div>
                     </div>
 
-                    <form action="/auth/github" method="post">
-                        <button type="submit" class="btn btn-dark btn-left-icon">
-                            <i class="bi bi-github"></i>
-                            {{auth.link.github.label}}
-                        </button>
-                    </form>
+                    {{#embed "github-sign-in/tpl"}}{{/embed}}
 
                     <div class="d-flex align-items-center justify-content-center px-4 pt-4">
-                        {{auth.login.noAccount}}&nbsp;
-                        <a href="{{menu.cadastro.url}}" class="text-decoration-none">
-                            {{auth.link.signUp.label}}
+                        {{i "auth.signIn.noAccount"}}&nbsp;
+                        <a href="{{i "main.signUp.url"}}" class="text-decoration-none">
+                            {{i "main.signUp.label"}}
                         </a>
                     </div>
                 {{/content}}

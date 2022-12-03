@@ -1,18 +1,47 @@
 {
-    "size": 3,
+    "size": 30,
     "name": "technologies",
     "schema": {
         "id": "datatype.uuid",
-        "title": "unique:helpers.arrayElement:React Js,Angular,Responsive Web",
-        "slug": "helpers.slugify:prop.title",
+        "title": "unique:helpers.arrayElement:React Js,Angular,Vue JS,Next Js,Svelte,Gatsby Js,Jquery,Express,Flutter,Jest,HTML 5,CSS 3,Flask,Fast Api,Blazor,Git,NPM,PIP",
+        "slug": "lodash.kebabCase:prop.title",
         "description": "lorem.paragraph",
-        "areaId": "relation:areas.type:technologies.slug"
+        "icon": "lodash.replace:/public/images/tech/{{name}}-250.png,{{name}},prop.slug",
+        "areaId": "one-to-one:technologies.slug-areas.slug",
+        "languageId": "one-to-one:technologies.slug-programingLanguages.slug"
     },
-    "mapping": {
-        "areas": {
+    "relations": {
+        "technologies.slug-areas.slug": {
             "react-js": "frontend",
             "angular": "frontend",
-            "responsive-web": "frontend"
+            "vue-js": "frontend",
+            "html-5": "frontend",
+            "css-3": "frontend",
+            "svelte": "frontend",
+            "express": "backend",
+            "flutter": "mobile",
+            "flask": "backend",
+            "fast-api": "backend",
+            "next-js": "full-stack",
+            "blazor": "full-stack",
+            "git": "full-stack",
+            "pip": "full-stack",
+            "jest": "testing",
+            "py-test": "testing"
+        },
+        "technologies.slug-programingLanguages.slug": {
+            "react-js": "jsx",
+            "angular": "typescript",
+            "vue-js": "javascript",
+            "express": "javascript",
+            "svelte": "javascript",
+            "next-js": "javascript",
+            "npm": "javascript",
+            "flutter": "dart",
+            "flask": "python",
+            "fast-api": "python",
+            "pip": "python",
+            "blazor": "c#"
         }
     }
 }

@@ -1,37 +1,21 @@
-<div class="gr-floating-menu invisible bg-darker pt-3 pb-4 px-4 rounded-bottom">
-    <div class="d-flex align-items-center mb-3">
-        <button class="gr-drop-menu-back-btn btn btn-sm btn-link text-body p-0 me-1 d-md-none">
-            <i class="bi bi-arrow-left-short fs-1"></i>
-        </button>
-        <p class="gr-drop-menu-title mb-1">{{dropMenu.chooseCategory}}</p>
-        <p class="gr-drop-menu-sub-title mb-1" data-title="{{dropMenu.chooseSubCategory}}"></p>
-    </div>
-    <div class="gr-drop-menu-container d-flex flex-column flex-md-row">
-        <div class="flex-fill">
-            {{#each categories.items}}
-                <a
-                    href="{{this.url}}"
-                    data-label="{{this.label}}"
-                    data-target="{{this.name}}"
-                    class="btn btn-gr-outline-{{this.name}} d-block text-start py-1 mb-2"
-                >
-                    {{this.label}}
-                </a>
-            {{/each}}
-        </div>
-
-        <div>
-            {{#each categories.items}}
-                <div class="gr-sub-category {{this.name}}">
-                    <div></div>
-                    {{#each this.items}}
-                        <a
-                            href="{{this.url}}"
-                            class="text-start d-block ps-3 py-2 mb-2 mb-md-0"
-                        >{{this.label}}</a>
-                    {{/each}}
-                </div>
-            {{/each}}
-        </div>
+<div class="gr-drop-menu invisible bg-darker pt-2 pb-2 px-3 rounded-bottom">
+    <div>
+        <a
+            href="{{default (data "page") "/"}}"
+            data-label="all"
+            class="btn btn-lg btn-outline-dark d-block text-start mb-2"
+        >
+        Todas as áreas
+        </a>
+        {{#each areas}}
+            <a
+                href="{{default (data "page") "/"}}?area={{this.slug}}"
+                data-label="{{this.title}}"
+                data-target="{{this.slug}}"
+                class="btn btn-lg btn-outline-{{this.slug}} d-block text-start mb-2"
+            >
+            {{this.title}}
+            </a>
+        {{/each}}
     </div>
 </div>

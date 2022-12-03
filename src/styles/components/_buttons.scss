@@ -1,0 +1,6 @@
+@import "../mixins";
+
+@each $name in $colorNames {
+    @include button(prefix($name), $name);
+    @include buttonOutline(prefix($name), $name);
+}

@@ -1,0 +1,10 @@
+{
+    "sugject": "Bem vindo ao Grimore!",
+    "title": "Olá {{user.username}}",
+    "beforeCallOut": [
+        "Sua conta foi ativada!",
+        "Agora você já pode começar a aprender com o Grimore, clique no botão abaixo para ir até o seu perfíl."
+    ],
+    "callOutText": "Ir para o perfíl",
+    "callOutUrl": "/profile"
+}
