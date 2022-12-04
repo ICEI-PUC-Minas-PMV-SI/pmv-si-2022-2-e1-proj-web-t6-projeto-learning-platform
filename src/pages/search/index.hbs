@@ -3,35 +3,44 @@
         <div class="gr-search-page d-flex flex-column overflow-hidden">
             {{#if (isTruthy area)}}
                 {{#with area}}
-                <div class="gr-search-area py-4 px-3 bg-{{slug}} text-white">
-                    <div class="d-flex align-items-center">
-                        <h4 class="me-3">{{title}}</h4>
-                        <button class="btn btn-link btn-lg text-white p-0">
-                            <i class="bi bi-flag-fill"></i>
-                        </button>
-                        <div class="vr mx-4"></div>
-                        <a href="/search" title="" class="text-dark">
-                            <small>Remover filtro e buscar em todas as categorias</small>
-                        </a>
-                        <div class="flex-fill text-end">
-                            <button data-toggle="gr-search-area-description" class="btn btn-link text-white">
-                                <i class="bi bi-chevron-up"></i>
+                    <div class="gr-search-area py-4 px-3 bg-{{slug}} text-white">
+                        <div class="d-flex align-items-center">
+                            <h4 class="me-3">{{title}}</h4>
+                            <button class="btn btn-link btn-lg text-white p-0">
+                                <i class="bi bi-flag-fill"></i>
                             </button>
+                            <div class="vr mx-4"></div>
+                            <a href="/search" title="" class="text-dark">
+                                <small>Remover filtro e buscar em todas as categorias</small>
+                            </a>
+                            <div class="flex-fill text-end">
+                                <button
+                                    data-toggle="gr-search-area-description"
+                                    class="btn btn-link text-white"
+                                >
+                                    <i class="bi bi-chevron-up"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="gr-search-area-description" class="pt-4">
+                            <p>{{description}}</p>
                         </div>
                     </div>
-                    <div id="gr-search-area-description" class="pt-4">
-                        <p>{{description}}</p>
-                    </div>
-                </div>
                 {{/with}}
             {{/if}}
             <div id="gr-search-menu" class="gr-search-box-menu bg-darker pt-2 pb-3 overflow-hidden">
                 <div class="d-flex h-100">
                     {{#each menu}}
-                    <a id="{{id}}" href="/search?area={{areaId}}&tech={{slug}}" data-slug="{{slug}}" data-index="{{@index}}" class="gr-search-menu-item d-inline-block rounded-3 bg-dark me-2 px-3 py-2">
-                        <img src="{{icon}}" class="d-block mb-2" width="37" height="37" />
-                        <small class="d-block">{{title}}</small>
-                    </a>
+                        <a
+                            id="{{id}}"
+                            href="/search?area={{areaId}}&tech={{slug}}"
+                            data-slug="{{slug}}"
+                            data-index="{{@index}}"
+                            class="gr-search-menu-item d-inline-block rounded-3 bg-dark me-2 px-3 py-2"
+                        >
+                            <img src="{{icon}}" class="d-block mb-2" width="37" height="37" />
+                            <small class="d-block">{{title}}</small>
+                        </a>
                     {{/each}}
                 </div>
             </div>
@@ -44,7 +53,8 @@
                                 {{#each (i "search.userMenu")}}
                                     <li class="nav-item">
                                         <a class="nav-link ps-0" href="{{url}}" title="{{title}}">
-                                            <i class="bi bi-dash opacity-25 d-inline pe-1"></i> {{title}}
+                                            <i class="bi bi-dash opacity-25 d-inline pe-1"></i>
+                                            {{title}}
                                         </a>
                                     </li>
                                 {{/each}}
@@ -55,8 +65,13 @@
                             <ul class="nav flex-column">
                                 {{#each technologies}}
                                     <li class="nav-item">
-                                        <a class="nav-link ps-0" href="/search?area={{areaId}}&tech={{slug}}" title="{{title}}">
-                                            <i class="bi bi-dash opacity-25 d-inline pe-1"></i> {{title}}
+                                        <a
+                                            class="nav-link ps-0"
+                                            href="/search?area={{areaId}}&tech={{slug}}"
+                                            title="{{title}}"
+                                        >
+                                            <i class="bi bi-dash opacity-25 d-inline pe-1"></i>
+                                            {{title}}
                                         </a>
                                     </li>
                                 {{/each}}
@@ -67,7 +82,11 @@
                 <div id="gr-search-results" class="flex-fill overflow-auto">
                     <div class="p-4 d-flex flex-wrap">
                         {{#each videos}}
-                            <a class="gr-search-result d-inline-block me-4 mb-4" href="/video?id={{id}}" title={{title}}>
+                            <a
+                                class="gr-search-result d-inline-block me-4 mb-4"
+                                href="/video?id={{id}}"
+                                title={{title}}
+                            >
                                 <span class="d-block mb-2">
                                     <img src="{{thumbnail}}" alt="{{title}}" class="img-fluid" />
                                 </span>
@@ -81,12 +100,15 @@
             </div>
         </div>
     {{/content}}
-    
+
     {{#content "scripts" mode="append"}}
-        <script src="https://cdn.jsdelivr.net/gh/idiotWu/smooth-scrollbar@8.8.1/dist/smooth-scrollbar.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/idiotWu/smooth-scrollbar@8.8.1/dist/plugins/overscroll.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/gh/idiotWu/smooth-scrollbar@8.8.1/dist/smooth-scrollbar.js"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/gh/idiotWu/smooth-scrollbar@8.8.1/dist/plugins/overscroll.js"
+        ></script>
         <script src="/public/scripts/vendors/scrollbars/horizontal-scroll.plugin.js"></script>
         <script src="/public/scripts/pages/search.js"></script>
     {{/content}}
 {{/extend}}
-

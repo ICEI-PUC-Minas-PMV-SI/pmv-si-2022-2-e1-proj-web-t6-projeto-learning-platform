@@ -5,7 +5,6 @@ const userRoutes = (router, config) => {
     });
 
     router.get(`/test/:what/:where`, (req, res) => {
-        
         // login
         res.json({ params: req.params, query: req.query });
     });

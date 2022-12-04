@@ -1,20 +1,20 @@
 <div class="gr-drop-menu invisible bg-darker pt-2 pb-2 px-3 rounded-bottom">
     <div>
         <a
-            href="{{default (data "page") "/"}}"
+            href="{{default (data 'page') '/'}}"
             data-label="all"
             class="btn btn-lg btn-outline-dark d-block text-start mb-2"
         >
-        Todas as áreas
+            Todas as áreas
         </a>
         {{#each areas}}
             <a
-                href="{{default (data "page") "/"}}?area={{this.slug}}"
+                href="{{default (data 'page') '/'}}?area={{this.slug}}"
                 data-label="{{this.title}}"
                 data-target="{{this.slug}}"
                 class="btn btn-lg btn-outline-{{this.slug}} d-block text-start mb-2"
             >
-            {{this.title}}
+                {{this.title}}
             </a>
         {{/each}}
     </div>

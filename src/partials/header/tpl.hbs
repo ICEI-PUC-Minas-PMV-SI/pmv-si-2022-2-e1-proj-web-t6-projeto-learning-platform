@@ -23,15 +23,13 @@
                 </svg>
             </button>
         </div>
-        
+
         <!-- Logo Component -->
         <div class="navbar-brand text-center text-xl-start flex-grow-1 flex-xl-grow-0">
             <h1 class="m-0 me-lg-3">
-                <a
-                    href="/"
-                    title="{{i "main.title"}}"
-                    class="text-decoration-none text-white"
-                >{{i "main.name"}}</a>
+                <a href="/" title="{{i 'main.title'}}" class="text-decoration-none text-white">{{i
+                        "main.name"
+                    }}</a>
             </h1>
         </div>
 
@@ -43,7 +41,11 @@
                 </button>
 
                 <form class="d-flex flex-fill mb-0" role="search" method="get" action="/search">
-                    <button class="gr-explore-btn btn btn-{{default (get "area" query) "secondary"}} me-2 text-nowrap" type="button">
+                    <button
+                        class="gr-explore-btn btn btn-{{default (get 'area' query) 'secondary'}}
+                            me-2 text-nowrap"
+                        type="button"
+                    >
                         <span class="d-none d-sm-inline text-bold">
                             {{#if area}}
                                 <span class="me-2">{{area.title}}</span>
@@ -62,7 +64,7 @@
                             name="q"
                             type="text"
                             class="form-control"
-                            placeholder="{{i "main.search.placeholder"}}"
+                            placeholder="{{i 'main.search.placeholder'}}"
                             aria-label="Search button"
                             aria-describedby="form-control"
                         />
@@ -107,14 +109,14 @@
 
                 {{#not authenticated}}
                     <a
-                        href="{{i "main.signIn.url"}}"
+                        href="{{i 'main.signIn.url'}}"
                         class="btn btn-outline-secondary border-dashed me-0 me-xl-2 mb-3 mb-xl-0 d-block d-xl-inline"
                     >
                         {{i "main.signIn.label"}}
                     </a>
 
                     <a
-                        href="{{i "main.signUp.url"}}"
+                        href="{{i 'main.signUp.url'}}"
                         class="btn btn-outline-primary d-block d-xl-inline"
                     >
                         {{i "main.signUp.label"}}

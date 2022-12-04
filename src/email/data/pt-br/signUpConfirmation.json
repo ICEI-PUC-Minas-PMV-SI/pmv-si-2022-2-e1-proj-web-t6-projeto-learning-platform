@@ -6,8 +6,5 @@
         "Seu cadastro está quase completo, para finalizar, clique no botão abaixo para validar o seu email."
     ],
     "callOutText": "Confirmar email",
-    "afterCallOut": [
-        "Qualquer dúvida estamos a sua disposição.",
-        "Até mais!"
-    ]
+    "afterCallOut": ["Qualquer dúvida estamos a sua disposição.", "Até mais!"]
 }

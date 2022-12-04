@@ -14,7 +14,7 @@
                             <i class="bi bi-arrow-left me-2 gr-{{area.slug}}-color"></i>
                             Passo 3 de 4
                         </a>
-        
+
                         <h1 class="text mb-4">
                             <span class="gr-{{area.slug}}-color">{{tech.title}}</span>
                             {{#with (find technologies "slug" tech.slug)}}
@@ -36,9 +36,17 @@
                                 <input type="hidden" name="time" value="" />
 
                                 {{#each (i "times")}}
-                                    <button type="submit" data-time="{{value}}" class="text-lead d-flex align-items-center justify-content-center btn px-3 py-4 border-top gr-plan-options border-0">
+                                    <button
+                                        type="submit"
+                                        data-time="{{value}}"
+                                        class="text-lead d-flex align-items-center justify-content-center btn px-3 py-4 border-top gr-plan-options border-0"
+                                    >
                                         <p class="m-0 flex-fill text-start me-5">{{description}}</p>
-                                        <i class="bi bi-clock-history gr-{{data 'area.slug'}}-color"></i>
+                                        <i
+                                            class="bi bi-clock-history gr-{{data
+                                                    'area.slug'
+                                                }}-color"
+                                        ></i>
                                     </button>
                                 {{/each}}
                             </form>

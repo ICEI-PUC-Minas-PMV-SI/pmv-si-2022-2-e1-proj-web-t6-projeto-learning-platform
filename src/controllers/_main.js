@@ -20,21 +20,19 @@ class MainController extends ControllerAbstract {
         return null;
     }
     async handle(req) {
-        const data = {}
+        const data = {};
         data.areas = await this.loadAreas();
-        
+
         if (req.query.area) {
-            data.area = data.areas.find(area => area.slug === req.query.area);
+            data.area = data.areas.find((area) => area.slug === req.query.area);
         }
 
         if (req.query.tech) {
             data.tech = await this.loadTech(req.query.tech);
         }
-        
-        return data
+
+        return data;
     }
 }
 
-
 exports.controller = MainController;
-

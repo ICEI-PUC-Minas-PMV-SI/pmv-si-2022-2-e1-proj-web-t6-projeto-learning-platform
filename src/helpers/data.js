@@ -16,7 +16,7 @@
  */
 module.exports = function (path, options) {
     const parts = path.split(".");
-        
+
     return (function recurse(props, opts) {
         if (!props.length) return opts;
 

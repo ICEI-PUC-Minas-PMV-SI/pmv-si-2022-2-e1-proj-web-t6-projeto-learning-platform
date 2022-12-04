@@ -15,5 +15,5 @@
  * @returns {(string|number|null|undefined)}
  */
 module.exports = function (size, options) {
-    return Array.from(Array(size).keys())
+    return Array.from(Array(size).keys());
 };

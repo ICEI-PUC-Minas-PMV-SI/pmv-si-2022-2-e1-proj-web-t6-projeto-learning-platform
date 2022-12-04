@@ -2,7 +2,9 @@ const { ControllerAbstract } = require("@jmilanes/hotbars");
 
 class SearchController extends ControllerAbstract {
     async loadTechnologies(areaId) {
-        const { error, data } = await this.get(`/_api/technologies${areaId ? `?areaId=${areaId}` : ""}`);
+        const { error, data } = await this.get(
+            `/_api/technologies${areaId ? `?areaId=${areaId}` : ""}`
+        );
 
         if (!error) {
             return data.items || [];
@@ -10,9 +12,9 @@ class SearchController extends ControllerAbstract {
 
         return [];
     }
-    
+
     async loadVideos() {
-        const { error, data } = await this.get("/_api/videos", {_limit: 20 });
+        const { error, data } = await this.get("/_api/videos", { _limit: 20 });
 
         if (!error) {
             return data.items || [];
@@ -20,7 +22,7 @@ class SearchController extends ControllerAbstract {
 
         return [];
     }
-    
+
     async loadArea(areaSlug) {
         const { error, data } = await this.get("/_api/areas", { slug: areaSlug });
 
@@ -50,10 +52,10 @@ class SearchController extends ControllerAbstract {
 
         return [];
     }
-    
+
     async handle(req) {
-        const data = {}
- 
+        const data = {};
+
         if (req.query.area) {
             data.area = await this.loadArea(req.query.area);
             data.technologies = await this.loadTechnologies(data.area.id);
@@ -64,8 +66,8 @@ class SearchController extends ControllerAbstract {
         data.sass = await this.loadSass();
         data.languages = await this.loadLanguages();
         data.videos = await this.loadVideos();
-        data.menu = [...data.technologies, ...data.languages]
-        
+        data.menu = [...data.technologies, ...data.languages];
+
         return data;
     }
 }

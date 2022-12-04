@@ -1,11 +1,11 @@
 const GithubStrategy = require("passport-github2");
-const random = require('random-seed');
+const random = require("random-seed");
 const { JsonDbAuthStrategy, DataManager } = require("@jmilanes/hotbars");
 
 class GithubAuth extends JsonDbAuthStrategy {
     constructor() {
         super("github");
-        this.successRedirect = "/profile"
+        this.successRedirect = "/profile";
     }
 
     createStrategy() {
@@ -29,9 +29,9 @@ class GithubAuth extends JsonDbAuthStrategy {
 
     async authenticate(...args) {
         const [accessToken, refreshToken, profile, done] = args;
-        
+
         try {
-            const user = await this.getOrCreateUser(profile, accessToken, refreshToken)
+            const user = await this.getOrCreateUser(profile, accessToken, refreshToken);
 
             if (user) {
                 await this.sendEmailConfirmation(user, this.name);
@@ -40,33 +40,37 @@ class GithubAuth extends JsonDbAuthStrategy {
             }
 
             return done(undefined, false);
-        } catch(e) {
+        } catch (e) {
             return done(e, false);
         }
     }
-    
+
     async getOrCreateUser(profile, accessToken, refreshToken) {
         const user = await this.getUser(profile.emails[0].value);
-        
+
         if (!user) {
             return this.createUser(profile, accessToken, refreshToken);
         }
-        
+
         return user;
     }
-    
+
     async createUser(profile, accessToken, refreshToken) {
-        return DataManager.get("jsonDb").from("users").insert({
-            confirmed: false,
-            provider: profile.provider,
-            accessToken,
-            refreshToken,
-            username: profile.username,
-            email: profile.emails?.length ? profile.emails[0].value : null,
-            avatar: profile.photos?.length ? profile.photos[0].value : `https://avatars.dicebear.com/api/bottts/${random.create()}.svg`,
-            firstName: profile.name?.givenName || null,
-            lastName: profile.name?.familyName || null,
-        });
+        return DataManager.get("jsonDb")
+            .from("users")
+            .insert({
+                confirmed: false,
+                provider: profile.provider,
+                accessToken,
+                refreshToken,
+                username: profile.username,
+                email: profile.emails?.length ? profile.emails[0].value : null,
+                avatar: profile.photos?.length
+                    ? profile.photos[0].value
+                    : `https://avatars.dicebear.com/api/bottts/${random.create()}.svg`,
+                firstName: profile.name?.givenName || null,
+                lastName: profile.name?.familyName || null,
+            });
     }
 
     async getUser(email) {
