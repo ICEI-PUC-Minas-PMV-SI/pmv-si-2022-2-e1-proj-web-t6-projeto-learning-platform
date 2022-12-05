@@ -6,7 +6,9 @@
         "doc": "docs"
     },
     "scripts": {
-        "start": "hotbars serve",
+        "start": "hotbars serve --configName hotbarsrc-dev",
+        "serve": "hotbars serve",
+        "fake": "hotbars fake",
         "format": "prettier --write ."
     },
     "repository": {
@@ -20,8 +22,12 @@
     },
     "homepage": "https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2022-2-e1-proj-web-t6-projeto-learning-platform#readme",
     "devDependencies": {
-        "@jmilanes/hotbars": "^1.4.6",
         "prettier": "^2.7.1",
-        "sass": "^1.55.0"
+        "sass": "^1.56.1"
+    },
+    "dependencies": {
+        "@jmilanes/hotbars": "^1.7.5",
+        "passport-github2": "^0.1.12",
+        "random-seed": "^0.3.0"
     }
 }

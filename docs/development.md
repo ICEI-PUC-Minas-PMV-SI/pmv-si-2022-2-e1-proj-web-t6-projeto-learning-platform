@@ -1,13 +1,56 @@
 # Programação de Funcionalidades
 
-Implementação do sistema descritas por meio dos requisitos funcionais e/ou não funcionais. Deve relacionar os requisitos atendidos os artefatos criados (código fonte) além das estruturas de dados utilizadas e as instruções para acesso e verificação da implementação que deve estar funcional no ambiente de hospedagem.
+As screenshots abaixo demonstram algumas das páginas mais importantes da aplicação e seus arquivos fonte.
 
-Para cada requisito funcional, pode ser entregue um artefato desse tipo
+### Home Page
+*/src/pages/index.hbs*
+![Pesquisa de conteudo](img/etapa-3/home.png)
+(RF-003 -> RF-007)
+### Sobre o projeto
+*/src/pages/about.hbs*
+![Pesquisa de conteudo](img/etapa-3/sobre.png)
+(RF-001)
+### Como funciona
+*/src/pages/how-it-works.hbs*
+![Pesquisa de conteudo](img/etapa-3/como-funciona.png)
+(RF-002)
+### Buscar Conteúdo
+*/src/pages/index.hbs*
+![Pesquisa de conteudo](img/etapa-3/busca.png)
 
-> **Links Úteis**:
->
-> -   [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
-> -   [JSON Tutorial](https://www.w3resource.com/JSON)
-> -   [JSON Data Set Sample](https://opensource.adobe.com/Spry/samples/data_region/JSONDataSetSample.html)
-> -   [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
-> -   [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
+### Videos
+*/src/pages/search/index.hbs*
+![Pesquisa de conteudo](img/etapa-3/videos.png)
+(RF-008)
+
+### Videos por technologia
+*/src/pages/search/index.hbs*
+![Pesquisa de conteudo](img/etapa-3/tech-videos.png)
+
+### Cadastro
+*/src/pages/search/sign-up/index.hbs*
+![Pesquisa de conteudo](img/etapa-3/cadastro.png)
+(RF-013 até RF-015)
+
+### Login
+*/src/pages/search/sign-in.hbs*
+![Pesquisa de conteudo](img/etapa-3/login.png)
+(RF-009 até RF-012)
+
+### Criar plano de estudos
+*/src/pages/secure/new/track/index.hbs*
+![Pesquisa de conteudo](img/etapa-3/novo-plano.png)
+(RF-034 e RF-036)
+
+### Escolha de technologia
+*/src/pages/secure/new/track/tech.hbs*
+![Pesquisa de conteudo](img/etapa-3/plano-tech.png)
+( RF-035)
+
+### Plano de estudos
+*/src/pages/secure/tracks/[trackId]/index.hbs*
+![Pesquisa de conteudo](img/etapa-3/plano-de-estudo.png)
+
+### Tópico de estudo
+*/src/pages/secure/tracks/[trackId]/[topicId].hbs*
+![Pesquisa de conteudo](img/etapa-3/plano-de-estudo.png)

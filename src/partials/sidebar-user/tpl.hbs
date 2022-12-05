@@ -1,0 +1,47 @@
+{{#block "sidebar-user/tpl"}}
+    <div
+        id="gr-sidebar-user"
+        class="offcanvas offcanvas-end bg-dark"
+        tabindex="-1"
+        aria-labelledby="gr-sidebar-user-label"
+    >
+        <div class="offcanvas-header">
+            <h6 class="offcanvas-title fs-5 text-muted">Perfíl</h6>
+            <button
+                type="button"
+                class="btn-close text-muted"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+            ></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <h5 class="offcanvas-title mb-5">{{user.firstName}} {{user.lastName}}</h5>
+            <div class="px-5 py-4 text-center">
+                <div class="rounded-circle p-1">
+                    <img
+                        class="img-fluid rounded-circle"
+                        src="{{user.avatar}}"
+                        alt="{{user.firstName}}"
+                    />
+                </div>
+            </div>
+            <div class="py-4 border-bottom border-light">
+                <ul class="nav flex-column">
+                    {{#each (i "main.userMenu")}}
+                        <li class="nav-item"><a
+                                href="{{url}}"
+                                class="nav-link"
+                                title="Ver seu perfíl"
+                            >{{title}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+            <form action="/sign-out" method="post" class="m-0 py-4">
+                <button type="submit" class="btn btn-outline-primary w-100 d-xl-inline">
+                    Sair
+                </button>
+            </form>
+        </div>
+    </div>
+{{/block}}

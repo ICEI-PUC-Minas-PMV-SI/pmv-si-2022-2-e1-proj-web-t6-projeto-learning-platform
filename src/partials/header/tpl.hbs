@@ -1,6 +1,6 @@
 {{#block "header/tpl"}}
-    <div class="container-fluid bd-gutter flex-wrap flex-xl-nowrap">
-        <div class="bd-navbar-toggle">
+    <div class="container-fluid bd-gutter">
+        <div class="gr-header-start">
             <button
                 class="navbar-toggler"
                 type="button"
@@ -25,39 +25,54 @@
         </div>
 
         <!-- Logo Component -->
-        <div class="navbar-brand">
+        <div class="navbar-brand text-center text-xl-start flex-grow-1 flex-xl-grow-0">
             <h1 class="m-0 me-lg-3">
-                <a
-                    href="/"
-                    title="{{meta.title}}"
-                    class="text-decoration-none text-white"
-                >{{meta.name}}</a>
+                <a href="/" title="{{i 'main.title'}}" class="text-decoration-none text-white">{{i
+                        "main.name"
+                    }}</a>
             </h1>
         </div>
 
         <!-- Search Component -->
         <div class="gr-search-bar position-relative">
-            <div class="d-flex flex-fill">
-                <button class="gr-search-bar-back-btn btn btn-link text-decoration-none text-body">
+            <div class="gr-search-bar-container d-flex flex-fill">
+                <button class="gr-search-close btn btn-link text-decoration-none text-body">
                     <i class="bi bi-arrow-left-short fs-1"></i>
                 </button>
 
-                <button class="gr-search-bar-explore-btn btn btn-secondary me-2" type="button">
-                    <span class="d-none d-sm-inline">Explore</span>
-                    <i class="bi bi-funnel d-sm-none"></i>
-                </button>
-
-                <form class="d-flex flex-fill mb-0" role="search">
-                    <input
-                        type="text"
-                        class="form-control input me-2"
-                        placeholder="{{home.header.search.placeholder}}"
-                        aria-label="Example text with button addon"
-                        aria-describedby="button-addon1"
-                    />
-                    <button class="gr-search-btn btn btn-secondary" type="submit">
-                        <i class="bi bi-search"></i>
+                <form class="d-flex flex-fill mb-0" role="search" method="get" action="/search">
+                    <button
+                        class="gr-explore-btn btn btn-{{default (get 'area' query) 'secondary'}}
+                            me-2 text-nowrap"
+                        type="button"
+                    >
+                        <span class="d-none d-sm-inline text-bold">
+                            {{#if area}}
+                                <span class="me-2">{{area.title}}</span>
+                            {{else}}
+                                <span class="me-2">Explore</span>
+                            {{/if}}
+                            <i class="bi bi-chevron-right"></i>
+                        </span>
+                        <i class="bi bi-funnel d-sm-none"></i>
                     </button>
+                    {{#if (isTruthy area)}}
+                        <input type="hidden" name="area" value="{{area.slug}}" />
+                    {{/if}}
+                    <div class="input-group">
+                        <input
+                            name="q"
+                            type="text"
+                            class="form-control"
+                            placeholder="{{i 'main.search.placeholder'}}"
+                            aria-label="Search button"
+                            aria-describedby="form-control"
+                        />
+
+                        <button class="gr-icon-btn btn btn-secondary" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
                 </form>
             </div>
             {{#embed "drop-menu/tpl"}}{{/embed}}
@@ -70,7 +85,7 @@
             id="gr-navbar-collapse"
         >
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">{{meta.name}}</h5>
+                <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">{{i "main.name"}}</h5>
                 <button
                     type="button"
                     class="btn-close"
@@ -80,8 +95,8 @@
                 ></button>
             </div>
             <div class="offcanvas-body">
-                <ul class="navbar-nav me-3">
-                    {{#each menu.items}}
+                <ul class="navbar-nav me-3 fs-6">
+                    {{#each (i "main.menu")}}
                         <li class="nav-item">
                             <a href="{{this.url}}" title="{{this.title}}" class="nav-link">
                                 {{this.title}}
@@ -90,20 +105,50 @@
                     {{/each}}
                 </ul>
 
-                <hr class="d-xl-none my-4" />
+                <hr class="d-lg-none my-4" />
 
-                <a
-                    href="{{menu.login.url}}"
-                    class="btn btn-outline-secondary border-dashed me-0 me-xl-2 mb-3 mb-xl-0 d-block d-xl-inline"
-                >
-                    {{menu.login.title}}
-                </a>
+                {{#not authenticated}}
+                    <a
+                        href="{{i 'main.signIn.url'}}"
+                        class="btn btn-outline-secondary border-dashed me-0 me-xl-2 mb-3 mb-xl-0 d-block d-xl-inline"
+                    >
+                        {{i "main.signIn.label"}}
+                    </a>
 
-                <a href="{{menu.cadastro.url}}" class="btn btn-outline-primary d-block d-xl-inline">
-                    {{menu.cadastro.title}}
-                    <i class="bi bi-plus-lg"></i>
-                </a>
+                    <a
+                        href="{{i 'main.signUp.url'}}"
+                        class="btn btn-outline-primary d-block d-xl-inline"
+                    >
+                        {{i "main.signUp.label"}}
+                        <i class="bi bi-plus-lg"></i>
+                    </a>
+                {{/not}}
             </div>
+        </div>
+
+        <div class="gr-header-end text-end">
+            <button class="gr-search-btn gr-icon-btn btn btn-link text-white" type="button">
+                <i class="bi bi-search"></i>
+            </button>
+            {{#if authenticated}}
+                <button
+                    class="gr-user-btn gr-icon-btn btn btn-link bg-gradient text-white rounded-circle"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#gr-sidebar-user"
+                    aria-controls="gr-sidebar-user"
+                >
+                    {{#if (isTruthy user.avatar)}}
+                        <img
+                            class="`gr-user-thumbnail img-fluid rounded-circle"
+                            src="{{user.avatar}}"
+                            alt="{{user.firstName}}"
+                        />
+                    {{else}}
+                        <i class="bi bi-person-circle"></i>
+                    {{/if}}
+                </button>
+            {{/if}}
         </div>
     </div>
 {{/block}}

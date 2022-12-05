@@ -1,0 +1,43 @@
+.gr-search-area {
+    transition: height 0.4s ease-in-out;
+}
+
+.gr-search-box-menu {
+    min-height: 110px;
+}
+
+.scrollbar-track {
+    background: var(--bs-gray-900) !important;
+}
+
+.gr-search-menu-item {
+    min-width: 170px;
+    transition: box-shadow 0.4s ease-in-out;
+
+    small {
+        text-wrap: avoid;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &:hover {
+        background: var(--bs-gray-800) !important;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4) !important;
+    }
+}
+
+.gr-search-result {
+    max-width: 360px;
+    width: 360px;
+}
+
+.gr-search-sidebar {
+    flex: 1 1 300px;
+    max-width: 300px;
+    min-width: 300px;
+
+    a {
+        font-size: 90%;
+    }
+}

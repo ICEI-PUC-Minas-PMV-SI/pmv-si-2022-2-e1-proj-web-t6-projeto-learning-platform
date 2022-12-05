@@ -1,0 +1,23 @@
+{
+    "size": 30,
+    "name": "users",
+    "schema": {
+        "id": "datatype.uuid",
+        "createdAt": "date.past",
+        "gender": "name.sex",
+        "firstName": "unique:name.firstName:prop.gender",
+        "lastName": "name.lastName:prop.gender",
+        "username": "lodash.snakeCase:prop.firstName,prop.lastName",
+        "password": "hash:internet.password",
+        "email": "internet.exampleEmail:prop.firstName,prop.lastName",
+        "avatar": "internet.avatar",
+        "jobTitle": "name.jobTitle",
+        "country": "use:Brasil",
+        "countryCode": "use:BR",
+        "age": "datatype.number:min_18,max_40",
+        "state": "address.state",
+        "bio": "lorem.paragraphs:2-8",
+        "timeZone": "use:America/Sao_Paulo",
+        "website": "internet.url"
+    }
+}

@@ -1,0 +1,7 @@
+@import "../mixins";
+
+@include bg(prefix("darker"), "darker");
+
+@each $name in $colorNames {
+    @include bg(prefix($name), $name);
+}

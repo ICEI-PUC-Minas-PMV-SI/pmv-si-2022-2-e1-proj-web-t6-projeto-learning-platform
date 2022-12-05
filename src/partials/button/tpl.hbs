@@ -1,0 +1,17 @@
+{{#block "button/tpl"}}
+    {{#isTruthy url}}
+        <a href="{{url}}" class="btn btn-{{default type "primary"}} {{#eq size "lg"}}btn-lg{{/eq}} {{#isTruthy side}}btn-icon-{{side}}{{/isTruthy}} d-block my-5">
+            {{this.label}}
+            {{#isTruthy icon}}
+                <i class="bi bi-{{icon}}"></i>
+            {{/isTruthy}}
+        </a>
+    {{else}}
+        <button type="{{type}}" class="btn btn-{{default type "primary"}} {{#eq size "lg"}}btn-lg{{/eq}} {{#isTruthy side}}btn-icon-{{side}}{{/isTruthy}} d-block my-5">
+            {{this.label}}
+            {{#isTruthy icon}}
+                <i class="bi bi-{{icon}}"></i>
+            {{/isTruthy}}
+        </button>
+    {{/isTruthy}}
+{{/block}}

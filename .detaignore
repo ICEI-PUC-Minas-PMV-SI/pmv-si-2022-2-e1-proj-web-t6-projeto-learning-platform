@@ -1,0 +1,12 @@
+tests
+docs
+.github
+logs
+presentation
+.env
+.env*
+.hidden
+.hidden*
+**/*.md
+src/backup
+!.hotbarsrc

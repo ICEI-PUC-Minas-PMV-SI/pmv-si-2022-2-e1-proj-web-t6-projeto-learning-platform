@@ -1,0 +1,41 @@
+{
+    "name": "Grimore",
+    "title": "Grimore - Aprendizado gratuído de alta qualidade em TI",
+    "copyright": "&copy; 2022 Grimore, Inc",
+    "search": {
+        "placeholder": "Digite uma palavra chave",
+        "dropdown": {
+            "chooseCategory": "Escolha uma área de seu interesse.",
+            "chooseSubCategory": "Escolha um tópico de seu interesse ou continue em %s"
+        }
+    },
+    "menu": [
+        { "title": "Home", "url": "/" },
+        { "title": "Sobre", "url": "/about" },
+        { "title": "Como Começar", "url": "/how-it-works" }
+    ],
+    "signIn": {
+        "label": "Entrar",
+        "url": "/sign-in"
+    },
+    "signUp": {
+        "label": "Cadastre-se",
+        "url": "/sign-up"
+    },
+    "recover": {
+        "label": "Esqueceu sua senha?",
+        "url": "/password-recovery"
+    },
+    "github": {
+        "label": "Continue com o Github",
+        "url": null
+    },
+    "userMenu": [
+        { "title": "Perfíl", "url": "/profile" },
+        { "title": "Settings", "url": "/settings" },
+        { "title": "Planos em andamento", "url": "/profile/open-tracks" },
+        { "title": "Planos finalizados", "url": "/profile/completed-tracks" },
+        { "title": "Bookmarks", "url": "/profile/bookmarks" },
+        { "title": "Notas", "url": "/profile/notes" }
+    ]
+}

@@ -7,41 +7,19 @@ html,
 body {
     height: 100%;
     color: var(--gr-text-body);
-
-    p{
-        margin-bottom: 0;
-    }
 }
-
 
 @import "./typography";
 @import "./overwrites";
 @import "./utilities";
 
-/*****************************************************************************
+/*******************************************************************************
 * HEADER
-*****************************************************************************/
-header {
-    padding: 10px 32px 10px 12px;
+*******************************************************************************/
+@import "./components/header";
 
-    .navbar-brand {
-        h1 {
-            font-size: 1.6rem !important;
-        }
-    }
-
-    @include media-breakpoint-up(xl) {
-        .btn {
-            --bs-btn-line-height: 36px;
-        }
-    }
-
-    // Muda a posição do menu mobile para a direite em telas lg
-    @include media-breakpoint-between(md, xl) {
-        .bd-navbar-toggle {
-            order: 5;
-        }
-    }
+#gr-sidebar-user {
+    max-width: 300px;
 }
 
 /*****************************************************************************
@@ -75,11 +53,6 @@ footer {
 }
 
 /*******************************************************************************
-* MAIN SEARCH
-*******************************************************************************/
-@import "./components/header-search";
-
-/*******************************************************************************
 * AUTHENTICATION BOXES (LOGIN, CADASTRO, RECUPERAÇÃO, etc...)
 *******************************************************************************/
 .auth-container {
@@ -101,6 +74,10 @@ footer {
 * HOME
 *******************************************************************************/
 @import "./components/home";
+
+/*******************************************************************************
+* SIGN UP
+*******************************************************************************/
 
 /*******************************************************************************
 * PLANO DE ESTUDOS STYLES
@@ -169,18 +146,18 @@ footer {
 
 .gr-theme-frontend {
     h1 {
-        color: var(--gr-frontend-color);
+        color: var(--gr-frontend);
     }
 
     .gr-plan-progress {
         &.complete {
             & > div:first-child {
                 div:first-child {
-                    border-color: var(--gr-frontend-color);
+                    border-color: var(--gr-frontend);
                 }
 
                 div:last-child {
-                    background: var(--gr-frontend-color);
+                    background: var(--gr-frontend);
                 }
             }
         }
@@ -189,35 +166,33 @@ footer {
 
 .gr-theme-backend {
     h1 {
-        color: var(--gr-backend-color);
+        color: var(--gr-backend);
     }
 
     .gr-plan-progress {
         &.complete {
             & > div:first-child {
                 div:first-child {
-                    border-color: var(--gr-backend-color);
+                    border-color: var(--gr-backend);
                 }
 
                 div:last-child {
-                    background: var(--gr-backend-color);
+                    background: var(--gr-backend);
                 }
             }
         }
     }
 }
 
-.gr-plan-options{
-
+.gr-plan-options {
     color: white !important;
     min-height: 64px;
-   
-    i{
+
+    i {
         font-size: 40px;
     }
 
-    
-    &:hover{
+    &:hover {
         background-color: rgb(43, 43, 43) !important;
         scale: (1.02);
         border: none;
@@ -225,7 +200,8 @@ footer {
         transition: 0.2s;
     }
 
-    &:focus{
-        
+    &:focus {
     }
 }
+
+@import "./components/search";

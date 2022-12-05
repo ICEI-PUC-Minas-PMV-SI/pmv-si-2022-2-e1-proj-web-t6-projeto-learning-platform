@@ -1,0 +1,10 @@
+{
+    "size": 50,
+    "name": "bookmarks",
+    "schema": {
+        "id": "datatype.uuid",
+        "createAt": "date.recent",
+        "contentId": "one-to-one:videos.id",
+        "userId": "one-to-one:users.id"
+    }
+}

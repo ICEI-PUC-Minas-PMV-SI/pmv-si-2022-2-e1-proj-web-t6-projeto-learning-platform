@@ -1,0 +1,10 @@
+{
+    "title": "Bem vindo de volta!",
+    "noAccount": "Não possui uma conta?",
+    "email": {
+        "label": "Username"
+    },
+    "password": {
+        "label": "Password"
+    }
+}

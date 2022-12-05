@@ -1,5 +1,5 @@
 // Classes de utilidades aqui
-
+@import "./breakpoints";
 /*******************************************************
 * PAGE
 *******************************************************/
@@ -11,7 +11,7 @@
 * BACKGROUNDS
 *******************************************************/
 .bg-secondary {
-    background-color: var(--gr-bg-secondary) !important;
+    background-color: var(--bs-secondary) !important;
 }
 
 .bg-darker {
@@ -61,20 +61,43 @@
     .bi {
         position: absolute;
         left: 24px;
-        top: 50%;
-        transform: translateY(-50%);
+        font-size: 1.5rem;
     }
 }
 
-.gr-btn-plan{
+.btn-right-icon {
+    position: relative;
+
+    .bi {
+        position: absolute;
+        right: 24px;
+        font-size: 1.5rem;
+    }
+}
+
+.gr-btn-plan {
     background: none;
     border: 2px solid var(--gr-text-muted);
     position: relative;
 
-    &:hover{
+    &:hover {
         background: none !important;
-        box-shadow: inset 0 0 10px var(--gr-text-muted),
-            0 0 10px var(--gr-text-muted);
+        box-shadow: inset 0 0 10px var(--gr-text-muted), 0 0 10px var(--gr-text-muted);
+    }
+}
+
+.btn-wide {
+    min-width: 100%;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+        min-width: 350px;
+        width: 350px;
+    }
+
+    @include media-breakpoint-up(xl) {
+        min-width: 450px;
+        width: 450px;
     }
 }
 
@@ -89,18 +112,17 @@
 * CATEGORIES
 *******************************************************/
 .gr-frontend-color {
-    color: var(--gr-frontend-color);
+    color: var(--gr-frontend);
 }
 
 .gr-frontend-bg {
-    background-color: var(--gr-frontend-color);
+    background-color: var(--gr-frontend);
 }
 
 .gr-backend-color {
-    color: var(--gr-backend-color);
+    color: var(--gr-backend);
 }
 
 .gr-backend-bg {
-    background-color: var(--gr-backend-color);
+    background-color: var(--gr-backend);
 }
-

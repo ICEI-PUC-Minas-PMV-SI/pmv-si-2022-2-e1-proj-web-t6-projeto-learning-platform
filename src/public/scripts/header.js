@@ -1,7 +1,7 @@
 function initMobileSearch() {
     const search = $(".gr-search-bar");
-    const trigger = $(".gr-search-btn", search);
-    const closeTrigger = $(".gr-search-bar-back-btn", search);
+    const trigger = $("header .gr-search-btn");
+    const closeTrigger = $(".gr-search-close", search);
 
     const toggle = (e) => {
         e.preventDefault();
@@ -23,7 +23,7 @@ function initMobileSearch() {
     let attached = false;
 
     $(window).on("resize", (e) => {
-        const isMobile = window.outerWidth < 768;
+        const isMobile = window.outerWidth < 1200;
 
         if (isMobile && !attached) {
             attach();
@@ -39,17 +39,17 @@ function initMobileSearch() {
 
 function initDropMenu() {
     const search = $(".gr-search-bar");
-    const menu = $(".gr-floating-menu");
+    const menu = $(".gr-drop-menu");
     const container = $(".gr-drop-menu-container");
-    const exploreBtn = search.find(".gr-search-bar-explore-btn");
+    const exploreBtn = search.find(".gr-explore-btn");
     const categories = container.find("div:first-child [data-target]");
-    const backBtn = $(".gr-drop-menu-back-btn");
-    const menuSubTitle = $(".gr-drop-menu-sub-title");
 
+    // Toggle drop menu
     exploreBtn.on("click", () => {
         menu.toggleClass("invisible");
     });
 
+    // When search container closes, also close the menu if is open
     search.mutate(["class"], (values) => {
         if (values.class.indexOf("gr-opened") === -1 && !menu.hasClass("invisible")) {
             menu.toggleClass("invisible");
@@ -58,13 +58,13 @@ function initDropMenu() {
 
     menu.mutate(["class"], (values) => {
         if (menu.hasClass("invisible")) {
-            $(".gr-sub-category").removeClass("gr-active");
             exploreBtn.removeClass("gr-active");
         } else {
             exploreBtn.addClass("gr-active");
         }
     });
 
+    // Close the menu if the window get's resized below 1200px
     $(window).on("resize", (e) => {
         if (e.currentTarget.innerWidth < 978 && !menu.hasClass("invisible")) {
             menu.toggleClass("invisible");
@@ -79,22 +79,7 @@ function initDropMenu() {
             categories.each((i, cat) => $(cat).removeClass("gr-active"));
 
             $(category).addClass("gr-active");
-
-            const targetClass = `.gr-sub-category.${$(category).data("target")}`;
-
-            $(".gr-sub-category").removeClass("gr-active");
-            $(targetClass).addClass("gr-active");
-
-            menuSubTitle.html(
-                menuSubTitle
-                    .data("title")
-                    .replace("%s", `<a href="/">${$(category).data("label")}</a>`)
-            );
         });
-    });
-
-    backBtn.on("click", () => {
-        $(".gr-sub-category.gr-active").toggleClass("gr-active");
     });
 }
 
@@ -105,16 +90,17 @@ function initDropMenu() {
  */
 function initHeaderMenu() {
     // Retira a última parte da URL atual para saber qual a página atual carregada (ex: sobre.html)
-    const page = location.pathname.split("/").pop();
+    const page = `/${location.pathname.split("/").pop()}`;
 
     // Seleciona todos as tags "a" do menu principal
     const menuItems = document.querySelectorAll("#gr-navbar-collapse ul > li > a");
 
     // Passa por cada uma delas, verificando qual é a ativa
     menuItems.forEach((element) => {
+        const url = new URL(element.href);
         // Se a tag "a" contém o nome da página atual em seu atributo href
         // adcionamos uma classe de nome "active"
-        if (element.href.endsWith(page)) {
+        if (url.pathname === page) {
             element.classList.add("active");
             // Caso contrário, removemos a classe "active" da tag "a"
         } else {

@@ -1,0 +1,48 @@
+{{#extend "default" scroll="main"}}
+    {{#content "main"}}
+        <section class="gr-about-how pt-page">
+            <div class="container">
+                <div class="row mb-3 mb-md-5 text-paragraph">
+                    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                        <h1 class="text-gradient mb-5">
+                            {{i "about.title"}}
+                        </h1>
+
+                        <div class="text-justify">
+                            {{#each (i "about.intro")}}
+                                <p class="{{#if (eq @index 0)}}lead-text{{/if}} mb-4">
+                                    {{this}}
+                                </p>
+                            {{/each}}
+                        </div>
+
+                        <h2 class="pt-5 mb-5">{{i "about.teamTitle"}}</h2>
+
+                        {{#each (i "about.team")}}
+                            <div class="row text-paragraph mb-5">
+                                <div class="col-md-4 order-0 order-md-0 text-center mb-4 mb-md-0">
+                                    <img
+                                        class="img-fluid rounded-circle"
+                                        alt="{{name}}"
+                                        src="{{avatar}}"
+                                    />
+                                </div>
+                                <div class="col-md-8 order-1 order-md-1">
+                                    <div class="text-center text-md-start mb-4">
+                                        <h3 class="text-gradient">{{name}}</h3>
+                                        <p class="text-muted text-muted">{{ocupation}}</p>
+                                    </div>
+                                    <div class="text-justify">
+                                        {{#each description}}
+                                            <p>{{this}}</p>
+                                        {{/each}}
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {{/content}}
+{{/extend}}

@@ -8,14 +8,11 @@
     --bs-font-sans-serif: "Almarai", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial,
         sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --bs-body-font-size: 0.95rem;
-    --bs-primary: #38b9e1;
-    --bs-primary-hover: #{tint(#38b9e1, 10%)};
-    --bs-secondary: #383838;
-    --bs-secondary-hover: #{tint(#383838, 5%)};
+
     --bs-primary-rgb: 56, 185, 225;
     --bs-secondary-rgb: 56, 56, 56;
 
-    --bs-link-color: var(--bs-primary);
+    --bs-link-color: #f1f1f1;
     --bs-link-hover-color: var(--bs-primary-hover);
 
     --bs-border-color: #3d3d3d !important;
@@ -27,14 +24,44 @@
 
     --gr-bg-light: #3d3d3d !important;
     --gr-bg-default: #292929 !important;
-    --gr-bg-secondary: #1b1b1b;
+    // --gr-bg-secondary: #1b1b1b;
     --gr-bg-darker: #1f1f1f;
 
-    --gr-frontend-color: #ca3d89;
-    --gr-frontend-color-hover: #ff5bb4;
+    --bs-primary: #38b9e1;
+    --bs-primary-hover: #{sat(#38b9e1, 10%)};
 
-    --gr-backend-color: #8542d8;
-    --gr-backend-color-hover: #a257ff;
+    --bs-secondary: #383838;
+    --bs-secondary-hover: #{tint(#383838, 5%)};
+
+    --bs-dark: #383838;
+    --bs-dark-hover: #{tint(#383838, 5%)};
+
+    --bs-light: #7e7e7e;
+    --bs-light-hover: #38b9e1;
+
+    --gr-frontend: #ab437d;
+    --gr-frontend-hover: #{sat(#ab437d, 10%)};
+
+    --gr-backend: #3b75cb;
+    --gr-backend-hover: #{sat(#3b75cb, 10%)};
+
+    --gr-full-stack: #8d4ed2;
+    --gr-full-stack-hover: #{sat(#8d4ed2, 10%)};
+
+    --gr-mobile: #40abcc;
+    --gr-mobile-hover: #{sat(#40abcc, 30%)};
+
+    --gr-version-control: #ad963f;
+    --gr-version-control-hover: #{sat(#ad963f, 10%)};
+
+    --gr-automation: #b05434;
+    --gr-automation-hover: #{sat(#b05434, 10%)};
+
+    --gr-project-management: #40b46f;
+    --gr-project-management-hover: #{sat(#40b46f, 10%)};
+
+    --gr-testing: #b8c94a;
+    --gr-testing-hover: #{sat(#b8c94a, 10%)};
 
     --gr-box-primary-hover: #2ee6f3af;
 }

@@ -57,7 +57,6 @@ export function initHomeScrollNav() {
             // Se a seção pai e a próxima seção existirem
             if (parentSection && parentSection.next()) {
                 // Scroll para a próxima seção
-                console.log(parentSection.next());
                 parentSection.next().get(0).scrollIntoView({
                     behavior: "smooth", // Usa transição para o scroll
                     block: "start", // Alinhe a próxima seção no topo da window
@@ -67,15 +66,13 @@ export function initHomeScrollNav() {
     });
 }
 
-
-
 export function initPrivateProfile() {
-    window.onload = async function() {
-        const response = await fetch("/api/userPlans");
+    window.onload = async function () {
+        const response = await fetch("/_api/userPlans");
         const plans = await response.json();
 
         plans
-            .filter((plan) => (!plan.finished))
+            .filter((plan) => !plan.finished)
             .forEach((plan, i) => {
                 $("#gr-profile-body").render("ongoing", plan, i > 0 ? "append" : null);
             });
@@ -87,8 +84,8 @@ export function initPrivateProfile() {
             const template = $(btn).data("template");
             triggers.removeClass("activ");
             $(btn).addClass("activ");
-            if(template === "ongoing" || template === "finished"){
-                const response = await fetch("/api/userPlans");
+            if (template === "ongoing" || template === "finished") {
+                const response = await fetch("/_api/userPlans");
                 const plans = await response.json();
 
                 plans
@@ -101,22 +98,20 @@ export function initPrivateProfile() {
                         $("#gr-profile-body").render(template, plan, i > 0 ? "append" : null);
                     });
             }
-            if(template === "saved"){
-                console.log("saved");
+            if (template === "saved") {
                 const response = await fetch("/api/saved");
                 const saves = await response.json();
                 saves.items.forEach((item, i) => {
-                        $("#gr-profile-body").render(template, item, i > 0 ? "append" : null);
-                    });
+                    $("#gr-profile-body").render(template, item, i > 0 ? "append" : null);
+                });
             }
-            if(template === "notes"){
-                console.log("notes");
+            if (template === "notes") {
                 const response = await fetch("/api/notes");
                 const notes = await response.json();
                 notes.items.forEach((item, i) => {
-                        $("#gr-profile-body").render(template, item, i > 0 ? "append" : null);
-                    });
-                }
+                    $("#gr-profile-body").render(template, item, i > 0 ? "append" : null);
+                });
+            }
         });
     });
 }

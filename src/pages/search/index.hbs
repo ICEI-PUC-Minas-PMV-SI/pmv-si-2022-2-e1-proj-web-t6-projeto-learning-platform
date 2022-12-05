@@ -1,7 +1,114 @@
 {{#extend "default"}}
     {{#content "main"}}
-        <div class="gr-search-page w-100">
-            <h1>Search Page</h1>
+        <div class="gr-search-page d-flex flex-column overflow-hidden">
+            {{#if (isTruthy area)}}
+                {{#with area}}
+                    <div class="gr-search-area py-4 px-3 bg-{{slug}} text-white">
+                        <div class="d-flex align-items-center">
+                            <h4 class="me-3">{{title}}</h4>
+                            <button class="btn btn-link btn-lg text-white p-0">
+                                <i class="bi bi-flag-fill"></i>
+                            </button>
+                            <div class="vr mx-4"></div>
+                            <a href="/search" title="" class="text-dark">
+                                <small>Remover filtro e buscar em todas as categorias</small>
+                            </a>
+                            <div class="flex-fill text-end">
+                                <button
+                                    data-toggle="gr-search-area-description"
+                                    class="btn btn-link text-white"
+                                >
+                                    <i class="bi bi-chevron-up"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="gr-search-area-description" class="pt-4">
+                            <p>{{description}}</p>
+                        </div>
+                    </div>
+                {{/with}}
+            {{/if}}
+            <div id="gr-search-menu" class="gr-search-box-menu bg-darker pt-2 pb-3 overflow-hidden">
+                <div class="d-flex h-100">
+                    {{#each menu}}
+                        <a
+                            id="{{id}}"
+                            href="/search?area={{areaId}}&tech={{slug}}"
+                            data-slug="{{slug}}"
+                            data-index="{{@index}}"
+                            class="gr-search-menu-item d-inline-block rounded-3 bg-dark me-2 px-3 py-2"
+                        >
+                            <img src="{{icon}}" class="d-block mb-2" width="37" height="37" />
+                            <small class="d-block">{{title}}</small>
+                        </a>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="gr-search-main d-flex flex-fill overflow-hidden border-top">
+                <div id="gr-search-sidebar" class="gr-search-sidebar bg-darker">
+                    <nav class="px-3 py-4 border-end">
+                        <div class="mb-5">
+                            <p class="text-bold text-white">Minha lista</p>
+                            <ul class="nav flex-column">
+                                {{#each (i "search.userMenu")}}
+                                    <li class="nav-item">
+                                        <a class="nav-link ps-0" href="{{url}}" title="{{title}}">
+                                            <i class="bi bi-dash opacity-25 d-inline pe-1"></i>
+                                            {{title}}
+                                        </a>
+                                    </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-bold text-white">Tecnologias</p>
+                            <ul class="nav flex-column">
+                                {{#each technologies}}
+                                    <li class="nav-item">
+                                        <a
+                                            class="nav-link ps-0"
+                                            href="/search?area={{areaId}}&tech={{slug}}"
+                                            title="{{title}}"
+                                        >
+                                            <i class="bi bi-dash opacity-25 d-inline pe-1"></i>
+                                            {{title}}
+                                        </a>
+                                    </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div id="gr-search-results" class="flex-fill overflow-auto">
+                    <div class="p-4 d-flex flex-wrap">
+                        {{#each videos}}
+                            <a
+                                class="gr-search-result d-inline-block me-4 mb-4"
+                                href="/video?id={{id}}"
+                                title={{title}}
+                            >
+                                <span class="d-block mb-2">
+                                    <img src="{{thumbnail}}" alt="{{title}}" class="img-fluid" />
+                                </span>
+                                <span class="d-block">
+                                    <p class="mb-0"><strong><small>{{title}}</small></strong></p>
+                                </span>
+                            </a>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
         </div>
+    {{/content}}
+
+    {{#content "scripts" mode="append"}}
+        <script
+            src="https://cdn.jsdelivr.net/gh/idiotWu/smooth-scrollbar@8.8.1/dist/smooth-scrollbar.js"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/gh/idiotWu/smooth-scrollbar@8.8.1/dist/plugins/overscroll.js"
+        ></script>
+        <script src="/public/scripts/vendors/scrollbars/horizontal-scroll.plugin.js"></script>
+        <script src="/public/scripts/pages/search.js"></script>
     {{/content}}
 {{/extend}}

@@ -1,0 +1,10 @@
+{
+    "size": 50,
+    "name": "notes",
+    "schema": {
+        "id": "datatype.uuid",
+        "description": "lorem.paragraphs:1,2",
+        "createAt": "date.recent",
+        "userId": "one-to-one:users.id"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "title": "Inscreva-se e comece a aprender",
+    "hasAccount": "Ja tem conta?",
+    "username": {
+        "label": "Username",
+        "name": "username",
+        "placeholder": "Escolha seu username"
+    },
+    "email": {
+        "label": "Email",
+        "name": "email",
+        "placeholder": "nome@email.com"
+    },
+    "password": {
+        "label": "Password",
+        "name": "password",
+        "placeholder": "Digite sua senha"
+    }
+}

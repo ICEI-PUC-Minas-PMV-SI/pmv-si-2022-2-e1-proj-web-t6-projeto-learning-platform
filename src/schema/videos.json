@@ -1,0 +1,13 @@
+{
+    "size": 50,
+    "name": "videos",
+    "schema": {
+        "id": "datatype.uuid",
+        "title": "lorem.sentence",
+        "description": "lorem.paragraphs:2,5",
+        "createAt": "date.recent",
+        "creator": "name.fullName",
+        "views": "datatype.number:min_2000,max_300000",
+        "thumbnail": "image.abstract:640,360"
+    }
+}

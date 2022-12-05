@@ -11,12 +11,7 @@
 /*****************************************************************************
 * BACKGROUND
 *****************************************************************************/
-.bg-dark {
-    background-color: var(--gr-bg-default) !important;
-}
-.bg-darker {
-    background-color: var(--gr-bg-darker) !important;
-}
+@import "./components/bg";
 
 /*****************************************************************************
 * TEXT
@@ -61,163 +56,38 @@
 *****************************************************************************/
 .btn {
     --bs-btn-padding-x: 24px;
-    --bs-btn-padding-y: 0;
-    --bs-btn-line-height: 42px;
+    // --bs-btn-padding-y: 0;
+    // --bs-btn-line-height: 42px;
     --bs-btn-border-width: 2px;
-    --bs-btn-border-radius: 6px;
+    --bs-btn-border-radius: 0.5rem;
     --bs-btn-font-size: 0.95rem;
 }
 
-.btn-primary {
-    --bs-btn-bg: var(--bs-primary);
-    --bs-btn-border-color: var(--bs-primary);
-    --bs-btn-hover-bg: var(--bs-primary-hover);
-    --bs-btn-hover-border-color: var(--bs-primary-hover);
-    --bs-btn-active-bg: var(--bs-primary);
-    --bs-btn-active-border-color: var(--bs-primary);
+.btn-group-lg > .btn,
+.btn-lg {
+    --bs-btn-padding-y: 0.8rem;
+    --bs-btn-padding-x: 1.3rem;
+    --bs-btn-font-size: 1rem;
+    --bs-btn-border-radius: 0.5rem;
 }
 
-.btn-outline-primary {
-    --bs-btn-color: var(--bs-primary);
-    --bs-btn-bg: transparent;
-    --bs-btn-border-color: var(--bs-primary);
-    --bs-btn-hover-bg: transparent;
-    --bs-btn-hover-border-color: var(--bs-primary-hover);
-    --bs-btn-active-bg: transparent;
-    --bs-btn-active-border-color: var(--bs-primary);
+@import "./components/buttons";
 
-    &:hover {
-        text-shadow: 0 0 21px var(--gr-primary-hover);
-        box-shadow: inset 0px 0 10px var(--gr-box-primary-hover),
-            0px 0 10px var(--gr-box-primary-hover);
-        transition: 0.3s;
-    }
-}
-
-.btn-outline-body {
-    --bs-btn-color: var(--bs-white);
-    --bs-btn-bg: transparent;
-    --bs-btn-border-color: var(--bs-primary);
-    --bs-btn-hover-bg: transparent;
-    --bs-btn-hover-border-color: var(--bs-primary-hover);
-    --bs-btn-active-bg: transparent;
-    --bs-btn-active-border-color: var(--bs-primary);
-    --bs-btn-font-family: var(--gr-text-body);
-    --bs-btn-font-size: 18px;
-    --bs-btn-font-weight: 800;
-    --bs-btn-min-width: 350px;
-    --bs-btn-gap: 10px;
-
-    &:hover {
-        text-shadow: 0 0 10px var(--gr-box-primary-hover);
-        box-shadow: inset 0px 0 10px var(--gr-box-primary-hover),
-            0px 0 10px var(--gr-box-primary-hover);
-        transition: 0.3s;
-    }
-}
-
-.btn-secondary {
-    --bs-btn-color: #{shade(#ffffff, 20%)};
-    --bs-btn-bg: var(--bs-secondary);
-    --bs-btn-border-color: var(--bs-secondary);
-    --bs-btn-hover-bg: var(--bs-secondary-hover);
-    --bs-btn-hover-border-color: var(--bs-secondary-hover);
-    --bs-btn-active-bg: var(--bs-secondary-hover);
-    --bs-btn-active-border-color: var(--bs-secondary-hover);
-}
-
-.btn-outline-secondary {
-    --bs-btn-color: #{shade(#ffffff, 20%)};
-    --bs-btn-bg: transparent;
-    --bs-btn-border-color: var(--bs-border-light-color);
-    --bs-btn-hover-bg: transparent;
-    --bs-btn-hover-border-color: var(--bs-primary-hover);
-    --bs-btn-active-bg: transparent;
-    --bs-btn-active-border-color: var(--bs-secondary-hover);
-}
-
-.btn-gr-frontend {
-    --bs-btn-color: var(--bs-white);
-    --bs-btn-bg: var(--gr-frontend-color);
-    --bs-btn-border-color: var(--gr-frontend-color);
-    --bs-btn-border-radius: 6px;
-    --bs-btn-hover-color: var(--bs-white);
-    --bs-btn-hover-bg: var(--gr-frontend-color-hover);
-    --bs-btn-hover-border-color: var(--gr-frontend-color-hover);
-    --bs-btn-focus-shadow-rgb: var(--gr-frontend-color);
-    --bs-btn-active-color: var(--bs-btn-hover-color);
-    --bs-btn-active-bg: var(--gr-frontend-color);
-    --bs-btn-active-border-color: var(--gr-frontend-color);
-}
-
-.btn-gr-outline-frontend {
-    --bs-btn-color: var(--gr-frontend-color);
-    --bs-btn-bg: transparent;
-    --bs-btn-border-color: var(--gr-frontend-color);
-    --bs-btn-border-radius: 6px;
-    --bs-btn-hover-color: var(--gr-frontend-color-hover);
-    --bs-btn-hover-bg: transparent;
-    --bs-btn-hover-border-color: var(--gr-frontend-color-hover);
-    --bs-btn-focus-shadow-rgb: var(--gr-frontend-color);
-    --bs-btn-active-color: var(--gr-frontend-color);
-    --bs-btn-active-bg: transparent;
-    .div-plan-content {
-        p {
-            font-size: 24px;
-            text-align: center;
-        }
-    }
-    --bs-btn-active-border-color: var(--gr-frontend-color);
-
-    &:hover {
-        text-shadow: 0 0 10px var(--gr-frontend-color-hover);
-        box-shadow: inset 0 0 10px var(--gr-frontend-color-hover),
-            0 0 10px var(--gr-frontend-color-hover);
-    }
-}
-
-.btn-gr-outline-backend {
-    --bs-btn-color: var(--gr-backend-color);
-    --bs-btn-bg: transparent;
-    --bs-btn-border-color: var(--gr-backend-color);
-    --bs-btn-border-radius: 6px;
-    --bs-btn-hover-color: var(--gr-backend-color-hover);
-    --bs-btn-hover-bg: transparent;
-    --bs-btn-hover-border-color: var(--gr-backend-color-hover);
-    --bs-btn-focus-shadow-rgb: var(--gr-backend-color);
-    --bs-btn-active-color: var(--gr-backend-color);
-    --bs-btn-active-bg: transparent;
-    --bs-btn-active-border-color: var(--gr-backend-color);
-
-    &:hover {
-        text-shadow: 0 0 21px var(--gr-backend-color-hover);
-        box-shadow: inset 0px 0 10px var(--gr-backend-color-hover),
-            0px 0 10px var(--gr-backend-color-hover);
-    }
-}
+/*****************************************************************************
+* SECTION SCROLL BUTTON
+*****************************************************************************/
 .btn-nav-section {
-    
     border-bottom: 3px solid transparent;
-    
     --bs-btn-color: white;
     --bs-btn-border-radius: 0px;
     --bs-btn-hover-color: white;
     --bs-btn-hover-border-color: transparent;
     --bs-btn-active-border-color: transparent;
-    
+
     &:hover {
         border-bottom: 3px groove var(--bs-primary-hover) !important;
     }
-
-
 }
-.activ {
-    border-bottom: 3px solid var(--bs-primary-hover);
-    &:hover{
-        border-bottom: 3px solid var(--bs-primary-hover);
-    }
-}
-
 
 .gr-section-nav-button {
     transition: 300ms ease-in-out;
@@ -239,7 +109,6 @@
 * FORMS
 *****************************************************************************/
 .form-control {
-    padding: 0.6rem 0.75rem;
     color: var(--gr-text-body);
     background-color: var(--gr-bg-darker);
     border: 2px solid var(--bs-border-light-color);
@@ -250,6 +119,10 @@
         border-color: var(--bs-primary-hover);
         background-color: var(--gr-bg-darker);
         box-shadow: none;
+    }
+
+    &.lg {
+        padding: 0.6rem 0.75rem;
     }
 }
 
@@ -377,15 +250,13 @@
 
 .gr-profile-container {
     max-width: 1192px;
-
 }
-.gr-edit-profile-section{
-    
+.gr-edit-profile-section {
     border-bottom: 2px solid var(--gr-bg-light);
-    .container{
+    .container {
         max-width: 792px;
     }
-    .password{
+    .password {
         background-color: var(--gr-bg-darker);
         h6 {
             color: var(--bs-primary);

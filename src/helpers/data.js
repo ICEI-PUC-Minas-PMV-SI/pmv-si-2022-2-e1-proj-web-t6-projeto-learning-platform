@@ -1,7 +1,7 @@
 /**
  * Helper usado para acessar dados em qualquer context
  * sem precisar mudar o cominho do context  com '../',
- * o que cause errors quando formatando os arquivos com
+ * o que causa errors quando formatando os arquivos com
  * com prettier.
  *
  * Uso:

@@ -1,0 +1,63 @@
+{{#extend "default"}}
+    {{#content "main"}}
+        <div class="auth-container flex-fill mx-3">
+            {{#embed "form-box/tpl" id="gr-login" action="/auth/local"}}
+                {{#content "cardTitle"}}
+                    {{i "auth.signIn.title"}}
+                {{/content}}
+
+                {{#content "cardContent"}}
+                    <div class="mb-3">
+                        <label for="auth-username" class="form-label">{{i
+                                "auth.signIn.email.label"
+                            }}</label>
+                        <input
+                            name="username"
+                            type="text"
+                            class="form-control"
+                            id="auth-username"
+                        />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="auth-password" class="form-label">{{i
+                                "auth.signIn.password.label"
+                            }}</label>
+                        <input
+                            name="password"
+                            type="password"
+                            class="form-control"
+                            id="auth-password"
+                        />
+                    </div>
+
+                    <div class="text-end my-4">
+                        <a
+                            href="{{i 'main.recover.url'}}"
+                            class="text-body-link text-decoration-none"
+                        >{{i "main.recover.label"}}</a>
+                    </div>
+                {{/content}}
+
+                {{#content "cardButton"}} Login {{/content}}
+
+                {{#content "cardExtra"}}
+                    <div class="d-flex align-items-center my-3">
+                        <div class="border-top border-lighter flex-fill" style="height: 1px"></div>
+                        <div class="px-2">ou</div>
+                        <div class="border-top border-lighter flex-fill" style="height: 1px"></div>
+                    </div>
+
+                    {{#embed "github-sign-in/tpl"}}{{/embed}}
+
+                    <div class="d-flex align-items-center justify-content-center px-4 pt-4">
+                        {{i "auth.signIn.noAccount"}}&nbsp;
+                        <a href="{{i 'main.signUp.url'}}" class="text-decoration-none">
+                            {{i "main.signUp.label"}}
+                        </a>
+                    </div>
+                {{/content}}
+            {{/embed}}
+        </div>
+    {{/content}}
+{{/extend}}
