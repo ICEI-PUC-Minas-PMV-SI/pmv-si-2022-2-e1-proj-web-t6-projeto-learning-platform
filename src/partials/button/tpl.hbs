@@ -1,22 +1,16 @@
 {{#block "button/tpl"}}
     {{#isTruthy url}}
-        <a href="{{url}}" class="btn btn-outline-{{default color "primary"}} {{#eq size "lg"}}btn-lg{{/eq}} d-block my-5">
-            {{#isTruthy leftIcon}}
-                <i class="bi bi-{{leftIcon}}"></i>
-            {{/isTruthy}}
+        <a href="{{url}}" class="btn btn-{{default type "primary"}} {{#eq size "lg"}}btn-lg{{/eq}} {{#isTruthy side}}btn-icon-{{side}}{{/isTruthy}} d-block my-5">
             {{this.label}}
-            {{#isTruthy rightIcon}}
-                <i class="bi bi-{{rightIcon}}"></i>
+            {{#isTruthy icon}}
+                <i class="bi bi-{{icon}}"></i>
             {{/isTruthy}}
         </a>
     {{else}}
-        <button type="{{type}}" class="btn btn-outline-{{default color "primary"}} {{#eq size "lg"}}btn-lg{{/eq}} d-block my-5">
-            {{#isTruthy leftIcon}}
-                <i class="bi bi-{{leftIcon}}"></i>
-            {{/isTruthy}}
+        <button type="{{type}}" class="btn btn-{{default type "primary"}} {{#eq size "lg"}}btn-lg{{/eq}} {{#isTruthy side}}btn-icon-{{side}}{{/isTruthy}} d-block my-5">
             {{this.label}}
-            {{#isTruthy rightIcon}}
-                <i class="bi bi-{{rightIcon}}"></i>
+            {{#isTruthy icon}}
+                <i class="bi bi-{{icon}}"></i>
             {{/isTruthy}}
         </button>
     {{/isTruthy}}

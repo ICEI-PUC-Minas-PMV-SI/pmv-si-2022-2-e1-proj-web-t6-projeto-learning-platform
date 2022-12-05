@@ -28,7 +28,7 @@
     --gr-bg-darker: #1f1f1f;
 
     --bs-primary: #38b9e1;
-    --bs-primary-hover: #{tint(#38b9e1, 10%)};
+    --bs-primary-hover: #{sat(#38b9e1, 10%)};
 
     --bs-secondary: #383838;
     --bs-secondary-hover: #{tint(#383838, 5%)};
@@ -39,29 +39,29 @@
     --bs-light: #7e7e7e;
     --bs-light-hover: #38b9e1;
 
-    --gr-frontend: #ca3d89;
-    --gr-frontend-hover: #ff5bb4;
+    --gr-frontend: #ab437d;
+    --gr-frontend-hover: #{sat(#ab437d, 10%)};
 
-    --gr-backend: #3c7de0;
-    --gr-backend-hover: #4688ee;
+    --gr-backend: #3b75cb;
+    --gr-backend-hover: #{sat(#3b75cb, 10%)};
 
-    --gr-full-stack: #8c43e3;
-    --gr-full-stack-hover: #a257ff;
+    --gr-full-stack: #8d4ed2;
+    --gr-full-stack-hover: #{sat(#8d4ed2, 10%)};
 
-    --gr-mobile: #21bae5;
-    --gr-mobile-hover: #4bcff5;
+    --gr-mobile: #40abcc;
+    --gr-mobile-hover: #{sat(#40abcc, 30%)};
 
-    --gr-version-control: #e1bd22;
-    --gr-version-control-hover: #eece45;
+    --gr-version-control: #ad963f;
+    --gr-version-control-hover: #{sat(#ad963f, 10%)};
 
-    --gr-automation: #e3501b;
-    --gr-automation-hover: #e56f44;
+    --gr-automation: #b05434;
+    --gr-automation-hover: #{sat(#b05434, 10%)};
 
-    --gr-project-management: #1be36b;
-    --gr-project-management-hover: #3ff186;
+    --gr-project-management: #40b46f;
+    --gr-project-management-hover: #{sat(#40b46f, 10%)};
 
-    --gr-testing: #c8e31b;
-    --gr-testing-hover: #d7ec52;
+    --gr-testing: #b8c94a;
+    --gr-testing-hover: #{sat(#b8c94a, 10%)};
 
     --gr-box-primary-hover: #2ee6f3af;
 }

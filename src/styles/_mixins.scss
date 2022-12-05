@@ -7,6 +7,16 @@ $colorNames: "primary", "secondary", "dark", "light", "frontend", "backend", "fu
 /// @param {Number} $percentage - percentage of `$color` in returned color
 /// @return {Color}
 
+@function sat($color, $percentage) {
+    @return saturate($color, $percentage);
+}
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+
 @function tint($color, $percentage) {
     @return mix(white, $color, $percentage);
 }
@@ -62,7 +72,6 @@ $colorNames: "primary", "secondary", "dark", "light", "frontend", "backend", "fu
         --bs-btn-color: var(--#{$prefix}-#{$name});
         --bs-btn-bg: transparent;
         --bs-btn-border-color: var(--#{$prefix}-#{$name});
-        --bs-btn-border-radius: 6px;
         --bs-btn-hover-color: var(--#{$prefix}-#{$name}-hover);
         --bs-btn-hover-bg: transparent;
         --bs-btn-hover-border-color: var(--#{$prefix}-#{$name}-hover);

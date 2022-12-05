@@ -1,4 +1,4 @@
-{{#extend "default"}}
+{{#extend "default" scroll="main"}}
     {{#content "main"}}
         <section class="gr-about-how pt-page">
             <div class="container">
@@ -23,14 +23,14 @@
                                 <div class="col-md-4 order-0 order-md-0 text-center mb-4 mb-md-0">
                                     <img
                                         class="img-fluid rounded-circle"
-                                        alt="{{this.name}}"
-                                        src="{{this.avatar}}"
+                                        alt="{{name}}"
+                                        src="{{avatar}}"
                                     />
                                 </div>
                                 <div class="col-md-8 order-1 order-md-1">
                                     <div class="text-center text-md-start mb-4">
-                                        <h3 class="text-gradient">{{this.name}}</h3>
-                                        <p class="text-muted text-muted">{{this.ocupation}}</p>
+                                        <h3 class="text-gradient">{{name}}</h3>
+                                        <p class="text-muted text-muted">{{ocupation}}</p>
                                     </div>
                                     <div class="text-justify">
                                         {{#each description}}

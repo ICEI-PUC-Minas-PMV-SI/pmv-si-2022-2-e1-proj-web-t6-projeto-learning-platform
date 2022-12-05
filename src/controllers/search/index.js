@@ -58,7 +58,7 @@ class SearchController extends ControllerAbstract {
 
         if (req.query.area) {
             data.area = await this.loadArea(req.query.area);
-            data.technologies = await this.loadTechnologies(data.area.id);
+            data.technologies = await this.loadTechnologies(data.area?.id);
         } else {
             data.technologies = await this.loadTechnologies();
         }
