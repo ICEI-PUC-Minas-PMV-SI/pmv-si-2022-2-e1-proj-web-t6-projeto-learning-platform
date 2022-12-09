@@ -9,7 +9,8 @@
         "start": "hotbars serve --configName hotbarsrc-dev",
         "serve": "hotbars serve",
         "fake": "hotbars fake",
-        "format": "prettier --write ."
+        "format": "prettier --write .",
+        "css": "sass ./src/styles:./src/public/styles --style expanded --watch"
     },
     "repository": {
         "type": "git",

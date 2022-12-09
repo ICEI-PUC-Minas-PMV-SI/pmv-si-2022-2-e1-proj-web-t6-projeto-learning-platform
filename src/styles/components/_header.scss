@@ -8,7 +8,7 @@ header {
 
     .gr-header-start,
     .gr-header-end {
-        min-width: 30%;
+        min-width: 42px;
     }
 
     // hide logo and sidebar toggle when mobile search is open
@@ -61,8 +61,6 @@ header {
             border-right-width: 0 !important;
         }
         .btn {
-            background-color: var(--gr-bg-darker) !important;
-            border: 2px solid var(--bs-border-light-color) !important;
             border-left-width: 0 !important;
         }
     }
@@ -106,14 +104,13 @@ header {
 
 .gr-explore-btn {
     &.gr-active {
-        height: 50px !important;
+        height: 46px !important;
         margin-bottom: -10px;
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
-        border-color: var(--bs-dark);
-        background-color: var(--gr-bg-darker);
+        border-color: var(--bs-lighter);
+        background-color: var(--bs-black);
         border-bottom: 0;
-        border-width: 1px;
         box-shadow: 6px 7px 10px -4px rgba(0, 0, 0, 0.75);
         -webkit-box-shadow: 6px 7px 10px -4px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 6px 7px 10px -4px rgba(0, 0, 0, 0.75);
@@ -125,7 +122,7 @@ header {
 
         &:hover {
             color: #fff;
-            background-color: var(--gr-bg-darker);
+            background-color: var(--bs-black);
             border-color: var(--bs-dark);
         }
     }
@@ -133,16 +130,15 @@ header {
 
 .gr-drop-menu {
     position: absolute;
-    top: 49px;
     left: 0;
     right: 0;
+    top: 46px;
     transition: top 0.3s, opacity 0.3s;
     opacity: 1;
     z-index: 1000;
 
     &:not(.invisible) {
-        border-color: var(--bs-dark);
-        border: 1px solid var(--bs-dark);
+        border: 2px solid var(--bs-lighter);
         border-top: 0;
         box-shadow: 6px 7px 10px -4px rgba(0, 0, 0, 0.75);
         -webkit-box-shadow: 6px 7px 10px -4px rgba(0, 0, 0, 0.75);
@@ -150,7 +146,6 @@ header {
     }
 
     &.invisible {
-        top: 40px;
         opacity: 0;
 
         & > div {
@@ -175,13 +170,15 @@ header {
 
     @include media-breakpoint-up(md) {
         position: absolute;
-        transition: left 0.3s, opacity 0.3s;
+        transition: max-height 1s, opacity 0.3s;
         left: 0;
         right: auto;
+        max-height: 1000px;
+        overflow: hidden;
 
         &.invisible {
-            left: -20px;
-            opacity: 0;
+            max-height: 0;
+            // opacity: 0;
         }
 
         .gr-drop-menu-container {

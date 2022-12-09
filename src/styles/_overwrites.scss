@@ -1,5 +1,4 @@
 // Substituições e customizações das css variables do Bootstrap esse arquivo.
-
 .navbar-toggler {
     border: none;
 
@@ -9,69 +8,11 @@
 }
 
 /*****************************************************************************
-* BACKGROUND
-*****************************************************************************/
-@import "./components/bg";
-
-/*****************************************************************************
-* TEXT
-*****************************************************************************/
-.text-body {
-    color: var(--gr-text-body) !important;
-}
-
-.text-body-link {
-    color: var(--gr-text-body) !important;
-
-    &:hover {
-        color: var(--bs-primary-hover) !important;
-    }
-}
-
-.text-bold {
-    font-weight: 700;
-}
-
-.text-bg-lighter {
-    color: var(--gr-text-body) !important;
-    background-color: var(--bs-secondary) !important;
-}
-
-/*****************************************************************************
-* BORDER
-*****************************************************************************/
-.border-dark {
-    border-color: var(--gr-border-default) !important;
-}
-
-/*****************************************************************************
 * NAVBAR
 *****************************************************************************/
 .navbar {
     --bs-navbar-nav-link-padding-x: 24px;
 }
-
-/*****************************************************************************
-* BUTTONS
-*****************************************************************************/
-.btn {
-    --bs-btn-padding-x: 24px;
-    // --bs-btn-padding-y: 0;
-    // --bs-btn-line-height: 42px;
-    --bs-btn-border-width: 2px;
-    --bs-btn-border-radius: 0.5rem;
-    --bs-btn-font-size: 0.95rem;
-}
-
-.btn-group-lg > .btn,
-.btn-lg {
-    --bs-btn-padding-y: 0.8rem;
-    --bs-btn-padding-x: 1.3rem;
-    --bs-btn-font-size: 1rem;
-    --bs-btn-border-radius: 0.5rem;
-}
-
-@import "./components/buttons";
 
 /*****************************************************************************
 * SECTION SCROLL BUTTON
@@ -109,20 +50,11 @@
 * FORMS
 *****************************************************************************/
 .form-control {
-    color: var(--gr-text-body);
-    background-color: var(--gr-bg-darker);
-    border: 2px solid var(--bs-border-light-color);
-    border-radius: 6px;
-
     &:focus {
         color: var(--gr-text-body);
         border-color: var(--bs-primary-hover);
-        background-color: var(--gr-bg-darker);
+        background-color: var(--bs-darker);
         box-shadow: none;
-    }
-
-    &.lg {
-        padding: 0.6rem 0.75rem;
     }
 }
 
@@ -196,7 +128,7 @@
 
     .dropdown-menu {
         --bs-dropdown-link-color: rgba(255, 255, 255, 0.3);
-        --bs-dropdown-bg: var(--gr-bg-darker);
+        --bs-dropdown-bg: var(--bs-darker);
         --bs-dropdown-border-radius: 6px;
         --bs-dropdown-border-width: 2px;
         --bs-dropdown-border-color: rgba(255, 255, 255, 0.3);
@@ -206,24 +138,6 @@
         font-size: 18px;
         font-family: var(--gr-text-body);
         line-height: 24px;
-    }
-}
-
-/*****************************************************************************
-* CARDS
-*****************************************************************************/
-.card {
-    --bs-card-spacer-y: 1rem;
-    --bs-card-spacer-x: 1rem;
-    --bs-card-title-spacer-y: 2rem;
-    --bs-card-border-width: 0px;
-    --bs-card-border-radius: 6px;
-    --bs-card-box-shadow: #000;
-    --bs-card-bg: var(--gr-bg-light);
-
-    @media (min-width: 360px) {
-        --bs-card-spacer-y: 1.8rem;
-        --bs-card-spacer-x: 1.6rem;
     }
 }
 
@@ -242,10 +156,9 @@
 /*****************************************************************************
 * PROFILE CONTAINER
 *****************************************************************************/
-
 .gr-profile-header {
     top: 0;
-    background-color: var(--gr-bg-darker);
+    background-color: var(--bs-darker);
 }
 
 .gr-profile-container {
@@ -257,7 +170,7 @@
         max-width: 792px;
     }
     .password {
-        background-color: var(--gr-bg-darker);
+        background-color: var(--bs-darker);
         h6 {
             color: var(--bs-primary);
         }

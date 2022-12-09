@@ -1,13 +1,13 @@
 {
-    "size": 6,
+    "size": 21,
     "name": "tracks",
     "schema": {
         "id": "datatype.uuid",
-        "title": "unique:helpers.arrayElement:React Js,Angular,Vue Js,HTML 5",
+        "title": "unique:helpers.arrayElement:React Js,Angular,Vue Js,HTML 5,Scrum,Agile,XP,Jira,Asana,Python,Node Js,Jest,PyTest,Git,Github,Bitbucket,Flutter,React Native,Github Actions,Circle CI",
         "slug": "lodash.kebabCase:prop.title",
         "icon": "lodash.replace:/public/images/tech/{{name}}-250.png,{{name}},prop.slug",
         "areaId": "one-to-one:tracks.slug-areas.slug",
-        "techId": "one-to-one:tracks.slug-technologies.slug"
+        "technologyId": "one-to-one:tracks.slug-technologies.slug"
     },
     "relations": {
         "tracks.slug-areas.slug": {
@@ -16,13 +16,22 @@
             "vue-js": "frontend",
             "javascript": "frontend",
             "html-5": "frontend",
-            "responsive-web": "frontend"
-        },
-        "tracks.slug-technologies.slug": {
-            "react-js": "react-js",
-            "angular": "angular",
-            "vue-js": "vue-js",
-            "html-5": "html-5"
+            "srum": "project-management",
+            "agile": "project-management",
+            "xp": "project-management",
+            "jira": "project-management",
+            "asana": "project-management",
+            "python": "backend",
+            "node-js": "backend",
+            "jest": "testing",
+            "pytest": "pytest",
+            "git": "version-control",
+            "github": "version-control",
+            "bitbucket": "version-control",
+            "flutter": "mobile",
+            "react-native": "mobile",
+            "github-actions": "automation",
+            "circle-ci": "automation"
         }
     }
 }

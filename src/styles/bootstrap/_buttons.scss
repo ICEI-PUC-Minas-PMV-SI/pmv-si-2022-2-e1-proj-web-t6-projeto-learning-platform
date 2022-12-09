@@ -1,0 +1,57 @@
+.btn {
+    --#{$prefix}btn-padding-x: 24px;
+    --#{$prefix}btn-border-width: 2px;
+    --#{$prefix}btn-border-radius: 0.5rem;
+    --#{$prefix}btn-font-size: 0.95rem;
+}
+
+@each $color, $value in $theme-colors {
+    .btn-#{$color} {
+        --#{$prefix}btn-color: #{$white};
+        --#{$prefix}btn-border-width: 2px;
+        --#{$prefix}btn-hover-color: #{$white};
+        --#{$prefix}btn-hover-bg: #{shade-color($value, 10%)};
+        --#{$prefix}btn-hover-border-color: #{tint-color($value, 20%)};
+        --#{$prefix}btn-active-color: #{tint-color($value, 80%)};
+        --#{$prefix}btn-active-bg: #{shade-color($value, 20%)};
+    }
+
+    .btn-outline-#{$color} {
+        --#{$prefix}btn-color: var(--#{$prefix}#{$color});
+        --#{$prefix}btn-bg: transparent;
+        --#{$prefix}btn-border-color: var(--#{$prefix}#{$color});
+        --#{$prefix}btn-hover-color: #{tint-color($value, 80%)};
+        --#{$prefix}btn-hover-bg: transparent;
+        --#{$prefix}btn-active-color: #{$white};
+        --#{$prefix}btn-hover-border-color: var(--#{$prefix}#{$color}-hover);
+        --#{$prefix}btn-focus-shadow-rgb: var(--#{$prefix}#{$color});
+        --#{$prefix}btn-active-color: var(--#{$prefix}#{$color});
+        --#{$prefix}btn-active-bg: transparent;
+        --#{$prefix}btn-active-border-color: var(--#{$prefix}#{$color});
+
+        &:hover {
+            text-shadow: 0 0 10px var(--#{$prefix}#{$color}-hover);
+            box-shadow: inset 0 0 10px var(--#{$prefix}#{$color}-hover),
+                0 0 10px var(--#{$prefix}#{$color}-hover);
+            transition: 0.15s;
+        }
+    }
+}
+
+.btn-lg {
+    @include button-size(
+        $btn-padding-y-lg,
+        $btn-padding-x-lg,
+        $btn-font-size-lg,
+        $btn-border-radius-lg
+    );
+}
+
+.btn-sm {
+    @include button-size(
+        $btn-padding-y-sm,
+        $btn-padding-x-sm,
+        $btn-font-size-sm,
+        $btn-border-radius-sm
+    );
+}

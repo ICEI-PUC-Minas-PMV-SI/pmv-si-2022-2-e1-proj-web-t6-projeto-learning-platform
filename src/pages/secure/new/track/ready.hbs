@@ -1,0 +1,34 @@
+{{#extend "default" scroll="main"}}
+    {{#content "head" mode="append"}}
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+    {{/content}}
+    {{#content "main"}}
+        <section
+            data-user-track-id="{{userTrack.id}}"
+            class="flex-fill d-flex flex-column align-items-center justify-content-center"
+        >
+            <div class="div-plan-content">
+                <div
+                    class="d-flex justify-content-center align-items-center text-{{area.slug}} mb-4"
+                >
+                    <i id="emoji" class="bi bi-emoji-smile animate__animated"></i>
+                </div>
+                <h3 class="text-center describe-plan mb-5">
+                    Seu plano está pronto!
+                </h3>
+                <div>
+                    <a
+                        href="/user-tracks/{{userTrack.id}}"
+                        class="btn btn-outline-{{area.slug}} btn-lg d-block"
+                    >Começar!</a>
+                </div>
+            </div>
+        </section>
+    {{/content}}
+    {{#content "scripts" mode="append"}}
+        <script src="/public/scripts/pages/new/track/ready.js"></script>
+    {{/content}}
+{{/extend}}

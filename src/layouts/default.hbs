@@ -11,13 +11,15 @@
 
             {{> hotbarsHead}}
             
+            <!--
             <link
                 href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
                 integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
                 rel="stylesheet"
                 crossorigin="anonymous"
             />
-            
+            -->
+            <link href="/public/styles/bootstrap/bootstrap.css" rel="stylesheet" />
             <link href="/public/styles/style.css" rel="stylesheet" />
             <link
                 rel="stylesheet"
@@ -31,7 +33,7 @@
             />
         {{/block}}
     </head>
-    <body class="bg-dark d-flex flex-column {{#isnt scroll "body"}}overflow-hidden{{/isnt}}">
+    <body class="bg-darker d-flex flex-column {{#isnt scroll "body"}}overflow-hidden{{/isnt}}">
         <header class="navbar navbar-expand-xl bd-navbar navbar-dark border-bottom">
             {{#block "header"}}
                 {{#embed "header/tpl"}}{{/embed}}

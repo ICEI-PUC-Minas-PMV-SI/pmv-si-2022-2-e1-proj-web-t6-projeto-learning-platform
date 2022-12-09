@@ -1,36 +1,26 @@
-{{#extend "default"}}
+{{#extend "default" scroll="main"}}
     {{#content "main"}}
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div
-                        class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 pt-page"
-                    >
-                        <div class="div-plan-content">
-                            <h1 class="text-center title-plan">Por favor,</h1>
+        <section
+            data-user-track-id="{{userTrack.id}}"
+            class="flex-fill d-flex flex-column align-items-center justify-content-center"
+        >
+            <div class="div-plan-content">
+                <h3 class="text-center describe-plan">
+                    Criando plano de estudos
+                </h3>
 
-                            <h3 class="text-center describe-plan">
-                                Aguarde enquanto criamos seu plano de estudos para desenvolvimento
-                                <span>{{newTrack.area}}</span>
-                                com
-                                <span class="gr-{{newTrack.area}}-color">{{newTrack.title}}</span>.
-                            </h3>
-
-                            <div class="d-flex justify-content-center align-items-center p-5">
-                                <div class="spinner-border m-5" role="status">
-                                </div>
-                            </div>
-
-                            <div>
-                                <p class="lead-text text-center mb-5">
-                                    Seu plano de estudos ficará pronto em alguns segundos. Tenho
-                                    certeza que irá gostar!
-                                </p>
-                            </div>
-                        </div>
+                <div class="d-flex justify-content-center align-items-center p-2">
+                    <div class="spinner-border m-5 border-{{area.slug}}" role="status">
                     </div>
                 </div>
+
+                <p class="lead-text text-center mb-5">
+                    Seu plano de estudos ficará pronto em alguns segundos.
+                </p>
             </div>
         </section>
+    {{/content}}
+    {{#content "scripts" mode="append"}}
+        <script src="/public/scripts/pages/new/track/confirm.js"></script>
     {{/content}}
 {{/extend}}

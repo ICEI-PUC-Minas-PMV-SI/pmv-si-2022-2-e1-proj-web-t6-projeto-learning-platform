@@ -7,6 +7,18 @@
                 {{/block}}
             </h5>
             <form id="{{id}}" action="{{action}}" method="post">
+                {{#gt (length messages) 0}}
+                    <div class="alert alert-warning d-flex align-items-center mb-4" role="alert">
+                        <i class="bi bi-exclamation-triangle me-2"></i>
+                        <div>
+                            {{#each messages}}
+                                {{log @last}}
+                                <p class="mb-{{#not @last}}2{{else}}0{{/not}}">{{this}}</p>
+                            {{/each}}
+                        </div>
+                    </div>
+                {{/gt}}
+                
                 {{#block "cardContent"}}
                     Card content
                 {{/block}}
@@ -17,6 +29,7 @@
                     </button>
                 </div>
             </form>
+
             {{#block "cardExtra"}}{{/block}}
         </div>
     </div>

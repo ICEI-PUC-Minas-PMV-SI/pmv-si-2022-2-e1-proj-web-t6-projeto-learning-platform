@@ -1,0 +1,35 @@
+{{#extend "default" scroll="main"}}
+    {{#content "main"}}
+        <div>
+            {{> "plan-header/tpl"
+                url=(append (append "/user-tracks/" params.trackId) (append "/topic/" params.topicId))
+                category=area.title
+                title=lesson.title
+            }}
+            <section class="gr-track-lesson py-5 px-3 px-sm-0">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-8 offset-2">
+{{#markdown}}{{join-lines lesson.content}}{{/markdown}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 offset-2">
+                            <form method="post" action="/tracks/complete/{{params.trackId}}/{{params.topicId}}/{{params.lessonId}}" class="d-flex justify-content-center">
+                                {{#embed "button/tpl"
+                                     style=(append "outline-" area.slug)
+                                     type="submit"
+                                     icon="check-lg"
+                                     side="end"
+                                     size="lg"
+                                     width="100"
+                                     label="Marcar como completo"
+                                }}{{/embed}}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    {{/content}}
+{{/extend}}

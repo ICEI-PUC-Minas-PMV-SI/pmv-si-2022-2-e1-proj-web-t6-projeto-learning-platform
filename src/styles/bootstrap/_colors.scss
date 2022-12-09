@@ -1,0 +1,91 @@
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+
+$blue-gray-100: adjust-color($gray-100, $saturation: 5%);
+$blue-gray-200: adjust-color($gray-200, $saturation: 5%);
+$blue-gray-300: adjust-color($gray-300, $saturation: 5%);
+$blue-gray-400: adjust-color($gray-400, $saturation: 5%);
+$blue-gray-500: adjust-color($gray-500, $saturation: 5%);
+$blue-gray-600: adjust-color($gray-600, $saturation: 5%);
+$blue-gray-700: adjust-color($gray-700, $saturation: 5%);
+$blue-gray-800: adjust-color($gray-800, $saturation: 5%);
+$blue-gray-900: adjust-color($gray-900, $saturation: 5%);
+
+$blue-grays: (
+    "100": $blue-gray-100,
+    "200": $blue-gray-200,
+    "300": $blue-gray-300,
+    "400": $blue-gray-400,
+    "500": $blue-gray-500,
+    "600": $blue-gray-600,
+    "700": $blue-gray-700,
+    "800": $blue-gray-800,
+    "900": $blue-gray-900,
+) !default;
+
+$color-contrast-dark: $blue-gray-900;
+$color-contrast-light: $blue-gray-200;
+
+$primary: #0dcaf0;
+$secondary: $blue-gray-500;
+$success: #20c997;
+$info: #0dcaf0;
+$warning: #ffc107;
+$danger: mix(white, #dc3545, 20%);
+$light: $blue-gray-200;
+$lighter: $blue-gray-700;
+$dark: $blue-gray-800;
+$darker: $blue-gray-900;
+$black: #111315;
+// custom colors
+$frontend: mix(white, #d63384, 20%);
+$backend: mix(white, #0d6efd, 20%);
+$full-stack: mix(white, #6610f2, 20%);
+$mobile: mix(white, #0dcaf0, 20%);
+$version-control: mix(white, #ffc107, 20%);
+$automation: mix(white, #fd7e14, 20%);
+$project-management: mix(white, #20c997, 20%);
+$testing: mix(white, #dc3545, 20%);
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "light": $light,
+    "lighter": $lighter,
+    "dark": $dark,
+    "darker": $darker,
+    "black": $black,
+    // custom colors
+    "frontend": $frontend,
+    "backend": $backend,
+    "full-stack": $full-stack,
+    "mobile": $mobile,
+    "version-control": $version-control,
+    "automation": $automation,
+    "project-management": $project-management,
+    "testing": $testing,
+);
+
+$primary-hover: #{sat($primary, 10%)};
+$secondary-hover: #{tint($secondary, 5%)};
+$frontend-hover: #{sat($frontend, 10%)};
+$backend-hover: #{sat($backend, 10%)};
+$full-stack-hover: #{sat($full-stack, 10%)};
+$mobile-hover: #{sat($mobile, 30%)};
+$version-control-hover: #{sat($version-control, 10%)};
+$automation-hover: #{sat($automation, 10%)};
+$project-management-hover: #{sat($project-management, 10%)};
+$testing-hover: #{sat($testing, 10%)};
+$light-hover: #38b9e1;
+$dark-hover: #{tint($dark, 5%)};

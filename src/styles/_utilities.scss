@@ -1,5 +1,3 @@
-// Classes de utilidades aqui
-@import "./breakpoints";
 /*******************************************************
 * PAGE
 *******************************************************/
@@ -8,25 +6,10 @@
 }
 
 /*******************************************************
-* BACKGROUNDS
-*******************************************************/
-.bg-secondary {
-    background-color: var(--bs-secondary) !important;
-}
-
-.bg-darker {
-    background-color: var(--gr-bg-darker) !important;
-}
-
-/*******************************************************
 * BORDERS
 *******************************************************/
 .border-dashed {
     border-style: dashed;
-}
-
-.border-lighter {
-    border-color: var(--bs-border-light-color) !important;
 }
 
 /*******************************************************

@@ -1,17 +1,26 @@
-@import "./breakpoints";
+@import "./bootstrap/scss/functions";
+@import "./bootstrap/scss/variables";
+@import "./bootstrap/scss/mixins/breakpoints";
+@import "./bootstrap/colors";
+@import "./bootstrap/variables";
+@import "./tools/mixins";
 @import "./animations";
-@import "./mixins";
-@import "./variables";
 
 html,
 body {
     height: 100%;
-    color: var(--gr-text-body);
 }
 
 @import "./typography";
 @import "./overwrites";
 @import "./utilities";
+
+/*******************************************************************************
+* CUSTOM SCROLLBARS
+*******************************************************************************/
+.scrollbar-track {
+    background: var(--bs-gray-900) !important;
+}
 
 /*******************************************************************************
 * HEADER
@@ -36,7 +45,7 @@ footer {
 .gr-mobile-menu {
     &.show,
     &.showing {
-        background-color: var(--gr-bg-darker);
+        background-color: var(--bs-darker);
 
         @include media-breakpoint-down(xl) {
             font-size: 1.4rem !important;
@@ -56,17 +65,21 @@ footer {
 * AUTHENTICATION BOXES (LOGIN, CADASTRO, RECUPERAÇÃO, etc...)
 *******************************************************************************/
 .auth-container {
-    width: 375px;
-    padding-top: 6rem;
-    padding-bottom: 3.5rem;
+    width: 260px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     align-self: center;
 
-    @include media-breakpoint-up(md) {
-        width: 400px;
+    @include media-breakpoint-up(xs) {
+        width: 300px;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
     }
 
-    @include media-breakpoint-up(xl) {
-        width: 420px;
+    @include media-breakpoint-up(md) {
+        width: 340px;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
     }
 }
 
@@ -76,9 +89,13 @@ footer {
 @import "./components/home";
 
 /*******************************************************************************
-* SIGN UP
+* NOVO PLANO DE ESTUDOS
 *******************************************************************************/
-
+.div-plan-content {
+    .bi-emoji-smile {
+        font-size: 8rem;
+    }
+}
 /*******************************************************************************
 * PLANO DE ESTUDOS STYLES
 *******************************************************************************/
@@ -104,7 +121,7 @@ footer {
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            border: 4px solid var(--bs-border-light-color);
+            border-width: 4px !important;
             color: white;
             padding: 3px 0 0 1px;
 
@@ -116,14 +133,6 @@ footer {
         div:last-child {
             width: 4px;
             background: var(--bs-border-light-color);
-        }
-    }
-
-    &:last-child {
-        & > div:first-child {
-            div:last-child {
-                display: none;
-            }
         }
     }
 
@@ -144,63 +153,50 @@ footer {
     }
 }
 
-.gr-theme-frontend {
-    h1 {
-        color: var(--gr-frontend);
+.gr-track-lesson {
+    h1,
+    h2 {
+        margin-bottom: $spacer * 2;
     }
 
-    .gr-plan-progress {
-        &.complete {
-            & > div:first-child {
-                div:first-child {
-                    border-color: var(--gr-frontend);
-                }
-
-                div:last-child {
-                    background: var(--gr-frontend);
-                }
-            }
-        }
-    }
-}
-
-.gr-theme-backend {
-    h1 {
-        color: var(--gr-backend);
+    p + * {
+        margin-bottom: $spacer * 2;
     }
 
-    .gr-plan-progress {
-        &.complete {
-            & > div:first-child {
-                div:first-child {
-                    border-color: var(--gr-backend);
-                }
+    p + p {
+        margin-bottom: $spacer !important;
+    }
 
-                div:last-child {
-                    background: var(--gr-backend);
-                }
-            }
-        }
+    img {
+        display: inline-block;
+        width: 100%;
+        height: auto;
+        margin-bottom: $spacer * 2;
     }
 }
 
-.gr-plan-options {
-    color: white !important;
+.gr-plan-option {
     min-height: 64px;
 
     i {
         font-size: 40px;
+
+        &:last-child {
+            opacity: 0.1;
+        }
     }
 
     &:hover {
-        background-color: rgb(43, 43, 43) !important;
+        background-color: $dark !important;
         scale: (1.02);
-        border: none;
-        box-shadow: 0px 0 10px 0px rgb(36, 36, 36);
+        box-shadow: 0 0 10px 0 $black;
         transition: 0.2s;
-    }
 
-    &:focus {
+        i {
+            &:last-child {
+                opacity: 1;
+            }
+        }
     }
 }
 

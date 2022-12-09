@@ -1,4 +1,4 @@
-{{#extend "default"}}
+{{#extend "default" scroll="main"}}
     {{#content "main"}}
         <section>
             <div class="container">
@@ -7,12 +7,10 @@
                         class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 pt-page"
                     >
                         <a
-                            href="/tracks/new/time?category={{data
-                                'query.category'
-                            }}&tecnology={{data 'query.tecnology'}}"
-                            class="d-flex text-decoration-none align-items-center mb-2 link-light"
+                            href="/new/track/time?area={{area.slug}}&tech={{tech.slug}}"
+                            class="d-flex text-decoration-none align-items-center mb-2 text-muted"
                         >
-                            <i class="bi bi-arrow-left me-2 gr-{{data 'query.category'}}-color"></i>
+                            <i class="bi bi-arrow-left me-2"></i>
                             Passo 4 de 4
                         </a>
 
@@ -21,23 +19,18 @@
                         </h1>
 
                         <h4 class="text mb-4">
-
-                            {{#with (find categories.items "name" query.category)}}
-                                Você deseja aprender desenvolvimento
-                                <span class="gr-{{data 'query.category'}}-color">{{label}}</span>,
-                            {{/with}}
-
-                            {{#with (find technologies.items "name" query.tecnology)}}
+                            Você deseja aprender desenvolvimento
+                            <span class="text-{{area.slug}}">{{area.title}}</span>,
+                            {{#isTruthy tech.slug}}
                                 com foco em
-                                <span class="gr-{{data 'query.category'}}-color">{{label}}</span>,
-                            {{/with}}
-
-                            {{#with (find times.items "id" query.time)}}
-                                dedicando
-                                <span class="gr-{{data 'query.category'}}-color">{{label}}</span>
-                                diariamente.
-                            {{/with}}
-
+                                <span class="text-{{area.slug}}">{{tech.title}}</span>,
+                            {{/isTruthy}}
+                            dedicando
+                            <span class="text-{{area.slug}}">{{get
+                                    "label"
+                                    (find (i "newPlan.time.options") "id" query.time)
+                                }}</span>
+                            diariamente.
                         </h4>
 
                         <p>Ter um plano é sempre o primeiro passo para que algo extrordinário
@@ -47,17 +40,26 @@
                             gratificante.</P>
                         <p>Deseja criar um plano com base nas informações acima?</p>
 
-                        <a
-                            href="/tracks/new/confirmacao?category={{data
-                                'query.category'
-                            }}&tecnology={{data 'query.tecnology'}}"
-                            class="btn btn-outline-{{data 'query.category'}}
-                                d-block my-5 link-light"
-                        >
-                            Sim, quero criar o plano
-                            <i class="bi bi-plus"></i>
-                        </a>
+                        <form id="gr-new-plan-form" method="post" action="/new/track/confirm">
+                            <input type="hidden" name="area" value="{{data 'area.slug'}}" />
+                            <input type="hidden" name="tech" value="{{data 'tech.slug'}}" />
+                            <input
+                                type="hidden"
+                                name="time"
+                                value="{{join
+                                    (get 'value' (find (i 'newPlan.time.options') 'id' query.time))
+                                }}"
+                            />
 
+                            <button
+                                type="submit"
+                                class="btn btn-lg btn-outline-{{data 'area.slug'}}
+                                    d-block w-100 my-5 link-light"
+                            >
+                                Sim, quero criar o plano
+                                <i class="bi bi-plus"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>

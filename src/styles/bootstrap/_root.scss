@@ -1,0 +1,33 @@
+// CSS Variables do nosso projeto sempre com prefix gr (grimore)
+
+:root {
+    /********************************************************************
+    * BOOTSTRAP OVERWRITES
+    ********************************************************************/
+    --#{$prefix}primary-rgb: 56, 185, 225;
+    --#{$prefix}secondary-rgb: 56, 56, 56;
+
+    @each $color, $value in $blue-grays {
+        --#{$prefix}blue-gray-#{$color}: #{$value};
+    }
+
+    --#{$prefix}text-body: #{shade(#ffffff, 25%)};
+    --#{$prefix}text-title: #{shade(#ffffff, 5%)};
+    --#{$prefix}text-muted: rgba(255, 255, 255, 0.3);
+
+    --#{$prefix}primary-hover: #{$primary-hover};
+    --#{$prefix}secondary-hover: #{$secondary-hover};
+    --#{$prefix}dark-hover: #{$dark-hover};
+    --#{$prefix}light-hover: #{$light-hover};
+    --#{$prefix}frontend-hover: #{$frontend-hover};
+    --#{$prefix}backend-hover: #{$backend-hover};
+    --#{$prefix}full-stack-hover: #{$full-stack-hover};
+    --#{$prefix}mobile-hover: #{$mobile-hover};
+    --#{$prefix}version-control-hover: #{$version-control-hover};
+    --#{$prefix}automation-hover: #{$automation-hover};
+    --#{$prefix}project-management-hover: #{$project-management-hover};
+    --#{$prefix}testing-hover: #{$testing-hover};
+
+    --#{$prefix}link-hover-color: var(--#{$prefix}primary-hover);
+    --#{$prefix}box-primary-hover: #2ee6f3af;
+}

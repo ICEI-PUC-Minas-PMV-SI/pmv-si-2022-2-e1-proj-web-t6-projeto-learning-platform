@@ -1,28 +1,28 @@
+const { DataManager } = require("@jmilanes/hotbars");
+
 const userRoutes = (router, config) => {
-    router.post(`/login`, (req, res) => {
-        // login
-        res.json({ ...req.body, message: "Faltou logar!" });
-    });
+    const db = DataManager.get("jsonDb");
 
-    router.get(`/test/:what/:where`, (req, res) => {
-        // login
-        res.json({ params: req.params, query: req.query });
-    });
+    /**
+     * Marca topicos e lissões com completas.
+     */
+    router.post("/tracks/complete/:trackId/:topicId/:lessonId", async (req, res) => {
+        const { trackId, topicId, lessonId } = req.params;
 
-    router
-        .route("/crud-route")
-        .get((req, res) => {
-            res.send("/crud-route get Works!");
-        })
-        .post((req, res) => {
-            res.send("/crud-route post Works!");
-        })
-        .patch((req, res) => {
-            res.send("/crud-route patch Works!");
-        })
-        .delete((req, res) => {
-            res.send("/crud-route delete Works!");
-        });
+        if (lessonId) {
+            await db.from("lessons").update(lessonId, { complete: true });
+
+            const lessons = await db.from("lessons").eq("topicId", topicId).all();
+
+            if (lessons.length) {
+                if (lessons.every((lesson) => lesson.complete)) {
+                    await db.from("topics").update(topicId, { complete: true });
+                }
+            }
+        }
+
+        res.redirect(["", "user-tracks", trackId, "topic", topicId].join("/"));
+    });
 };
 
 module.exports = userRoutes;

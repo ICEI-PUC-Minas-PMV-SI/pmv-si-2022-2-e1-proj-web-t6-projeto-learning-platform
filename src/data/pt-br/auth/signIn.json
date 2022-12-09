@@ -1,6 +1,7 @@
 {
     "title": "Bem vindo de volta!",
-    "noAccount": "Não possui uma conta?",
+    "noAccount": "Não possui conta?",
+    "login": "Login",
     "email": {
         "label": "Username"
     },

@@ -1,14 +1,54 @@
 {
-    "size": 30,
+    "size": 37,
     "name": "technologies",
     "schema": {
         "id": "datatype.uuid",
-        "title": "unique:helpers.arrayElement:React Js,Angular,Vue JS,Next Js,Svelte,Gatsby Js,Jquery,Express,Flutter,Jest,HTML 5,CSS 3,Flask,Fast Api,Blazor,Git,NPM,PIP",
+        "title": "unique:helpers.arrayElement:React Js,Angular,Vue JS,Next Js,Svelte,Gatsby Js,Jquery,Express,Flutter,Jest,HTML 5,CSS 3,Flask,Fast Api,Blazor,Git,NPM,PIP,Github,Bitbucket,GitLab,Circle Ci,Jenkins,Github Actions,Jira,Asana,Javascript,Typescript,Jsx,Dart,Python,C#",
+        "sub-title": "lorem.sentence",
         "slug": "lodash.kebabCase:prop.title",
-        "description": "lorem.paragraph",
+        "type": "mapped:prop.slug",
+        "description": "lorem.paragraphs:1..3",
         "icon": "lodash.replace:/public/images/tech/{{name}}-250.png,{{name}},prop.slug",
-        "areaId": "one-to-one:technologies.slug-areas.slug",
-        "languageId": "one-to-one:technologies.slug-programingLanguages.slug"
+        "areaId": "one-to-one:technologies.slug-areas.slug"
+    },
+    "mappings": {
+        "type": {
+            "html-5": "markup",
+            "css-3": "stylesheet",
+            "react-js": "framework",
+            "angular": "framework",
+            "vue-js": "framework",
+            "svelte": "framework",
+            "gatsby-js": "framework",
+            "node-js": "framework",
+            "npm": "package-manager",
+            "pip": "package-manager",
+            "jquery": "framework",
+            "express": "framework",
+            "Scrum": "agile-framework",
+            "Agile": "methodology",
+            "xp": "framework",
+            "jira": "sass",
+            "asana": "sass",
+            "python": "language",
+            "flask": "framework",
+            "fast-api": "framework",
+            "blazor": "framework",
+            "jest": "framework",
+            "pytest": "framework",
+            "git": "frameork",
+            "github": "sass",
+            "bitbucket": "sass",
+            "flutter": "framework",
+            "react-native": "framework",
+            "github-actions": "sass",
+            "circle-ci": "sass",
+            "javascript": "language",
+            "typescript": "language",
+            "jsx": "language",
+            "dart": "language",
+            "c": "language"
+        }
     },
     "relations": {
         "technologies.slug-areas.slug": {
@@ -27,21 +67,15 @@
             "git": "full-stack",
             "pip": "full-stack",
             "jest": "testing",
-            "py-test": "testing"
-        },
-        "technologies.slug-programingLanguages.slug": {
-            "react-js": "jsx",
-            "angular": "typescript",
-            "vue-js": "javascript",
-            "express": "javascript",
-            "svelte": "javascript",
-            "next-js": "javascript",
-            "npm": "javascript",
-            "flutter": "dart",
-            "flask": "python",
-            "fast-api": "python",
-            "pip": "python",
-            "blazor": "c#"
+            "py-test": "testing",
+            "github": "version-control",
+            "bitbucket": "version-control",
+            "gitlab": "version-control",
+            "circle-ci": "automation",
+            "jenkins": "automation",
+            "github-actions": "automation",
+            "jira": "project-management",
+            "asana": "project-management"
         }
     }
 }
