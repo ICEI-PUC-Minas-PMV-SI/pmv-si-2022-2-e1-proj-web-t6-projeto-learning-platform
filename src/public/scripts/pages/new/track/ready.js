@@ -10,7 +10,7 @@ function animateEmoji() {
     this.lastAnimtation = animateRubber;
     const reotateAnimation = () => {
         const nextAnimation = this.lastAnimtation === animateRubber ? animateBounce : animateRubber;
-        console.log("AGAIN", this.lastAnimtation, nextAnimation());
+
         nextAnimation().one("animationend", () => {
             this.lastAnimtation = nextAnimation;
 
@@ -25,8 +25,3 @@ function animateEmoji() {
 
 animateEmoji();
 
-setTimeout(() => {
-    const trackId = $("[data-user-track-id]").data("user-track-id");
-    console.log("TRACK ID", trackId);
-    // location.href = `/user-tracks/${trackId}`
-}, 4000);

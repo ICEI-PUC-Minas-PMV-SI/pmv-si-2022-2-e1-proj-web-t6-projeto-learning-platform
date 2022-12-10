@@ -2,9 +2,11 @@ const { ControllerAbstract } = require("@jmilanes/hotbars");
 
 class SearchController extends ControllerAbstract {
     async loadTechnologies(areaId) {
-        const { error, data } = await this.get(
-            `/_api/technologies${areaId ? `?areaId=${areaId}` : ""}`
-        );
+        const query = { _expand: "area" }
+        
+        if (areaId) query.areaId = areaId;
+        
+        const { error, data } = await this.get("/_api/technologies", query);
 
         if (!error) {
             return data.items || [];
@@ -13,18 +15,8 @@ class SearchController extends ControllerAbstract {
         return [];
     }
 
-    async loadVideos() {
-        const { error, data } = await this.get("/_api/videos", { _limit: 20 });
-
-        if (!error) {
-            return data.items || [];
-        }
-
-        return [];
-    }
-
-    async loadArea(areaSlug) {
-        const { error, data } = await this.get("/_api/areas", { slug: areaSlug });
+    async loadArea(slug) {
+        const { error, data } = await this.get("/_api/areas", { slug });
 
         if (!error) {
             return (data.items || [])[0];
@@ -33,8 +25,16 @@ class SearchController extends ControllerAbstract {
         return {};
     }
 
-    async loadLanguages() {
-        const { error, data } = await this.get("/_api/programingLanguages");
+    async loadVideos(areaId, playlistId, type) {
+        const query = { _limit: 20 };
+
+        if (areaId) query.areaId = areaId;
+        
+        if (playlistId) query.playlistId = playlistId;
+        
+        if (type && type !== "playlists") query.type = type;
+
+        const { error, data } = await this.get("/_api/videos", query);
 
         if (!error) {
             return data.items || [];
@@ -43,8 +43,16 @@ class SearchController extends ControllerAbstract {
         return [];
     }
 
-    async loadSass() {
-        const { error, data } = await this.get("/_api/sass");
+    async loadPlaylists(areaId) {
+        const query = {
+            _expand: "area"
+        }
+        
+        if (areaId) {
+            query.areaId = areaId;
+        }
+        
+        const { error, data } = await this.get("/_api/playlists", query);
 
         if (!error) {
             return data.items || [];
@@ -54,20 +62,27 @@ class SearchController extends ControllerAbstract {
     }
 
     async handle(req) {
-        const data = {};
-
-        if (req.query.area) {
+        const { area, playlist, type } = req.query;
+        const data = { area: null, videos: [] };
+        
+        if (area) {
             data.area = await this.loadArea(req.query.area);
-            data.technologies = await this.loadTechnologies(data.area?.id);
-        } else {
-            data.technologies = await this.loadTechnologies();
         }
 
-        data.sass = await this.loadSass();
-        data.languages = await this.loadLanguages();
-        data.videos = await this.loadVideos();
-        data.menu = [...data.technologies, ...data.languages];
+        data.technologies = await this.loadTechnologies(data.area?.id);
 
+        data.playlists = await this.loadPlaylists(data.area?.id);
+        
+        if (type !== "playlists") {
+            data.videos = await this.loadVideos(area, playlist, type);    
+        } else {
+            for (let i = 0; i < data.playlists.length; i++) {
+                data.playlists[i].videos = await this.loadVideos(
+                    null, data.playlists[i].id, null
+                )   
+            }
+        }
+        
         return data;
     }
 }

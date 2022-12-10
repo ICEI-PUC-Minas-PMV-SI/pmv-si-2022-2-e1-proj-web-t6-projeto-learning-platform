@@ -53,15 +53,12 @@ class MainController extends ControllerAbstract {
         }
 
         if (req.query.trackId) {
-            console.log("WTF", req.query.trackId);
             data.userTrack = await this.loadUserTrack(req.query.trackId);
 
             if (data.userTrack) {
                 data.area = await this.loadArea(data.userTrack.areaId);
             }
         }
-
-        console.log(req.query, data.userTrack);
 
         return data;
     }

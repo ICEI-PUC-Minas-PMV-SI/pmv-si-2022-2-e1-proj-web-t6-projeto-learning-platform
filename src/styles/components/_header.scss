@@ -76,6 +76,10 @@ header {
         }
     }
 
+    .gr-search-close {
+        width: 50px;
+    }
+
     // On mobile, whe search is active fix flex and width
     &.gr-opened {
         flex-grow: 1;
@@ -104,7 +108,7 @@ header {
 
 .gr-explore-btn {
     &.gr-active {
-        height: 46px !important;
+        height: 52px !important;
         margin-bottom: -10px;
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
@@ -132,10 +136,20 @@ header {
     position: absolute;
     left: 0;
     right: 0;
-    top: 46px;
+    top: 52px;
     transition: top 0.3s, opacity 0.3s;
     opacity: 1;
     z-index: 1000;
+    max-height: calc(100vh - 80px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    
+    & > .drop-menu-scroll {
+        max-height: 100%;
+        min-height: 100%;
+        flex: 1 1 100%;
+    }
 
     &:not(.invisible) {
         border: 2px solid var(--bs-lighter);
@@ -167,18 +181,15 @@ header {
             }
         }
     }
-
+    
     @include media-breakpoint-up(md) {
         position: absolute;
         transition: max-height 1s, opacity 0.3s;
-        left: 0;
         right: auto;
-        max-height: 1000px;
-        overflow: hidden;
+        left: 50px;
 
         &.invisible {
             max-height: 0;
-            // opacity: 0;
         }
 
         .gr-drop-menu-container {
@@ -192,5 +203,9 @@ header {
                 width: 220px;
             }
         }
+    }
+    
+    @include media-breakpoint-up(xl) {
+        left: 0;
     }
 }

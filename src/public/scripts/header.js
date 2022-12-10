@@ -27,10 +27,13 @@ function initMobileSearch() {
 
         if (isMobile && !attached) {
             attach();
+            attached = true;
         }
 
+       
         if (!isMobile && attached) {
             detach();
+            attached = false;
         }
     });
 
@@ -44,6 +47,12 @@ function initDropMenu() {
     const exploreBtn = search.find(".gr-explore-btn");
     const categories = container.find("div:first-child [data-target]");
 
+    // Scroll the drop menu
+    window.Scrollbar.init(
+        document.querySelector(".drop-menu-scroll"),
+        { thumbMinSize: 10, plugins: { horizontalScroll: false } }
+    );
+    
     // Toggle drop menu
     exploreBtn.on("click", () => {
         menu.toggleClass("invisible");
@@ -64,13 +73,6 @@ function initDropMenu() {
         }
     });
 
-    // Close the menu if the window get's resized below 1200px
-    $(window).on("resize", (e) => {
-        if (e.currentTarget.innerWidth < 978 && !menu.hasClass("invisible")) {
-            menu.toggleClass("invisible");
-        }
-    });
-
     categories.each((i, category) => {
         $(category).on("click", (e) => {
             e.preventDefault();
@@ -80,6 +82,14 @@ function initDropMenu() {
 
             $(category).addClass("gr-active");
         });
+    });
+
+    // Close the menu if the window get's resized below 1200px
+    $(window).on("resize", (e) => {
+        if (!menu.hasClass("invisible")) {
+            menu.addClass("invisible");
+            exploreBtn.removeClass("gr-active");
+        }
     });
 }
 

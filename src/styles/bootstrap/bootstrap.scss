@@ -50,7 +50,6 @@
 
 // Custom utilities
 @import "./utilities";
-@import "./buttons";
 
 // Utilities
 @import "scss/utilities/api";
@@ -58,3 +57,6 @@
 
 // Custom root
 @import "./root";
+@import "./gradients";
+@import "./buttons";
+@import "./forms";

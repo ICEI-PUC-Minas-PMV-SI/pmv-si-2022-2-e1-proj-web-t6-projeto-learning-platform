@@ -1,12 +1,13 @@
 import "/public/scripts/extensions.js";
-import { initBreakpoints, initHomeScrollNav, initPrivateProfile } from "./lib.js";
+import { initBreakpoints, initHomeScrollNav } from "./lib.js";
 import { initHeader } from "./header.js";
 
 $(() => {
+    window.Scrollbar.use(HorizontalScrollPlugin, OverscrollPlugin);
+    
     initHeader();
     initBreakpoints();
     initHomeScrollNav();
-    // initPrivateProfile();
 
     /**
      * Submit new track form at confirm step.

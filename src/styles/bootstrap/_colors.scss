@@ -1,3 +1,5 @@
+@import "../tools/mixins";
+
 $gray-100: #f8f9fa;
 $gray-200: #e9ecef;
 $gray-300: #dee2e6;
@@ -38,21 +40,21 @@ $secondary: $blue-gray-500;
 $success: #20c997;
 $info: #0dcaf0;
 $warning: #ffc107;
-$danger: mix(white, #dc3545, 20%);
+$danger: tint(#dc3545, 20%);
 $light: $blue-gray-200;
 $lighter: $blue-gray-700;
 $dark: $blue-gray-800;
 $darker: $blue-gray-900;
 $black: #111315;
 // custom colors
-$frontend: mix(white, #d63384, 20%);
-$backend: mix(white, #0d6efd, 20%);
-$full-stack: mix(white, #6610f2, 20%);
-$mobile: mix(white, #0dcaf0, 20%);
-$version-control: mix(white, #ffc107, 20%);
-$automation: mix(white, #fd7e14, 20%);
-$project-management: mix(white, #20c997, 20%);
-$testing: mix(white, #dc3545, 20%);
+$frontend: tint(#d63384, 20%);
+$backend: tint(#0d6efd, 20%);
+$full-stack: tint(#6610f2, 20%);
+$mobile: tint(#0dcaf0, 20%);
+$version-control: tint(#ffc107, 20%);
+$automation: tint(#fd7e14, 20%);
+$project-management: tint(#20c997, 20%);
+$testing: tint(#dc3545, 20%);
 
 $theme-colors: (
     "primary": $primary,
@@ -89,3 +91,4 @@ $project-management-hover: #{sat($project-management, 10%)};
 $testing-hover: #{sat($testing, 10%)};
 $light-hover: #38b9e1;
 $dark-hover: #{tint($dark, 5%)};
+

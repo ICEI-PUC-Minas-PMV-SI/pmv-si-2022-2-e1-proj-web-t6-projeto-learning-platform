@@ -30,9 +30,28 @@ $spacer: 1.1rem;
 /** FONT & SIZE **/
 $font-family-sans-serif: "Almarai", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$font-size-base: 0.95rem;
+$font-size-base: 1rem;
 $font-size-sm: $font-size-base * 0.875;
 $font-size-lg: $font-size-base * 1.1;
+
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
+
+$font-sizes: (
+    xxxl: $font-size-base * 8,
+    xxl: $font-size-base * 6,
+    xl: $font-size-base * 4,
+    1: $h1-font-size,
+    2: $h2-font-size,
+    3: $h3-font-size,
+    4: $h4-font-size,
+    5: $h5-font-size,
+    6: $h6-font-size
+);
 
 /** LINKS **/
 $link-color: mix(white, #0dcaf0, 20%);
@@ -52,6 +71,12 @@ $border-radius-pill: 50rem;
 $input-bg: $black;
 $input-border-color: $lighter;
 $input-border-width: 2px;
+
+$input-disabled-color: $dark;
+$input-disabled-bg: $black;
+
+$form-select-disabled-color: $dark;
+$form-select-disabled-bg: $black;
 
 /** BUTTONS **/
 $input-btn-border-width: 2px;

@@ -1,11 +1,9 @@
 $(() => {
-    const Scrollbar = window.Scrollbar;
+    window.Scrollbar.use(HorizontalScrollPlugin, OverscrollPlugin);
 
-    Scrollbar.use(HorizontalScrollPlugin, OverscrollPlugin);
+    window.Scrollbar.init(document.querySelector("#gr-search-menu"), { thumbMinSize: 10 });
 
-    Scrollbar.init(document.querySelector("#gr-search-menu"), { thumbMinSize: 10 });
-
-    Scrollbar.init(document.querySelector("#gr-search-sidebar"), {
+    window.Scrollbar.init(document.querySelector("#gr-search-sidebar"), {
         thumbMinSize: 10,
         plugins: { horizontalScroll: false },
     });

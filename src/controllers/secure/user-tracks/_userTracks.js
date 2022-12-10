@@ -12,7 +12,7 @@ class UserTracksController extends ControllerAbstract {
     }
 
     async loadTrack(id) {
-        const { error, data } = await this.get(`/_api/tracks/${id}?_expand=area`, {});
+        const { error, data } = await this.get(`/_api/tracks/${id}?_expand=area&_expand=technology`, {});
 
         if (!error) {
             return data;
@@ -72,7 +72,6 @@ class UserTracksController extends ControllerAbstract {
         if (data.userTrack) {
             data.track = await this.loadTrack(data.userTrack.trackId);
             data.area = data.track.area;
-            console.log("AREA", data.area);
             data.tech = data.track.technology;
             data.topics = await this.loadTopics(data.track.id);
         }
@@ -86,6 +85,7 @@ class UserTracksController extends ControllerAbstract {
             data.lesson = await this.loadLesson(lessonId);
         }
 
+        console.log(Object.keys(data))
         return data;
     }
 }

@@ -1,0 +1,7 @@
+.form-control {
+    &:disabled {
+        &::placeholder {
+            color: $dark;
+        }
+    }
+}

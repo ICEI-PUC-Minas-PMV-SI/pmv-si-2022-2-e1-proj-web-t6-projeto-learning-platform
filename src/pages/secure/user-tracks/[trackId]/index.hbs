@@ -1,12 +1,14 @@
 {{#extend "default" scroll="main"}}
     {{#content "main"}}
+        
         <div class="gr-study-plan gr-theme-backend">
             {{> "plan-header/tpl"
-                url="/perfil-privado"
+                url="/profile"
                 category=area.title
                 title=tech.title
                 description=tech.description
             }}
+            {{log tech}}
             <section class="px-3 px-sm-0">
                 <div class="container">
                     <div class="row">

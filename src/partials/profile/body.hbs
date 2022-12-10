@@ -1,0 +1,16 @@
+{{#block "profile/body"}}
+    <section id="gr-profile-body" class="w-100">
+        {{#eq query.active "on-going"}}
+            {{#embed "profile/ongoing"}}{{/embed}}
+        {{/eq}}
+        {{#eq query.active "done"}}
+            {{#embed "profile/done"}}{{/embed}}
+        {{/eq}}
+        {{#eq query.active "saved"}}
+            {{#embed "profile/saved"}}{{/embed}}
+        {{/eq}}
+        {{#eq query.active "notes"}}
+            {{#embed "profile/notes"}}{{/embed}}
+        {{/eq}}
+    </section>
+{{/block}}
