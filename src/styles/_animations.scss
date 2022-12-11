@@ -145,6 +145,7 @@
         opacity: 0.7;
     }
 }
+
 @keyframes GradientRadialAnimation2 {
     0% {
         background-size: 100% 100%;
@@ -160,5 +161,62 @@
         background-size: 100% 100%;
         background-position: 0 0;
         opacity: 0.7;
+    }
+}
+
+@-webkit-keyframes RadialBgAnimation {
+    0% {
+        background-size: 80% 80%;
+        background-position: -20% 100%;
+    }
+    50% {
+        background-size: 150% 150%;
+        background-position: 80% 0;
+    }
+    100% {
+        background-size: 80% 80%;
+        background-position: -20% 100%;
+    }
+}
+@-moz-keyframes RadialBgAnimation {
+    0% {
+        background-size: 80% 80%;
+        background-position: -20% 100%;
+    }
+    50% {
+        background-size: 150% 150%;
+        background-position: 80% 0;
+    }
+    100% {
+        background-size: 80% 80%;
+        background-position: -20% 100%;
+    }
+}
+@-o-keyframes RadialBgAnimation {
+    0% {
+        background-size: 80% 80%;
+        background-position: -20% 100%;
+    }
+    50% {
+        background-size: 150% 150%;
+        background-position: 80% 0;
+    }
+    100% {
+        background-size: 80% 80%;
+        background-position: -20% 100%;
+    }
+}
+@keyframes RadialBgAnimation {
+    0% {
+        background-size: 80% 80%;
+        background-position: -20% 100%;
+    }
+    50% {
+        background-size: 150% 150%;
+        background-position: 80% 0;
+    }
+    100% {
+        background-size: 80% 80%;
+        background-position: -20% 100%;
     }
 }

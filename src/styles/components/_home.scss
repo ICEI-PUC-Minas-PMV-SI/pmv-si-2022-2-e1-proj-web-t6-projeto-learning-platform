@@ -1,6 +1,6 @@
 .gr-home-page {
     section {
-        height: 100vh;
+        height: calc(100vh - 61px);
         min-height: 590px;
         position: relative;
 
@@ -11,8 +11,8 @@
 
     .gr-section-nav-button {
         position: absolute;
-        right: 0;
-        left: 0;
+        right: auto;
+        left: auto;
         bottom: 20px;
     }
 
@@ -221,24 +221,24 @@
 *******************************************************************************/
 .gr-custom-search {
     position: relative;
+    opacity: 80%;
 
     .form-control {
         padding-right: 55px;
         background-color: rgba($color: #fff, $alpha: 0.1);
-        opacity: 80%;
         border-color: #38b9e1;
         height: 60px;
+        border-right: 0;
     }
 
     .form-control::placeholder {
         color: rgba($color: #fff, $alpha: 0.8);
-        font-size: 20px;
     }
 
-    .bi {
-        position: absolute;
-        right: 24px;
-        top: 50%;
-        transform: translateY(-50%);
+    .btn {
+        background-color: rgba($color: #fff, $alpha: 0.1) !important;
+        border-color: #38b9e1 !important;
+        border-left: 0;
+        margin-left: 0 !important;
     }
 }

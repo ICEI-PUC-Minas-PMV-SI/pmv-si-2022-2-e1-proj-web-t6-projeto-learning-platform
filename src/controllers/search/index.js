@@ -2,10 +2,10 @@ const { ControllerAbstract } = require("@jmilanes/hotbars");
 
 class SearchController extends ControllerAbstract {
     async loadTechnologies(areaId) {
-        const query = { _expand: "area" }
-        
+        const query = { _expand: "area" };
+
         if (areaId) query.areaId = areaId;
-        
+
         const { error, data } = await this.get("/_api/technologies", query);
 
         if (!error) {
@@ -29,9 +29,9 @@ class SearchController extends ControllerAbstract {
         const query = { _limit: 20 };
 
         if (areaId) query.areaId = areaId;
-        
+
         if (playlistId) query.playlistId = playlistId;
-        
+
         if (type && type !== "playlists") query.type = type;
 
         const { error, data } = await this.get("/_api/videos", query);
@@ -45,13 +45,13 @@ class SearchController extends ControllerAbstract {
 
     async loadPlaylists(areaId) {
         const query = {
-            _expand: "area"
-        }
-        
+            _expand: "area",
+        };
+
         if (areaId) {
             query.areaId = areaId;
         }
-        
+
         const { error, data } = await this.get("/_api/playlists", query);
 
         if (!error) {
@@ -62,27 +62,33 @@ class SearchController extends ControllerAbstract {
     }
 
     async handle(req) {
-        const { area, playlist, type } = req.query;
+        const { area, playlist, type, tech } = req.query;
         const data = { area: null, videos: [] };
-        
+
         if (area) {
             data.area = await this.loadArea(req.query.area);
         }
 
         data.technologies = await this.loadTechnologies(data.area?.id);
 
-        data.playlists = await this.loadPlaylists(data.area?.id);
-        
-        if (type !== "playlists") {
-            data.videos = await this.loadVideos(area, playlist, type);    
-        } else {
-            for (let i = 0; i < data.playlists.length; i++) {
-                data.playlists[i].videos = await this.loadVideos(
-                    null, data.playlists[i].id, null
-                )   
+        if (tech) {
+            const index = data.technologies.findIndex((t) => t.slug === tech);
+
+            if (index > -1) {
+                data.tech = data.technologies.splice(index, 1).pop();
             }
         }
-        
+
+        data.playlists = await this.loadPlaylists(data.area?.id);
+
+        if (type !== "playlists") {
+            data.videos = await this.loadVideos(area ? data.area?.id : null, playlist, type);
+        } else {
+            for (let i = 0; i < data.playlists.length; i++) {
+                data.playlists[i].videos = await this.loadVideos(null, data.playlists[i].id, null);
+            }
+        }
+
         return data;
     }
 }

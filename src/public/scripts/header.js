@@ -30,7 +30,6 @@ function initMobileSearch() {
             attached = true;
         }
 
-       
         if (!isMobile && attached) {
             detach();
             attached = false;
@@ -48,11 +47,11 @@ function initDropMenu() {
     const categories = container.find("div:first-child [data-target]");
 
     // Scroll the drop menu
-    window.Scrollbar.init(
-        document.querySelector(".drop-menu-scroll"),
-        { thumbMinSize: 10, plugins: { horizontalScroll: false } }
-    );
-    
+    window.Scrollbar.init(document.querySelector(".drop-menu-scroll"), {
+        thumbMinSize: 10,
+        plugins: { horizontalScroll: false },
+    });
+
     // Toggle drop menu
     exploreBtn.on("click", () => {
         menu.toggleClass("invisible");

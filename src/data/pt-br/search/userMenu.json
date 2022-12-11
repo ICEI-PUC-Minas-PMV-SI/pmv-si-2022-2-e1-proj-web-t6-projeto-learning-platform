@@ -2,9 +2,7 @@
     {
         "title": "Vídeos salvos",
         "url": "/search",
-        "query": [
-            { "userId": "user.id" }
-        ]
+        "query": [{ "userId": "user.id" }]
     },
     {
         "title": "Playlists",

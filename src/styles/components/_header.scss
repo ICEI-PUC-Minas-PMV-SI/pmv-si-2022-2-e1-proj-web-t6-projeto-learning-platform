@@ -144,7 +144,7 @@ header {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    
+
     & > .drop-menu-scroll {
         max-height: 100%;
         min-height: 100%;
@@ -181,7 +181,7 @@ header {
             }
         }
     }
-    
+
     @include media-breakpoint-up(md) {
         position: absolute;
         transition: max-height 1s, opacity 0.3s;
@@ -204,7 +204,7 @@ header {
             }
         }
     }
-    
+
     @include media-breakpoint-up(xl) {
         left: 0;
     }

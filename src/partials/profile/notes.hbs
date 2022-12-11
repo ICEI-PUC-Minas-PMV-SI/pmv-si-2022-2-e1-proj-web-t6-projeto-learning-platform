@@ -5,7 +5,10 @@
                 <i class="bi bi-clipboard-minus text-muted fs-1 p-2 me-3"></i>
                 <div class="d-flex flex-column">
                     <p class="mb-1 flex-fill">{{description}}</p>
-                    <small class="text-muted">{{moment createdAt "dddd, MMMM Do YYYY, h:mm:ss a"}}</small>
+                    <small class="text-muted">{{moment
+                            createdAt
+                            "dddd, MMMM Do YYYY, h:mm:ss a"
+                        }}</small>
                 </div>
             </div>
         {{/each}}

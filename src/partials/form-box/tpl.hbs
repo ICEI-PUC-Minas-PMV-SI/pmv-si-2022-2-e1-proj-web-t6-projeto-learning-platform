@@ -1,11 +1,14 @@
 {{#block "form-box/tpl"}}
-    <div class="card auth-card shadow">
-        <div class="card-body">
-            <h5 class="card-title text-center">
+    <div class="card auth-card shadow bg-darker">
+        <div class="card-body p-4">
+            <h2 class="card-title text-center mb-2">
                 {{#block "cardTitle"}}
                     Default title
                 {{/block}}
-            </h5>
+            </h2>
+            
+            {{#block "cardSubTitle"}}{{/block}}
+            
             <form id="{{id}}" action="{{action}}" method="post">
                 {{#gt (length messages) 0}}
                     <div class="alert alert-warning d-flex align-items-center mb-4" role="alert">

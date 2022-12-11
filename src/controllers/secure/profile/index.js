@@ -10,7 +10,7 @@ class ProfileController extends ControllerAbstract {
 
         return [];
     }
-    
+
     async loadTracks(userId) {
         const { error, data } = await this.get("/_api/user-tracks", { _expand: "track", userId });
 
@@ -25,7 +25,7 @@ class ProfileController extends ControllerAbstract {
         const { error, data } = await this.get(`/_api/topics`, {});
 
         if (!error) {
-            return data.items || []
+            return data.items || [];
         }
 
         return null;
@@ -40,14 +40,14 @@ class ProfileController extends ControllerAbstract {
 
         return [];
     }
-    
+
     async handle(req) {
         const data = {};
-        
+
         data.tracks = await this.loadTracks(req.user.id);
         data.areas = await this.loadAreas();
         data.notes = await this.loadNotes(req.user.id);
-        
+
         const topics = await this.loadTopics(data.tracks.trackId);
 
         data.tracks = data.tracks.reduce((list, userTrack) => {
@@ -56,32 +56,29 @@ class ProfileController extends ControllerAbstract {
 
                 delete userTrack.track;
                 delete track.id;
-                
+
                 if (track.areaId) {
-                    track.area = data.areas.find(
-                        area => area.id === track.areaId
-                    );
+                    track.area = data.areas.find((area) => area.id === track.areaId);
                 }
 
                 track.topics = topics.filter((item) => {
-                    return Array.isArray(item.trackId) && item.trackId.indexOf(userTrack.trackId) > -1;
+                    return (
+                        Array.isArray(item.trackId) && item.trackId.indexOf(userTrack.trackId) > -1
+                    );
                 }).length;
-                
+
                 return [
                     ...list,
                     {
                         ...userTrack,
-                        ...track
-                    }
-                ]    
+                        ...track,
+                    },
+                ];
             }
-            
-            return [
-                ...list,
-                userTrack
-            ];
+
+            return [...list, userTrack];
         }, []);
-        
+
         return data;
     }
 }

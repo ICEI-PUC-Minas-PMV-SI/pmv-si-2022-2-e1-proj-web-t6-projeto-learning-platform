@@ -4,7 +4,7 @@ import { initHeader } from "./header.js";
 
 $(() => {
     window.Scrollbar.use(HorizontalScrollPlugin, OverscrollPlugin);
-    
+
     initHeader();
     initBreakpoints();
     initHomeScrollNav();
@@ -26,4 +26,10 @@ $(() => {
             }
         });
     }
+
+    // Initialize tooltips
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(
+        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+    );
 });

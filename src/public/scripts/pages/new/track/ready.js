@@ -24,4 +24,3 @@ function animateEmoji() {
 }
 
 animateEmoji();
-
