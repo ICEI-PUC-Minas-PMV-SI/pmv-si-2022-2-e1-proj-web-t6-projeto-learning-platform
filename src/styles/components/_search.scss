@@ -1,8 +1,5 @@
 .gr-search-menu {
-    min-height: 110px;
-
     a {
-        min-width: 170px;
         border-width: 2px;
         transition: box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
@@ -25,11 +22,34 @@
             opacity: 0.6;
         }
     }
+
+    @include media-breakpoint-up(md) {
+        min-height: 110px;
+
+        a {
+            min-width: 120px;
+        }
+    }
+}
+
+.gr-selected-tech {
+    img {
+        max-width: 70%;
+        height: auto;
+    }
+
+    @include media-breakpoint-up(md) {
+        min-width: 200px;
+    }
+
+    @include media-breakpoint-up(xl) {
+        min-width: 300px;
+    }
 }
 
 .gr-search-result {
     flex: 1 1 100%;
-    
+
     @include media-breakpoint-up(sm) {
         min-width: 30%;
         max-width: 48%;
@@ -41,7 +61,7 @@
         max-width: 32%;
         flex: 1 1 30%;
     }
-    
+
     @include media-breakpoint-up(xxl) {
         min-width: 20%;
         max-width: 24%;

@@ -37,15 +37,15 @@
             />
         {{/block}}
     </head>
-    <body class="bg-darker d-flex flex-column {{#isnt scroll "body"}}overflow-hidden{{/isnt}}">
-        <header class="navbar navbar-expand-xl bd-navbar navbar-dark border-bottom">
+    <body class="bg-{{default body-bg "darker"}} d-flex flex-column {{#isnt scroll "body"}}overflow-hidden{{/isnt}}">
+        <header class="navbar navbar-expand-xl bd-navbar navbar-dark border-bottom bg-darker">
             {{#block "header"}}
                 {{#embed "header/tpl"}}{{/embed}}
             {{/block}}
         </header>
 
         <div class="d-flex flex-column flex-fill {{#eq scroll "main"}}overflow-auto{{else}}{{#isnt scroll "body"}}overflow-hidden{{/isnt}}{{/eq}}">
-            <main class="d-flex flex-column {{#isFalsey scroll}}overflow-hidden{{/isFalsey}}">
+            <main class="d-flex flex-column flex-fill {{#isFalsey scroll}}overflow-hidden{{/isFalsey}}">
                 {{#block "main"}}
                     <p class="text-white">Conteudo</p>
                 {{/block}}

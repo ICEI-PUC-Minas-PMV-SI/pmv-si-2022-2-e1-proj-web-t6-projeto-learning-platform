@@ -3,7 +3,7 @@
 /** BREAKPOINTS **/
 $grid-breakpoints: (
     xxs: 0,
-    xs: 300px,
+    xs: 340px,
     sm: 576px,
     md: 768px,
     lg: 992px,
@@ -13,13 +13,13 @@ $grid-breakpoints: (
 );
 
 $container-max-widths: (
-    xs: 280px,
+    xs: 90%,
     sm: 540px,
     md: 720px,
     lg: 960px,
     xl: 1140px,
     xxl: 1320px,
-    xxxl: 1700px,
+    xxxl: 1320px,
 );
 
 /** BASE COLORS **/
@@ -52,7 +52,7 @@ $font-sizes: (
     3: $h3-font-size,
     4: $h4-font-size,
     5: $h5-font-size,
-    6: $h6-font-size
+    6: $h6-font-size,
 );
 
 /** POSITION VALUES **/
@@ -67,7 +67,7 @@ $position-values: (
     70: 70%,
     80: 80%,
     90: 90%,
-    100: 100%
+    100: 100%,
 );
 
 /** LINKS **/

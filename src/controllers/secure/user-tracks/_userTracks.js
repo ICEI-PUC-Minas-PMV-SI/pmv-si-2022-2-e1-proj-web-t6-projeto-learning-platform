@@ -12,7 +12,10 @@ class UserTracksController extends ControllerAbstract {
     }
 
     async loadTrack(id) {
-        const { error, data } = await this.get(`/_api/tracks/${id}?_expand=area&_expand=technology`, {});
+        const { error, data } = await this.get(
+            `/_api/tracks/${id}?_expand=area&_expand=technology`,
+            {}
+        );
 
         if (!error) {
             return data;

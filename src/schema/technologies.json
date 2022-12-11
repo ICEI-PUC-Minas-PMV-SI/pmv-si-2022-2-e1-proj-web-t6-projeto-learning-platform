@@ -9,6 +9,7 @@
         "type": "mapped:prop.slug",
         "description": "lorem.paragraphs:1..3",
         "icon": "lodash.replace:/public/images/tech/{{name}}-250.png,{{name}},prop.slug",
+        "website": "internet.url",
         "areaId": "one-to-one:technologies.slug-areas.slug"
     },
     "mappings": {
