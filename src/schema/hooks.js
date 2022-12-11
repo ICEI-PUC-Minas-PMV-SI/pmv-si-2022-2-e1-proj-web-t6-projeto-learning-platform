@@ -16,3 +16,17 @@ module.exports.afterSchema = (records, schemaConfig, props) => {
     
     return records;
 }
+
+module.exports.afterAll = (data, schemas, props) => {
+    const { videos, playlists } = data;
+
+    videos.forEach((video) => {
+        if (video.playlistId) {
+            const playlist = playlists.find(p => p.id === video.playlistId);
+            
+            video.areaId = playlist.areaId;
+        }
+    })
+    
+    return data;
+}

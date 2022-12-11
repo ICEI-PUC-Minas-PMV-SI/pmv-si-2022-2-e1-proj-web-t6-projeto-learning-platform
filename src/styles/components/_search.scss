@@ -28,8 +28,31 @@
 }
 
 .gr-search-result {
-    max-width: 360px;
-    width: 360px;
+    flex: 1 1 100%;
+    
+    @include media-breakpoint-up(sm) {
+        min-width: 30%;
+        max-width: 48%;
+        flex: 1 1 46%;
+    }
+
+    @include media-breakpoint-up(lg) {
+        min-width: 28%;
+        max-width: 32%;
+        flex: 1 1 30%;
+    }
+    
+    @include media-breakpoint-up(xxl) {
+        min-width: 20%;
+        max-width: 24%;
+        flex: 1 1 22%;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+        min-width: 12%;
+        max-width: 17%;
+        flex: 1 1 15%;
+    }
 }
 
 .gr-search-sidebar {

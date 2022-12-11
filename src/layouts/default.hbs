@@ -31,6 +31,10 @@
                 href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Bakbak+One&display=swap"
                 rel="stylesheet"
             />
+            <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+            />
         {{/block}}
     </head>
     <body class="bg-darker d-flex flex-column {{#isnt scroll "body"}}overflow-hidden{{/isnt}}">
@@ -40,19 +44,23 @@
             {{/block}}
         </header>
 
-        <main class="d-flex flex-column flex-fill {{#eq scroll "main"}}overflow-auto{{else}}{{#isnt scroll "body"}}overflow-hidden{{/isnt}}{{/eq}}">
-            {{#block "main"}}
-                <p class="text-white">Conteudo</p>
-            {{/block}}
-        </main>
+        <div class="d-flex flex-column flex-fill {{#eq scroll "main"}}overflow-auto{{else}}{{#isnt scroll "body"}}overflow-hidden{{/isnt}}{{/eq}}">
+            <main class="d-flex flex-column {{#isFalsey scroll}}overflow-hidden{{/isFalsey}}">
+                {{#block "main"}}
+                    <p class="text-white">Conteudo</p>
+                {{/block}}
+            </main>
 
-        <footer
-            class="bg-default d-flex align-items-center justify-content-center border-top flex-shrink-1 py-3"
-        >
-            {{#block "footer"}}
-                <p class="m-0">{{i "main.copyright"}}</p>
-            {{/block}}
-        </footer>
+            {{#isnt footer false}}
+                <footer
+                    class="bg-default d-flex align-items-center justify-content-center border-top flex-shrink-1 py-3"
+                >
+                    {{#block "footer"}}
+                        <p class="m-0">{{i "main.copyright"}}</p>
+                    {{/block}}
+                </footer>
+            {{/isnt}}
+        </div>
 
         {{#embed "sidebar-user/tpl"}}{{/embed}}
 

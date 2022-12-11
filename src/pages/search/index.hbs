@@ -1,4 +1,4 @@
-{{#extend "default"}}
+{{#extend "default" footer=false}}
     {{#content "main"}}
         <div class="gr-search-page d-flex flex-column overflow-hidden">
             {{#if (isTruthy area)}}
@@ -33,10 +33,10 @@
                     {{#each technologies}}
                         <a
                             id="{{id}}"
-                            href="/search?area={{area.slug}}&tech={{slug}}"
+                            href="/search?{{#isTruthy (data "query.area")}}area={{data "query.area"}}&{{/isTruthy}}tech={{slug}}"
                             data-slug="{{slug}}"
                             data-index="{{@index}}"
-                            class="d-inline-block border border-2 rounded-3 bg-dark bg-lighter-hover text-white-hover text-decoration-none me-2 px-3 py-2"
+                            class="d-inline-block border border-2 {{#eq (data "query.tech") slug}}border-{{default (data "query.area") "primary"}}{{/eq}} rounded-3 bg-dark bg-lighter-hover text-white-hover text-decoration-none me-2 px-3 py-2"
                         >
                             <img src="{{icon}}" alt="{{title}}" class="d-block mb-2" width="37" height="37" />
                             <small class="d-block">{{title}}</small>
@@ -45,7 +45,7 @@
                 </div>
             </div>
             <div class="gr-search-main d-flex flex-fill overflow-hidden border-top border-dark">
-                <div id="gr-search-sidebar" class="gr-search-sidebar bg-black">
+                <div id="gr-search-sidebar" class="gr-search-sidebar bg-black d-none d-xl-block">
                     <nav class="px-3 py-4 border-end border-dark h-100">
                         <div class="mb-5">
                             <p class="text-bold text-{{default area.slug "muted"}} fw-bolder">Minha lista</p>
@@ -84,13 +84,9 @@
                     </nav>
                 </div>
                 <div id="gr-search-results" class="flex-fill overflow-auto">
-                    <div class="p-4 d-flex flex-wrap">
+                    <div class="p-4 d-flex flex-wrap gap-xs-4">
                         {{#each videos}}
-                            <a
-                                class="gr-search-result d-inline-block me-4 mb-4"
-                                href="/video?id={{id}}"
-                                title={{title}}
-                            >
+                            <div class="gr-search-result d-inline-block text-body mb-4">
                                 <span class="d-block mb-2">
                                     <img
                                         src="{{thumbnail}}"
@@ -98,36 +94,39 @@
                                         class="img-fluid rounded-3"
                                     />
                                 </span>
-                                <span class="d-block">
-                                    <p class="mb-0"><strong><small>{{title}}</small></strong></p>
-                                </span>
-                            </a>
+                                <div class="d-flex">
+                                    <div style="min-width: 45px; max-width: 45px; height:45px;" class="me-3 rounded-circle overflow-hidden">
+                                        <img src="{{creatorAvatar}}" class="img-fluid" />
+                                    </div>
+                                    <div>
+                                        <a href="/video?id={{id}}" class="d-block text-body" title={{title}}>{{title}}</a>
+                                        <small class="text-muted">{{creator}}</small><span class="d-inline-block text-muted mx-1">-</span><small class="text-muted">{{views}} views</small>
+                                    </div>
+                                </div>
+                            </div>
                         {{/each}}
                         {{#eq query.type "playlists"}}
                             {{#each playlists}}
-                                <a
-                                    class="gr-search-result d-inline-block me-4 mb-4"
-                                    href="/video?id={{id}}"
-                                    title={{title}}
-                                >
+                            <div class="gr-search-result d-inline-block text-body me-4 mb-4">
                                 <span class="d-block mb-2 position-relative overflow-hidden">
                                     {{#each (first videos 3)}}
                                         <img
                                             src="{{thumbnail}}"
                                             alt="{{title}}"
-                                            class="img-fluid rounded-3 {{#gt @index 0}}position-absolute top-0 left-{{multiply @index 25}}{{/gt}}"
+                                            class="img-fluid shadow-sm rounded-3 {{#not @last}}img-gray{{/not}} {{#gt @index 0}}position-absolute top-0 start-{{multiply @index 10}}{{/gt}}" style="z-index: {{plus @index 100}};"
                                         />
                                     {{/each}}
                                 </span>
-                                <span class="d-block">
-                                    <p class="mb-0">
-                                        <strong><small>{{title}}</small></strong>
-                                    </p>
-                                    <p class="mb-0 text-muted">
-                                       {{area.title}} - {{length videos}} videos
-                                    </p>
-                                </span>
-                                </a>
+                                <div class="d-flex">
+                                    <div style="min-width: 45px; max-width: 45px; height:45px;" class="me-3 rounded-circle overflow-hidden">
+                                        <img src="{{creatorAvatar}}" class="img-fluid" />
+                                    </div>
+                                    <div>
+                                        <a href="/video?id={{id}}" class="d-block text-body" title={{title}}>{{title}}</a>
+                                        <small class="text-muted">{{creator}}</small><span class="d-inline-block text-muted mx-1">-</span><small class="text-muted">{{length videos}} vídeos</small>
+                                    </div>
+                                </div>
+                            </div>
                             {{/each}}
                         {{/eq}}
                     </div>

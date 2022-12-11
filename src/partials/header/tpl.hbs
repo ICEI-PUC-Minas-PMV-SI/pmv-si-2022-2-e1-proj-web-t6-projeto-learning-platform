@@ -94,8 +94,8 @@
                     aria-label="Close"
                 ></button>
             </div>
-            <div class="offcanvas-body">
-                <ul class="navbar-nav me-3 fs-6">
+            <div class="offcanvas-body  fs-6">
+                <ul class="navbar-nav me-3">
                     {{#each (i "main.menu")}}
                         <li class="nav-item">
                             <a href="{{this.url}}" title="{{this.title}}" class="nav-link">
@@ -105,23 +105,43 @@
                     {{/each}}
                 </ul>
 
-                <hr class="d-lg-none my-4" />
+                <hr class="d-xl-none my-4" />
+                
+                <div class="mb-5 d-xl-none">
+                    <p class="text-bold text-{{default area.slug "muted"}} fw-bolder">Links úteis</p>
+                    <ul class="nav flex-column">
+                        {{#each (i "search.userMenu")}}
+                            <li class="nav-item">
+                            <a class="nav-link ps-0 text-body text-{{default (data "area.slug") "primary"}}-hover"
+                                href="{{url}}{{#isTruthy (data "area")}}&area={{data "area.slug"}}{{/isTruthy}}"
+                                title="{{title}}">
+                                <i class="bi bi-dash opacity-25 d-inline pe-1"></i>
+                                {{title}}
+                                </a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+
+                <hr class="d-xl-none my-4" />
 
                 {{#not authenticated}}
-                    <a
-                        href="{{i 'main.signIn.url'}}"
-                        class="btn btn-outline-secondary border-dashed me-0 me-xl-2 mb-3 mb-xl-0 d-block d-xl-inline"
-                    >
-                        {{i "main.signIn.label"}}
-                    </a>
+                    <div class="d-xl-none">
+                        <a
+                            href="{{i 'main.signIn.url'}}"
+                            class="btn btn-outline-secondary border-dashed me-0 me-xl-2 mb-3 mb-xl-0 d-block d-xl-inline"
+                        >
+                            {{i "main.signIn.label"}}
+                        </a>
 
-                    <a
-                        href="{{i 'main.signUp.url'}}"
-                        class="btn btn-outline-primary d-block d-xl-inline"
-                    >
-                        {{i "main.signUp.label"}}
-                        <i class="bi bi-plus-lg"></i>
-                    </a>
+                        <a
+                            href="{{i 'main.signUp.url'}}"
+                            class="btn btn-outline-primary d-block d-xl-inline"
+                        >
+                            {{i "main.signUp.label"}}
+                            <i class="bi bi-plus-lg"></i>
+                        </a>
+                    </div>
                 {{/not}}
             </div>
         </div>
@@ -149,6 +169,11 @@
                     {{/if}}
                 </button>
             {{/if}}
+            {{#not authenticated}}
+                <a href="/sign-in" data-bs-toggle="tooltip" data-bs-title="Click para loggar" class="btn btn-link p-0 fs-3 text-body text-primary-hover">
+                    <i class="bi bi-person-circle"></i>
+                </a>
+            {{/not}}
         </div>
     </div>
 {{/block}}

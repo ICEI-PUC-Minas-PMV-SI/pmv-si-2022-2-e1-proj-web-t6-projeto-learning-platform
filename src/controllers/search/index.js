@@ -74,7 +74,7 @@ class SearchController extends ControllerAbstract {
         data.playlists = await this.loadPlaylists(data.area?.id);
         
         if (type !== "playlists") {
-            data.videos = await this.loadVideos(area, playlist, type);    
+            data.videos = await this.loadVideos(area ? data.area?.id : null, playlist, type);    
         } else {
             for (let i = 0; i < data.playlists.length; i++) {
                 data.playlists[i].videos = await this.loadVideos(

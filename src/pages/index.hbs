@@ -35,14 +35,20 @@
                                     para filtrar esse conteúdo e disponibilizar para você apenas o
                                     que há de melhor e confiável.</p>
                             </div>
-                            <form>
-                                <div class="gr-custom-search">
+                            <form action="/search" method="get">
+                                <div class="input-group gr-custom-search">
                                     <input
+                                        name="q"
                                         type="text"
-                                        class="form-control input"
+                                        class="form-control"
                                         placeholder="Digite um tópico ou tecnologia"
+                                        aria-label="Search button"
+                                        aria-describedby="form-control"
                                     />
-                                    <i class="bi bi-search lead-text"></i>
+
+                                    <button class="gr-icon-btn btn btn-black border-lighter" type="submit">
+                                        <i class="bi bi-search"></i>
+                                    </button>
                                 </div>
                             </form>
                         </div>

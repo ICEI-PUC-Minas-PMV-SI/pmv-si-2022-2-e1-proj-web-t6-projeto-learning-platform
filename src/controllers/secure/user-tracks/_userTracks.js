@@ -63,7 +63,7 @@ class UserTracksController extends ControllerAbstract {
         return null;
     }
 
-    async handle(req, res) {
+    async handle(req) {
         const { trackId, topicId, lessonId } = req.params;
         const data = {};
 
@@ -85,7 +85,6 @@ class UserTracksController extends ControllerAbstract {
             data.lesson = await this.loadLesson(lessonId);
         }
 
-        console.log(Object.keys(data))
         return data;
     }
 }
