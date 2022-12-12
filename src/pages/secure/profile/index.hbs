@@ -1,93 +1,126 @@
-{{#extend "default"}}
+{{#extend "default" scroll="main"}}
     {{#content "main"}}
-        <section class="d-flex gr-profile-header w-100">
-            <div class="container gr-profile-container pb-4">
-                <h1 class="py-5">Olá, que bom te ver de volta!</h1>
+        <section class="d-flex w-100 bg-black">
+            <div class="container pb-4">
+                <h3 class="py-5">Olá, que bom te ver de volta!</h3>
                 <div class="d-flex row">
-                    <div class="col-lg-3 order-0 text-center text-lg-start">
-                        <img class="img-flid rounded-circle" src="/images/User.png" />
+                    <div class="col-lg-3 pe-5 order-0 text-center text-lg-start">
+                        <img class="img-fluid rounded-circle" src="{{user.avatar}}" />
                     </div>
                     <div class="col-lg-9 order-1 text-center text-lg-start">
-                        <div class="d-flex justify-content-between align-items-center pb-2">
-                            <h2>Marcelo Soares</h2>
-                            <a
-                                href="/profile/update"
-                                class="text-decoration-none"
-                                style="font-size: 18px"
-                            >Editar perfil</a>
+                        <div class="d-flex justify-content-between align-items-center pb-2 mb-2">
+                            <h3>
+                                {{default user.firstName user.username}} {{user.lastName}}
+                            </h3>
+                            <a href="/profile/update" class="text-decoration-none">Editar perfil</a>
                         </div>
+                        
                         <div class="d-flex">
-                            <i class="bi bi-envelope p-1"></i>
-                            <p>marcelo.soares@gmail.com</p>
+                            <i class="bi bi-envelope p-1 me-2 text-primary fs-5 mb-2"></i>
+                            <span class="text-muted">{{user.email}}</span>
                         </div>
+                        
+                        {{#isTruthy user.location}}
                         <div class="d-flex">
-                            <i class="bi bi-geo-alt p-1"></i>
-                            <p>Belo Horizonte, Minas Gerais</p>
+                            <i class="bi bi-geo-alt p-1 me-2 text-primary fs-5 mb-2"></i>
+                            <span class="text-muted">Belo Horizonte, Minas Gerais</span>
                         </div>
+                        {{/isTruthy}}
+                        
+                        {{#eq user.provider "github"}}
                         <div class="d-flex">
-                            <i class="bi bi-github p-1"></i>
-                            <p>marcelosoares</p>
+                            <i class="bi bi-github p-1 me-2 text-primary fs-5 mb-2"></i>
+                            <a class="text-muted" href="https://github.com/{{user.username}}" target="_blank">
+                                @{{user.username}}
+                            </a>
                         </div>
-                        <div class="d-flex">
-                            <i class="bi bi-linkedin p-1"></i>
-                            <p>http://linkedin.com/marcelo-soares</p>
-                        </div>
-                        <div class="d-flex">
-                            <i class="bi bi-link-45deg p-1"></i>
-                            <p>http://marcelo.soares.com.br</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="gr-menu w-100">
-            <div class="container gr-profile-container">
-                <div class="d-flex menu justify-content-between align-items-center">
-                    <div class="order-0">
-                        <button data-template="ongoing" class="btn btn-nav-section activ">Planos em
-                            andamento</button>
-                        <button data-template="finished" class="btn btn-nav-section">Planos
-                            concluídos</button>
-                        <button data-template="saved" class="btn btn-nav-section">Conteúdo salvo</button>
-                        <button data-template="notes" class="btn btn-nav-section">Notas</button>
-                    </div>
-                    <a href="/tracks/new" class="text-decoration-none order-1"><small>Criar novo
-                            plano de estudos</small></a>
-                </div>
-            </div>
-        </section>
-        <section class="w-100">
-            <div class="container gr-profile-container gr-search">
-                <div class="d-flex justify-content-between align-items-center">
-                    <input
-                        type="text"
-                        class="gr-form-filter w-100"
-                        placeholder="Filtrar resultados"
-                        aria-describedby="button-addon1"
-                    />
-                    <div class="dropdown dropup mx-2">
-                        <button
-                            class="dropdown-toggle gr-form-filter text-start"
-                            id="dropdownMenuOffset"
-                            style="width: 328px;"
-                            type="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                        >
-                            <span class="d-none d-sm-inline">Ordenar por</span>
-                            <i class="bi bi-chevron-down"></i>
-                        </button>
-                        <div class="dropdown-menu w-100">
-                            <li><a class="d-flex dropdown-item justify-content-between">Ordenar por
-                                    <i class="bi bi-chevron-right"></i></a></li>
-                            <li><a class="dropdown-item">Mais antigos primeiro</a></li>
-                            <li><a class="dropdown-item">Mais novos primeiro</a></li>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        {{#embed "profile-body/tpl"}}{{/embed}}
+                        {{/eq}}
 
+                        {{#isTruthy user.location}}
+                        <div class="d-flex">
+                            <i class="bi bi-linkedin p-1 me-2 text-primary fs-5 mb-2"></i>
+                            <span class="text-muted">{{user.linkedin}}</span>
+                        </div>
+                        {{/isTruthy}}
+
+                        {{#isTruthy user.website}}
+                        <div class="d-flex">
+                            <i class="bi bi-link-45deg p-0 me-2 text-primary fs-3 mb-2"></i>
+                            <span class="text-muted">{{user.website}}</span>
+                        </div>
+                        {{/isTruthy}}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gr-menu w-100 bg-darker border-bottom">
+            <nav class="navbar navbar-dark navbar-expand-lg">
+                <div class="container">
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link {{#eq query.active "on-going"}}active{{/eq}}" aria-current="page" href="/profile?active=on-going">
+                                    Planos em andamento
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{#eq query.active "done"}}active{{/eq}}" href="/profile?active=done">
+                                    Planos concluídos
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{#eq query.active "saved"}}active{{/eq}}" href="/profile?active=saved">
+                                    Conteúdo salvo
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{#eq query.active "notes"}}active{{/eq}}" href="/profile?active=notes">
+                                    Notas
+                                </a>
+                            </li>
+                        </ul>
+                        <span class="navbar-text">
+                            <a href="/new/track" class="btn btn-outline-secondary">
+                                Criar plano de estudos
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </nav>
+        </section>
+        <section class="w-100 bg-darker border-bottom py-2">
+            <div class="container">
+                <div class="d-flex">
+                    <div class="me-4 w-50">
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Filtrar resultados"
+                            {{#or (eq (length tracks) 0) (lt (length tracks) 10)}}disabled{{/or}}
+                        />
+                    </div>
+                    <div class="flex-grow-0 w-25">
+                        <select class="form-select"
+                                {{#or (eq (length tracks) 0) (lt (length tracks) 10)}}disabled{{/or}}>
+                            <option selected>Choose...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        {{#embed "profile/body"}}{{/embed}}
+
+    {{/content}}
+    {{#content "scripts" mode="append"}}
+        <script>
+            console.log($.query().get("active"))
+            if (!$.query().get("active")) {
+                location.href = "/profile?active=on-going"
+            }
+        </script>
     {{/content}}
 {{/extend}}

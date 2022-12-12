@@ -1,17 +1,10 @@
 <a
-    href="/tracks/{{data 'params.trackId'}}/topic/{{data 'params.topicId'}}/{{id}}"
-    class="d-flex pt-5 pb-4 border-bottom"
+    href="/user-tracks/{{data 'params.trackId'}}/topic/{{data 'params.topicId'}}/{{id}}"
+    class="gr-plan-progress d-flex pt-5 pb-4 border-bottom text-body"
 >
-    <div class="d-flex gr-plan-progress {{ternary this.complete 'complete' ''}}">
-        <div class="d-flex flex-column align-items-center">
-            <div>
-                <i class="bi bi-check-lg"></i>
-            </div>
-            <span></span>
-        </div>
-    </div>
+    {{#embed "track-progress-marker/tpl" complete=complete area=area.slug connect=false}}{{/embed}}
     <div class="flex-fill ms-4">
-        <h5>{{title}}</h5>
+        <p class="fs-4">{{title}}</p>
         <p class="mb-4 text-muted">{{description}}</p>
         <div>
             <small class="d-flex align-items-center justify-content-end text-muted m-0 fs-6">

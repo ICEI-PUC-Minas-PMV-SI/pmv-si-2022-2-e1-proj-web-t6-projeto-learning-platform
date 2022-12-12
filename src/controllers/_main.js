@@ -1,5 +1,15 @@
 const { ControllerAbstract } = require("@jmilanes/hotbars");
 class MainController extends ControllerAbstract {
+    async loadArea(id) {
+        const { error, data } = await this.get(`/_api/areas/${id}`);
+
+        if (!error) {
+            return data;
+        }
+
+        return null;
+    }
+
     async loadAreas() {
         const { error, data } = await this.get("/_api/areas");
 
@@ -19,6 +29,17 @@ class MainController extends ControllerAbstract {
 
         return null;
     }
+
+    async loadUserTrack(id) {
+        const { error, data } = await this.get(`/_api/user-tracks/${id}`, {});
+
+        if (!error) {
+            return data;
+        }
+
+        return null;
+    }
+
     async handle(req) {
         const data = {};
         data.areas = await this.loadAreas();
@@ -29,6 +50,14 @@ class MainController extends ControllerAbstract {
 
         if (req.query.tech) {
             data.tech = await this.loadTech(req.query.tech);
+        }
+
+        if (req.query.trackId) {
+            data.userTrack = await this.loadUserTrack(req.query.trackId);
+
+            if (data.userTrack) {
+                data.area = await this.loadArea(data.userTrack.areaId);
+            }
         }
 
         return data;

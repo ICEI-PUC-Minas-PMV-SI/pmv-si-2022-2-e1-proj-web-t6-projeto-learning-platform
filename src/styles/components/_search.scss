@@ -1,43 +1,82 @@
-.gr-search-area {
-    transition: height 0.4s ease-in-out;
-}
+.gr-search-menu {
+    a {
+        border-width: 2px;
+        transition: box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
-.gr-search-box-menu {
-    min-height: 110px;
-}
+        small {
+            text-wrap: avoid;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
 
-.scrollbar-track {
-    background: var(--bs-gray-900) !important;
-}
-
-.gr-search-menu-item {
-    min-width: 170px;
-    transition: box-shadow 0.4s ease-in-out;
-
-    small {
-        text-wrap: avoid;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        &:hover {
+            opacity: 1 !important;
+            border-color: var(--bs-blue-gray-500) !important;
+            box-shadow: 0 0.5rem 1rem #000 !important;
+        }
     }
 
     &:hover {
-        background: var(--bs-gray-800) !important;
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4) !important;
+        a {
+            opacity: 0.6;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        min-height: 110px;
+
+        a {
+            min-width: 120px;
+        }
+    }
+}
+
+.gr-selected-tech {
+    img {
+        max-width: 70%;
+        height: auto;
+    }
+
+    @include media-breakpoint-up(md) {
+        min-width: 200px;
+    }
+
+    @include media-breakpoint-up(xl) {
+        min-width: 300px;
     }
 }
 
 .gr-search-result {
-    max-width: 360px;
-    width: 360px;
+    flex: 1 1 100%;
+
+    @include media-breakpoint-up(sm) {
+        min-width: 30%;
+        max-width: 48%;
+        flex: 1 1 46%;
+    }
+
+    @include media-breakpoint-up(lg) {
+        min-width: 28%;
+        max-width: 32%;
+        flex: 1 1 30%;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        min-width: 20%;
+        max-width: 24%;
+        flex: 1 1 22%;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+        min-width: 12%;
+        max-width: 17%;
+        flex: 1 1 15%;
+    }
 }
 
 .gr-search-sidebar {
     flex: 1 1 300px;
     max-width: 300px;
     min-width: 300px;
-
-    a {
-        font-size: 90%;
-    }
 }

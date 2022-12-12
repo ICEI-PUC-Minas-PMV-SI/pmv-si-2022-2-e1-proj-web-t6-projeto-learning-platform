@@ -1,0 +1,13 @@
+{
+    "size": 30,
+    "name": "playlists",
+    "schema": {
+        "id": "datatype.uuid",
+        "title": "lorem.sentence",
+        "description": "lorem.paragraphs:2,5",
+        "createAt": "date.recent",
+        "creator": "name.fullName",
+        "areaId": "one-to-one:areas.id",
+        "technologyId": "one-to-one:technologies.id"
+    }
+}

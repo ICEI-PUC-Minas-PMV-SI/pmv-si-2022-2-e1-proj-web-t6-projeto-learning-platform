@@ -1,0 +1,12 @@
+{{#block "track-progress-marker"}}
+    <div class="d-flex flex-column align-items-center">
+        <div class="border border-{{ternary complete area 'dark'}}">
+            {{#if complete}}
+                <i class="bi bi-check-lg"></i>
+            {{/if}}
+        </div>
+        {{#if connect}}
+            <div class="flex-fill bg-{{ternary complete area 'dark'}}"></div>
+        {{/if}}
+    </div>
+{{/block}}

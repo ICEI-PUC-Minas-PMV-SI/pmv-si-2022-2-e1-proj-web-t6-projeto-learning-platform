@@ -1,10 +1,26 @@
 {
-    "title": "Bem vindo de volta!",
-    "noAccount": "Não possui uma conta?",
+    "title": "Já é membro?",
+    "subTitle": "Faça seu login e boa aprendizagem!",
+    "noAccount": "Não possui conta?",
+    "login": "Login",
     "email": {
         "label": "Username"
     },
     "password": {
         "label": "Password"
-    }
+    },
+    "images": [
+        "javascript",
+        "dart",
+        "python",
+        "emoji_star-eyes",
+        "html-5",
+        "css-3",
+        "Jquery",
+        "emoji_head-exploding",
+        "react-js",
+        "angular",
+        "vue-js",
+        "emoji_sunglasses"
+    ]
 }

@@ -1,0 +1,25 @@
+{{#block "profile-plans/finished"}}
+    <div class="container py-5">
+        {{#each tracks}}
+            <div class="d-flex border-bottom py-2">
+                <div class="pe-4 py-3">
+                    <i class="bi bi-trophy fs-1 text-{{area.slug}}"></i>
+                </div>
+                <div class="flex-fill border-end pe-5 py-2">
+                    <p class="fs-6 mb-0 text-{{area.slug}}">{{area.title}}</p>
+                    <h5>{{title}}</h5>
+                    <p class="mb-0">{{topics}} lições <!-- & 3 projetos restantes --></p>
+                    <p class="text-muted mb-0">{{moment
+                            startDate
+                            "dddd, MMMM Do YYYY, h:mm:ss a"
+                        }}</p>
+                </div>
+                <div class="d-flex align-items-center justify-content-center ps-5">
+                    <a href="/user-tracks/{{id}}" class="btn btn-outline-{{area.slug}}">
+                        Abrir plano de estudo
+                    </a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+{{/block}}

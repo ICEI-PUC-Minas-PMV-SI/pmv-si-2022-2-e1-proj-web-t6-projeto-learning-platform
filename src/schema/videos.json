@@ -1,5 +1,5 @@
 {
-    "size": 50,
+    "size": 300,
     "name": "videos",
     "schema": {
         "id": "datatype.uuid",
@@ -7,7 +7,12 @@
         "description": "lorem.paragraphs:2,5",
         "createAt": "date.recent",
         "creator": "name.fullName",
-        "views": "datatype.number:min_2000,max_300000",
-        "thumbnail": "image.abstract:640,360"
+        "creatorAvatar": "internet.avatar",
+        "thumbnail": "image.abstract:640,360,true",
+        "type": "helpers.arrayElement:full-course,tutorial,tips-and-tricks,test-prep,presentation",
+        "areaId": "one-to-one:areas.id",
+        "playlistId": "one-to-one:videos.areaId-playlists.areaId",
+        "technologyId": "one-to-one:technologies.id",
+        "views": "datatype.number:min_2000,max_300000"
     }
 }

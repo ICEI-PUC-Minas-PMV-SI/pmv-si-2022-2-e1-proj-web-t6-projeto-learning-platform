@@ -1,0 +1,38 @@
+@import "scss/maps";
+@import "scss/mixins";
+@import "scss/utilities";
+
+$utilities: map-merge(
+    $utilities,
+    (
+        // Make an existing utility responsive
+        "border-color":
+            map-merge(
+                map-get($utilities, "border-color"),
+                (
+                    state: hover focus,
+                )
+            ),
+        "background-color":
+            map-merge(
+                map-get($utilities, "background-color"),
+                (
+                    state: hover focus,
+                )
+            ),
+        "color":
+            map-merge(
+                map-get($utilities, "color"),
+                (
+                    state: hover focus,
+                )
+            ),
+        "font-size":
+            map-merge(
+                map-get($utilities, "font-size"),
+                (
+                    responsive: true,
+                )
+            )
+    )
+);

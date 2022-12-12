@@ -1,0 +1,7 @@
+@import "../tools/mixins";
+
+@each $color, $value in $theme-colors {
+    .bg-#{$color}-gradient {
+        background: linear-gradient(90deg, $value, tint($value, 30%)) !important;
+    }
+}

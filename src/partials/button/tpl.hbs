@@ -1,14 +1,14 @@
 {{#block "button/tpl"}}
-    {{#isTruthy url}}
-        <a href="{{url}}" class="btn btn-{{default type "primary"}} {{#eq size "lg"}}btn-lg{{/eq}} {{#isTruthy side}}btn-icon-{{side}}{{/isTruthy}} d-block my-5">
-            {{this.label}}
+    {{#isTruthy href}}
+        <a href="{{href}}" class="btn btn-{{default style "primary"}} {{#eq size "lg"}}btn-lg{{/eq}} {{#isTruthy side}}btn-icon-{{side}}{{/isTruthy}} d-block my-5 w-{{default width "auto"}}">
+            {{label}}
             {{#isTruthy icon}}
                 <i class="bi bi-{{icon}}"></i>
             {{/isTruthy}}
         </a>
     {{else}}
-        <button type="{{type}}" class="btn btn-{{default type "primary"}} {{#eq size "lg"}}btn-lg{{/eq}} {{#isTruthy side}}btn-icon-{{side}}{{/isTruthy}} d-block my-5">
-            {{this.label}}
+        <button type="{{type}}" class="btn btn-{{default style "primary"}} {{#eq size "lg"}}btn-lg{{/eq}} {{#isTruthy side}}btn-icon-{{side}}{{/isTruthy}} d-block my-5 w-{{default width "auto"}}">
+            {{label}}
             {{#isTruthy icon}}
                 <i class="bi bi-{{icon}}"></i>
             {{/isTruthy}}

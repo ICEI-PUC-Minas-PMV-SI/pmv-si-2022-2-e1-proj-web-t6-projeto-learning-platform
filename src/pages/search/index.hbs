@@ -1,21 +1,26 @@
-{{#extend "default"}}
+{{#extend "default" footer=false}}
     {{#content "main"}}
         <div class="gr-search-page d-flex flex-column overflow-hidden">
             {{#if (isTruthy area)}}
                 {{#with area}}
-                    <div class="gr-search-area py-4 px-3 bg-{{slug}} text-white">
+                    <div class="gr-search-area py-3 py-md-4 px-3 bg-{{slug}} text-white">
                         <div class="d-flex align-items-center">
-                            <h4 class="me-3">{{title}}</h4>
-                            <button class="btn btn-link btn-lg text-white p-0">
-                                <i class="bi bi-flag-fill"></i>
-                            </button>
-                            <div class="vr mx-4"></div>
-                            <a href="/search" title="" class="text-dark">
-                                <small>Remover filtro e buscar em todas as categorias</small>
-                            </a>
+                            <div class="d-flex align-items-md-center flex-column flex-md-row">
+                                <div class="d-flex align-items-center">
+                                    <a href="/search" title="" class="d-md-none text-dark me-2">
+                                        <i class="bi bi-x-lg"></i>
+                                    </a>
+                                    <h4 class="me-3 mb-0 fs-4 fs-md-2">{{title}}</h4>
+                                </div>
+                                <div class="vr mx-4 d-none d-md-inline-block"></div>
+                                <a href="/search" title="" class="text-dark d-none d-md-inline-block">
+                                    <small>Remover filtro e buscar em todas as categorias</small>
+                                </a>
+                            </div>
                             <div class="flex-fill text-end">
                                 <button
                                     data-toggle="gr-search-area-description"
+                                    data-active="true"
                                     class="btn btn-link text-white"
                                 >
                                     <i class="bi bi-chevron-up"></i>
@@ -28,73 +33,127 @@
                     </div>
                 {{/with}}
             {{/if}}
-            <div id="gr-search-menu" class="gr-search-box-menu bg-darker pt-2 pb-3 overflow-hidden">
-                <div class="d-flex h-100">
-                    {{#each menu}}
-                        <a
-                            id="{{id}}"
-                            href="/search?area={{areaId}}&tech={{slug}}"
-                            data-slug="{{slug}}"
-                            data-index="{{@index}}"
-                            class="gr-search-menu-item d-inline-block rounded-3 bg-dark me-2 px-3 py-2"
-                        >
-                            <img src="{{icon}}" class="d-block mb-2" width="37" height="37" />
-                            <small class="d-block">{{title}}</small>
-                        </a>
-                    {{/each}}
-                </div>
-            </div>
-            <div class="gr-search-main d-flex flex-fill overflow-hidden border-top">
-                <div id="gr-search-sidebar" class="gr-search-sidebar bg-darker">
-                    <nav class="px-3 py-4 border-end">
-                        <div class="mb-5">
-                            <p class="text-bold text-white">Minha lista</p>
-                            <ul class="nav flex-column">
-                                {{#each (i "search.userMenu")}}
-                                    <li class="nav-item">
-                                        <a class="nav-link ps-0" href="{{url}}" title="{{title}}">
-                                            <i class="bi bi-dash opacity-25 d-inline pe-1"></i>
-                                            {{title}}
-                                        </a>
-                                    </li>
-                                {{/each}}
-                            </ul>
+            <div class="d-flex flex-md-column flex-fill overflow-hidden">
+                <div class="d-flex flex-column flex-md-row bg-black">
+                    {{#isTruthy tech}}
+                        <div class="gr-selected-tech d-flex align-items-center justify-content-center justify-content-md-start ps-md-3 pt-3 pt-md-0">
+                            <img src="{{tech.icon}}" alt="{{title}}" class="d-block mb-2" width="60" height="60" />
+                            <div class="d-none d-md-inline-block ms-2">
+                                <span class="fs-5 fs-xl-3 fw-bolder">{{tech.title}}</span>
+                                <a href="{{tech.website}}"
+                                   class="d-none d-md-inline-block text-muted fs-5"
+                                   data-bs-toggle="tooltip"
+                                   data-bs-title="Ir até a página"
+                                   target="_blank">
+                                    <i class="bi bi-link-45deg"></i>
+                                </a>
+                            </div>
                         </div>
-                        <div>
-                            <p class="text-bold text-white">Tecnologias</p>
-                            <ul class="nav flex-column">
-                                {{#each technologies}}
-                                    <li class="nav-item">
-                                        <a
-                                            class="nav-link ps-0"
-                                            href="/search?area={{areaId}}&tech={{slug}}"
-                                            title="{{title}}"
-                                        >
-                                            <i class="bi bi-dash opacity-25 d-inline pe-1"></i>
-                                            {{title}}
-                                        </a>
-                                    </li>
-                                {{/each}}
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-                <div id="gr-search-results" class="flex-fill overflow-auto">
-                    <div class="p-4 d-flex flex-wrap">
-                        {{#each videos}}
+                    {{/isTruthy}}
+                    <div id="gr-search-menu" class="gr-search-menu bg-black pt-2 pb-3 px-2 px-md-3 overflow-hidden">
+                        <div class="d-flex flex-column flex-md-row h-100">
+                            {{#each technologies}}
                             <a
-                                class="gr-search-result d-inline-block me-4 mb-4"
-                                href="/video?id={{id}}"
-                                title={{title}}
-                            >
+                                id="{{id}}"
+                                href="/search?{{#isTruthy (data "query.area")}}area={{data "query.area"}}&{{/isTruthy}}tech={{slug}}"
+                                
+                                data-slug="{{slug}}"
+                                data-index="{{@index}}"
+                                class="d-inline-block border-md-2 text-body bg-dark bg-lighter-hover text-white-hover rounded-3 text-decoration-none mb-2 mb-md-0 me-md-2 px-1 px-md-3 py-2"
+                                >
+                                <img src="{{icon}}" alt="{{title}}" class="d-block mb-md-2" width="37" height="37" />
+                                <small class="d-none d-md-block">{{title}}</small>
+                                </a>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+                <div class="gr-search-main d-flex flex-fill overflow-hidden border-top border-dark">
+                    <div id="gr-search-sidebar" class="gr-search-sidebar bg-black d-none d-xl-block">
+                        <nav class="px-3 py-4 border-end border-dark h-100">
+                            <div class="mb-5">
+                                <p class="text-bold text-{{default area.slug "muted"}} fw-bolder">Minha lista</p>
+                                <ul class="nav flex-column">
+                                    {{#each (i "search.userMenu")}}
+                                        <li class="nav-item">
+                                        <a class="nav-link ps-0 text-body text-{{default (data "area.slug") "primary"}}-hover"
+                                            href="{{url}}{{#isTruthy (data "area")}}&area={{data "area.slug"}}{{/isTruthy}}"
+                                            title="{{title}}">
+                                            <i class="bi bi-dash opacity-25 d-inline pe-1"></i>
+                                            {{title}}
+                                            </a>
+                                        </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                            {{#gt (length playlists) 0}}
+                                <div>
+                                    <p class="text-bold text-{{default area.slug "muted"}} fw-bolder">Playlists</p>
+                                    <ul class="nav flex-column">
+                                        {{#each playlists}}
+                                            <li class="nav-item">
+                                                <a
+                                                    class="nav-link d-flex justify-content-start align-items-center ps-0 text-body text-{{default (data "area.slug") "primary"}}-hover"
+                                                    href="/search?playlist={{id}}"
+                                                title="{{title}}"
+                                                >
+                                                <i class="bi bi-dash opacity-25 d-inline pe-1"></i>
+                                                <span>{{title}}</span>
+                                                </a>
+                                            </li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            {{/gt}}
+                        </nav>
+                    </div>
+                    <div id="gr-search-results" class="flex-fill overflow-auto">
+                        <div class="p-4 d-flex flex-wrap gap-xs-4">
+                            {{#each videos}}
+                                <div class="gr-search-result d-inline-block text-body mb-4">
                                 <span class="d-block mb-2">
-                                    <img src="{{thumbnail}}" alt="{{title}}" class="img-fluid" />
+                                    <img
+                                        src="{{thumbnail}}"
+                                        alt="{{title}}"
+                                        class="img-fluid rounded-3"
+                                    />
                                 </span>
-                                <span class="d-block">
-                                    <p class="mb-0"><strong><small>{{title}}</small></strong></p>
+                                    <div class="d-flex">
+                                        <div style="min-width: 45px; max-width: 45px; height:45px;" class="me-3 rounded-circle overflow-hidden">
+                                            <img src="{{creatorAvatar}}" class="img-fluid" />
+                                        </div>
+                                        <div>
+                                            <a href="/video?id={{id}}" class="d-block text-body" title={{title}}>{{title}}</a>
+                                            <small class="text-muted">{{creator}}</small><span class="d-inline-block text-muted mx-1">-</span><small class="text-muted">{{views}} views</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            {{/each}}
+                            {{#eq query.type "playlists"}}
+                                {{#each playlists}}
+                                    <div class="gr-search-result d-inline-block text-body me-4 mb-4">
+                                <span class="d-block mb-2 position-relative overflow-hidden">
+                                    {{#each (first videos 3)}}
+                                        <img
+                                            src="{{thumbnail}}"
+                                            alt="{{title}}"
+                                            class="img-fluid shadow-sm rounded-3 {{#not @last}}img-gray{{/not}} {{#gt @index 0}}position-absolute top-0 start-{{multiply @index 10}}{{/gt}}" style="z-index: {{plus @index 100}};"
+                                        />
+                                    {{/each}}
                                 </span>
-                            </a>
-                        {{/each}}
+                                        <div class="d-flex">
+                                            <div style="min-width: 45px; max-width: 45px; height:45px;" class="me-3 rounded-circle overflow-hidden">
+                                                <img src="{{creatorAvatar}}" class="img-fluid" />
+                                            </div>
+                                            <div>
+                                                <a href="/video?id={{id}}" class="d-block text-body" title={{title}}>{{title}}</a>
+                                                <small class="text-muted">{{creator}}</small><span class="d-inline-block text-muted mx-1">-</span><small class="text-muted">{{length videos}} vídeos</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {{/each}}
+                            {{/eq}}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -102,13 +161,6 @@
     {{/content}}
 
     {{#content "scripts" mode="append"}}
-        <script
-            src="https://cdn.jsdelivr.net/gh/idiotWu/smooth-scrollbar@8.8.1/dist/smooth-scrollbar.js"
-        ></script>
-        <script
-            src="https://cdn.jsdelivr.net/gh/idiotWu/smooth-scrollbar@8.8.1/dist/plugins/overscroll.js"
-        ></script>
-        <script src="/public/scripts/vendors/scrollbars/horizontal-scroll.plugin.js"></script>
         <script src="/public/scripts/pages/search.js"></script>
     {{/content}}
 {{/extend}}

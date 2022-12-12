@@ -15,7 +15,10 @@ class NewTrackTechController extends ControllerAbstract {
         const area = await this.loadArea(req.query.area);
 
         if (area) {
-            const { error, data } = await this.get("/_api/tracks", { area: area.id });
+            const { error, data } = await this.get(
+                "/_api/tracks?_expand=area&_expand=technology&_expand=language&_expand=sass",
+                { areaId: area.id }
+            );
 
             if (!error) {
                 return { tracks: data.items };

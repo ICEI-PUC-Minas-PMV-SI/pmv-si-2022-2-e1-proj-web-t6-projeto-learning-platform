@@ -11,13 +11,15 @@
 
             {{> hotbarsHead}}
             
+            <!--
             <link
                 href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
                 integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
                 rel="stylesheet"
                 crossorigin="anonymous"
             />
-            
+            -->
+            <link href="/public/styles/bootstrap/bootstrap.css" rel="stylesheet" />
             <link href="/public/styles/style.css" rel="stylesheet" />
             <link
                 rel="stylesheet"
@@ -29,28 +31,36 @@
                 href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Bakbak+One&display=swap"
                 rel="stylesheet"
             />
+            <link
+                rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+            />
         {{/block}}
     </head>
-    <body class="bg-dark d-flex flex-column {{#isnt scroll "body"}}overflow-hidden{{/isnt}}">
-        <header class="navbar navbar-expand-xl bd-navbar navbar-dark border-bottom">
+    <body class="bg-{{default body-bg "darker"}} d-flex flex-column {{#isnt scroll "body"}}overflow-hidden{{/isnt}}">
+        <header class="navbar navbar-expand-xl bd-navbar navbar-dark border-bottom bg-darker">
             {{#block "header"}}
                 {{#embed "header/tpl"}}{{/embed}}
             {{/block}}
         </header>
 
-        <main class="d-flex flex-column flex-fill {{#eq scroll "main"}}overflow-auto{{else}}{{#isnt scroll "body"}}overflow-hidden{{/isnt}}{{/eq}}">
-            {{#block "main"}}
-                <p class="text-white">Conteudo</p>
-            {{/block}}
-        </main>
+        <div class="d-flex flex-column flex-fill {{#eq scroll "main"}}overflow-auto{{else}}{{#isnt scroll "body"}}overflow-hidden{{/isnt}}{{/eq}}">
+            <main class="d-flex flex-column flex-fill {{#isFalsey scroll}}overflow-hidden{{/isFalsey}}">
+                {{#block "main"}}
+                    <p class="text-white">Conteudo</p>
+                {{/block}}
+            </main>
 
-        <footer
-            class="bg-default d-flex align-items-center justify-content-center border-top flex-shrink-1 py-3"
-        >
-            {{#block "footer"}}
-                <p class="m-0">{{i "main.copyright"}}</p>
-            {{/block}}
-        </footer>
+            {{#isnt footer false}}
+                <footer
+                    class="bg-default d-flex align-items-center justify-content-center border-top flex-shrink-1 py-3"
+                >
+                    {{#block "footer"}}
+                        <p class="m-0">{{i "main.copyright"}}</p>
+                    {{/block}}
+                </footer>
+            {{/isnt}}
+        </div>
 
         {{#embed "sidebar-user/tpl"}}{{/embed}}
 
@@ -62,6 +72,13 @@
                 integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
                 crossorigin="anonymous"
             ></script>
+            <script
+                src="https://cdn.jsdelivr.net/gh/idiotWu/smooth-scrollbar@8.8.1/dist/smooth-scrollbar.js"
+            ></script>
+            <script
+                src="https://cdn.jsdelivr.net/gh/idiotWu/smooth-scrollbar@8.8.1/dist/plugins/overscroll.js"
+            ></script>
+            <script src="/public/scripts/vendors/scrollbars/horizontal-scroll.plugin.js"></script>
             <script async type="module" src="/public/scripts/main.js"></script>
         {{/block}}
     </body>

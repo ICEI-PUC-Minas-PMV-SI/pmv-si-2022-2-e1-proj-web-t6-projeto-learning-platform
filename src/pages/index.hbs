@@ -35,14 +35,23 @@
                                     para filtrar esse conteúdo e disponibilizar para você apenas o
                                     que há de melhor e confiável.</p>
                             </div>
-                            <form>
-                                <div class="gr-custom-search">
+                            <form action="/search" method="get">
+                                <div class="input-group gr-custom-search">
                                     <input
+                                        name="q"
                                         type="text"
-                                        class="form-control input"
+                                        class="form-control"
                                         placeholder="Digite um tópico ou tecnologia"
+                                        aria-label="Search button"
+                                        aria-describedby="form-control"
                                     />
-                                    <i class="bi bi-search lead-text"></i>
+
+                                    <button
+                                        class="gr-icon-btn btn btn-black border-lighter"
+                                        type="submit"
+                                    >
+                                        <i class="bi bi-search"></i>
+                                    </button>
                                 </div>
                             </form>
                         </div>
@@ -55,7 +64,7 @@
             </section>
 
             <section
-                class="gr-section-courses bg-darker d-flex align-items-center justify-content-center"
+                class="gr-section-courses bg-dark d-flex align-items-center justify-content-center"
             >
                 <div class="container text-center text-lg-start">
                     <div class="row mb-1 mb-lg-5">
@@ -82,7 +91,9 @@
                     {{#embed "section-nav-button/tpl"}}{{/embed}}
                 </div>
             </section>
-            <section class="gr-section-sing-up d-flex align-items-center justify-content-center">
+            <section
+                class="gr-section-sing-up bg-lighter d-flex align-items-center justify-content-center"
+            >
                 <div class="container text-center">
                     <div>
                         <img src="/public/images/academic-cap.svg" class="img-fluid" />

@@ -1,0 +1,43 @@
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+
+@function sat($color, $percentage) {
+    @return saturate($color, $percentage);
+}
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+
+@function shade($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}
+
+@function btnTextColor($name) {
+    @if $name == "dark" {
+        @return "white";
+    }
+    @return $name;
+}
+
+@function prefix($name) {
+    @if $name == "primary" or $name == "secondary" or $name == "dark" or $name == "light" {
+        @return "bs";
+    }
+    @return "gr";
+}

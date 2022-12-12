@@ -32,10 +32,9 @@
     },
     "userMenu": [
         { "title": "Perfíl", "url": "/profile" },
-        { "title": "Settings", "url": "/settings" },
-        { "title": "Planos em andamento", "url": "/profile/open-tracks" },
-        { "title": "Planos finalizados", "url": "/profile/completed-tracks" },
-        { "title": "Bookmarks", "url": "/profile/bookmarks" },
-        { "title": "Notas", "url": "/profile/notes" }
+        { "title": "Planos em andamento", "url": "/profile?active=on-going" },
+        { "title": "Planos finalizados", "url": "/profile?active=done" },
+        { "title": "Bookmarks", "url": "/profile?active=saved" },
+        { "title": "Notas", "url": "/profile?active=notes" }
     ]
 }

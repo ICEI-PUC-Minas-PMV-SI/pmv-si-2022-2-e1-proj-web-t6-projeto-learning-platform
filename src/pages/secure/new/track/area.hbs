@@ -7,26 +7,27 @@
                         class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 pt-page"
                     >
                         <a
-                            href="/tracks/new"
-                            class="d-flex text-decoration-none align-items-center mb-2 link-light"
+                            href="/new/track"
+                            class="d-flex text-decoration-none align-items-center mb-2 text-muted"
                         >
                             <i class="bi bi-arrow-left me-2"></i>
-                            Passo 1 de 4
+                            {{i "newPlan.area.breadcrumb"}}
                         </a>
 
-                        <h1 class="text mb-4">Escolha uma área do seu interesse</h1>
+                        <h2 class="text mb-4">
+                            {{i "newPlan.area.title"}}
+                        </h2>
 
                         <div class="mb-5">
-                            <p>
-                                Cada uma das categorias abaixo envolve uma gama de tecnologias em
-                                que pode se especializar, escolha qual delas quer aprender:
-                            </p>
+                            {{#each (i "newPlan.area.content")}}
+                                <p>{{this}}</p>
+                            {{/each}}
                         </div>
 
                         <div class="text-start border-top">
                             {{#each areas}}
                                 <a
-                                    href="new/track/tech?area={{slug}}"
+                                    href="/new/track/tech?area={{slug}}"
                                     class="btn btn-lg btn-outline-{{slug}} text-start d-block mb-2"
                                 >
                                     {{title}}

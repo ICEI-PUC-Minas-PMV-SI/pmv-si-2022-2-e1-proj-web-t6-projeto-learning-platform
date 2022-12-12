@@ -1,17 +1,26 @@
-@import "./breakpoints";
+@import "./bootstrap/scss/functions";
+@import "./bootstrap/scss/variables";
+@import "./bootstrap/scss/mixins/breakpoints";
+@import "./bootstrap/colors";
+@import "./bootstrap/variables";
+@import "./tools/mixins";
 @import "./animations";
-@import "./mixins";
-@import "./variables";
 
 html,
 body {
     height: 100%;
-    color: var(--gr-text-body);
 }
 
 @import "./typography";
 @import "./overwrites";
 @import "./utilities";
+
+/*******************************************************************************
+* CUSTOM SCROLLBARS
+*******************************************************************************/
+.scrollbar-track {
+    background: var(--bs-gray-900) !important;
+}
 
 /*******************************************************************************
 * HEADER
@@ -36,7 +45,7 @@ footer {
 .gr-mobile-menu {
     &.show,
     &.showing {
-        background-color: var(--gr-bg-darker);
+        background-color: var(--bs-darker);
 
         @include media-breakpoint-down(xl) {
             font-size: 1.4rem !important;
@@ -56,17 +65,255 @@ footer {
 * AUTHENTICATION BOXES (LOGIN, CADASTRO, RECUPERAÇÃO, etc...)
 *******************************************************************************/
 .auth-container {
-    width: 375px;
-    padding-top: 6rem;
-    padding-bottom: 3.5rem;
+    max-width: 100%;
+    min-width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     align-self: center;
 
-    @include media-breakpoint-up(md) {
-        width: 400px;
+    @include media-breakpoint-up(xs) {
+        max-width: 400px;
+        min-width: 300px;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
     }
 
-    @include media-breakpoint-up(xl) {
-        width: 420px;
+    @include media-breakpoint-up(sm) {
+        max-width: 400px;
+        min-width: 400px;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    @include media-breakpoint-up(md) {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+    .card {
+        background: rgba(var(--bs-darker-rgb), 0.4) !important;
+    }
+}
+
+.gr-sign-in-page {
+    -webkit-animation: RadialBgAnimation 30s ease infinite;
+    -moz-animation: RadialBgAnimation 30s ease infinite;
+    -o-animation: RadialBgAnimation 30s ease infinite;
+    animation: RadialBgAnimation 30s ease infinite;
+    background-size: 80% 80%;
+    background-position: 100% 0;
+
+    &.javascript {
+        background-image: radial-gradient(circle, rgba(52, 52, 10, 1) 0%, rgba(17, 18, 21, 0) 56%);
+    }
+
+    &.dart {
+        background-image: radial-gradient(circle, rgba(14, 35, 60, 1) 0%, rgba(17, 19, 21, 0) 56%);
+    }
+
+    &.python {
+        background-image: radial-gradient(circle, rgba(60, 59, 14, 1) 0%, rgba(17, 19, 21, 0) 56%);
+    }
+
+    &.html-5 {
+        background-image: radial-gradient(circle, rgba(66, 31, 15, 1) 0%, rgba(17, 19, 21, 0) 56%);
+    }
+
+    &.css-3 {
+        background-image: radial-gradient(circle, rgba(15, 50, 66, 1) 0%, rgba(17, 19, 21, 0) 56%);
+    }
+
+    &.jquery {
+        background-image: radial-gradient(
+            circle,
+            rgba(29, 18, 66, 0.938813025210084) 0%,
+            rgba(17, 19, 21, 0) 56%
+        );
+    }
+
+    &.angular {
+        background-image: radial-gradient(circle, rgba(66, 15, 15, 1) 0%, rgba(17, 19, 21, 0) 56%);
+    }
+
+    &.react-js {
+        background-image: radial-gradient(circle, rgba(15, 66, 66, 1) 0%, rgba(17, 19, 21, 0) 56%);
+    }
+
+    &.vue-js {
+        background-image: radial-gradient(
+            circle,
+            rgba(15, 51, 23, 0.938813025210084) 0%,
+            rgba(17, 19, 21, 0) 56%
+        );
+    }
+
+    &.emoji_star-eyes,
+    &.emoji_sunglasses,
+    &.emoji_head-exploding {
+        background-image: radial-gradient(
+            circle,
+            rgba(83, 17, 79, 0.938813025210084) 0%,
+            rgba(54, 18, 83, 0.7063200280112045) 15%,
+            rgba(18, 56, 76, 0.5074404761904762) 32%,
+            rgba(17, 19, 21, 0) 56%
+        );
+    }
+}
+
+.gr-sign-in-images-container {
+    position: relative;
+    padding-bottom: 350px;
+    height: 650px;
+
+    h1 {
+        z-index: 100;
+    }
+}
+
+.gr-sign-in-images {
+    position: absolute;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 500px;
+    max-height: 500px;
+    top: 150px;
+
+    & > .item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+
+        & > img {
+            z-index: 99;
+        }
+
+        &:not(.animating) {
+            opacity: 0;
+        }
+
+        &.animate__bounceIn {
+            --animate-duration: 1s;
+        }
+
+        &.animate__bounceOut {
+            --animate-duration: 0.5s;
+        }
+
+        & > .gradient {
+            z-index: 90;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 30%;
+            width: 30%;
+            opacity: 0.3;
+            margin: auto;
+            background-size: 100% 100%;
+            background-position: 0 0;
+            transition: top 0.5s ease-out, left 0.5s ease-out, opacity 2s ease-out,
+                width 0.5s ease-out, height 0.5s ease-out;
+            overflow: visible;
+
+            &.javascript {
+                background-image: radial-gradient(
+                    circle,
+                    rgba(83, 82, 17, 0.938813025210084) 0%,
+                    rgba(57, 57, 14, 0.46262254901960786) 28%,
+                    rgba(17, 19, 21, 0) 56%
+                );
+            }
+
+            &.dart {
+                background-image: radial-gradient(
+                    circle,
+                    rgba(14, 35, 60, 1) 0%,
+                    rgba(17, 19, 21, 0) 56%
+                );
+            }
+
+            &.python {
+                background-image: radial-gradient(
+                    circle,
+                    rgba(60, 59, 14, 1) 0%,
+                    rgba(17, 19, 21, 0) 56%
+                );
+            }
+
+            &.html-5 {
+                background-image: radial-gradient(
+                    circle,
+                    rgba(66, 31, 15, 1) 0%,
+                    rgba(17, 19, 21, 0) 56%
+                );
+            }
+
+            &.css-3 {
+                background-image: radial-gradient(
+                    circle,
+                    rgba(15, 50, 66, 1) 0%,
+                    rgba(17, 19, 21, 0) 56%
+                );
+            }
+
+            &.jquery {
+                background-image: radial-gradient(
+                    circle,
+                    rgba(29, 18, 66, 0.938813025210084) 0%,
+                    rgba(17, 19, 21, 0) 56%
+                );
+            }
+
+            &.angular {
+                background-image: radial-gradient(
+                    circle,
+                    rgba(66, 15, 15, 1) 0%,
+                    rgba(17, 19, 21, 0) 56%
+                );
+            }
+
+            &.react-js {
+                background-image: radial-gradient(
+                    circle,
+                    rgba(15, 66, 66, 1) 0%,
+                    rgba(17, 19, 21, 0) 56%
+                );
+            }
+
+            &.vue-js {
+                background-image: radial-gradient(
+                    circle,
+                    rgba(15, 51, 23, 0.938813025210084) 0%,
+                    rgba(17, 19, 21, 0) 56%
+                );
+            }
+
+            &.emoji_star-eyes,
+            &.emoji_sunglasses,
+            &.emoji_head-exploding {
+                background-image: radial-gradient(
+                    circle,
+                    rgba(83, 17, 79, 0.938813025210084) 0%,
+                    rgba(54, 18, 83, 0.7063200280112045) 15%,
+                    rgba(18, 56, 76, 0.5074404761904762) 32%,
+                    rgba(17, 19, 21, 0) 56%
+                );
+            }
+        }
+
+        &.animating {
+            .gradient {
+                height: 150%;
+                width: 150%;
+                left: -25%;
+                top: -25%;
+                opacity: 0.6;
+            }
+        }
     }
 }
 
@@ -76,9 +323,13 @@ footer {
 @import "./components/home";
 
 /*******************************************************************************
-* SIGN UP
+* NOVO PLANO DE ESTUDOS
 *******************************************************************************/
-
+.div-plan-content {
+    .bi-emoji-smile {
+        font-size: 8rem;
+    }
+}
 /*******************************************************************************
 * PLANO DE ESTUDOS STYLES
 *******************************************************************************/
@@ -104,7 +355,7 @@ footer {
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            border: 4px solid var(--bs-border-light-color);
+            border-width: 4px !important;
             color: white;
             padding: 3px 0 0 1px;
 
@@ -116,14 +367,6 @@ footer {
         div:last-child {
             width: 4px;
             background: var(--bs-border-light-color);
-        }
-    }
-
-    &:last-child {
-        & > div:first-child {
-            div:last-child {
-                display: none;
-            }
         }
     }
 
@@ -144,63 +387,50 @@ footer {
     }
 }
 
-.gr-theme-frontend {
-    h1 {
-        color: var(--gr-frontend);
+.gr-track-lesson {
+    h1,
+    h2 {
+        margin-bottom: $spacer * 2;
     }
 
-    .gr-plan-progress {
-        &.complete {
-            & > div:first-child {
-                div:first-child {
-                    border-color: var(--gr-frontend);
-                }
-
-                div:last-child {
-                    background: var(--gr-frontend);
-                }
-            }
-        }
-    }
-}
-
-.gr-theme-backend {
-    h1 {
-        color: var(--gr-backend);
+    p + * {
+        margin-bottom: $spacer * 2;
     }
 
-    .gr-plan-progress {
-        &.complete {
-            & > div:first-child {
-                div:first-child {
-                    border-color: var(--gr-backend);
-                }
+    p + p {
+        margin-bottom: $spacer !important;
+    }
 
-                div:last-child {
-                    background: var(--gr-backend);
-                }
-            }
-        }
+    img {
+        display: inline-block;
+        width: 100%;
+        height: auto;
+        margin-bottom: $spacer * 2;
     }
 }
 
-.gr-plan-options {
-    color: white !important;
+.gr-plan-option {
     min-height: 64px;
 
     i {
         font-size: 40px;
+
+        &:last-child {
+            opacity: 0.1;
+        }
     }
 
     &:hover {
-        background-color: rgb(43, 43, 43) !important;
+        background-color: $dark !important;
         scale: (1.02);
-        border: none;
-        box-shadow: 0px 0 10px 0px rgb(36, 36, 36);
+        box-shadow: 0 0 10px 0 $black;
         transition: 0.2s;
-    }
 
-    &:focus {
+        i {
+            &:last-child {
+                opacity: 1;
+            }
+        }
     }
 }
 

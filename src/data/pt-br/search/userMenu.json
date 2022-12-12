@@ -1,18 +1,27 @@
 [
     {
-        "title": "React Js",
-        "url": "/search?area=frontend&tech=react-js"
+        "title": "Vídeos salvos",
+        "url": "/search",
+        "query": [{ "userId": "user.id" }]
     },
     {
-        "title": "Angular",
-        "url": "/search?area=frontend&tech=angular"
+        "title": "Playlists",
+        "url": "/search?type=playlists"
     },
     {
-        "title": "Responsive Web",
-        "url": "/search?area=frontend&tech=responsive-web"
+        "title": "Cursos completos",
+        "url": "/search?type=courses"
     },
     {
-        "title": "HTML 5",
-        "url": "/search?area=frontend&tech=html-5"
+        "title": "Tips & Tricks",
+        "url": "/search?type=tips-and-tricks"
+    },
+    {
+        "title": "Preparações para tests",
+        "url": "/search?type=test-preps"
+    },
+    {
+        "title": "Apresentações",
+        "url": "/search?type=presentation"
     }
 ]

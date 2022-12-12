@@ -1,0 +1,35 @@
+{{#extend "default" scroll="main"}}
+    {{#content "main"}}
+        <div class="gr-theme-backend">
+            {{> "plan-header/tpl"
+                url=(append "/user-tracks/" params.trackId)
+                category=area.title
+                title=topic.title
+                description=topic.description
+            }}
+            <section class="py-5 px-3 px-sm-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3 offset-1 d-none d-lg-block">
+                            <h6 class="mb-5">Progress</h6>
+                            {{#each topics}}
+                                {{#embed "study-plan-step/tpl"
+                                     context=this
+                                     area=(data "area")
+                                     track=(data "track")
+                                     trackId=(data "params.trackId")
+                                }}{{/embed}}
+                            {{/each}}
+                        </div>
+                        <div class="col-12 cl-md-10 ofsset-md-1 col-lg-7 offset-lg-0">
+                            {{#each lessons}}
+                                {{#embed "plan-topic-entry/tpl" context=this area=(data "area")}}{{/embed}}
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    {{/content}}
+{{/extend}}
+
