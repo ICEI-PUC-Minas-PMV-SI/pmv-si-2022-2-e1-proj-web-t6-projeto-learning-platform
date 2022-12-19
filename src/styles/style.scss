@@ -70,6 +70,7 @@ footer {
     padding-top: 2rem;
     padding-bottom: 2rem;
     align-self: center;
+    z-index: 100;
 
     @include media-breakpoint-up(xs) {
         max-width: 400px;
@@ -164,6 +165,7 @@ footer {
     position: relative;
     padding-bottom: 350px;
     height: 650px;
+    z-index: 1;
 
     h1 {
         z-index: 100;
@@ -316,6 +318,10 @@ footer {
         }
     }
 }
+
+/*******************************************************************************
+* FORMS
+*******************************************************************************/
 
 /*******************************************************************************
 * HOME

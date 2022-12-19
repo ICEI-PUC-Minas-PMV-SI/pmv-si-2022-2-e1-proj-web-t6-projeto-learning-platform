@@ -1,17 +1,33 @@
 {{#block "profile-saved/tpl"}}
-    <div class="d-flex container gr-profile-container gr-video-list">
-        <div class="d-flex">
-            <div class="col-lg-2 align-items-center">
-                <img
-                    src="../public/images/video1.png"
-                    style="object-fit: contain; width:100%; padding-right:12px"
-                />
+    <div class="d-flex container gr-profile-container gr-video-list py-5">
+        {{#each saved}}
+            <div class="d-flex flex-column flex-md-row border-bottom pb-3 border-dark">
+                <div class="align-items-center me-3" style="max-width: 200px;">
+                    <img src="{{thumbnail}}" class="img-fluid rounded-3" />
+                </div>
+                <div class="d-flex">
+                    <div>
+                        <a
+                            href="/video?id={{id}}"
+                            class="d-block text-body mb-2"
+                            title={{title}}
+                        >{{title}}</a>
+
+                        <div class="d-flex">
+                            <div
+                                style="min-width: 45px; max-width: 45px; height:45px;"
+                                class="me-2 rounded-circle overflow-hidden"
+                            >
+                                <img src="{{creatorAvatar}}" class="img-fluid" />
+                            </div>
+                            <div>
+                                <small class="text-muted d-block">{{creator}}</small>
+                                <small class="text-muted d-block">{{views}} views</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-10">
-                <p class="text-paragraph">Tutorial - Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit.</p>
-                <p>By JeffScript</p>
-            </div>
-        </div>
+        {{/each}}
     </div>
 {{/block}}

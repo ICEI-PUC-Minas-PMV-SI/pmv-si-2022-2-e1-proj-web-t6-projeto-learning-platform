@@ -61,14 +61,15 @@
 
 ---
 
-| Criar plano de estudos                                                              |
-| --------------------------------------------------------------------------------- |
-| ![](./gifs/create_plan.gif)                                                                    |
+| Criar plano de estudos                                                                           |
+| ------------------------------------------------------------------------------------------------ |
+| ![](./gifs/create_plan.gif)                                                                      |
 | Descrição: A plataforma possibilita a criação de planos de estudos personalizados pelos usuários |
-| Pré-Requisito: Estar logado                                                   |
-| Requisito(s): RF-034                                      |
+| Pré-Requisito: Estar logado                                                                      |
+| Requisito(s): RF-034                                                                             |
 
-> **Passo a passo**                                                               
+> **Passo a passo**
+>
 > 1. Clicar no botão "Criar plano de estudos" disponível na home e tela de perfil do usuário.
 > 2. Selecionar área de interesse para os estudos.
 > 3. Escolher tecnologia para aprofundamento.
@@ -77,30 +78,30 @@
 
 ---
 
-| Acompanhamento progressivo do plano de estudos                                                     |
-| --------------------------------------------------------------------------------- |
-| ![](./gifs/plan_view.gif)                                                                    |
+| Acompanhamento progressivo do plano de estudos                                                         |
+| ------------------------------------------------------------------------------------------------------ |
+| ![](./gifs/plan_view.gif)                                                                              |
 | Descrição: O usuário pode visualizar o progresso do curso na medida que completa as etapas necessárias |
-| Pré-Requisito: Estar logado e ter um plano já criado                                                 |
-| Requisito(s): RF-022 e RF-023                                     |
+| Pré-Requisito: Estar logado e ter um plano já criado                                                   |
+| Requisito(s): RF-022 e RF-023                                                                          |
 
-
-> ##### Passo a passo:                                                                    
->   1. No perfil, clicar no plano desejado.
->   2. Na visualizaçaõ das etapas do plano de estudos, clicar na etapa para ser estudada.
->   3. Ao terminar os estudos da etapa, clicar no botão "Marcar como concluído" no final da página.
->   4. Na tela de visualização das etapas visualizar o progresso.
+> ##### Passo a passo:
 >
+> 1. No perfil, clicar no plano desejado.
+> 2. Na visualizaçaõ das etapas do plano de estudos, clicar na etapa para ser estudada.
+> 3. Ao terminar os estudos da etapa, clicar no botão "Marcar como concluído" no final da página.
+> 4. Na tela de visualização das etapas visualizar o progresso.
 
 ---
 
-| Busca de videos                                                         |
-| --------------------------------------------------------------------------------- |
-| ![](./gifs/search.gif)                                                                    |
-| Descrição: No header da plataforma o usuário pode realizar a busca por videos desejados a partir de  palavras-chaves |
-| Pré-Requisito: Nenhum                                                 |
-| Requisito(s): RF-008                                      |
+| Busca de videos                                                                                                     |
+| ------------------------------------------------------------------------------------------------------------------- |
+| ![](./gifs/search.gif)                                                                                              |
+| Descrição: No header da plataforma o usuário pode realizar a busca por videos desejados a partir de palavras-chaves |
+| Pré-Requisito: Nenhum                                                                                               |
+| Requisito(s): RF-008                                                                                                |
 
-> **Passo a passo**                                                                
->   1. Selecionar o campo de pesquisa no header da página. 
->   2. Digitar palavras-chaves para retorno do conteúdo desejado.
+> **Passo a passo**
+>
+> 1. Selecionar o campo de pesquisa no header da página.
+> 2. Digitar palavras-chaves para retorno do conteúdo desejado.

@@ -9,7 +9,7 @@
             
             {{#block "cardSubTitle"}}{{/block}}
             
-            <form id="{{id}}" action="{{action}}" method="post">
+            <form id="{{id}}" action="{{action}}" method="post" data-validate="true" novalidate>
                 {{#gt (length messages) 0}}
                     <div class="alert alert-warning d-flex align-items-center mb-4" role="alert">
                         <i class="bi bi-exclamation-triangle me-2"></i>

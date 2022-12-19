@@ -4,22 +4,21 @@
         "lead": "O Grimore foi criado para auxiliar  iniciantes em TI, provendo conteúdo curado sobre diversos tópicos do setor e ferramentas que permitem a criação de planos de estudo para impulsionar o aprendizado."
     },
     "sectionOne": {
-        "title": "Como funciona?",
+        "title": "Nosso objetivo",
         "content": [
-            "O Grimore utiliza conteúdo gratuíto, já disponível na web para ajudar iniciantes no setor a aprender sobre diversos tópicos e tecnologias.",
-            "Nossa equipe utiliza algoritmos especiais e um processo de curagem manual para filtrar esse conteúdo e disponibilizar para você apenas o que há  de melhor e confiável."
+            "Facilitar o acesso à conteúdo grátuito sobre técnologia para auxiliar iniciantes e interessados em técnologia da informacão e acelerar seu aprendizado em diversos tópicos como desenvolvimento de software, computação na núvem, inteligência artifícil e técnologias relacionadas."
         ]
     },
     "sectionTwo": {
-        "title": "Planos de aprendizado",
+        "title": "Escolha seu caminho",
         "content": [
-            "Fazendo uso de conteúdo de qualidade, nosso sistema monta planos detalhados de aprendizado com artigos, vídeos e projetos interativos, que é capaz de tornar qualquer iniciante em um profissional em apenas alguns meses."
+            "Escolha sua área e técnologia de interesse e nosso sistema lhe auxilia montando um plano de aprendizado com comteúdo diverso incluindo artigos, vídeos e projetos interativos. acompanhe seu progresso em seu dashboard e compartilhe suas conquistas com facilidade."
         ]
     },
     "sectionThree": {
         "title": "Começe hoje mesmo!",
         "content": [
-            "Deixa de enrolar e comece aprender sobre seu tópico preferido em TI hoje mesmo, nosso serviço é totalmente gratuito!"
+            "Grandes conquistas começam com pequenos passos, crie sua conta e o primeiro passo em direção ao seu futuro, é grátis e sem compromisso. Temos certeza esse será o começo de algo fantástico!"
         ]
     }
 }

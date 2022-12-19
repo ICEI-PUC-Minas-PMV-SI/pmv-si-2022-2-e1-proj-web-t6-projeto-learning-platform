@@ -11,8 +11,9 @@
 
     .gr-section-nav-button {
         position: absolute;
-        right: auto;
-        left: auto;
+        margin: auto;
+        right: 0;
+        left: 0;
         bottom: 20px;
     }
 
@@ -36,8 +37,8 @@
     @include media-breakpoint-up(xxs) {
         section {
             min-height: 640px;
-            padding-left: 30px;
-            padding-right: 30px;
+            padding-left: 10px;
+            padding-right: 10px;
             padding-bottom: 40px;
 
             &:first-child {
@@ -62,8 +63,8 @@
     @include media-breakpoint-up(xs) {
         section {
             min-height: 640px;
-            padding-left: 50px;
-            padding-right: 50px;
+            padding-left: 10px;
+            padding-right: 10px;
 
             &:first-child {
                 height: 91vh;

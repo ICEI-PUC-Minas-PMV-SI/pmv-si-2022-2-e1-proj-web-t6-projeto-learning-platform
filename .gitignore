@@ -1,7 +1,6 @@
 .idea
 .vscode
 .parcel-cache
-src/db
 .env*
 .hidden*
 node_modules

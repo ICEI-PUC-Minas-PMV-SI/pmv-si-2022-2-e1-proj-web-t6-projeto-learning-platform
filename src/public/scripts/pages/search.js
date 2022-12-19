@@ -31,15 +31,8 @@ function initTechMenu() {
 $(() => {
     const AREA_DESC_KEY = "gr-area-description";
     const sidebar = $("#gr-search-sidebar");
-    const descriptionBtn = $(".btn[data-toggle]");
 
     iniScroll(sidebar[0]);
-
-    // Toggle search area description
-    descriptionBtn.openClose(function (active, elem) {
-        elem[0].style.transform = active ? null : "rotate(180deg)";
-        localStorage.setItem(AREA_DESC_KEY, active);
-    });
 
     initTechMenu();
 

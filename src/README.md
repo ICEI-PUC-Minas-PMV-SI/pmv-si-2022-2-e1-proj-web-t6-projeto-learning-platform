@@ -17,7 +17,7 @@ Isto irá instalar os arquivos necessários, a seguir, rode o comando abaixo par
 npm start
 ```
 
-Pronto! A plataforma está live na url [http://localhost:1234](http://localhost:1234), abra está url em seu browser caso não tenha aberto automaticamente, toda alteração que for feita no código fonte, será atualizada automaticamente nesta url.
+Pronto! A plataforma está live na url [http://localhost:1234](http://localhost:3000), abra está url em seu browser caso não tenha aberto automaticamente, toda alteração que for feita no código fonte, será atualizada automaticamente nesta url.
 
 ## Conceitos de desenvolvimento
 

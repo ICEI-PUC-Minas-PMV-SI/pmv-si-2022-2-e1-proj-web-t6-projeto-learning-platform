@@ -1,4 +1,4 @@
-function initMobileSearch() {
+function MobileSearch() {
     const search = $(".gr-search-bar");
     const trigger = $("header .gr-search-btn");
     const closeTrigger = $(".gr-search-close", search);
@@ -39,65 +39,12 @@ function initMobileSearch() {
     attach();
 }
 
-function initDropMenu() {
-    const search = $(".gr-search-bar");
-    const menu = $(".gr-drop-menu");
-    const container = $(".gr-drop-menu-container");
-    const exploreBtn = search.find(".gr-explore-btn");
-    const categories = container.find("div:first-child [data-target]");
-
-    // Scroll the drop menu
-    window.Scrollbar.init(document.querySelector(".drop-menu-scroll"), {
-        thumbMinSize: 10,
-        plugins: { horizontalScroll: false },
-    });
-
-    // Toggle drop menu
-    exploreBtn.on("click", () => {
-        menu.toggleClass("invisible");
-    });
-
-    // When search container closes, also close the menu if is open
-    search.mutate(["class"], (values) => {
-        if (values.class.indexOf("gr-opened") === -1 && !menu.hasClass("invisible")) {
-            menu.toggleClass("invisible");
-        }
-    });
-
-    menu.mutate(["class"], (values) => {
-        if (menu.hasClass("invisible")) {
-            exploreBtn.removeClass("gr-active");
-        } else {
-            exploreBtn.addClass("gr-active");
-        }
-    });
-
-    categories.each((i, category) => {
-        $(category).on("click", (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-
-            categories.each((i, cat) => $(cat).removeClass("gr-active"));
-
-            $(category).addClass("gr-active");
-        });
-    });
-
-    // Close the menu if the window get's resized below 1200px
-    $(window).on("resize", (e) => {
-        if (!menu.hasClass("invisible")) {
-            menu.addClass("invisible");
-            exploreBtn.removeClass("gr-active");
-        }
-    });
-}
-
 /**
  * Função que verifica a página carregada e adiciona
  * a classe "active" ao item do menu principal para
  * indicar qual a página atual.
  */
-function initHeaderMenu() {
+function HeaderMenu() {
     // Retira a última parte da URL atual para saber qual a página atual carregada (ex: sobre.html)
     const page = `/${location.pathname.split("/").pop()}`;
 
@@ -118,8 +65,7 @@ function initHeaderMenu() {
     });
 }
 
-export function initHeader() {
-    initMobileSearch();
-    initDropMenu();
-    initHeaderMenu();
+export function Header() {
+    MobileSearch();
+    HeaderMenu();
 }

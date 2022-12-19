@@ -15,5 +15,10 @@
         "label": "Password",
         "name": "password",
         "placeholder": "Digite sua senha"
+    },
+    "confirm": {
+        "label": "Confirme seu password",
+        "name": "password-confirm",
+        "placeholder": "Digite sua senha novamente"
     }
 }

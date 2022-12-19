@@ -36,7 +36,11 @@
                 </div>
                 <div class="flex-fill d-flex justify-content-center order-1">
                     <div class="auth-container mx-md-3">
-                        {{#embed "form-box/tpl" id="gr-login" action="/auth/jsonDb"}}
+                        {{#embed
+                            "form-box/tpl"
+                            id="gr-login"
+                            action=(append auth.signIn "/jsonDb")
+                        }}
                             {{#content "cardTitle"}}
                                 {{i "auth.signIn.title"}}
                             {{/content}}
@@ -55,6 +59,9 @@
                                         type="text"
                                         class="form-control"
                                         id="auth-username"
+                                        minlength="3"
+                                        maxlength="60"
+                                        required
                                     />
                                 </div>
 
@@ -67,6 +74,9 @@
                                         type="password"
                                         class="form-control"
                                         id="auth-password"
+                                        minlength="8"
+                                        maxlength="30"
+                                        required
                                     />
                                 </div>
 
@@ -75,7 +85,7 @@
                                         {{i "main.recover.label"}}</a>
                                 </div>
                             {{/content}}
-
+                            {{log this}}
                             {{#content "cardButton"}} {{i "auth.signIn.login"}}&nbsp;{{/content}}
 
                             {{#content "cardExtra"}}
@@ -106,7 +116,8 @@
             </div>
         </div>
     {{/content}}
-    {{#content "scripts"}}
+    {{#content "scripts" mode="append"}}
         <script src="/public/scripts/pages/sign-in.js"></script>
+        <script src="/public/scripts/pages/sign-up.js"></script>
     {{/content}}
 {{/extend}}

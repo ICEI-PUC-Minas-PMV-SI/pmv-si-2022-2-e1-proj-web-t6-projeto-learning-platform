@@ -41,12 +41,23 @@ class ProfileController extends ControllerAbstract {
         return [];
     }
 
+    async loadSaved(userId) {
+        const { error, data } = await this.get(`/_api/saved`, { userId });
+
+        if (!error) {
+            return data.items || [];
+        }
+
+        return [];
+    }
+
     async handle(req) {
         const data = {};
 
         data.tracks = await this.loadTracks(req.user.id);
         data.areas = await this.loadAreas();
         data.notes = await this.loadNotes(req.user.id);
+        data.saved = await this.loadSaved(req.user.id);
 
         const topics = await this.loadTopics(data.tracks.trackId);
 
