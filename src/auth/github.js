@@ -9,6 +9,7 @@ class GithubAuth extends JsonDbAuthStrategy {
     }
 
     createStrategy() {
+        console.log("REDIRECT URI", this.getCallbackUrl());
         return new GithubStrategy(
             {
                 clientID: process.env.GITHUB_CLIENT_ID,

@@ -25,11 +25,8 @@
     {{/content}}
     {{#content "scripts"}}
         <script>
-            const userConfirmed = {{user.confirmed}};
-            
-            if (userConfirmed) {
-                location.href = "/profile"
-            }
-        </script>    
+            const userConfirmed =
+            {{user.confirmed}}; if (userConfirmed) { location.href = "/profile" }
+        </script>
     {{/content}}
 {{/extend}}

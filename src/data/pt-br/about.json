@@ -33,15 +33,6 @@
                 "Previamente cursando Matemática na Universidade Federal de Minas gerais, descobriu sua paixão por TI durante o curso, o que o trouxe para o curso de Tecnlogia da Informação ma PUC Minas, onde ele agora busca desenvolver suas habilidades e utilizar seu conhecimento em matemática na criação de aplicações para web com HTML, CSS e tecnologias modernas de Javascript a fim ingressar no setor de TI como um profissional Full Stack.",
                 "Atualmente 100% dedicado ao seus estudos e especialização em busca de estágio."
             ]
-        },
-        {
-            "name": "Gabriel Janot",
-            "ocupation": "Entusiasta de TI",
-            "avatar": "/public/images/Gabriel.png",
-            "description": [
-                "Graduando de Sistemas de Informação na PUC Minas, busca agressivamente aperfeiçoar suas habilidades em desenvolvimento e gênciamento de software.",
-                "Atualmente 100% dedicado ao seus estudos e especialização em busca de estágio."
-            ]
         }
     ]
 }

@@ -1,35 +1,16 @@
-import "/public/scripts/extensions.js";
-import { initBreakpoints, initHomeScrollNav } from "./lib.js";
-import { initHeader } from "./header.js";
+import * as components from "./components/index.js";
 
 $(() => {
+    // Add default scollbar plugins
     window.Scrollbar.use(HorizontalScrollPlugin, OverscrollPlugin);
 
-    initHeader();
-    initBreakpoints();
-    initHomeScrollNav();
+    // initialize components
+    Object.keys(components).forEach((name) => {
+        components[name]();
+    });
 
-    /**
-     * Submit new track form at confirm step.
-     */
-    if ($("#gr-new-plan-form").eq(0)) {
-        $("#gr-new-plan-form").on("submit", (e) => {
-            const timeInput = $('input[name="time"]');
-
-            if (!timeInput.val()) {
-                e.preventDefault();
-                e.stopPropagation();
-
-                $('input[name="time"]').val($(e.submitter).data("time"));
-
-                $(e.target).trigger("submit");
-            }
-        });
-    }
-
-    // Initialize tooltips
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-    const tooltipList = [...tooltipTriggerList].map(
-        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
-    );
+    // Initialize all tooltips
+    document
+        .querySelectorAll('[data-bs-toggle="tooltip"]')
+        .forEach((el) => new bootstrap.Tooltip(el));
 });

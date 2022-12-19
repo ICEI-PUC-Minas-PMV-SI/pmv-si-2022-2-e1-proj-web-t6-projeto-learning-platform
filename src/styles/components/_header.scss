@@ -6,9 +6,10 @@ header {
         font-size: 1.8rem !important;
     }
 
+    .navbar-brand,
     .gr-header-start,
     .gr-header-end {
-        min-width: 42px;
+        flex: 1;
     }
 
     // hide logo and sidebar toggle when mobile search is open
@@ -31,22 +32,22 @@ header {
         }
     }
 
-    .gr-user-thumbnail {
-    }
-
     @include media-breakpoint-up(xl) {
+        .navbar-brand,
         .gr-header-start,
         .gr-header-end {
-            min-width: auto;
+            flex: 0;
+        }
 
-            .gr-search-btn {
-                display: none;
-            }
+        .gr-search-btn {
+            display: none;
         }
     }
 }
 
 .gr-search-bar {
+    $active: "gr-active";
+
     flex-grow: 0;
     position: relative;
 
@@ -104,108 +105,72 @@ header {
         .gr-search-bar-container {
         }
     }
-}
 
-.gr-explore-btn {
-    &.gr-active {
-        height: 52px !important;
-        margin-bottom: -10px;
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0;
-        border-color: var(--bs-lighter);
-        background-color: var(--bs-black);
-        border-bottom: 0;
-        box-shadow: 6px 7px 10px -4px rgba(0, 0, 0, 0.75);
-        -webkit-box-shadow: 6px 7px 10px -4px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 6px 7px 10px -4px rgba(0, 0, 0, 0.75);
-
-        .bi {
-            display: inline-block;
-            transform: rotate(90deg);
-        }
-
-        &:hover {
-            color: #fff;
+    .gr-explore-btn {
+        &.#{$active} {
+            height: 52px !important;
+            margin-bottom: -10px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            border-color: var(--bs-lighter);
             background-color: var(--bs-black);
-            border-color: var(--bs-dark);
+            border-bottom: 0;
+            box-shadow: 6px 7px 10px -4px rgba(0, 0, 0, 0.75);
+            -webkit-box-shadow: 6px 7px 10px -4px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 6px 7px 10px -4px rgba(0, 0, 0, 0.75);
+
+            .bi {
+                display: inline-block;
+                transform: rotate(90deg);
+            }
+
+            &:hover {
+                color: #fff;
+                background-color: var(--bs-black);
+                border-color: var(--bs-dark);
+            }
         }
     }
-}
 
-.gr-drop-menu {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 52px;
-    transition: top 0.3s, opacity 0.3s;
-    opacity: 1;
-    z-index: 1000;
-    max-height: calc(100vh - 80px);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-
-    & > .drop-menu-scroll {
-        max-height: 100%;
-        min-height: 100%;
-        flex: 1 1 100%;
-    }
-
-    &:not(.invisible) {
-        border: 2px solid var(--bs-lighter);
-        border-top: 0;
-        box-shadow: 6px 7px 10px -4px rgba(0, 0, 0, 0.75);
-        -webkit-box-shadow: 6px 7px 10px -4px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 6px 7px 10px -4px rgba(0, 0, 0, 0.75);
-    }
-
-    &.invisible {
+    .gr-drop-menu {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 52px;
+        transition: top 0.3s, opacity 0.3s;
+        z-index: 1000;
+        max-height: calc(100vh - 80px);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        visibility: hidden;
         opacity: 0;
 
-        & > div {
-            display: none !important;
-        }
-    }
-
-    .gr-drop-menu-container {
-        & > div:first-child {
-            width: 100%;
-        }
-    }
-
-    .gr-drop-menu-container {
-        // If has no active sub-menu, hide container
-        & > div:last-child {
-            &:not(:has(.gr-sub-category.gr-active)) {
-                display: none !important;
-            }
-        }
-    }
-
-    @include media-breakpoint-up(md) {
-        position: absolute;
-        transition: max-height 1s, opacity 0.3s;
-        right: auto;
-        left: 50px;
-
-        &.invisible {
-            max-height: 0;
+        & > .drop-menu-scroll {
+            max-height: 100%;
+            min-height: 100%;
+            flex: 1 1 100%;
         }
 
-        .gr-drop-menu-container {
-            & > div:first-child {
-                width: 280px;
-            }
+        &.#{$active} {
+            visibility: visible;
+            opacity: 1;
+            border: 2px solid var(--bs-lighter);
+            border-top: 0;
+            box-shadow: 6px 7px 10px -4px rgba(0, 0, 0, 0.75);
+            -webkit-box-shadow: 6px 7px 10px -4px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 6px 7px 10px -4px rgba(0, 0, 0, 0.75);
         }
 
-        .gr-drop-menu-container {
-            & > div:last-child {
-                width: 220px;
-            }
+        @include media-breakpoint-up(md) {
+            position: absolute;
+            transition: max-height 1s, opacity 0.3s;
+            right: auto;
+            left: 50px;
         }
-    }
 
-    @include media-breakpoint-up(xl) {
-        left: 0;
+        @include media-breakpoint-up(xl) {
+            left: 0;
+        }
     }
 }

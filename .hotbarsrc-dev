@@ -19,7 +19,16 @@
         "enabled": true
     },
     "auth": {
-        "enabled": true
+        "enabled": true,
+        "views": {
+            "signIn": "sign-in",
+            "signUp": "sign-up",
+            "signUpPending": "sign-up/pending",
+            "signOut": "sign-out",
+            "passwordRecovery": "password-recovery",
+            "passwordRecovered": "password-recovered",
+            "passwordReset": "password-reset"
+        }
     },
     "upload": {
         "enabled": true,
