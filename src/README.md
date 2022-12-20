@@ -1,126 +1,53 @@
 # Grimore
 
+A versão live do projeto pode ser encontrada aqui [https://grimore-dev.onrender.com/sign-in](https://grimore-dev.onrender.com/sign-in).
+
+Para rodar a versão local, siga as instruções abaixo.
+
 ## Desenvolvimento
 
-A plataforma utiliza o `handlebars`, que possibilita quebrar os arquivos fonte em partes reusáveis, evitando a repitição desnecessária de código.
-Para inicializar o ambiente de desenvolvimento, siga os passos abaixo:
+A plataforma foi desenvolvida com Node Js e utiliza o **[Hotbars](https://github.com/jairmilanes/hotbars)** , uma plataforma de desenvolvimento que disponibiliza diversas técnologias para auxiliar no desenvolvimento de aplicativos e websites, algumas delas listadas abaixo:
 
-Se esta é a primeira vez que está iniciando o projeto, instale as dependências rodando o commando abaixo apartir do root deste projeto (uma pasta acima de onde este README.md se encontra):
+* Handlebars
+* Sass
+* Json Server
+* Http Server
+* SMTP Server trap
+* Data Management
 
+Para iniciar o servidor de desenvolvimento, siga os passos abaixo.
+
+### Instale os pacótes
+Rode o comando abaixo a partir do root do projeto:
 ```
 npm install
 ```
 
-Isto irá instalar os arquivos necessários, a seguir, rode o comando abaixo para inicializar a plataforma:\
+### Authenticação
 
+A plataforma utiliza duas estratégias de authenticação, local e a integração com Github, nada precisa ser feito para efetuar seu cadastro e posteriormente seu login com a estratégia local, preechendo os formulários em `/sign-up` & `/sign-in`.
+
+Para a integração com o Github, é necessário uma chave e um segredo que deve ser configurado no arquivo `.env` no root do projeto, esta mesma funcionalidade pode ser testada na versão live do projeto sem necessidade de configuração.
+
+### Environment
+
+Renomeie o arquivo `.env.template` no root do projeto para `.env` e substitua os valores das chaves abaixo para habilitar a authenticação com o Github:
+
+```shell
+GITHUB_CLIENT_ID=<github client id>
+GITHUB_CLIENT_SECRET=<github client secret>
+```
+
+### Inicie o servidor
+
+Isto irá instalar os arquivos necessários, a seguir, rode o comando abaixo para inicializar a plataforma:
 ```
 npm start
 ```
+Pronto! A plataforma está live na url [http://localhost:3000](http://localhost:3000), uma janela do navegador deverá abrir automaticamente, caso não aconteça, clica no link.
 
-Pronto! A plataforma está live na url [http://localhost:1234](http://localhost:3000), abra está url em seu browser caso não tenha aberto automaticamente, toda alteração que for feita no código fonte, será atualizada automaticamente nesta url.
 
-## Conceitos de desenvolvimento
-
-Utilizamos o Handlebars para evitar o repetimento continuo de código, a plataforma contém mais de 30 páginas, sem o Handlebars, a manutenção do código seria mais complexa e mais propensa a erros.
-
-O Handlebars trás 3 conceitos principais e largamente utilizados na plataforma:
-
-### Dados
-
-Com handlebars é possível separar as responsabilidades em arquivos e pastas dedicadas, tornando nosso código fonte mais limpo e coerente. Com isso, os dados das páginas ficam localizados em arquivos `.json` na pasta dados, e estão disponíveis em qualquer layout, bloco ou páginas do código.
-
-A utilização destes dados começa por criar seu arquivo de dados dentro da pasta dados:
-
-```json
-// Arquivo: ./dados/usuario.json
-{
-    "nome": "John",
-    "sobrenome": "Doe"
-}
-```
-
-Com seu arquivo de dados criado, utilize os dados em uma de suas páginas, layouts ou blocos como abaixo:
-
-```handlebars
-{{#block "custom"}}
-    <h2>{{usuario.nome}} {{usuario.sobrenome}}<h2>
-{{/block}}
-```
-
-### Páginas
-
-Páginas são os pontos de entrada da plataforma, e devem ser criadas dentro da pasta `pages`. A única página fora da pasta `pages` é a home, que é representada pelo arquivo `./src/index.hbs`, toda e qualquer outra página deve ser criada dentro da pasta pages, utilizando uma estrutura de sub-pastas coeerentes a navegação do site, ex:
-
-```
-./src/pages/dashboard.hbs
-./src/pages/dashboard/concluidos.hbs
-./src/pages/dashboard/salvos.hbs
-./src/pages/dashboard/notas.hbs
-./src/pages/planos/novo.hbs
-./src/pages/planos/novo/categoria.hbs
-./src/pages/planos/novo/tecnologia.hbs
-./src/pages/planos/novo/tempo.hbs
-./src/pages/planos/novo/confirmacao.hbs
-./src/pages/planos/novo/precessando.hbs
-...
-```
-
-### Layouts
-
-Layouts são esqueletos de páginas, contendo apenas o html, css e javascript que são comuns em várias páginas, layouts são o principal block de construção de páginas, ele contem toda a estrutura html básica incluindo a tag html, head, body, ele já tem as chamadas necessárias para os arquivos do Bootstrap, além dos estilos e scripts básicos da plataforma.
-
-Ao criar uma nova página na pasta `pages`, é necessário que extenda um dos layouts disponíveis na pasta `./layouts` como no exemplo abaixo:
-
-```handlebars
-{{#extend "default"}}
-    <!-- ...blocks -->
-{{/extend}}
-```
-
-Com o código acima, todo conteúdo de layout `./layouts/default.hbs` será renderizado em sua nova página, e tudo o que tem que fazer é customizar seus blocos.
-
-```handlebars
-{{#extend "default"}}
-    <!-- Ao utilizar o bloco #content, substituimos o conteúdo do bloco "main" do layout "default". -->
-    {{#content "main"}}
-        <p class="text-white">Customizar Conteudo</p>
-    {{/content}}
-
-{{/extend}}
-```
-
-### Parciais (Partials)
-
-Parciais são pedaços de html, uma pequena parte de uma página em um arquivo independente, que pode ser re-utilizado em vários layouts. Novas parciais devem ser salvas na pasta `./partials`, e seu conteúdo deve sempre começar com a declaração de nome do bloco:
-
-```handlebars
-<!-- Arquivo: ./partials/my-block.hbs -->
-{{#block "my-block"}}
-    <!-- Insira aqui o HTML deste bloco -->
-{{/block}}
-```
-
-Uma vez criada uma parcial, ela pode ser importada em qualquer layout, outras parcias e outras páginas, utilizando a tag `#embed` da seguinte maneira:
-
-```handlebars
-{{#extend "default"}}
-    {{#content "main"}}
-        <!-- O conteúdo do bloco "main" do layout "default", será substituído pelo conteúdo de sua nova parcial "my-block". -->
-        {{#embed "my-block"}}{{/embed}}
-    {{/content}}
-
-{{/extend}}
-```
-
-### Helpers
-
-Helpers são exxtremamente úteis na formatação de conteúdo, como converter textos para caixa alta ou baixa, customizar html, e facilitar a criação de estruturas complexas.
-
-Um helper é nada mais que uma função javascript em um arquivo dedicado, que recebe um contexxto e retorna conteúdo HTML em forma de uma string (texto).
-
-Nossa plataforma já disponibiliza uma grande quantidade de helpers que podem ser usados, a lista completa pode ser conferida [aqui](https://www.npmjs.com/package/handlebars-helpers), em casos específicos que nenhum dos helpers disponíveis satisfação os requerimentos, um novo deverá ser criado na pasta `./src/helpers`.
-
-# Flow de desenfolvimento de páginas
+# Flow de desenfolvimento
 
 Com os conceitos acima entendidos, é fácil criar novas páginas em nossa plataforma, o passo a passo abaixo cobre todos os passos da criação e desenvolvimento de novas páginas.
 
