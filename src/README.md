@@ -47,7 +47,7 @@ npm start
 Pronto! A plataforma está live na url [http://localhost:3000](http://localhost:3000), uma janela do navegador deverá abrir automaticamente, caso não aconteça, clica no link.
 
 
-# Flow de desenfolvimento
+# Flow de desenvolvimento
 
 Com os conceitos acima entendidos, é fácil criar novas páginas em nossa plataforma, o passo a passo abaixo cobre todos os passos da criação e desenvolvimento de novas páginas.
 
