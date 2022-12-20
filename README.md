@@ -18,9 +18,11 @@ Nossa equipe é formada por calouros do bacharelado em Técnologia da Informaç�
 
 ## Demo
 
-[https://grimore-dev.onrender.com/sign-in](https://grimore-dev.onrender.com/sign-in).
+Utilize o link abaixo para conferir um demo da aplicação com tudo oque construimos até agora. 
 
-para instruções sobre como completar seu cadastro confira a [documentação](./src/README.md).
+[https://grimore-dev.onrender.com](https://grimore-dev.onrender.com).
+
+[Documentação para desenvolvimento](./src/README.md).
 
 
 # Planejamento

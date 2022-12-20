@@ -1,7 +1,8 @@
+.hotbars
 .idea
 .vscode
 .parcel-cache
-.env*
+.env
 .hidden*
 node_modules
 dist

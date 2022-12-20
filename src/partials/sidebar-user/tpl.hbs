@@ -23,7 +23,7 @@
                     <div class="rounded-circle p-1">
                         <img
                             class="img-fluid rounded-circle"
-                            src="{{user.avatar}}"
+                            src="{{default user.avatar (replace "https://avatars.dicebear.com/api/bottts/%s.svg" "%s" user.firstName)}}"
                             alt="{{user.firstName}}"
                         />
                     </div>
