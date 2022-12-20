@@ -14,6 +14,95 @@ Para que pudessemos atingir nosso objetivo com essa plataforma, foi escolhido um
 * **Bootstrap 5**: Framework para desenvolvimento frontend
 * **HTML 5**: Para marcação de páginas e layout de páginas.
 
+## Conceitos de desenvolvimento
+
+Utilizamos o Handlebars para evitar o repetimento continuo de código, a plataforma contém mais de 30 páginas, sem o Handlebars, a manutenção do código seria mais complexa e mais propensa a erros.
+
+O Handlebars trás 3 conceitos principais e largamente utilizados na plataforma:
+
+### Templates
+
+Com handlebars é possível separar as responsabilidades em arquivos e pastas dedicadas, tornando nosso código fonte mais limpo e coerente. Com isso, os dados das páginas ficam localizados em arquivos `.json` na pasta dados, e estão disponíveis em qualquer layout, bloco ou páginas do código.
+
+A utilização destes dados começa por criar seu arquivo de dados dentro da pasta dados:
+
+```json
+// Arquivo: ./dados/usuario.json
+{
+    "nome": "John",
+    "sobrenome": "Doe"
+}
+```
+
+Com seu arquivo de dados criado, utilize os dados em uma de suas páginas, layouts ou blocos como abaixo:
+
+```handlebars
+{{#block "custom"}}
+    <h2>{{usuario.nome}} {{usuario.sobrenome}}<h2>
+{{/block}}
+```
+
+### Páginas
+
+Páginas são os pontos de entrada da plataforma, e devem ser criadas dentro da pasta `pages`, a estrutura de pastas serve como roteamento sendo que as url's seguem a mesma esturtura.
+
+Páginas criadas dentro de `/pages/secure` são protegidas por athenticação automaticamente se authenticação estiver habilitada.
+
+### Layouts
+
+Layouts são esqueletos de páginas, contendo apenas o html, css e javascript que são comuns em várias páginas, layouts são o principal block de construção de páginas, ele contem toda a estrutura html básica incluindo a tag html, head, body, ele já tem as chamadas necessárias para os arquivos do Bootstrap, além dos estilos e scripts básicos da plataforma.
+
+Ao criar uma nova página na pasta `pages`, é necessário que extenda um dos layouts disponíveis na pasta `./layouts` como no exemplo abaixo:
+
+```handlebars
+{{#extend "default"}}
+    <!-- ...blocks -->
+{{/extend}}
+```
+
+Com o código acima, todo conteúdo de layout `./layouts/default.hbs` será renderizado em sua nova página, e tudo o que tem que fazer é customizar seus blocos.
+
+```handlebars
+{{#extend "default"}}
+    <!-- Ao utilizar o bloco #content, substituimos o conteúdo do bloco "main" do layout "default". -->
+    {{#content "main"}}
+        <p class="text-white">Customizar Conteudo</p>
+    {{/content}}
+
+{{/extend}}
+```
+
+### Parciais (Partials)
+
+Parciais são pedaços de html, uma pequena parte de uma página em um arquivo independente, que pode ser re-utilizado em vários layouts. Novas parciais devem ser salvas na pasta `./partials`, e seu conteúdo deve sempre começar com a declaração de nome do bloco:
+
+```handlebars
+<!-- Arquivo: ./partials/my-block.hbs -->
+{{#block "my-block"}}
+    <!-- Insira aqui o HTML deste bloco -->
+{{/block}}
+```
+
+Uma vez criada uma parcial, ela pode ser importada em qualquer layout, outras parcias e outras páginas, utilizando a tag `#embed` da seguinte maneira:
+
+```handlebars
+{{#extend "default"}}
+    {{#content "main"}}
+        <!-- O conteúdo do bloco "main" do layout "default", será substituído pelo conteúdo de sua nova parcial "my-block". -->
+        {{#embed "my-block"}}{{/embed}}
+    {{/content}}
+
+{{/extend}}
+```
+
+### Helpers
+
+Helpers são exxtremamente úteis na formatação de conteúdo, como converter textos para caixa alta ou baixa, customizar html, e facilitar a criação de estruturas complexas.
+
+Um helper é nada mais que uma função javascript em um arquivo dedicado, que recebe um contexxto e retorna conteúdo HTML em forma de uma string (texto).
+
+Nossa plataforma já disponibiliza uma grande quantidade de helpers que podem ser usados, a lista completa pode ser conferida [aqui](https://www.npmjs.com/package/handlebars-helpers), em casos específicos que nenhum dos helpers disponíveis satisfação os requerimentos, um novo deverá ser criado na pasta `./src/helpers`.
+
 ## Estrutura de dados
 
 Foram necessárias algumas estruturas de dados para a plataforma, abaixo descrevemos as mais importantes:

@@ -16,6 +16,13 @@ Nossa equipe é formada por calouros do bacharelado em Técnologia da Informaç�
 
 -   Simone de Assis Alves da Silva
 
+## Demo
+
+[https://grimore-dev.onrender.com/sign-in](https://grimore-dev.onrender.com/sign-in).
+
+para instruções sobre como completar seu cadastro confira a [documentação](./src/README.md).
+
+
 # Planejamento
 
 <ol>
