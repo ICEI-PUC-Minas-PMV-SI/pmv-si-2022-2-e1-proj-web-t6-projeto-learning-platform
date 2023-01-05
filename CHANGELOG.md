@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2022-2-e1-proj-web-t6-projeto-learning-platform/compare/ICEI-PUC-Minas-PMV-SI/pmv-si-2022-2-e1-proj-web-t6-projeto-learning-platform-v1.1.0...ICEI-PUC-Minas-PMV-SI/pmv-si-2022-2-e1-proj-web-t6-projeto-learning-platform-v1.1.1) (2023-01-05)
+
+
+### Bug Fixes
+
+* fixing host for smtp server ([4fe397b](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2022-2-e1-proj-web-t6-projeto-learning-platform/commit/4fe397b75def53393b448006eee4a48766915578))
+
 ## [1.1.0](https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2022-2-e1-proj-web-t6-projeto-learning-platform/compare/ICEI-PUC-Minas-PMV-SI/pmv-si-2022-2-e1-proj-web-t6-projeto-learning-platform-v1.0.0...ICEI-PUC-Minas-PMV-SI/pmv-si-2022-2-e1-proj-web-t6-projeto-learning-platform-v1.1.0) (2023-01-05)
 
 
