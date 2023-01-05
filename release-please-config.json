@@ -1,0 +1,17 @@
+{
+  "packages": {
+    ".": {
+      "token": "secrets.TOKEN",
+      "changelog-path": "CHANGELOG.md",
+      "package-name": "ICEI-PUC-Minas-PMV-SI/pmv-si-2022-2-e1-proj-web-t6-projeto-learning-platform",
+      "release-type": "node",
+      "target-branch": "master",
+      "bump-minor-pre-major": false,
+      "bump-patch-for-minor-pre-major": false,
+      "draft": false,
+      "prerelease": false,
+      "initial-version": "1.0.0"
+    }
+  },
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
+}

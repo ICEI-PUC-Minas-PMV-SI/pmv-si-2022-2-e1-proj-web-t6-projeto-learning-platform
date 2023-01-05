@@ -1,0 +1,24 @@
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+name: release-please
+jobs:
+  release-please:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        id: release
+        with:
+          command: manifest
+
+      - name: Deploy
+        if: ${{ steps.release.outputs.release_created }}
+        uses: bankfliptech/deploy-to-render@v1
+        with:
+          serviceId: ${{ secrets.RENDER_SERVICE_ID }}
+          apiKey: ${{ secrets.RENDER_API_KEY }}
+          deployHookURL: ${{ secrets.RENDER_DEPLOY_HOOK }}
