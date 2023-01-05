@@ -4,7 +4,8 @@
     "jsonDb": "db/db.json",
     "views": "pages",
     "smtpServer": {
-        "enabled": true
+        "enabled": true,
+        "host": "https://grimore-dev.onrender.com"
     },
     "mailer": {
         "enabled": true
